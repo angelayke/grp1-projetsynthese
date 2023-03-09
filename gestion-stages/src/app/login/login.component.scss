@@ -1,0 +1,42 @@
+h1, p {
+  margin-top: 0;
+  text-align: center;
+}
+
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  form {
+    width: 50%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #089da4;
+      color: #F6F6F6;
+    }
+  }
+}

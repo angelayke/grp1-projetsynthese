@@ -1,0 +1,24 @@
+<h1>Identification</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, temporibus!</p>
+
+<div class="login-container">
+
+  <div class="image-container">
+    <img src="../../assets/img/imagelogin.png" alt="Image de connexion">
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nom et Prénom</mat-label>
+      <input matInput formControlName="username" type="text" placeholder="Votre nom et prénom" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Votre email" required>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" type="submit">Login</button>
+
+  </form>
+
+</div>
