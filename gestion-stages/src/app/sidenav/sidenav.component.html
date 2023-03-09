@@ -1,0 +1,47 @@
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <!--ici doit se trouver le menu de l'application-->
+    <img src="" alt="logo">
+    <!--<p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>-->
+    <mat-sidenav-container >
+        <mat-sidenav-content>
+            <button mat-button>
+                <mat-icon>home</mat-icon>
+                <span>Tableau de bord</span>
+            </button>
+     
+            <button mat-button>
+                <mat-icon>event_note</mat-icon>
+                <span>Demandes de stages</span>
+            </button>
+            <button mat-button>
+                <mat-icon>near_me</mat-icon>
+                <span>Offres de stage</span>
+            </button>
+            <button mat-button>
+                <mat-icon>person</mat-icon>
+                <span>Candidats</span>
+            </button>
+            <button mat-button>
+                <mat-icon>business_center</mat-icon>
+                <span>Entreprises</span>
+            </button>
+        
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+  </mat-drawer>
+
+  <!--bouton menu sort pour afficher le menu de la side nav-->
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+     <mat-icon aria-hidden="false" aria-label="sort icon" fontIcon="sort" class="material-symbols-outlined">Sort</mat-icon>
+    </button>
+  </div>
+
+</mat-drawer-container>
