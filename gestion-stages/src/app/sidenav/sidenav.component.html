@@ -1,39 +1,24 @@
 
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <!--ici doit se trouver le menu de l'application-->
-    <img src="" alt="logo">
-    <!--<p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>-->
-    <mat-sidenav-container >
-        <mat-sidenav-content>
-            <button mat-button>
-                <mat-icon>home</mat-icon>
-                <span>Tableau de bord</span>
-            </button>
-     
-            <button mat-button>
-                <mat-icon>event_note</mat-icon>
-                <span>Demandes de stages</span>
-            </button>
-            <button mat-button>
-                <mat-icon>near_me</mat-icon>
-                <span>Offres de stage</span>
-            </button>
-            <button mat-button>
-                <mat-icon>person</mat-icon>
-                <span>Candidats</span>
-            </button>
-            <button mat-button>
-                <mat-icon>business_center</mat-icon>
-                <span>Entreprises</span>
-            </button>
-        
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened [disableClose]="true">
+    <!--ici se trouve le menu de l'application-->
+    <img src="" alt="logo" class="logo">
+  <div class="container-nav">
+    <nav>
+      <ul>
+        <li><a href="" class="color-tableaubord"><mat-icon>home</mat-icon>
+          <span> Tableau de bord</span></a></li>
+        <li><a href="" class="color-demandestage"><mat-icon>event_note</mat-icon>
+          <span> Demandes de stages</span></a></li>
+        <li><a href="" class="color-offrestage"> <mat-icon>near_me</mat-icon>
+          <span>Offres de stage</span></a></li>
+        <li><a href="" class="color-candidat"> <mat-icon>person</mat-icon>
+          <span> Candidats</span></a></li>
+        <li><a href=""  class="color-entreprise"><mat-icon>business_center</mat-icon>
+          <span> Entreprises</span></a></li>
+      </ul>
+    </nav>
+  </div>
 
   </mat-drawer>
 
