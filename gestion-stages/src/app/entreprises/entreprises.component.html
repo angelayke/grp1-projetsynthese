@@ -1,0 +1,23 @@
+<div class="container">
+    <div>
+        <h1>Entreprises</h1>
+        <button mat-button aria-label="Ajouter" routerLink="/">Ajouter une entreprise</button>
+    </div>
+    <div>
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{entreprise?.name}}</mat-card-title>
+                <p>{{entreprise?.address}} <br>
+                    {{entreprise?.city}} {{entreprise?.postalCode}}
+                </p>
+                <img mat-card-md-image src="https://fakeimg.pl/250/"  alt="Pictogramme entreprise">
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Téléphone: {{entreprise?.contactPhone}} <br>
+                   Courriel: {{entreprise?.contactEmail}}</p>
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>
