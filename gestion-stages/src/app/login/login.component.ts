@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid){
       alert("Veuillez remplir les champs SVP!")
 
-
     }
     else{
       this.router.navigate(["/tableau-affichage-demande-stage"])

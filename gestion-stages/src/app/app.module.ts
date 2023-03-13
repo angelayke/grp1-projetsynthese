@@ -14,16 +14,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 
 import { LoginComponent } from './login/login.component';
 import { TableauAffichageDemandeStageComponent } from './tableau-affichage-demande-stage/tableau-affichage-demande-stage.component';
+
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TableauAffichageDemandeStageComponent
+    TableauAffichageDemandeStageComponent,
+    ConfirmationDialogComponent,
+    DetailsStagesRequestComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,9 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatCardModule
 
 
   ],

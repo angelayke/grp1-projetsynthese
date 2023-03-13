@@ -1,4 +1,3 @@
-
 <main>
   <section class="container">
     <div class="demandes-infos">
@@ -6,68 +5,111 @@
         <h1>Dernières <span class="demandes">demandes</span> de stage</h1>
         <h2 class="titre2"> En attente de validation</h2>
       </div>
-      <button class="btn-valid">Valider toutes les demandes</button>
+      <button class="btn-valid"(click)="validerToutesDemandes()">Valider toutes les demandes</button>
     </div>
   </section>
 
   <section class="container">
     <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSourceStage" matSort class="mat-elevation-z8">
 
-      <table mat-table [dataSource]="dataSource" matSort>
 
-
-        <ng-container matColumnDef="profil" class="text-underline">
+        <ng-container matColumnDef="titre" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Profil </th>
 
-          <td mat-cell *matCellDef="let row">
+          <td mat-cell *matCellDef="let stage">
             <span class="vertical-line"></span>
             <mat-icon class="school">school</mat-icon>
-            {{row.profil}}
+            {{stage.titre}}
+
+          </td>
+
+        </ng-container>
+
+
+        <ng-container matColumnDef="name" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Établissement </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.enterprise.name}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="startDate" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Début </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.startDate | date:'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="endDate" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fin </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.endDate | date:'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="stageType" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type de stage </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.stageType.label}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="hoursPerWeek" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Heures par semaine </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.hoursPerWeek}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="paid" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Rémunéré </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.paid ? 'Oui' : 'Non'}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="skills" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Compétences </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.skills.label}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="active" class="text-underline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Actif </th>
+          <td mat-cell *matCellDef="let stage"> {{stage.active ? 'Oui' : 'Non'}}
+
           </td>
         </ng-container>
 
-
-        <ng-container matColumnDef="etablissement" class="text-underline">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Établissement </th>
-          <td mat-cell *matCellDef="let row"> {{row.etablissement}} </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="date" class="text-underline">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-          <td mat-cell *matCellDef="let row"> {{row.date}} </td>
-        </ng-container>
 
 
         <ng-container matColumnDef="actions" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
-          <td mat-cell *matCellDef="let row" class="btn-td">
-            <button mat-icon-button color="primary" aria-label="Refuser">
-              <!-- <mat-icon>clear</mat-icon> -->
-              <span class="refuser">Refuser</span>
-            </button>
-            <button class="btn-icons"  mat-icon-button color="primary" aria-label="Accepter">
-              <!-- <mat-icon>done</mat-icon> -->
-              <span class="accepter">Accepter</span>
-            </button>
+          <td mat-cell *matCellDef="let stage" class="btn-td">
+
+
+            <button class="refuser"  (click)="refuserStage(stage)" *ngIf="stage.active"> Refuser</button>
+            <button  class="accepter" (click)="accepterStage(stage)" *ngIf="!stage.active"> Accepter</button>
+
+
+
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
-              <mat-icon class="visibility">visibility</mat-icon>
+              <mat-icon (click)="openDetailsDialog(stage._id)" class="visibility">visibility</mat-icon>
             </button>
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
               <mat-icon class="edit">edit</mat-icon>
             </button>
-            <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
+            <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer" (click)="deleteStage(stage._id)">
               <mat-icon class="delete">delete</mat-icon>
             </button>
+
+
           </td>
         </ng-container>
 
+
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let stage; columns: displayedColumns;"></tr>
+
 
 
       </table>
-
 
     </div>
   </section>
