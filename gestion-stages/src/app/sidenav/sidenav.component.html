@@ -1,0 +1,32 @@
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened [disableClose]="true">
+    <!--ici se trouve le menu de l'application-->
+    <img src="" alt="logo" class="logo">
+  <div class="container-nav">
+    <nav>
+      <ul>
+        <li><a href="" class="color-tableaubord" routerLink="/tableaudebord"><mat-icon>home</mat-icon>
+          <span> Tableau de bord</span></a></li>
+        <li><a href="" class="color-demandestage" routerLink="/demandesdestage"><mat-icon>event_note</mat-icon>
+          <span> Demandes de stages</span></a></li>
+        <li><a href="" class="color-offrestage" routerLink="/offredestage"> <mat-icon>near_me</mat-icon>
+          <span>Offres de stage</span></a></li>
+        <li><a href="" class="color-candidat" routerLink="/candidats"> <mat-icon>person</mat-icon>
+          <span> Candidats</span></a></li>
+        <li><a href=""  class="color-entreprise" routerLink="/entreprises"><mat-icon>business_center</mat-icon>
+          <span> Entreprises</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  </mat-drawer>
+
+  <!--bouton menu sort pour afficher le menu de la side nav-->
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+     <mat-icon aria-hidden="false" aria-label="sort icon" fontIcon="sort" class="material-symbols-outlined">Sort</mat-icon>
+    </button>
+  </div>
+
+</mat-drawer-container>
