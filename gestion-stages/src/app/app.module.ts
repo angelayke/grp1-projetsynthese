@@ -33,7 +33,6 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
@@ -47,19 +46,16 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatCardModule
-
+    MatCardModule,
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
