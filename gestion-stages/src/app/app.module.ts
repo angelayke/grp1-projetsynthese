@@ -8,6 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //ajout module
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
+//menu sidenav
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
 
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,10 +33,12 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
 @NgModule({
   declarations: [
     AppComponent,
+
     LoginComponent,
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
+    SidenavComponent
 
   ],
   imports: [
@@ -39,6 +47,7 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -47,6 +56,9 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
     MatDialogModule,
     MatCardModule
 
+    MatSidenavModule,
+    MatToolbarModule,
+    MatDividerModule
 
   ],
   providers: [],
