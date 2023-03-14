@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$color1: red;
+$line-height: normal;
+
+@font-face {  
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+span, p {
+    color: #a00707;
+}
+
+h3, p {
+    line-height: $line-height;
+    font-family: Lato;
+}
+
+button {
+    float: right;
+    font-family: Lato;
+}
+
+table {
+    margin-top: 5rem;
+    width: 100%;
+    border-left-color: #a00707;
+    font-family: Lato;
+    font-size: 8px;
+  }
+
+
+.btn {
+    display: inline-table;
+    font-size: 10px;
+    margin-left: 12px;
+    min-width: 80px;
+    font-family: Lato;
+}
+
+// mat-icon {
+//     margin-left: 12px;
+// }
+
+th {
+    font-weight: bolder;
+    border-bottom: 5px;
+    font-family: Lato;
+    width: fit-content;
+}
+
+.school {
+    float: left;
+    margin-right: 10px;
+    color: rgb(138, 120, 21);
+}
+
+.delete {
+    color: #f26689;
+    display: inline-table;
+}
+
+.visibility {
+    color: #22a6ac;
+    display: inline-table;
+}
+
+.edit {
+   color: #f89747;
+   display: inline-table;
+
+}
+
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 0;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    // text-decoration: underline; 
+}
+
+
+// mat-row, mat-header-row,   td.mat-cell, td.mat-footer-cell {
+//     border-bottom-color: #f44336;
+// }
+
+.refuser {
+    color: #a00707;
+    background-color: rgba(160, 7, 7, 0.5);
+    padding: 0.1rem;
+    float: left;
+    display: table-cell;
+    font-size: 14px;
+    min-width: 160px;
+    font-family: Lato;
+}
+
+.accepter {
+    color:#07a04a;
+    background-color: rgba(173, 216, 230, 0.5);
+    padding: 0.1rem;
+    float: left;
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 20px;
+    min-width: 160px;
+    margin-top: auto; 
+    font-family: Lato;
+}
+
+
+
+.btn-offre-stage {
+    color: white;
+    background-color: #22a6ac;
+    font-family: Lato;
+}
+
+.work {
+    background-color: rgba(160, 7, 7, 0.5);
+    float: left;
+    font-size: 24px;
+    // border-left: solid;
+}
+
+.border-left {
+    border-left: solid;
+    border-left-width: 5px;
+    border-left-color:  rgba(160, 7, 7, 0.5);
+    border-left-style: groove;
+}
+
+hr {
+    height: 10px;
+    width: 50%;
+}
+
+
+
+
