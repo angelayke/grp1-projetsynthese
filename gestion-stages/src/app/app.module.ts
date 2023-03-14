@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,13 +25,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 
-import {MatTableModule} from '@angular/material/table';
+
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
+
 
 import { LoginComponent } from './login/login.component';
 import { TableauAffichageDemandeStageComponent } from './tableau-affichage-demande-stage/tableau-affichage-demande-stage.component';
@@ -63,14 +63,10 @@ import { DetailsStagesRequestComponent } from './details-stages-request/details-
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
-    ReactiveFormsModule,
-    MatFormFieldModule,
+    MatCardModule,
     MatInputModule,
-    MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatCardModule,
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule
