@@ -27,15 +27,19 @@ import { LoginComponent } from './login/login.component';
 import { TableauAffichageDemandeStageComponent } from './tableau-affichage-demande-stage/tableau-affichage-demande-stage.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    EntreprisesComponent,
     TableauAffichageOffreStageComponent,
     HeaderComponent,
     AjoutCandidatComponent,
