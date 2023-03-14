@@ -1,0 +1,35 @@
+
+<h1>Candidats</h1>
+<div><button mat-raised-button class="btn__button"> <h2>Ajouter un candidat</h2></button></div>
+<ng-container class="container-fluid" *ngFor="let c of candidats">
+
+    <mat-card class="liste-card" (click)="(c._id)">
+        <div class="modal-candidat-view">
+            <div class="overlay"></div>
+            <div class="modal-candidat-view-container flex">
+              <div class="modal-candidat-view-image flex-1">
+    <mat-card-title>
+        <span class="material-icons">person</span>
+      </mat-card-title>
+
+      <mat-card-content>
+        <dl> 
+          <dt>{{c.name}} </dt>
+          <dt>{{c.jobTitle}}</dt>
+          <dt>{{c.email }}</dt>
+          <dt>{{c.phone}}</dt>
+        </dl>
+        </mat-card-content>
+         <button
+      (click)="closeModal()"
+      class="btn btn-close">Fermer</button>
+        
+    </div>
+
+</div>
+
+</div>
+    </mat-card>
+    
+</ng-container>
+
