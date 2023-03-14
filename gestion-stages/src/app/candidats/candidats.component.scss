@@ -1,0 +1,41 @@
+
+h1 {
+    font: 600 24px/28px "Open Sans";
+    color: gray;
+  }
+
+h2 {
+  color: white;
+}
+
+.liste-candidats {
+  margin-bottom: 5px;
+  display: inline-flex;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #a00768;
+}
+
+mat-card-content {
+  display: inline-flex;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+
+.btn__button {
+  border-style: solid;
+  background: transparent;
+  border-radius: 5px;
+  background-color: #a00768;
+
+}
+
+
+
+
+
