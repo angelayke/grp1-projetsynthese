@@ -36,7 +36,7 @@ import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
-    TableauAffichageOffreStageComponent
+    TableauAffichageOffreStageComponent,
     HeaderComponent,
     AjoutCandidatComponent,
     CandidatsComponent,
