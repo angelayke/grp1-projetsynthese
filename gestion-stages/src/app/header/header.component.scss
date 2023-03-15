@@ -3,39 +3,71 @@ ul {
   display: inline-flex;
   width: 85%;
   justify-content: space-around;
+  list-style: none;
   }
   li {
       font-size: 60%;
     }
-    #btn__button1 {
-      border-style: solid;
+
+    @mixin header-bouton($border-color: #bb2026, $color: #821519){
+      padding: 7px;
+      border: $border-color solid 1px;
       background: transparent;
-      border-radius: 5px;
-      border-color: #F26689;
-      color: #F26689;
+      border-radius: 8px;
+      color: $color;
+
+      &:hover{
+        cursor: pointer;
+        filter: brightness(85%);
+      }
     }
-    
-    #btn__button2 {
-      border-style: solid;
+
+    .btn-rouge {
+      @include header-bouton()
+    }
+
+    .btn-jaune {
+      @include header-bouton(#cb912b, #986d22)
+    }
+
+    .btn-bleu{
+      @include header-bouton(#86a9e6, #2b497c)
+    }
+
+    .btn-violet{
+      @include header-bouton(#7f2987, #4a1150)
+    }
+
+    /*
+    #btn__button1 {
+      padding: 7px;
+      border: #bb2026 solid 1px;
       background: transparent;
-      border-radius: 5px;
-      border-color: #F89747;
-      color: #F89747;
+      border-radius: 8px;
+      color: #821519;
+    }
+
+    #btn__button2 {
+      padding: 7px;
+      border: #cb912b solid 1px;
+      background: transparent;
+      border-radius: 8px;
+      color: #986d22;
     }
     #btn__button3 {
-      border-style: solid;
+      padding: 7px;
+      border: #86a9e6 solid 1px;
       background: transparent;
-      border-radius: 5px;
-      border-color: #86A9E6;
-      color: #86A9E6;
+      border-radius: 8px;
+      color: #2b497c;
     }
     
     #btn__button4 {
-      border-style: solid;
+      padding: 7px;
+      border: #7f2987 solid 1px;
       background: transparent;
-      border-radius: 5px;
-      border-color: #7F2987;
-      color: #7F2987;
+      border-radius: 8px;
+      color: #4a1150;
     }
   
     #btn__button1:hover {
@@ -56,4 +88,4 @@ ul {
     #btn__button4:hover {
       cursor: pointer;
       filter: brightness(85%);
-    }
+    }*/
