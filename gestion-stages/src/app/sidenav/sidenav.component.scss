@@ -1,150 +1,132 @@
 /* css angular material side nav*/
-  .example-container {
-    width: 100%;
-    height: 100%;
-    /*border: 1px solid rgba(0, 0, 0, 0.5);*/
-  }
-  /**
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: start;
-    justify-content: start;
-  }
+.example-container {
+  width: 100%;
+  height: 100%;
+}
 
-  .example-sidenav[_ngcontent-ete-c42] {
-    padding-left: 20px;
-    padding-right: 0;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-  }**/
+/*icon sort*/
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL'0,
+    'wght'400,
+    'GRAD'0,
+    'opsz'48
+}
 
-  /*icon sort*/
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-  }
-/*
-  mat-sidenav-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+.container-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .mat-button {
-    padding: 20px;
-  }*/
+.logo {
+  margin-bottom: 30px;
+}
 
-  .container-nav{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+mat-icon {
+  margin-right: 20px;
+}
 
-  .logo{
-    margin-bottom: 30px;
-    margin-left: 20px;
-  }
+/* NAVIGATION */
+nav {
+  width: 250px;
+}
 
-  mat-icon{
-    margin-right: 20px;
-  }
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-  nav{
-    width: 250px;
-  }
+nav ul li {
+  width: 100%;
+  display: block;
+}
 
-  nav ul{
-    list-style: none;
-    padding-left: 0;
-  }
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  line-height: 50px;
+  padding-left: 20px;
+}
 
-  nav ul li {
-    width: 100%;
-    display: block;
-  }
+/*couleur bordure lien menu en hover et active*/
+nav ul li:nth-child(1) a {
 
-  nav ul li a{
-    display: block;
-    text-decoration: none;
-    line-height: 50px;
-    padding-left: 20px;
-  }
-
-  /*couleur bordure lien menu en hover et active*/
-  nav ul li:nth-child(1) a{
-    &:hover,
-    &:active{
+  &:hover,
+  &:active {
     border-right: #089da4 solid 5px;
     font-weight: bold;
-    }
   }
+}
 
-  nav ul li:nth-child(2) a{
-    &:hover,
-    &:active{
+nav ul li:nth-child(2) a {
+
+  &:hover,
+  &:active {
     border-right: #cb912b solid 5px;
     font-weight: bold;
-   }
   }
+}
 
-  nav ul li:nth-child(3) a{
-    &:hover,
-    &:active{
+nav ul li:nth-child(3) a {
+
+  &:hover,
+  &:active {
     border-right: #bb2026 solid 5px;
     font-weight: bold;
-   }
   }
+}
 
-  nav ul li:nth-child(4) a{
-    &:hover,
-    &:active{
+nav ul li:nth-child(4) a {
+
+  &:hover,
+  &:active {
     border-right: #7f2987 solid 5px;
     font-weight: bold;
-   }
   }
+}
 
-  nav ul li:nth-child(5) a{
-    &:hover,
-    &:active{
+nav ul li:nth-child(5) a {
+
+  &:hover,
+  &:active {
     border-right: #86a9e6 solid 5px;
     font-weight: bold;
-   }
   }
-  /*fin couleur bordure lien hover et active*/
+}
 
-   /*color text*/
-   .color-tableaubord {
-    color: #089da4;
-  }
+/*fin couleur bordure lien hover et active*/
 
-  .color-demandestage {
-    color:#cb912b;
-  }
+/*color text*/
+.color-tableaubord {
+  color: #089da4;
+}
 
-  .color-offrestage{
-    color:#bb2026;
-  }
+.color-demandestage {
+  color: #cb912b;
+}
 
-  .color-candidat{
-    color: #7f2987;
-  }
+.color-offrestage {
+  color: #bb2026;
+}
 
-  .color-entreprise{
-    color: #86a9e6;
-  }
+.color-candidat {
+  color: #7f2987;
+}
 
-  mat-toolbar {
-    margin-bottom: 4em;
-  }
+.color-entreprise {
+  color: #86a9e6;
+}
 
-  section{
-    margin-bottom: 5em;
-  }
+mat-toolbar {
+  margin-bottom: 4em;
+}
+
+section {
+  margin-bottom: 7em;
+}
+
+header {
+  width: 100%;
+}
