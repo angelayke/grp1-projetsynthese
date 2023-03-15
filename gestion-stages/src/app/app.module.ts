@@ -33,6 +33,7 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 
 
 
@@ -49,7 +50,8 @@ import {MatDividerModule} from '@angular/material/divider';
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
-    SidenavComponent
+    SidenavComponent,
+    TableaudebordComponent
    ],
 
   imports: [
