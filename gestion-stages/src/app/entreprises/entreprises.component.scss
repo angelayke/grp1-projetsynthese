@@ -3,3 +3,32 @@
     max-width: 400px;
     margin-bottom: 8px;
   }
+
+h1 {
+  color: #707070 ;
+  font-weight: 600;
+}
+
+.mat-button{
+  margin-bottom: 20px;
+  background-color: #86a9e6;
+  color: #2b497c;
+}
+
+mat-card-title-group{
+  display: flex;
+  flex-wrap: wrap;
+}
+mat-card {
+  margin: 10px;
+}
+
+img{
+  margin-right: 2em;
+}
+
+.flex-card{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 5px;
+}
