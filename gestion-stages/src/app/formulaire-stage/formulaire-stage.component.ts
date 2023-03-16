@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 })
 export class FormulaireStageComponent implements OnInit {
 
-  form = new FormGroup({
-    titre: new FormControl(''),
+  formStage = new FormGroup({
+    title: new FormControl(''),
     nomPrenom: new FormControl(''),
     presentation: new FormControl(''),
     program: new FormControl(''),
@@ -45,11 +45,19 @@ export class FormulaireStageComponent implements OnInit {
 
   }
   onAdd(){
-
+    if(this.formStage.value){
+      const formData = this.formStage.value;
+      console.log(formData)
+    }
   }
   ajouterDemande(){
-    this.router.navigate(['/form']);
+    this.router.navigate(['/formStage']);
     console.log("Tester")
+
+  }
+
+  onCancel(){
+    this.formStage.reset();
 
   }
 

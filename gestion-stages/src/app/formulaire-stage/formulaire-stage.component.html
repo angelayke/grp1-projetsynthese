@@ -1,7 +1,7 @@
- <form [formGroup]="form" class="form-container">
+ <form [formGroup]="formStage" class="form-container">
   <div class="button-container">
-    <button mat-raised-button class="mat-primary">Sauvegarder</button>
-    <button mat-raised-button class="mat-accent" type="reset">Annuler</button>
+    <button mat-raised-button class="mat-accent" type="reset" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button class="mat-primary" (click)="onAdd()">Sauvegarder</button>
   </div>
   <div class="form-fields-container">
     <mat-form-field class="form-field">

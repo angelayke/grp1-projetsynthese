@@ -116,13 +116,17 @@ table {
   }
 
   .btn-valid{
-    background-color:  #CD9635;;
+    background-color:  #CD9635;
     color: #F1FEFB;
     border-radius: 10px;
     border: none;
+    text-decoration: none;
     padding:1rem;
     font-size: 16px;
     cursor: pointer;
+    &:hover{
+      background-color:  #d2ae71;
+    }
   }
 
 

@@ -20,7 +20,7 @@ const routes: Routes = [
 // { path: 'ficheentreprise'}, //component: FicheEntrepriseComponent
 // { path: 'formulaireentreprise'}, //component: FormulaireEntrepriseComponent
 
-{ path: 'form', component: FormulaireStageComponent }
+{ path: 'formStage', component: FormulaireStageComponent }
 ];
 
 @NgModule({
