@@ -31,19 +31,20 @@
   </mat-drawer>
 
   <!--bouton menu sort pour afficher le menu de la side nav-->
-  <header>
-    <mat-toolbar>
-      <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-          <mat-icon aria-hidden="false" aria-label="sort icon" fontIcon="sort" class="material-symbols-outlined">Sort
-          </mat-icon>
-        </button>
-        <app-header></app-header>
-      </div>
-    </mat-toolbar>
-  </header>
 
   <body>
+    <header>
+      <mat-toolbar>
+        <div class="example-sidenav-content">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon aria-hidden="false" aria-label="sort icon" fontIcon="sort" class="material-symbols-outlined">Sort
+            </mat-icon>
+          </button>
+          <app-header></app-header>
+        </div>
+      </mat-toolbar>
+    </header>
+
     <main>
       <div class="container">
         <!--groupe de card donnant un aperçu de nombre d'enregistrement par catégorie-->
@@ -62,6 +63,8 @@
         </section>
       </div>
     </main>
-  </body>
 
+    <footer>
+    </footer>
+  </body>
 </mat-drawer-container>
