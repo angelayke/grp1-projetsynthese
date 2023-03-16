@@ -1,0 +1,69 @@
+ <form [formGroup]="form" class="form-container">
+  <div class="button-container">
+    <button mat-raised-button class="mat-primary">Sauvegarder</button>
+    <button mat-raised-button class="mat-accent" type="reset">Annuler</button>
+  </div>
+  <div class="form-fields-container">
+    <mat-form-field class="form-field">
+      <mat-label>Titre</mat-label>
+      <input matInput class="mat-input-element" formControlName="title">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Nom et Prénom</mat-label>
+      <input matInput class="mat-input-element" formControlName="nomPrenom">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Présentation</mat-label>
+      <textarea matInput class="mat-input-element" formControlName="presentation"></textarea>
+    </mat-form-field>
+    <div class="form-fields-row">
+      <mat-form-field class="form-field">
+        <mat-label>Programme de formation</mat-label>
+        <input matInput class="mat-input-element" formControlName="program">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Établissement scolaire</mat-label>
+        <input matInput class="mat-input-element" formControlName="school">
+      </mat-form-field>
+    </div>
+    <div class="form-fields-row">
+      <mat-form-field class="form-field">
+        <mat-label>Secteur d'activité</mat-label>
+        <input matInput class="mat-input-element" formControlName="school">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Ville</mat-label>
+        <input matInput class="mat-input-element" formControlName="program">
+      </mat-form-field>
+    </div>
+    <mat-form-field class="form-field">
+      Région
+      <mat-label>Compétences</mat-label>
+      <textarea matInput class="mat-input-element" formControlName="presentation"></textarea>
+    </mat-form-field>
+    <h2>Informations sur le stage recherché</h2>
+    <div class="form-fields-row">
+      <mat-form-field class="form-field">
+
+        <mat-label>Type de stage</mat-label>
+        <input matInput class="mat-input-element" formControlName="school">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Date de début</mat-label>
+        <input matInput class="mat-input-element" formControlName="program">
+      </mat-form-field>
+    </div>
+    <div class="form-fields-row">
+      <mat-form-field class="form-field">
+        <mat-label>Nombre d'heures par semaine</mat-label>
+        <input matInput class="mat-input-element" formControlName="school">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Date de fin</mat-label>
+        <input matInput class="mat-input-element" formControlName="program">
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+
+

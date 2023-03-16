@@ -15,6 +15,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSortModule} from '@angular/material/sort';
+
+
+
+
+
+
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -33,6 +44,10 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+
+
 
 
 
@@ -49,7 +64,11 @@ import {MatDividerModule} from '@angular/material/divider';
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
-    SidenavComponent
+    SidenavComponent,
+    FormulaireStageComponent,
+    TableauGestionDemandeStageComponent,
+
+
    ],
 
   imports: [
@@ -68,7 +87,15 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDialogModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    LayoutModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatSortModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
