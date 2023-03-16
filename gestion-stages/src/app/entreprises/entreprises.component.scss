@@ -1,12 +1,18 @@
 
 .example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
+    max-width: 450px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
 h1 {
   color: #707070 ;
   font-weight: 600;
+}
+
+img{
+  width: 100%;
+  margin-right: 2em;
 }
 
 .mat-button{
@@ -15,20 +21,26 @@ h1 {
   color: #2b497c;
 }
 
-mat-card-title-group{
-  display: flex;
-  flex-wrap: wrap;
-}
-mat-card {
-  margin: 10px;
-}
-
-img{
-  margin-right: 2em;
-}
-
+/*
 .flex-card{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 10px 5px;
+  width: 100%;
+}*/
+
+.mat-card{
+  display: inline-flex;
+  align-items: center;
+
+}
+
+.mat-card-title-group{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mat-card-md-image {
+  width: 50%; 
 }
