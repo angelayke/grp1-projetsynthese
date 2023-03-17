@@ -15,6 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSortModule} from '@angular/material/sort';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -35,6 +42,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 
+//Demande de stage
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+
+
 
 
 @NgModule({
@@ -51,6 +63,8 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
     SidenavComponent,
+    FormulaireStageComponent,
+    TableauGestionDemandeStageComponent,
     TableaudebordComponent
    ],
 
@@ -70,7 +84,16 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
     MatDialogModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    LayoutModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatSortModule,
+    MatCheckboxModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

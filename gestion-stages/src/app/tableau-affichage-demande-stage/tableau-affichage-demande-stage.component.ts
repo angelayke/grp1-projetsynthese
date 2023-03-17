@@ -126,10 +126,10 @@ export class TableauAffichageDemandeStageComponent implements OnInit {
       // }
 
 
-      openDetailsDialog(id: string) {
+      openDetailsDialog(_id: string) {
         const dialogRef = this.dialog.open(DetailsStagesRequestComponent, {
           width: '600px',
-          data: { id: id },
+          data: { _id: _id },
         });
       }
 

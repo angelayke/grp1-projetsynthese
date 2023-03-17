@@ -1,0 +1,190 @@
+<form [formGroup]="formStage" class="form-container" name="stageForm" novalidate>
+  <h1 class="vertical-line">Ajouter une demande</h1>
+  <div class="button-container">
+    <button mat-raised-button class="mat-accent" type="reset" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button class="mat-primary" [disabled]="formStage.invalid" (click)="onAdd()">
+      <mat-icon>save</mat-icon>Sauvegarder
+    </button>
+  </div>
+  <div class="form-fields-container">
+    <mat-form-field class="form-field">
+      <mat-label>Titre</mat-label>
+      <input type="text" matInput class="mat-input-element" formControlName="title" name="title" required minlength="5"
+        maxlength="50" placeholder="Titre">
+      <mat-error
+        *ngIf="formStage.get('title')?.invalid && (formStage.get('title')?.dirty || formStage.get('title')?.touched) && formStage.get('title')?.errors ">
+        Le titre est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
+
+
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Nom et Prénom</mat-label>
+      <input type="text" matInput class="mat-input-element" formControlName="nomPrenom" name="nomPrenom" required
+        minlength="5" maxlength="50" placeholder="Nom et prénom">
+      <mat-error
+        *ngIf="formStage.get('nomPrenom')?.invalid && (formStage.get('nomPrenom')?.dirty || formStage.get('nomPrenom')?.touched) && formStage.get('nomPrenom')?.errors">
+        Le nom et le prénom sont obligatoires et ils doivent contenir au moins 5 caractères.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Présentation</mat-label>
+      <textarea type="text" matInput class="mat-input-element" formControlName="presentation" name="presentation"
+        minlength="10" maxlength="200" required placeholder="Présentation"></textarea>
+      <mat-error
+        *ngIf="formStage.get('presentation')?.invalid && (formStage.get('presentation')?.dirty || formStage.get('presentation')?.touched) && formStage.get('presentation')?.errors">
+        Ce champ est obligatoire et il doit contenir au moins 10 caractères.</mat-error>
+    </mat-form-field>
+
+    <div class="form-fields-row">
+      <mat-form-field class="form-field">
+        <mat-label>Programme de formation</mat-label>
+        <input type="text" matInput class="mat-input-element" formControlName="program" name="program" required
+          minlength="5" maxlength="50" placeholder="Programme de formation">
+        <mat-error
+          *ngIf="formStage.get('program')?.invalid && (formStage.get('program')?.dirty || formStage.get('program')?.touched)  && formStage.get('program')?.errors">
+          Ce champ est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Établissement scolaire</mat-label>
+        <input type="text" matInput class="mat-input-element" formControlName="school" name="school" required
+          minlength="5" maxlength="50" placeholder="Établissement scolaire">
+        <mat-error
+          *ngIf="formStage.get('school')?.invalid && (formStage.get('school')?.dirty || formStage.get('school')?.touched) && formStage.get('school')?.errors">
+          Ce champ est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-fields-row">
+
+      <mat-form-field class="fieldChamp">
+        <mat-label>Secteur d'activité</mat-label>
+        <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="activity"
+          name="activity" required placeholder="Secteur d'activité">
+          <mat-option value="activity1">Activité 1</mat-option>
+          <mat-option value="activity2">Activité 2</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formStage.get('activity')?.invalid && (formStage.get('activity')?.dirty || formStage.get('activity')?.touched) && formStage.get('activity')?.errors">
+          Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field class="form-field">
+        <mat-label>Ville</mat-label>
+        <input type="text" matInput class="mat-input-element" formControlName="ville" name="ville" name="ville" required
+          minlength="5" maxlength="50" placeholder="Ville">
+        <mat-error
+          *ngIf="formStage.get('ville')?.invalid && (formStage.get('ville')?.dirty || formStage.get('ville')?.touched) && formStage.get('ville')?.errors">
+          Ce champ est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="fieldChamp">
+      <mat-label>Région</mat-label>
+      <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="region"
+        name="region" required placeholder="Région">
+        <mat-option value="region1">Région 1</mat-option>
+        <mat-option value="region2">Région 2</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="formStage.get('region')?.invalid && (formStage.get('region')?.dirty || formStage.get('region')?.touched) && formStage.get('region')?.errors">
+        Ce champ est obligatoire</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="form-field">
+      <mat-label>Compétences</mat-label>
+      <textarea type="text" matInput class="mat-input-element" formControlName="competences" name="competences"
+        minlength="5" maxlength="50" required placeholder="Compétences"></textarea>
+      <mat-error
+        *ngIf="formStage.get('competences')?.invalid && (formStage.get('competences')?.dirty || formStage.get('competences')?.touched) && formStage.get('competences')?.errors">
+        Ce champ est obligatoire et il doit contenir au moins 5 caractères. </mat-error>
+    </mat-form-field>
+
+    <h2>Informations sur le stage recherché</h2>
+    <div class="form-fields-row">
+      <mat-form-field class="fieldChamp">
+        <mat-label>Type de stage</mat-label>
+        <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="typeStage"
+          name="typeStage" required>
+          <mat-label>Veuillez effectuer votre choix</mat-label>
+          <mat-option value="stage1">Stage 1</mat-option>
+          <mat-option value="stage2">Stage 2</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formStage.get('typeStage')?.invalid && (formStage.get('typeStage')?.dirty || formStage.get('typeStage')?.touched) && formStage.get('typeStage')?.errors">
+          Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary" appearance="fill" class="fieldChamp">
+        <mat-label>Date de début</mat-label>
+        <input matInput [matDatepicker]="picker1" class="mat-input-element" formControlName="startDate" name="startDate"
+          required placeholder="Date de début">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+        <mat-error
+          *ngIf="formStage.get('startDate')?.invalid && (formStage.get('startDate')?.dirty || formStage.get('startDate')?.touched) && formStage.get('startDate')?.errors">
+          Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-fields-row">
+      <mat-form-field class="fieldChamp">
+        <mat-label>Nombre d'heures par semaine</mat-label>
+        <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix"
+          formControlName="hoursPerWeek" name="hoursPerWeek" required placeholder="Nombre d'heures par semaine">
+          <mat-option value="hoursPerWeek">Valeur 1</mat-option>
+          <mat-option value="hoursPerWeek">Valeur 2</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formStage.get('activity')?.invalid && (formStage.get('activity')?.dirty || formStage.get('activity')?.touched) && formStage.get('activity')?.errors">
+          Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary" appearance="fill" class="fieldChamp">
+        <mat-label>Date de fin</mat-label>
+
+        <input matInput [matDatepicker]="picker2" class="mat-input-element" formControlName="endDate" name="endDate"
+          required placeholder="Date de fin">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        <mat-error
+          *ngIf="formStage.get('endDate')?.invalid && (formStage.get('endDate')?.dirty || formStage.get('endDate')?.touched) && formStage.get('endDate')?.errors">
+          Ce champ est obligatoire</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <mat-form-field class="form-field">
+      <mat-label>Informations supplémentaires</mat-label>
+      <textarea type="text" matInput class="mat-input-element" formControlName="informations" name="informations"
+        minlength="10" maxlength="200" required placeholder="Informations"></textarea>
+      <mat-error
+        *ngIf="formStage.get('informations')?.invalid && (formStage.get('informations')?.dirty || formStage.get('informations')?.touched) && formStage.get('informations')?.errors">
+        Ce champ est obligatoire et il doit contenir au moins 10 caractères.</mat-error>
+    </mat-form-field>
+    <h2>Rémunération</h2>
+    <mat-checkbox class="mat-input-element" formControlName="discretion">A la discrétion de l'entreprise</mat-checkbox>
+    <mat-checkbox  class="mat-input-element" formControlName="remunere">Stage rémunéré</mat-checkbox>
+    <mat-checkbox  class="mat-input-element" formControlName="nonRemunere">Stage non rémunéré</mat-checkbox>
+
+  </div>
+
+    <a href="../../assets/img/fichier.pdf"  target="_blank"> <mat-icon>folder</mat-icon><mat-icon>keyboard_arrow_down</mat-icon></a>
+
+
+
+  <div class="button-container">
+    <button mat-raised-button class="mat-accent" type="reset" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button class="mat-primary" [disabled]="formStage.invalid" (click)="onAdd()">
+      <mat-icon>save</mat-icon>Sauvegarder
+    </button>
+  </div>
+
+
+</form>
+
