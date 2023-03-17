@@ -35,18 +35,14 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
-
-//Demande de stage
-import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
-import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
-
-
 
 
 @NgModule({
