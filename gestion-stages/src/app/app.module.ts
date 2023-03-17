@@ -33,6 +33,9 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 
 
@@ -49,7 +52,10 @@ import {MatDividerModule} from '@angular/material/divider';
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
-    SidenavComponent
+    SidenavComponent,
+    FicheEntrepriseComponent,
+    FormulaireAjoutEntrepriseComponent,
+    FormulaireUpdateEntrepriseComponent
    ],
 
   imports: [
