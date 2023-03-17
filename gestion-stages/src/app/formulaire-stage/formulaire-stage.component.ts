@@ -1,4 +1,4 @@
-import { Validators } from '@angular/forms';
+import { FormArray, Validators, FormBuilder } from '@angular/forms';
 
 // import { StagesRequest } from './../models/stagesRequests';
 import { Component, OnInit } from '@angular/core';
@@ -16,32 +16,36 @@ import { Router } from '@angular/router';
 export class FormulaireStageComponent implements OnInit {
 
 
+  formStage: FormGroup;
 
-  formStage = new FormGroup({
-    title: new FormControl(''),
-    nomPrenom: new FormControl(''),
-    presentation: new FormControl(''),
-    program: new FormControl(''),
-    school: new FormControl(''),
-    activity: new FormControl(''),
-    ville: new FormControl(''),
-    region: new FormControl(''),
-    competences: new FormControl(''),
-    typeStage: new FormControl(''),
-    startDate: new FormControl(''),
-    hoursPerWeek: new FormControl(''),
-    endDate: new FormControl(''),
-    remuneration1: new FormControl(''),
-    remuneration2: new FormControl(''),
-    remuneration3: new FormControl(''),
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.formStage = this.fb.group({
+      title: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      nomPrenom: new FormControl(''),
+      presentation: new FormControl(''),
+      program: new FormControl(''),
+      school: new FormControl(''),
+      activity: new FormControl(''),
+      ville: new FormControl(''),
+      region: new FormControl(''),
+      competences: new FormControl(''),
+      typeStage: new FormControl(''),
+      startDate: new FormControl(''),
+      hoursPerWeek: new FormControl(''),
+      endDate: new FormControl(''),
+      discretion: new FormControl(true, Validators.requiredTrue),
+      remunere: new FormControl(false),
+      nonRemunere: new FormControl(false),
 
 
-  });
+      informations: new FormControl(''),
 
+    });
 
-  constructor(private router: Router) { }
+  }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(){

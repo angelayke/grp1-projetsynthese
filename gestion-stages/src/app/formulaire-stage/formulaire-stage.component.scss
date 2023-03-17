@@ -133,6 +133,9 @@
   .form-fields-container {
     display: flex;
     flex-direction: column;
+    h2{
+      color : #22A6AC;
+    }
   }
 
   .button-container {
@@ -185,6 +188,7 @@
 
 
     }
+
 
     .mat-input-underline {
       display: none;
