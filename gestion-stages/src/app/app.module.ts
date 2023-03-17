@@ -23,10 +23,6 @@ import {MatSortModule} from '@angular/material/sort';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 
 
-
-
-
-
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
 import { HeaderComponent } from './header/header.component';
@@ -44,9 +40,11 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
+
+//Demande de stage
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
-
 
 
 
@@ -67,8 +65,7 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     SidenavComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
-
-
+    TableaudebordComponent
    ],
 
   imports: [
