@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 
 // import { StagesRequest } from './../models/stagesRequests';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +15,8 @@ import { Router } from '@angular/router';
 })
 export class FormulaireStageComponent implements OnInit {
 
+
+
   formStage = new FormGroup({
     title: new FormControl(''),
     nomPrenom: new FormControl(''),
@@ -22,18 +25,18 @@ export class FormulaireStageComponent implements OnInit {
     school: new FormControl(''),
     activity: new FormControl(''),
     ville: new FormControl(''),
+    region: new FormControl(''),
     competences: new FormControl(''),
     typeStage: new FormControl(''),
     startDate: new FormControl(''),
     hoursPerWeek: new FormControl(''),
     endDate: new FormControl(''),
-    remuneration: new FormControl(''),
-
-
+    remuneration1: new FormControl(''),
+    remuneration2: new FormControl(''),
+    remuneration3: new FormControl(''),
 
 
   });
-
 
 
   constructor(private router: Router) { }
@@ -44,12 +47,26 @@ export class FormulaireStageComponent implements OnInit {
   onSubmit(){
 
   }
-  onAdd(){
-    if(this.formStage.value){
+
+
+  onAdd() {
+    // Vérification de la validité des champs
+    Object.values(this.formStage.controls).forEach(control => control.markAsTouched());
+    if (this.formStage.valid) {
+      // Si le formulaire est valide, exécuter le code d'ajout
       const formData = this.formStage.value;
-      console.log(formData)
+         console.log(formData);
+         this.formStage.reset();
+    } else if (!this.formStage.valid) {
+      // Si le formulaire est invalide, afficher un message d'erreur
+      console.log("Les champs sont obligatoires. Veuillez les remplir SVP!");
+      alert("Les champs sont obligatoires. Veuillez les remplir SVP!");
     }
   }
+
+
+
+
   ajouterDemande(){
     this.router.navigate(['/formStage']);
     console.log("Tester")

@@ -20,7 +20,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSortModule} from '@angular/material/sort';
-
+import { MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -92,7 +92,8 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     LayoutModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatSortModule
+    MatSortModule,
+    MatCheckboxModule
 
 
 
