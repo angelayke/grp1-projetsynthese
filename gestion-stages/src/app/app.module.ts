@@ -44,6 +44,9 @@ import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/form
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import {MatDividerModule} from '@angular/material/divider';
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
     SidenavComponent,
+    FicheEntrepriseComponent,
+    FormulaireAjoutEntrepriseComponent,
+    FormulaireUpdateEntrepriseComponent,
     FormulaireOffreAjoutComponent,
     FormulaireOffreEditionComponent,
     FormulaireStageComponent,
@@ -89,6 +95,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCheckboxModule,
     LayoutModule,
     MatSortModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
