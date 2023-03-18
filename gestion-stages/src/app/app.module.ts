@@ -15,6 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -33,6 +38,8 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
+import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 
 
 
@@ -49,7 +56,9 @@ import {MatDividerModule} from '@angular/material/divider';
     TableauAffichageDemandeStageComponent,
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
-    SidenavComponent
+    SidenavComponent,
+    FormulaireOffreAjoutComponent,
+    FormulaireOffreEditionComponent
    ],
 
   imports: [
@@ -68,7 +77,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDialogModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
