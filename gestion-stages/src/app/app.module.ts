@@ -15,6 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSortModule} from '@angular/material/sort';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -28,6 +35,9 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -36,7 +46,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
-
 
 
 @NgModule({
@@ -55,7 +64,10 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
     SidenavComponent,
     FicheEntrepriseComponent,
     FormulaireAjoutEntrepriseComponent,
-    FormulaireUpdateEntrepriseComponent
+    FormulaireUpdateEntrepriseComponent,
+    FormulaireStageComponent,
+    TableauGestionDemandeStageComponent,
+    TableaudebordComponent
    ],
 
   imports: [
@@ -74,7 +86,13 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
     MatDialogModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    LayoutModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatSortModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
