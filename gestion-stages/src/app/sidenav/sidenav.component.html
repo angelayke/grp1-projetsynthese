@@ -5,23 +5,23 @@
     <div class="container-nav">
       <nav>
         <ul>
-          <li><a href="" class="color-tableaubord" routerLink="/tableaudebord">
+          <li><a class="color-tableaubord" routerLink="/">
               <mat-icon>home</mat-icon>
               <span> Tableau de bord</span>
             </a></li>
-          <li><a href="" class="color-demandestage" routerLink="/demandesdestage">
+          <li><a class="color-demandestage" routerLink="/demandesdestage">
               <mat-icon>event_note</mat-icon>
               <span> Demandes de stages</span>
             </a></li>
-          <li><a href="" class="color-offrestage" routerLink="/offredestage">
+          <li><a class="color-offrestage" routerLink="/offredestage">
               <mat-icon>near_me</mat-icon>
               <span>Offres de stage</span>
             </a></li>
-          <li><a href="" class="color-candidat" routerLink="/candidats">
+          <li><a class="color-candidat" routerLink="/candidats">
               <mat-icon>person</mat-icon>
               <span> Candidats</span>
             </a></li>
-          <li><a href="" class="color-entreprise" routerLink="/entreprises">
+          <li><a class="color-entreprise" routerLink="/entreprises">
               <mat-icon>business_center</mat-icon>
               <span> Entreprises</span>
             </a></li>
@@ -46,28 +46,24 @@
     </header>
 
     <main>
-      <div class="container">
-        <!--groupe de card donnant un aperçu de nombre d'enregistrement par catégorie-->
-        <section>
+      <ng-container>
+        <div class="container">
+          <!--groupe de card donnant un aperçu de nombre d'enregistrement par catégorie-->
+          <section>
 
-        </section>
+          </section>
 
-        <!--Tableau d'affichage des dernières demandes de stage-->
-        <section>
-          <app-tableau-affichage-demande-stage></app-tableau-affichage-demande-stage>
-        </section>
+          <!--Tableau d'affichage des dernières demandes de stage-->
+          <section>
+            <app-tableau-affichage-demande-stage></app-tableau-affichage-demande-stage>
+          </section>
 
-        <!--Tableau d'affichage des dernières offres de stage-->
-        <section>
-          <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage>
-        </section>
-
-        <!-- Test  Jean-->
-        <section>
-          <app-tableau-gestion-demande-stage></app-tableau-gestion-demande-stage>
-          <app-login></app-login>
-        </section>
-      </div>
+          <!--Tableau d'affichage des dernières offres de stage-->
+          <section>
+            <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage>
+          </section>
+        </div>
+      </ng-container>
     </main>
 
     <footer>
