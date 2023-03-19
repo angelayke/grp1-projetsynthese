@@ -45,6 +45,7 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
 //Demande de stage
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 
 
 
@@ -67,6 +68,7 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
+    DernieresDemandesStagesComponent,
 
    ],
 
