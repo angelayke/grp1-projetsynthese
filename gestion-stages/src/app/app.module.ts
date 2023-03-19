@@ -49,6 +49,7 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     SidenavComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
-    TableaudebordComponent
+    TableaudebordComponent,
+
    ],
 
   imports: [
