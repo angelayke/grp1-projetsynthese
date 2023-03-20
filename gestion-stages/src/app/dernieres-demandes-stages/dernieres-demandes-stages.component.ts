@@ -119,10 +119,10 @@ export class DernieresDemandesStagesComponent implements OnInit {
       this.tableDemandeStage.renderRows();
     }
 
-    openDetailsDialog(_id: string) {
+    openDetailsDialog(stage: Stage) {
       const dialogRef = this.dialog.open(DetailsStagesRequestComponent, {
         width: '600px',
-        data: { _id: _id },
+        data: { stage },
       });
     }
 
