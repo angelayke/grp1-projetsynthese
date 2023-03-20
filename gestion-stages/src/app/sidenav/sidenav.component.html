@@ -48,9 +48,13 @@
 
     <main>
       <div class="container">
+        <!-- Trouver un moyen de faire afficher la section1
+          sans avoir besoin de faire un click sur le bouton de la nav et la faire disparaitre quand on arrive dans une page -->
         <!--groupe de card donnant un aperçu de nombre d'enregistrement par catégorie-->
         <section *ngIf="sideMenuContext === 'section-1'">
-          <app-tableaudebord></app-tableaudebord>
+          <!-- <app-tableaudebord></app-tableaudebord> -->
+          <app-tableau-affichage-demande-stage></app-tableau-affichage-demande-stage>
+          <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage>
         </section>
 
          <!-- Test  Jean-->
@@ -68,7 +72,7 @@
 
         <section *ngIf="sideMenuContext === 'section-4'">
           <!--Composants à ajouter Candidat  -->
-          <app-ajout-candidat></app-ajout-candidat>
+       <app-candidats></app-candidats>
 
         </section>
         <section *ngIf="sideMenuContext === 'section-5'">
