@@ -1,1 +1,76 @@
-<p>formulaire-update-entreprise works!</p>
+<section id="formulaire-update-entreprise">
+  <ng-container>
+    <table class="table-titre">
+      <tr>
+        <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo"></td>
+        <td class="td-fiche-entreprise">
+          <p class="soustitre-fiche">Entreprise</p>
+          <h1 class="titre-entreprise">Titre</h1>
+        </td>
+      </tr>
+      <tr>
+
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-stroked-button color="secondary"><mat-icon>cancel</mat-icon> Annuler</button>
+    
+            <button mat-flat-button color="primary"><mat-icon>save</mat-icon> Mettre à jour</button>
+          </div>
+        </ng-container>
+      </tr>
+    </table>
+    <div class="container fiche">
+      <h1>Courte présentation</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium repudiandae, incidunt deserunt assumenda
+        laboriosam rem odio?
+        Assumenda non quae accusantium asperiores vel veritatis dolorum numquam enim tempora. Repudiandae, adipisci
+        repellendus.</p>
+
+      <h3>Personne contact</h3>
+      <p class="person-contact-fiche">Louise St-Cyr</p>
+
+      <h3>Information de contact</h3>
+      <!--Test input form angular-->
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr class="tr-fiche">
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Adresse</p>
+              <p class="txt-fiche">123 rue machin</p>
+            </td>
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Téléphone</p>
+              <p class="txt-fiche">819 373-2235</p>
+            </td>
+          </tr>
+          <br>
+          <tr class="tr-fiche">
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Ville</p>
+              <p class="txt-fiche">TownCity</p>
+            </td>
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Courriel</p>
+              <p class="txt-fiche">info@entreprise.com</p>
+            </td>
+          </tr>
+          <br>
+          <tr class="tr-fiche">
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Province</p>
+              <p class="txt-fiche">Québec</p>
+            </td>
+          </tr>
+          <br>
+          <tr class="tr-fiche">
+            <td class="td-fiche">
+              <p class="subtitle-fiche">Code Postal</p>
+              <p class="txt-fiche">H1H 1H1</p>
+            </td>
+          </tr>
+        </table>
+
+      </form>
+    </div>
+  </ng-container>
+</section>
