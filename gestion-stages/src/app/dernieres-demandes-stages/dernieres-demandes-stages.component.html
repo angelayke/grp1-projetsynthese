@@ -12,7 +12,7 @@
 
   <section class="container">
     <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource.data" matSort class="mat-elevation-z8">
 
 
         <ng-container matColumnDef="title" class="text-underline">
@@ -63,7 +63,7 @@
               <mat-icon class="edit">edit</mat-icon>
             </button>
             <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
-              <mat-icon class="delete">delete</mat-icon>
+              <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>
             </button>
 
 

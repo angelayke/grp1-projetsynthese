@@ -20,16 +20,37 @@ export class DernieresDemandesStagesComponent implements OnInit {
   displayedColumns: string[] = ['title', 'activitySector','startDate', 'actions'];
 
   dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource(STAGES);
+  // dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource();
 
   demandesStages: Stage[]=[];
+
+  newStage: Stage = {
+    _id: "",
+    description: "",
+    createdAt: "",
+    updatedAt: "",
+    title: "",
+    startDate: "",
+    endDate: "",
+    program: "",
+    region: "",
+    requirements: "",
+    stageType: "",
+    hoursPerWeek: 0,
+    additionalInfo: "",
+    paid: true,
+    published: false,
+    active: true,
+    activitySector: ""
+  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeStage!: MatTable<Stage>;
 
   ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
   }
 
@@ -44,6 +65,8 @@ export class DernieresDemandesStagesComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.demandesStages);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      console.log("Récupération des données:",  this.demandesStages)
+      console.log("Récupération des données dans le filteredData du tableau:",    this.dataSource.data)
     });
 
   }
@@ -68,17 +91,19 @@ export class DernieresDemandesStagesComponent implements OnInit {
     }
 
 
-    deleteStage(_id: string): void {
+    onDeleteClick(stage: Stage): void {
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
         width: '400px',
-        data: { itemId: _id },
+        data: { itemId: stage._id},
       });
 
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
           // effectuer la suppression
-          console.log("Juste pour tester");
-          this.deleteDemandeStages(_id);
+          // Si l'utilisateur confirme la suppresion, supprimez l'élément du tableau de données
+          this.dataSource.data = this.dataSource.data.filter(item => item !== stage)
+          console.log("Juste pour tester",   this.dataSource.data);
+
         }
       });
     }
