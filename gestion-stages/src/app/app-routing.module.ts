@@ -9,13 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
   // { path: '', component: LoginComponent },
-  { path: 'sidenav', component: SidenavComponent}, //component: TableaudebordComponent
-// { path: ''}, //component: LoginComponent
-// { path: 'tableaudebord'}, //component: TableaudebordComponent
-// { path: 'demandesdestage'}, //component: DemandesdestageComponent
-// { path: 'offredestage'}, //component: OffredestageComponent
-// { path: 'candidats'}, //component: CandidatsComponent
-// { path: 'entreprises'}, //component: EntreprisesComponent
+  // { path: 'sidenav', component: SidenavComponent}, //component: TableaudebordComponent
+// { path: '', component: MainComponent, children: [
+//   { path: '', component: T}
+// ]}, //component: LoginComponent
+{ path: 'tableaudebord', component: TableaudebordComponent}, //component: TableaudebordComponent
+{ path: 'demandesdestage', component: TableaudebordComponent}, //component: DemandesdestageComponent
+{ path: 'offredestage'}, //component: OffredestageComponent
+{ path: 'candidats'}, //component: CandidatsComponent
+{ path: 'entreprises'}, //component: EntreprisesComponent
 // { path: 'fichedemandestage'}, //component: FicheDemandeStageComponent
 // { path: 'formulairestage'}, //component: FormulaireStageComponent
 // { path: 'ficheoffrestage'}, //component: FicheOffreStageComponent
@@ -35,3 +37,7 @@ imports: [RouterModule.forRoot(routes)],
 exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// app-component <= root
+// login/signup <= login
+// / <= main-app-component <= sidenav component <= routing-module
