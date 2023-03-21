@@ -21,10 +21,10 @@ $color3: #707070;
 }
 
 .ligne-verticale {
-    border-left: 6px solid; 
+    border-left: 12px solid; 
     color: $color1;
-    height: 800px;
-    display: inline;
+    height: fit-content;
+    display: flexbox;
 }
 
 .button1, .button2 {
@@ -33,7 +33,14 @@ $color3: #707070;
 }
 
 h1 {
-    font-size: 58px;
+    font-size: 42px;
+    font-weight: bolder;
+    color: $color3;
+    font-family: Lato;
+}
+
+h4 {
+    font-size: 24px;
     font-weight: bolder;
     color: $color3;
     font-family: Lato;
@@ -119,3 +126,18 @@ label {
 .background-color {
     color: rgb(185, 182, 182);
 }
+
+.line-height {
+    line-height: 1px;
+    color: $color3;
+    // margin: 5px;
+}
+
+div .heading {
+    color: $color3;
+}
+
+
+
+
+
