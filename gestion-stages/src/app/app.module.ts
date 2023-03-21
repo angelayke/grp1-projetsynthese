@@ -46,6 +46,8 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
 
 
 
@@ -69,6 +71,8 @@ import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/de
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
     DernieresDemandesStagesComponent,
+    ModifierDemandeStageComponent,
+    DialogModifierStageComponent,
 
    ],
 

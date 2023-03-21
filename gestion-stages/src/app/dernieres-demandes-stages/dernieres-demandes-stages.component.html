@@ -1,4 +1,6 @@
+
 <main>
+
   <section class="container">
     <div class="demandes-infos">
       <div>
@@ -60,7 +62,8 @@
               <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
             </button>
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
-              <mat-icon class="edit">edit</mat-icon>
+              <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
+
             </button>
             <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
               <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>

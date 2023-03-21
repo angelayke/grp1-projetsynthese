@@ -9,6 +9,7 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 import { STAGES } from '../mock-stages';
 import { Stage } from '../stage';
 import { DetailsStagesRequestComponent } from '../details-stages-request/details-stages-request.component';
+import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-modifier-stage.component';
 
 
 @Component({
@@ -71,6 +72,17 @@ export class DernieresDemandesStagesComponent implements OnInit {
 
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+
+
 
   validerToutesDemandes(){
     this.dataSource.data.forEach(stage => {
@@ -128,13 +140,33 @@ export class DernieresDemandesStagesComponent implements OnInit {
 
 
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+
+    stages = STAGES; // Utiliser les données du tableau
+
+    openDialog(stage: Stage): void {
+      const dialogRef = this.dialog.open(DialogModifierStageComponent, {
+        width: '250px',
+        data: {...stage} // Passer les données du stage à modifier
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          // Mettre à jour les données du stage avec les données modifiées
+          const index = this.stages.findIndex(s => s._id === result.id);
+          this.stages[index] = {...result};
+        }
+      });
     }
-  }
+
+
+
+
+
+
+
+
+
+
 
 }
