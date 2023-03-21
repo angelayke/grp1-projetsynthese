@@ -146,7 +146,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
 
     openDialog(stage: Stage): void {
       const dialogRef = this.dialog.open(DialogModifierStageComponent, {
-        width: '250px',
+        width: '500px',
         data: {...stage} // Passer les données du stage à modifier
       });
 
