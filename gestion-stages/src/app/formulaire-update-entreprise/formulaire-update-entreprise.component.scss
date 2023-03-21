@@ -1,7 +1,7 @@
 /* demo angular */
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
+   /* min-width: 150px;
+    max-width: 500px;*/
     width: 100%;
   }
   
@@ -85,4 +85,11 @@ img{
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+input{
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 7px;
+    border: 1px #70707031 solid;
 }

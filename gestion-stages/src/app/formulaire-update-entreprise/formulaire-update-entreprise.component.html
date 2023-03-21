@@ -34,14 +34,19 @@
       <form class="example-form">
         <table class="example-full-width" cellspacing="0">
           <tr class="tr-fiche">
+
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
+                <input matInput name="adresse" placeholder="Adresse" required><!-- #nom="ngModel" [(ngModel)]="enterprise.adresse"-->
+              </td>
+
+            
             <td class="td-fiche">
-              <p class="subtitle-fiche">Adresse</p>
-              <p class="txt-fiche">123 rue machin</p>
+              <!--<p class="subtitle-fiche">Téléphone</p>-->
+              <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
+              <input matInput name="telephone" placeholder="000 000-0000" required><!-- #nom="ngModel" [(ngModel)]="enterprise.phone"-->
             </td>
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Téléphone</p>
-              <p class="txt-fiche">819 373-2235</p>
-            </td>
+          
           </tr>
           <br>
           <tr class="tr-fiche">
@@ -74,3 +79,113 @@
     </div>
   </ng-container>
 </section>
+<!--
+<div class="form">
+  <h2>Formulaire d'ajout d'un forfait</h2>
+
+  <form #formulaireForfait="ngForm">
+ 
+  <mat-card>
+    <mat-card-content>
+      <section class="example-section">
+        <label class="example-margin">Premium:</label>
+        <mat-radio-group name="premium" [(ngModel)]="labelPosition">
+          <mat-radio-button class="example-margin" value="after">Oui</mat-radio-button>
+          <mat-radio-button class="example-margin" value="before">Non</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </mat-card-content>
+  </mat-card>
+  <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Nom du forfait</mat-label>
+      <input matInput name="nom" #nom="ngModel" [(ngModel)]="forfait.nom" required>
+    </mat-form-field>
+  <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Code</mat-label>
+      <input matInput name="code" #nom="ngModel" [(ngModel)]="forfait.code" placeholder="AAA000" required>
+    </mat-form-field>
+  
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput name="description" #description="ngModel" [(ngModel)]="forfait.description" required></textarea>
+  </mat-form-field>
+  <br>
+  <div>-->
+     <!--<mat-label>ÉTABLISSEMENT</mat-label><br> -->
+     <!--
+      <mat-form-field appearance="fill">
+        <mat-label>Nom de l'établissement</mat-label>
+        <input matInput name="nomEtablissement" #nomEtablissement="ngModel" [(ngModel)]="forfait.etablissement.nomEtablissement" required>
+      </mat-form-field><br>-->
+  <!--
+      <mat-form-field appearance="fill">
+        <mat-label>Adresse</mat-label>
+        <input matInput>
+      </mat-form-field> 
+      <mat-form-field appearance="fill" class="space">
+        <mat-label>Ville</mat-label>
+        <input matInput>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Téléphone</mat-label>
+        <input matInput type="number">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="space">
+        <mat-label>Courriel</mat-label>
+        <input matInput type="email">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="space">
+        <mat-label>Site Internet</mat-label>
+        <input matInput>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill" class="textarea-form">
+        <mat-label>Description de l'établissement</mat-label>
+        <textarea matInput rows="5" cols="40" class="textarea-full-width"></textarea>
+      </mat-form-field>
+    
+  </div>
+  <br>
+  <mat-form-field appearance="fill" class="example-form-field">
+    <mat-label>Choisissez vos disponibilités</mat-label>
+    <mat-date-range-input [rangePicker]="rangePicker">
+      <input matStartDate placeholder="Start date">
+      <input matEndDate placeholder="End date">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #rangePicker>
+      <mat-date-range-picker-actions>
+        <button mat-button matDateRangePickerCancel>Annuler</button>
+        <button mat-raised-button color="primary" matDateRangePickerApply>Appliquer</button>
+      </mat-date-range-picker-actions>
+    </mat-date-range-picker>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Prix</mat-label>
+    <input matInput name="prix" #prix="ngModel" [(ngModel)]="forfait.prix" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="space">
+    <mat-label>Nouveau prix</mat-label>
+    <input matInput name="nouveauprix" #nouveauprix="ngModel" [(ngModel)]="forfait.nouveauprix" required>
+  </mat-form-field>
+<br>-->
+<!--Boutons
+ 
+    <button *ngIf="forfait.id else boutonAjout" mat-button aria-label="Modifier"
+      [disabled]="!formulaireForfait.form.valid" (click)="updateForfait(formulaireForfait)">
+      Modifier
+    </button>
+    <ng-template #boutonAjout>
+     <button mat-button mat-aria-label="Ajouter" (click)="addForfait(formulaireForfait)">Ajouter</button>-->
+     <!-- <button mat-button mat-aria-label="Ajouter" [disabled]="!formulaireForfait.form.valid"
+      (click)="addForfait(formulaireForfait)">Créer</button>
+    </ng-template>  
+  
+  <button mat-button mat-aria-label="Annuler" (click)="annuler()">Annuler</button>
+
+</form>
+</div>--> 
