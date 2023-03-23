@@ -19,7 +19,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { LayoutModule } from '@angular/cdk/layout';
+import {MatSortModule} from '@angular/material/sort';
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -33,15 +34,16 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
+import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
+import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
-import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
-
-
 
 @NgModule({
   declarations: [
@@ -58,7 +60,10 @@ import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/form
     DetailsStagesRequestComponent,
     SidenavComponent,
     FormulaireOffreAjoutComponent,
-    FormulaireOffreEditionComponent
+    FormulaireOffreEditionComponent,
+    FormulaireStageComponent,
+    TableauGestionDemandeStageComponent,
+    TableaudebordComponent
    ],
 
   imports: [
@@ -81,7 +86,9 @@ import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/form
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCheckboxModule  
+    MatCheckboxModule,
+    LayoutModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

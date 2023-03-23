@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.router.navigate(["/tableau-affichage-demande-stage"])
+      this.router.navigate(["/formStage"])
+
     }
   }
 

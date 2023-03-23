@@ -5,22 +5,28 @@ table {
 
   td, th{
     width: 25%;
+
   }
 
   th{
     color:#707070;
+
     text-decoration: underline;
     text-underline-position: under;
     text-underline-offset: 0.5em;
 
   }
+
 }
+
+
 
 .mat-elevation-z8{
   // margin: 0 15%;
   margin-top: 3rem;
-}
 
+
+}
 .container{
   margin: 0 5%;
 }
@@ -30,6 +36,7 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
 
 
 
@@ -61,6 +68,8 @@ table {
   padding: 0.4rem;
   border-radius: 5%;
   border:none;
+
+
 }
 
 .btn-td{
@@ -69,6 +78,7 @@ table {
 
 .btn-icons{
   margin: 0 0 0 2rem;
+
 }
 
 .school{
@@ -78,7 +88,10 @@ table {
   background-color: #D6B477;
   border-radius: 10%;
   padding: 0.2rem;
+
 }
+
+
 
 .vertical-line {
   display: inline-block;
@@ -90,39 +103,34 @@ table {
 }
 
 
+
+
+
+
+
 .demandes-infos{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // margin: 0 5% 2rem 5%;
-
-  .demandes{
-    color: #CD9635;
-  }
-
-  .titre2{
+   .titre2{
     color:#E33462;
     margin-top:0;
+
   }
 
   .btn-valid{
-    background-color: #089da4;
+    background-color:  #CD9635;
     color: #F1FEFB;
     border-radius: 10px;
     border: none;
+    text-decoration: none;
     padding:1rem;
     font-size: 16px;
     cursor: pointer;
+    &:hover{
+      background-color:  #d2ae71;
+    }
   }
+
+
 }
 
-// .actions-cell {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// }
 
-// .actions-cell button {
-//   margin-right: 10px;
-// }
 

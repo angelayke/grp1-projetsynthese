@@ -8,6 +8,8 @@
 $color1: #bb2026;
 $color1hover: #821519;
 $color3: #707070;
+$color4: #242222;
+
 
 // :host {
 //     display: flex;
@@ -15,16 +17,30 @@ $color3: #707070;
 //     align-items: flex-start;
 //   }
 
+.form-container {
+    margin: auto;
+    width: 75%;
+    margin-top: 36px;
+}
+
 
 .flex-container {
     display: flex;
 }
 
 .ligne-verticale {
-    border-left: 6px solid; 
+    border-left: 12px solid; 
     color: $color1;
-    height: 800px;
-    display: inline;
+    height: fit-content;
+    display: flexbox;
+}
+
+.ligne-verticale2 {
+    border-left: 7px solid; 
+    color: $color4;
+    height: fit-content;
+    // position:fixed;
+  
 }
 
 .button1, .button2 {
@@ -33,7 +49,14 @@ $color3: #707070;
 }
 
 h1 {
-    font-size: 58px;
+    font-size: 42px;
+    font-weight: bolder;
+    color: $color3;
+    font-family: Lato;
+}
+
+h4 {
+    font-size: 24px;
     font-weight: bolder;
     color: $color3;
     font-family: Lato;
@@ -71,7 +94,7 @@ div h3 {
 }
 
 div h5 {
-
+    margin-top: 12px;
     color: $color1;
     font-size: 16px;
     font-weight: bolder;
@@ -95,12 +118,17 @@ div h5 {
 
 label {
     margin-right: 24px;
-    margin-left: 16px;
+    color: $color3;
+    font-family: Lato;
+    font-weight: bolder;
+    margin-bottom: 8px;
 }
+
 
 .block {
     display: block;
     text-align: start;
+    margin-left: 12;
 }
 
 // .float-left {
@@ -118,4 +146,14 @@ label {
 
 .background-color {
     color: rgb(185, 182, 182);
+}
+
+.line-height {
+    line-height: 1px;
+    color: $color3;
+    // margin: 5px;
+}
+
+div .heading {
+    color: $color3;
 }

@@ -1,11 +1,10 @@
-<div class="login-container">
-
+<div class="login-wrapper">
   <div class="image-container">
-    <img src="../../assets/img/imagelogin.png" alt="Image de connexion">
+    <img class="login-image" src="../../assets/img/imagelogin.png" alt="Image de connexion">
   </div>
-  <div>
-    <h1>Identification</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, temporibus!</p>
+  <div class="form-container">
+    <h1 class="login-title">Identification</h1>
+    <p class="login-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, temporibus!</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
@@ -18,7 +17,7 @@
       </mat-form-field>
 
 
-      <button mat-raised-button color="primary" type="submit">Login</button>
+      <button class="login-btn" mat-raised-button color="primary" type="submit">Login</button>
 
     </form>
   </div>
