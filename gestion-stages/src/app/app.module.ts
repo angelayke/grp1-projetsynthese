@@ -22,6 +22,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
 
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+
+
+
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
 import { HeaderComponent } from './header/header.component';
@@ -40,13 +46,19 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 
+import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
+
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
+
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
-import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
-import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +81,12 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
     FormulaireOffreEditionComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
-    TableaudebordComponent
+    TableaudebordComponent,
+    DernieresDemandesStagesComponent,
+    ModifierDemandeStageComponent,
+    DialogModifierStageComponent,
+    FicheDemandeStageComponent,
+
    ],
 
   imports: [
@@ -95,8 +112,10 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
     MatCheckboxModule,
     LayoutModule,
     MatSortModule,
-    MatCheckboxModule
-  ],
+    MatCheckboxModule,
+    MatGridListModule,
+    MatListModule
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })
