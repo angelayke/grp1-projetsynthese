@@ -9,9 +9,14 @@ $line-height: normal;
 
 }
 
+table {
+    align-content: center;
+}
+
 
 .flex-container {
     display: flex;
+    align-items: center;
 }
 
 span, p {
@@ -140,6 +145,12 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 hr {
     height: 10px;
     width: 50%;
+}
+
+.ligne-vertical {
+   height: 30px;
+   border-left: 6px solid green;
+   margin-left: -3px;
 }
 
 .titre2{
