@@ -47,6 +47,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
+import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
     FormulaireOffreEditionComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
-    TableaudebordComponent
+    TableaudebordComponent,
+    FicheOffreStageComponent
    ],
 
   imports: [
