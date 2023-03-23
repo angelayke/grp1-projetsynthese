@@ -21,6 +21,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSortModule} from '@angular/material/sort';
 import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 
 
 // Component
@@ -48,6 +50,7 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
 import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
 
 
 
@@ -73,6 +76,7 @@ import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-mod
     DernieresDemandesStagesComponent,
     ModifierDemandeStageComponent,
     DialogModifierStageComponent,
+    FicheDemandeStageComponent,
 
    ],
 
@@ -98,7 +102,9 @@ import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-mod
     MatNativeDateModule,
     MatSelectModule,
     MatSortModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule,
+    MatListModule
 
 
 

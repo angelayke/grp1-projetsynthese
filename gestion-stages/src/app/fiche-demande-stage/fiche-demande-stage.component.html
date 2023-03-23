@@ -1,0 +1,31 @@
+<div class="stage-list">
+  <div class="stage-item" *ngFor="let stage of demandesStages">
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Program:</div>
+        <div class="stage-item-value">{{ stage.program }}</div>
+        <div class="stage-item-value">{{ stage.additionalInfo }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Region:</div>
+        <div class="stage-item-value">{{ stage.region }}</div>
+      </div>
+    </div>
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Activity Sector:</div>
+        <div class="stage-item-value">{{ stage.activitySector }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Title:</div>
+        <div class="stage-item-value">{{ stage.title }}</div>
+        <div class="stage-item-value">{{ stage.stageType }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Hours Per Week:</div>
+        <div class="stage-item-value">{{ stage.hoursPerWeek }}</div>
+        <div class="stage-item-value">{{ stage.createdAt | date }}</div>
+      </div>
+    </div>
+  </div>
+</div>
