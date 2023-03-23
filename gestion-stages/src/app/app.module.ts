@@ -48,6 +48,7 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
+import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
-    FicheOffreStageComponent
+    FicheOffreStageComponent,
+    TableauAffichageOffreStage2Component
    ],
 
   imports: [

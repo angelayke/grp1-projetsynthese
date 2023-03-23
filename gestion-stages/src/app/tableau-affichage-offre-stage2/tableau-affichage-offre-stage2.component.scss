@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$color1: #bb2026;
+$color1hover: #821519;
+$color3: #707070;
+$line-height: normal;
+
+@font-face {  
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+}
+
+.table-container {
+    margin: auto;
+    width: 75%;
+    margin-top: 36px;
+}
+
+table {
+    align-content: center;
+}
+
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+// span, p {
+//     color: #a00707;
+// }
+
+
+h1 {
+    font-size: 42px;
+    font-weight: bolder;
+    color: #707070;
+    font-family: Lato;
+    margin-bottom: 24px;
+    }
+
+h3, p {
+    line-height: $line-height;
+    font-family: Lato;
+}
+
+
+button {
+    font-family: Lato;
+    // float: right;
+}
+
+table {
+    margin-top: 5rem;
+    width: 100%;
+    border-left-color: #a00707;
+    font-family: Lato;
+    font-size: 8px;
+    display: inline-flexbox;
+  }
+
+
+.btn {
+    display: inline-table;
+    font-size: 10px;
+    margin-left: 12px;
+    min-width: 80px;
+    font-family: Lato;
+}
+
+// mat-icon {
+//     margin-left: 12px;
+// }
+
+th {
+    font-weight: bolder;
+    border-bottom: 5px;
+    font-family: Lato;
+    width: fit-content;
+}
+
+.school {
+    float: left;
+    margin-right: 10px;
+    color: rgb(138, 120, 21);
+}
+
+.delete {
+    color: #f26689;
+    display: inline-table;
+}
+
+.visibility {
+    color: #22a6ac;
+    display: inline-table;
+}
+
+.edit {
+   color: #f89747;
+   display: inline-table;
+
+}
+
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 0;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    // text-decoration: underline; 
+}
+
+
+// mat-row, mat-header-row,   td.mat-cell, td.mat-footer-cell {
+//     border-bottom-color: #f44336;
+// }
+
+.refuser {
+    color: #a00707;
+    background-color: rgba(160, 7, 7, 0.5);
+    padding: 0.1rem;
+    float: left;
+    display: table-cell;
+    font-size: 14px;
+    min-width: 160px;
+    font-family: Lato;
+}
+
+.accepter {
+    color:#07a04a;
+    background-color: rgba(173, 216, 230, 0.5);
+    padding: 0.1rem;
+    float: left;
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 20px;
+    min-width: 160px;
+    margin-top: auto; 
+    font-family: Lato;
+}
+
+
+
+.btn-offre-stage {
+    color: white;
+    background-color: $color1;
+    font-family: Lato;
+    margin-top: 36px;
+}
+
+.btn-offre-stage:hover {
+    background-color: $color1hover; 
+}
+
+
+.work {
+    background-color: rgba(160, 7, 7, 0.5);
+    float: left;
+    font-size: 24px;
+    // border-left: solid;
+}
+
+.border-left {
+    border-left: solid;
+    border-left-width: 5px;
+    border-left-color:  rgba(160, 7, 7, 0.5);
+    border-left-style: groove;
+}
+
+hr {
+    height: 10px;
+    width: 50%;
+}
+
+.ligne-vertical {
+   height: 30px;
+   border-left: 6px solid green;
+//    margin-left: -3px;
+}
+
+.titre2 {
+    color:#bb2026;
+    margin-top:0;
+}
