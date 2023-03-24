@@ -15,12 +15,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
-import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+
 
 
 // Component
@@ -35,20 +38,25 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
+import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
+import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
+
+import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
+
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
-
-//Demande de stage
-import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
-import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -64,9 +72,18 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
     SidenavComponent,
+    FicheEntrepriseComponent,
+    FormulaireAjoutEntrepriseComponent,
+    FormulaireUpdateEntrepriseComponent,
+    FormulaireOffreAjoutComponent,
+    FormulaireOffreEditionComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
+    DernieresDemandesStagesComponent,
+    ModifierDemandeStageComponent,
+    DialogModifierStageComponent,
+    FicheDemandeStageComponent,
 
    ],
 
@@ -87,16 +104,16 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule,
-    MatDatepickerModule,
-    LayoutModule,
-    MatNativeDateModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    LayoutModule,
     MatSortModule,
-    MatCheckboxModule
-
-
-
-  ],
+    MatCheckboxModule,
+    MatGridListModule,
+    MatListModule
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })
