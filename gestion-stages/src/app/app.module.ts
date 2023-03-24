@@ -43,6 +43,7 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
 import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
+import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
 
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
@@ -57,6 +58,7 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -80,11 +82,11 @@ import {MatDividerModule} from '@angular/material/divider';
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
+    FicheOffreStageComponent,
     DernieresDemandesStagesComponent,
     ModifierDemandeStageComponent,
     DialogModifierStageComponent,
     FicheDemandeStageComponent,
-
    ],
 
   imports: [
