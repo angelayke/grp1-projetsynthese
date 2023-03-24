@@ -21,6 +21,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -44,6 +45,9 @@ import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/form
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
+import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
+import { CandidatService } from './candidat.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,9 @@ import {MatDividerModule} from '@angular/material/divider';
     FormulaireOffreEditionComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
-    TableaudebordComponent
+    TableaudebordComponent,
+    CandidatDetailsComponent,
+    MajCandidatComponent
    ],
 
   imports: [
@@ -89,8 +95,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCheckboxModule,
     LayoutModule,
     MatSortModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CandidatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
