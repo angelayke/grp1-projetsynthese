@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Modifier le stage</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Titre" [(ngModel)]="data.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Secteur d'activité" [(ngModel)]="data.activitySector">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Date de début" [(ngModel)]="data.startDate">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [disabled]="!isDataValid()" (click)="onSaveClick()">Enregistrer</button>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Entreprise } from '../entreprises';
+import { ENTREPRISES } from '../mock-entreprises';
 
 @Component({
   selector: 'app-entreprises',
@@ -7,7 +8,7 @@ import { Entreprise } from '../entreprises';
   styleUrls: ['./entreprises.component.scss']
 })
 export class EntreprisesComponent implements OnInit {
-  @Input() entreprise?: Entreprise;
+ entreprises=ENTREPRISES;
 
   constructor() { }
 

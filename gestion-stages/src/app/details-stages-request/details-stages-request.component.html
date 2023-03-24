@@ -2,14 +2,18 @@
 
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title class="example-card-title">{{ stagesRequest?.titre }}</mat-card-title>
-    <mat-card-subtitle class="example-card-subtitle">{{ stagesRequest?.titre }}</mat-card-subtitle>
+    <!-- <mat-card-title class="example-card-title">{{ stagesRequest?.titre }}</mat-card-title> -->
+    <mat-card-title class="example-card-title">{{ stage.title }}</mat-card-title>
+    <!-- <mat-card-subtitle class="example-card-subtitle">{{ stagesRequest?.titre }}</mat-card-subtitle> -->
+    <mat-card-subtitle class="example-card-subtitle">{{ stage.title }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div class="example-card-content">
-      <p>{{ stagesRequest?.enterprise?.name }}</p>
-      <p>{{ stagesRequest?.startDate | date }}</p>
-      <p>{{ stagesRequest?.endDate | date }}</p>
+      <!-- <p>{{ stagesRequest?.titre }}</p> -->
+      <p>{{ stage.title }}</p>
+      <!-- <p>{{ stagesRequest?.startDate | date }}</p> -->
+      <p>{{ stage.startDate | date }}</p>
+
     </div>
   </mat-card-content>
 </mat-card>

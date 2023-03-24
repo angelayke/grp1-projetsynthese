@@ -2,7 +2,7 @@
   <div class="image-container">
     <img class="login-image" src="../../assets/img/imagelogin.png" alt="Image de connexion">
   </div>
-  <div class="form-container">
+  <div class="form-container" *ngIf="!isLoggedIn">
     <h1 class="login-title">Identification</h1>
     <p class="login-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, temporibus!</p>
 
