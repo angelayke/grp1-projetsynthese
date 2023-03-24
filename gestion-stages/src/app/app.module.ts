@@ -21,8 +21,6 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
-
-import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 
