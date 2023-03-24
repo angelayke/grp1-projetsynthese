@@ -37,7 +37,7 @@
     </mat-form-field>
 
     <div class="form-fields-row">
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field vertical-line">
         <mat-label>Programme de formation</mat-label>
         <input type="text" matInput class="mat-input-element" formControlName="program" name="program" required
           minlength="5" maxlength="50" placeholder="Programme de formation">
@@ -46,7 +46,7 @@
           Ce champ est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field  vertical-line">
         <mat-label>Établissement scolaire</mat-label>
         <input type="text" matInput class="mat-input-element" formControlName="school" name="school" required
           minlength="5" maxlength="50" placeholder="Établissement scolaire">
@@ -57,7 +57,7 @@
     </div>
     <div class="form-fields-row">
 
-      <mat-form-field class="fieldChamp">
+      <mat-form-field class="fieldChamp vertical-line">
         <mat-label>Secteur d'activité</mat-label>
         <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="activity"
           name="activity" required placeholder="Secteur d'activité">
@@ -71,7 +71,7 @@
 
 
 
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field  vertical-line">
         <mat-label>Ville</mat-label>
         <input type="text" matInput class="mat-input-element" formControlName="ville" name="ville" name="ville" required
           minlength="5" maxlength="50" placeholder="Ville">
@@ -81,7 +81,7 @@
       </mat-form-field>
     </div>
 
-    <mat-form-field class="fieldChamp">
+    <mat-form-field class="fieldChamp vertical-line">
       <mat-label>Région</mat-label>
       <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="region"
         name="region" required placeholder="Région">
@@ -94,7 +94,7 @@
     </mat-form-field>
 
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field vertical-line">
       <mat-label>Compétences</mat-label>
       <textarea type="text" matInput class="mat-input-element" formControlName="competences" name="competences"
         minlength="5" maxlength="50" required placeholder="Compétences"></textarea>
@@ -104,7 +104,7 @@
     </mat-form-field>
 
     <h2>Informations sur le stage recherché</h2>
-    <div class="form-fields-row">
+    <div class="form-fields-row vertical-line">
       <mat-form-field class="fieldChamp">
         <mat-label>Type de stage</mat-label>
         <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix" formControlName="typeStage"
@@ -118,7 +118,7 @@
           Ce champ est obligatoire</mat-error>
       </mat-form-field>
 
-      <mat-form-field color="primary" appearance="fill" class="fieldChamp">
+      <mat-form-field color="primary" appearance="fill" class="fieldChamp fieldDate ">
         <mat-label>Date de début</mat-label>
         <input matInput [matDatepicker]="picker1" class="mat-input-element" formControlName="startDate" name="startDate"
           required placeholder="Date de début">
@@ -132,7 +132,7 @@
     </div>
 
     <div class="form-fields-row">
-      <mat-form-field class="fieldChamp">
+      <mat-form-field class="fieldChamp vertical-line">
         <mat-label>Nombre d'heures par semaine</mat-label>
         <mat-select class="mat-input-element" placeholder="Veuillez effectuer votre choix"
           formControlName="hoursPerWeek" name="hoursPerWeek" required placeholder="Nombre d'heures par semaine">
@@ -159,7 +159,7 @@
 
     </div>
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field ">
       <mat-label>Informations supplémentaires</mat-label>
       <textarea type="text" matInput class="mat-input-element" formControlName="informations" name="informations"
         minlength="10" maxlength="200" required placeholder="Informations"></textarea>
@@ -168,9 +168,9 @@
         Ce champ est obligatoire et il doit contenir au moins 10 caractères.</mat-error>
     </mat-form-field>
     <h2>Rémunération</h2>
-    <mat-checkbox class="mat-input-element" formControlName="discretion">A la discrétion de l'entreprise</mat-checkbox>
-    <mat-checkbox  class="mat-input-element" formControlName="remunere">Stage rémunéré</mat-checkbox>
-    <mat-checkbox  class="mat-input-element" formControlName="nonRemunere">Stage non rémunéré</mat-checkbox>
+    <mat-checkbox class="mat-input-element vertical-line" formControlName="discretion">A la discrétion de l'entreprise</mat-checkbox>
+    <mat-checkbox  class="mat-input-element vertical-line" formControlName="remunere">Stage rémunéré</mat-checkbox>
+    <mat-checkbox  class="mat-input-element vertical-line" formControlName="nonRemunere">Stage non rémunéré</mat-checkbox>
 
   </div>
 
