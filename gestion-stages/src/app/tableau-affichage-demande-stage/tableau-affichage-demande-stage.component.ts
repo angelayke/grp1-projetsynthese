@@ -158,6 +158,18 @@ export class TableauAffichageDemandeStageComponent implements OnInit {
         });
       }
 
+
+
+
+      applyFilter(event: Event) {
+        const filterValue = (event.target as HTMLInputElement).value;
+        this.dataSourceStage.filter = filterValue.trim().toLowerCase();
+
+        if (this.dataSourceStage.paginator) {
+          this.dataSourceStage.paginator.firstPage();
+        }
+      }
+
 }
 
 
