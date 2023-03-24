@@ -18,3 +18,4 @@ export interface Stage {
     activitySector?: string;
     enterprise: string; // (ajouté & modifié par Tamanaco...)
   }
+

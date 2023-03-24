@@ -7,7 +7,6 @@
     <button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Sauvegarder</button>  <button mat-raised-button class="button1">Annuler</button><br>
 
     <div class="form-fields-container">
-
         <div class="inline font-size">
             <label>Titre:</label> 
                 <mat-form-field appearance="fill" class="input-size">
@@ -24,9 +23,8 @@
                 <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('maxlength')">
                     Le titre doit contenir au maximum 50 caractères.
                 </mat-error>
+           </div><br>
             
-                
-            </div><br>
         <div class="inline font-size">
             <label>Entreprise:</label>
                 <mat-form-field appearance="fill" class="input-size"> 
@@ -40,10 +38,7 @@
         </div>
     </div>
 
-
 <div class="font-size">
-    
-
             <h3>Description de la tâche</h3>
         <div class="form-fields-container">
                 <mat-form-field appearance="fill" class="textarea-size">
@@ -103,6 +98,7 @@
                             </mat-select>
                     </mat-form-field>
             </div>
+
             <div class="ligne-verticale2">
                 <label class="block">Date de début</label>
                 <mat-form-field appearance="fill"  class="fieldChamp">
@@ -118,7 +114,7 @@
       
         <div class="form-fields-row">
             <div class="ligne-verticale2">
-                <label class="block">Nombre d'heures pas semaine</label>
+                <label class="block">Nombre d'heures par semaine</label>
                     <mat-form-field appearance="fill"  class="fieldChamp">
                         <mat-label>Veuillez effectuer un choix</mat-label>
                             <mat-select>
@@ -130,6 +126,7 @@
                     </mat-form-field>
             </div>
           
+
             <div class="ligne-verticale2">               
                 <label class="block">Date de fin</label>
                     <mat-form-field appearance="fill"  class="fieldChamp">
@@ -141,13 +138,7 @@
                     </mat-form-field>
             </div>
     </div> -->
-                <!-- <mat-form-field appearance="fill">
-                    <mat-label>Different locale</mat-label>
-                    <input matInput [matDatepicker]="dp">
-                    <mat-hint>YYYY/MM/DD</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                    <mat-datepicker #dp></mat-datepicker>
-                  </mat-form-field> -->
+
             <!-- <div class="ligne-verticale2">
                 <label class="block">Rémunération</label>
                     <mat-checkbox>À discuter</mat-checkbox><br>
@@ -175,3 +166,5 @@
     
     </div>
 </form> -->
+
+
