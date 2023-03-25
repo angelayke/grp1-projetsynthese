@@ -16,5 +16,5 @@ export interface Stage {
   published?: boolean;
   active?: boolean;
   activitySector?: string;
-  enterprise: string; // (ajouté & modifié par Tamanaco...)
+  enterprise?: string; // (ajouté & modifié par Tamanaco...)
 }
