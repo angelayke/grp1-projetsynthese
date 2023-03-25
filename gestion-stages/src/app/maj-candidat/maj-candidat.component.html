@@ -1,0 +1,95 @@
+
+<body>
+    <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
+    <button  id="btn__boutonCancelCandidat" style="float: right; " matSuffix type="cancel" mat-raised-button><mat-icon>clear</mat-icon>Annuler</button>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <div class="entete">
+        <h1>Candidat</h1>
+        <br>
+        <label><h2>{{candidats[0].name}}</h2></label>
+        <br>
+        <label class="jobTitle">{{candidats[0].jobTitle}}</label>
+        </div>
+        <br>
+        <br>
+    </mat-form-field>
+  
+    <div class="container">
+      <label for="description"><h4> Courte présentation</h4></label>
+      <textarea type="text" rows="10" cols="60" class="form-control" id="description"  required [(ngModel)]="candidats[0].description" name="description"></textarea>
+    
+  
+     
+       <div class="row">
+                   <div class="adresse">
+                      <label for="adresse" class="form-label">Adresse</label>
+      <input [(ngModel)]="candidats[0].address" name="address"type="text" class="form-control" id="adresse" placeholder="3500 de Courval" value="" required="" name="adresse">
+      <div class="validation">
+         L'adresse est requise
+      </div>
+   </div>
+  </div>
+     <div class="row">
+      <div class="ville">
+       <label for="ville" class="form-label">Ville</label>
+      
+      <input [(ngModel)]="candidats[0].city" name="city" type="text" class="form-control" id="ville" placeholder="Trois-Rivières" value="" required="" name="ville">
+      <div class="validation">
+         Le nom de la ville est requis.
+      </div>
+   </div>
+   
+   <div class="row my-3">
+    <div class="province">
+       <label for="province" class="form-label">Province</label>
+      
+      <input [(ngModel)]="candidats[0].province" name="province" type="text" class="form-control" id="province" placeholder="Québec" value="" required="" name="province">
+      <div class="validation">
+         Le nom de la province est requis.
+      </div>
+   </div>
+  </div>
+   
+     
+  <div class="row my-3">
+    <div class="codePostal">
+       <label for="codePostal" class="form-label">Code postal</label>
+      <input [(ngModel)]="candidats[0].postalCode" name="postalCode" type="text" class="form-control" id="codePostal" placeholder="Code postal" value="" required="">
+      <div class="validation">
+         Un code postal est requis.
+      </div>
+   </div>
+  </div>
+    
+  <div class="row">
+  <div class="telephone">
+    <label for="telephone" class="form-label">Téléphone</label>
+      <input  [(ngModel)]="candidats[0].phone" name="phone"type="text" class="form-control" id="telephone" placeholder="819 999 9999" value="" required="" name="telephone">
+      <div class="validation">
+         Le numéro de telephone est requis.
+      </div>
+   </div>
+  </div>
+    
+  <div class="row">
+  <div class="courriel">
+    <label for="courriel" class="form-label">Courriel</label>
+      <input [(ngModel)]="candidats[0].email" name="email"type="email" class="form-control" id="Courriel" placeholder="plume@latraverse.com" value="" required="" name="courriel">
+      <div class="validation">
+         Une adresse courriel valide est requis.
+      </div>
+   </div>
+  </div>
+  
+  
+      </div>
+    </div>
+      
+    <br>
+    <br>
+    <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
+    <button  id="btn__boutonCancelCandidat" style="float: right; " matSuffix type="cancel" mat-raised-button><mat-icon>clear</mat-icon>Annuler</button>
+  
+  
+  </body>
