@@ -1,8 +1,50 @@
 /* css angular material side nav*/
 .example-container {
-  width: 100%;
+  // width: 100%;
   height: 100%;
+
 }
+
+// =====================================
+// .example-container {
+//   display: flex;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .sidenav {
+//   width: 250px;
+// }
+
+// .sidenav-content {
+//   flex-grow: 1;
+//   padding: 16px;
+// }
+
+// .container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   margin-top: 20px;
+// }
+
+// section {
+//   width: 100%;
+//   margin-bottom: 20px;
+// }
+
+// @media only screen and (max-width: 768px) {
+//   .example-container {
+//     flex-direction: column;
+//   }
+
+//   .sidenav {
+//     width: 100%;
+//   }
+// }
+
+// ===================================
+
 
 /*icon sort*/
 .material-symbols-outlined {

@@ -1,13 +1,71 @@
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { OffreStage, TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
+import { CandidatsComponent } from './candidats/candidats.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
+import { LoginComponent } from './login/login.component';
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
 
+    {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'sidenav',
+    component: SidenavComponent,
+    children: [
+      {
+        path: 'tableaudebord',
+        component: TableaudebordComponent,
+      },
+      {
+        path: 'demandesdestage',
+        component: TableauGestionDemandeStageComponent
+      },
+      {
+        path: 'offredestage',
+        component: TableauAffichageOffreStageComponent
+      },
+      {
+        path: 'candidats',
+        component: CandidatsComponent
+      },
+      {
+        path: 'entreprises',
+        component: EntreprisesComponent
+      },
+      {
+        path: 'formulairestage',
+        component: FormulaireStageComponent
+      },
+      {
+        path: 'ajout-candidat',
+        component: CandidatsComponent
+      },
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: '/login'
+  }
 
-// { path: ''}, //component: LoginComponent
-// { path: 'tableaudebord'}, //component: TableaudebordComponent
-// { path: 'demandesdestage'}, //component: DemandesdestageComponent
+  // { path: '', component: LoginComponent },
+  // { path: 'sidenav', component: SidenavComponent}, //component: TableaudebordComponent
+  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+// { path: '', component: MainComponent, children: [
+//   { path: '', component: T}
+// ]}, //component: LoginComponent
 // { path: 'offredestage'}, //component: OffredestageComponent
 // { path: 'candidats'}, //component: CandidatsComponent
 // { path: 'entreprises'}, //component: EntreprisesComponent
@@ -20,7 +78,9 @@ const routes: Routes = [
 // { path: 'ficheentreprise'}, //component: FicheEntrepriseComponent
 // { path: 'formulaireentreprise'}, //component: FormulaireEntrepriseComponent
 
-{ path: 'formStage', component: FormulaireStageComponent }
+
+
+
 ];
 
 @NgModule({
@@ -28,3 +88,7 @@ imports: [RouterModule.forRoot(routes)],
 exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// app-component <= root
+// login/signup <= login
+// / <= main-app-component <= sidenav component <= routing-module

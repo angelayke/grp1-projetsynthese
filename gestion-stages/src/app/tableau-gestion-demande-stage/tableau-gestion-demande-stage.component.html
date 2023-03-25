@@ -4,34 +4,26 @@
       <div>
         <h1>Demande de stage</h1>
        </div>
-        <a class="btn-valid" routerLink="/formStage">Ajouter une demande</a>
-
+        <a class="btn-valid" routerLink="/sidenav/formulairestage">Ajouter une demande</a>
     </div>
   </section>
 
   <section class="container">
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-
         <ng-container matColumnDef="title" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Poste </th>
-
           <td mat-cell *matCellDef="let stage">
             <span class="vertical-line"></span>
             <mat-icon class="school">school</mat-icon>
-            {{stage.title}}
-
+            {{stage.title | titlecase}}
           </td>
-
         </ng-container>
-
 
         <ng-container matColumnDef="activitySector" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Secteur d'activité </th>
           <td mat-cell *matCellDef="let stage"> {{stage.activitySector | titlecase }} </td>
         </ng-container>
-
 
         <ng-container matColumnDef="region" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Région </th>
@@ -39,41 +31,29 @@
         </ng-container>
 
         <ng-container matColumnDef="startDate" class="text-underline">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Région </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date de début </th>
           <td mat-cell *matCellDef="let stage"> {{stage.startDate | date }} </td>
         </ng-container>
-
-
 
         <ng-container matColumnDef="actions" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let stage" class="btn-td">
-
-
-
-
-
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
-              <mat-icon  class="visibility">visibility</mat-icon>
+              <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
             </button>
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
-              <mat-icon class="edit">edit</mat-icon>
+              <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
             </button>
             <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
-              <mat-icon class="delete">delete</mat-icon>
+              <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>
             </button>
-
-
           </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let stage; columns: displayedColumns;"></tr>
 
-
-
       </table>
-
     </div>
   </section>
 </main>

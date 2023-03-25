@@ -13,4 +13,12 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sideMenuOpen = false;
+  sideMenuContext = '';
+
+  toggleSideMenu(context: string) {
+    this.sideMenuOpen = !this.sideMenuOpen;
+    this.sideMenuContext = context;
+  }
+
 }

@@ -2,19 +2,19 @@
 <div><button mat-raised-button class="btn__button"> <h2>Ajouter un candidat</h2></button></div>
 <ng-container class="container-fluid" *ngFor="let c of candidats">
 
-    <mat-card class="liste-candidats" (click)="(c._id)">
-
+    <!--<mat-card class="liste-candidats" (click)="(c._id)">-->
+      <ng-container class="container-fluid" *ngFor="let candidat of candidats">
     <mat-card-title>
         <span class="material-icons">person</span>
       </mat-card-title>
 
       <mat-card-content>
         <dl> 
-          <dt>{{c.name}} </dt>
-          <dt>{{c.jobTitle}}</dt>
-          <dt>{{c.email }}</dt>
-          <dt>{{c.phone}}</dt>
+          <dt>{{candidat.name}} </dt>
+          <dt>{{candidat.jobTitle}}</dt>
+          <dt>{{candidat.email }}</dt>
+          <dt>{{candidat.phone}}</dt>
         </dl>
         </mat-card-content>
-    </mat-card>
+      </ng-container>
 </ng-container>
