@@ -42,7 +42,8 @@ export class DernieresDemandesStagesComponent implements OnInit {
     paid: true,
     published: false,
     active: true,
-    activitySector: ""
+    activitySector: "",
+    enterprise: ''
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
