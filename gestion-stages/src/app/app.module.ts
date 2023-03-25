@@ -37,13 +37,14 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
-import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
-import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
 
+//Demande de stage
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
 import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
@@ -60,6 +61,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
 import { CandidatService } from './candidat.service';
+
 
 
 @NgModule({
