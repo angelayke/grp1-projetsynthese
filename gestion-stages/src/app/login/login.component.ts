@@ -10,10 +10,12 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-
+  isLoggedIn: boolean = false;
+  showLogin = true;
   constructor(private fb: FormBuilder, private router: Router) { }
 
-  ngOnInit(): void {
+
+  ngOnInit() {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -35,9 +37,11 @@ export class LoginComponent implements OnInit {
       alert("Veuillez remplir les champs SVP!")
 
     }
-    else{
-      this.router.navigate(["/tableau-affichage-demande-stage"])
-      this.router.navigate(["/formStage"])
+    else if (this.loginForm.valid){
+      this.isLoggedIn = true;
+      this.router.navigate(['/sidenav/tableaudebord']);
+      this.showLogin = false;
+
 
     }
   }

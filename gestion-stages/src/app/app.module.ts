@@ -22,6 +22,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -40,6 +42,16 @@ import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-s
 import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
+import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
+
+import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
+
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -48,6 +60,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
 import { CandidatService } from './candidat.service';
+
 
 @NgModule({
   declarations: [
@@ -63,13 +76,21 @@ import { CandidatService } from './candidat.service';
     ConfirmationDialogComponent,
     DetailsStagesRequestComponent,
     SidenavComponent,
+    FicheEntrepriseComponent,
+    FormulaireAjoutEntrepriseComponent,
+    FormulaireUpdateEntrepriseComponent,
     FormulaireOffreAjoutComponent,
     FormulaireOffreEditionComponent,
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
     CandidatDetailsComponent,
-    MajCandidatComponent
+    MajCandidatComponent,
+    FicheOffreStageComponent,
+    DernieresDemandesStagesComponent,
+    ModifierDemandeStageComponent,
+    DialogModifierStageComponent,
+    FicheDemandeStageComponent,
    ],
 
   imports: [
@@ -95,6 +116,8 @@ import { CandidatService } from './candidat.service';
     MatCheckboxModule,
     LayoutModule,
     MatSortModule,
+    MatGridListModule,
+    MatListModule,
     HttpClientModule
   ],
   providers: [CandidatService],

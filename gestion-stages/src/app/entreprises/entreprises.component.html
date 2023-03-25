@@ -1,23 +1,27 @@
-<div class="container">
+<section>
+  <div class="container">
     <div>
-        <h1>Entreprises</h1>
-        <button mat-button aria-label="Ajouter" routerLink="/">Ajouter une entreprise</button>
+      <h1>Entreprises</h1>
+      <button mat-button aria-label="Ajouter" routerLink="/">Ajouter une entreprise</button>
     </div>
-    <div>
+    <!--
+    <div class="flex-card"> -->
+      <ng-container class="container-fluid" *ngFor="let e of entreprises">
         <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title-group>
-                <mat-card-title>{{entreprise?.name}}</mat-card-title>
-                <p>{{entreprise?.address}} <br>
-                    {{entreprise?.city}} {{entreprise?.postalCode}}
+            <img mat-card-md-image src="../../assets/img/logofakecie_300x214.png" alt="Pictogramme entreprise">
+            <mat-card-title-group>
+              <mat-card-title>{{e?.name}}</mat-card-title>
+              <mat-card-content>
+                <p>{{e?.address}} <br>
+                  {{e?.city}} {{e?.postalCode}}
                 </p>
-                <img mat-card-md-image src="https://fakeimg.pl/250/"  alt="Pictogramme entreprise">
-              </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Téléphone: {{entreprise?.contactPhone}} <br>
-                   Courriel: {{entreprise?.contactEmail}}</p>
-            </mat-card-content>
-          </mat-card>
+                <p>Téléphone: {{e?.contactPhone}} <br>
+                  Courriel: {{e?.contactEmail}}</p>
+              </mat-card-content>
+            </mat-card-title-group>
+        </mat-card>
+      </ng-container>
     </div>
-</div>
+    <!--
+  </div>-->
+</section>
