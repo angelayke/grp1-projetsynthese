@@ -1,0 +1,95 @@
+/* demo angular */
+.example-form {
+   /* min-width: 150px;
+    max-width: 500px;*/
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+td {
+    padding-right: 8px;
+  }
+
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+}
+
+/* fin demo angular */
+
+h1,h2,h3{
+    color: #86a9e6;
+    font-weight: bold;
+}
+
+img{
+    max-width: 100%;
+    width:"150px";
+}
+
+.soustitre-fiche{
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.titre-entreprise{
+    margin-top: 2px;
+    margin-left: 5px;
+    color: #707070;
+    font-size: 4em;
+}
+
+.table-titre{
+    width: 300px;
+}
+
+.fiche{
+    padding: 4em;
+    background-color: white;
+}
+
+.td-fiche{
+    border-left: 7px solid #707070;
+}
+
+.td-fiche-entreprise{
+    border-left: 7px solid #86a9e6;
+}
+
+.subtitle-fiche{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.txt-fiche{
+    margin-left: 5px;
+    font-style: italic;
+}
+
+.tr-fiche{
+    margin-bottom: 20px;
+}
+
+.person-contact-fiche{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+input{
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 7px;
+    border: 1px #70707031 solid;
+}
