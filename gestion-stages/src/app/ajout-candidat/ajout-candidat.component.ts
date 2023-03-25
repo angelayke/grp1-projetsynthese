@@ -9,7 +9,7 @@ import { Candidat } from '../candidat';
   styleUrls: ['./ajout-candidat.component.scss']
 })
 export class AjoutCandidatComponent implements OnInit {
-  candidat: Candidat = new Candidat();
+ // candidat: Candidat = new Candidat();
   submitted = false;
 
   
@@ -20,10 +20,10 @@ export class AjoutCandidatComponent implements OnInit {
 
   newCandidat(): void {
     this.submitted = false;
-    this.candidat = new Candidat();
+   // this.candidat = new Candidat();
     }
     save() {
-      this.candidat = new Candidat();
+    //  this.candidat = new Candidat();
     }
     onSubmit() {
       this.submitted = true;

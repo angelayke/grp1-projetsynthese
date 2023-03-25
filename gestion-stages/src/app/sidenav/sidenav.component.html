@@ -5,26 +5,33 @@
     <div class="container-nav">
       <nav>
         <ul>
-          <li><a  class="color-tableaubord" routerLink="/tableaudebord"  (click)="toggleSideMenu('section-1')">
+          <li><a  class="color-tableaubord" routerLink="/sidenav/tableaudebord" (click)="toggleSideMenu('section-1')" >
               <mat-icon>home</mat-icon>
               <span> Tableau de bord</span>
             </a></li>
-          <li><a class="color-demandestage" routerLink="/demandesdestage" (click)="toggleSideMenu('section-2')">
+          <li><a class="color-demandestage" routerLink="demandesdestage" (click)="toggleSideMenu('section-2')">
               <mat-icon>event_note</mat-icon>
               <span> Demandes de stages</span>
-            </a></li>
-          <li><a class="color-offrestage" routerLink="/offredestage" (click)="toggleSideMenu('section-3')">
+            </a>
+          </li>
+          <li>
+            <a class="color-offrestage" routerLink="offredestage" (click)="toggleSideMenu('section-3')">
               <mat-icon>near_me</mat-icon>
               <span>Offres de stage</span>
-            </a></li>
-          <li><a class="color-candidat" routerLink="/candidats" (click)="toggleSideMenu('section-4')">
+            </a>
+          </li>
+          <li>
+            <a class="color-candidat" routerLink="candidats" (click)="toggleSideMenu('section-4')">
               <mat-icon>person</mat-icon>
               <span> Candidats</span>
-            </a></li>
-          <li><a class="color-entreprise" routerLink="/entreprises" (click)="toggleSideMenu('section-5')">
+            </a>
+          </li>
+          <li>
+            <a class="color-entreprise" routerLink="entreprises" (click)="toggleSideMenu('section-5')">
               <mat-icon>business_center</mat-icon>
               <span> Entreprises</span>
-            </a></li>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -41,41 +48,48 @@
             </mat-icon>
           </button>
           <app-header></app-header>
-          <!-- <app-tableaudebord></app-tableaudebord> -->
+
         </div>
       </mat-toolbar>
     </header>
 
     <main>
+
       <div class="container">
+
+        <router-outlet></router-outlet>
+
+        <!-- Trouver un moyen de faire afficher la section1
+          sans avoir besoin de faire un click sur le bouton de la nav et la faire disparaitre quand on arrive dans une page -->
         <!--groupe de card donnant un aperçu de nombre d'enregistrement par catégorie-->
-        <section *ngIf="sideMenuContext === 'section-1'">
-          <app-tableaudebord></app-tableaudebord>
-        </section>
+        <!-- <section *ngIf="sideMenuContext === 'section-1'"> -->
+          <!-- <app-tableaudebord></app-tableaudebord> -->
+<!--
+          <app-tableau-affichage-demande-stage></app-tableau-affichage-demande-stage>
+          <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage> -->
+        <!-- </section> -->
 
          <!-- Test  Jean-->
         <!--Tableau de gestion de demandes de stage-->
         <section *ngIf="sideMenuContext === 'section-2'">
           <app-tableau-gestion-demande-stage></app-tableau-gestion-demande-stage>
-          <app-fiche-demande-stage></app-fiche-demande-stage>
         </section>
 
         <!--Tableau de gestion d'offres de stage à ajouter n'existe pas encore-->
-        <section *ngIf="sideMenuContext === 'section-3'">
-          <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage>
-        </section>
+        <!-- <section *ngIf="sideMenuContext === 'section-3'"> -->
+          <!-- <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage> -->
+        <!-- </section> -->
 
-
-        <section *ngIf="sideMenuContext === 'section-4'">
+        <!-- <section *ngIf="sideMenuContext === 'section-4'"> -->
           <!--Composants à ajouter Candidat  -->
-          <app-ajout-candidat></app-ajout-candidat>
+       <!-- <app-candidats></app-candidats> -->
 
-        </section>
-        <section *ngIf="sideMenuContext === 'section-5'">
+        <!-- </section> -->
+        <!-- <section *ngIf="sideMenuContext === 'section-5'"> -->
           <!--Composants à ajouter Candidat  -->
-        <app-entreprises></app-entreprises>
+        <!-- <app-entreprises></app-entreprises> -->
 
-        </section>
+        <!-- </section> -->
       </div>
     </main>
 
@@ -95,13 +109,15 @@
         Tableau d'affichage des dernières offres de stage
         <section>
           <app-tableau-affichage-offre-stage></app-tableau-affichage-offre-stage>
-        </section>
+        </section>-->
 
         <!-- Test  Jean-->
+        <!--
         <section>
           <app-tableau-gestion-demande-stage></app-tableau-gestion-demande-stage>
           <app-login></app-login>
-        </section>
+        </section>-->
+        <!--
       </div>
     </main> -->
 
