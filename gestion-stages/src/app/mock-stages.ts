@@ -18,7 +18,8 @@ export const STAGES: Stage[] = [
     paid: true,
     published: false,
     active: true,
-    activitySector: "Ijevle cote."
+    activitySector: "Ijevle cote.",
+    enterprise: "A"
   },
   {
     _id: "51c5db052d6971422d35ef13",
@@ -37,7 +38,8 @@ export const STAGES: Stage[] = [
     paid: false,
     published: false,
     active: true,
-    activitySector: "Ijevle cote."
+    activitySector: "Ijevle cote.",
+    enterprise: "B"
   },
   {
     _id: "51c5db052d6971422d35ef14",
@@ -56,7 +58,8 @@ export const STAGES: Stage[] = [
     paid: false,
     published: false,
     active: true,
-    activitySector: "Ijevle cote."
+    activitySector: "Ijevle cote.",
+    enterprise: "C"
   },
   {
     _id: "51c5db052d6971422d35ef15",
@@ -75,7 +78,8 @@ export const STAGES: Stage[] = [
     paid: false,
     published: false,
     active: true,
-    activitySector: "Ijevle cote."
+    activitySector: "Ijevle cote.",
+    enterprise: "D"
   },
   {
     _id: "51c5db052d6971422d35ef16",
@@ -94,7 +98,8 @@ export const STAGES: Stage[] = [
     paid: false,
     published: false,
     active: true,
-    activitySector: "Ijevle cote."
+    activitySector: "Ijevle cote.",
+    enterprise: "E"
   }
 
 ]

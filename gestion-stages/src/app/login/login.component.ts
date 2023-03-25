@@ -39,9 +39,8 @@ export class LoginComponent implements OnInit {
     }
     else if (this.loginForm.valid){
       this.isLoggedIn = true;
-      // this.router.navigate(["/tableau-affichage-demande-stage"])
-      this.router.navigate(['/sidenav']);
-      this.showLogin = false; // cacher le formulaire de connexion
+      this.router.navigate(['/sidenav/tableaudebord']);
+      this.showLogin = false;
 
 
     }

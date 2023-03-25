@@ -1,55 +1,88 @@
-***********************************************************************************************************************************************
-
-    <div class="line-height">
+<div class="form-container" >
+       <div class="line-height">
         <div class="ligne-verticale">
             <h5 class="heading">Offre de stage</h5><br>
             <h1>Intégrateur Web junior</h1><br>
             <h4>Acolyte communication</h4>
         </div>    
     </div>
+
+<form action="" class="form-margin" #formulaireOffreEdition="ngForm">
+        <button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Mettre à jour</button><button mat-raised-button class="button1">Annuler</button><br>
    
 <!-- <h1><span class="ligne-verticale">Offre de stage</span><h1><br> -->
 
-
-<form action="">    
-<button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Mettre à jour</button><button mat-raised-button class="button1">Annuler</button><br>
- 
-      
-</form>
-
-<div class="font-size">
+    <div class="font-size">
     
-    <h3>Description de la tâche</h3>
+        <h3>Description de la tâche</h3>
 
-        <form action="" class="form-margin">
+        <!-- <form action="" class="form-margin" #formulaireOffreEdition="ngForm"> -->
+           
                 <mat-form-field appearance="fill" class="textarea-size">
                     <mat-label></mat-label>
-                    <textarea matInput type="text"  required>
+                    <textarea matInput type="text" id="description" name="description" minlength="50" maxlength="200" required
+                     [(ngModel)]="newStage.description" #description="ngModel">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
                         dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
                         nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
                         purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.
                     </textarea>
                 </mat-form-field>
-            <p>Programme de Formation</p>
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                        <input matInput type="text" value="AEC ou équivalent" required>
-                </mat-form-field>
-            <p>Exigences</p>
-                <mat-form-field appearance="fill" class="textarea-size">
-                    <mat-label></mat-label>
-                    <textarea matInput type="text" required>
-                        HTML, CSS, JavaScript, React, vue.js, GIT
-                        PHP, MySQL. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum
-                        facilisis eros, ut dapibus quam hendrerit nec.
-                    </textarea>
-                </mat-form-field>
+                <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
+                    La description est obligatoire.
+                </mat-error>
+                <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('minlength')">
+                    La description doit contenir au moins 50 caractères.
+                </mat-error>
+                <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('maxlength')">
+                    La description doit contenir au maximum 200 caractères.
+                </mat-error>
+               
+
+            <div class="ligne-verticale2">
+                <label class="block">Programme de Formation</label>
+                    <mat-form-field appearance="fill">
+                        <mat-label></mat-label>
+                            <input matInput type="text" value="AEC ou équivalent" id="program" name="program" maxlength="50" required
+                             [(ngModel)]="newStage.program" #program="ngModel">
+                    </mat-form-field>
+                    <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('required')">
+                        Le nom du programme est obligatoire.
+                    </mat-error>
+                    <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('minlength')">
+                        Le nom du programme doit contenir au moins 5 caractères.
+                    </mat-error>
+                    <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('maxlength')">
+                        Le nom du programme doit contenir au maximum 50 caractères.
+                    </mat-error>       
+            </div>
+
+            <div class="ligne-verticale2">
+                <label class="block">Exigences</label>
+                    <mat-form-field appearance="fill" class="textarea-size">
+                        <mat-label></mat-label>
+                        <textarea matInput type="text" id="requirements" name="requirements" minlength="50" maxlength="200" required
+                         [(ngModel)]="newStage.requirements" #requirements="ngModel">
+                            HTML, CSS, JavaScript, React, vue.js, GIT
+                            PHP, MySQL. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum
+                            facilisis eros, ut dapibus quam hendrerit nec.
+                        </textarea>
+                    </mat-form-field>
+                    <mat-error *ngIf="requirements.invalid && (requirements.dirty || requirements.touched) && requirements.hasError('required')">
+                        Les exigences sont obligatoires.
+                    </mat-error>
+                    <mat-error *ngIf="requirements.invalid && (requirements.dirty || requirements.touched) && requirements.hasError('minlength')">
+                        Les exigences doivent contenir au moins 50 caractères.
+                    </mat-error>
+                    <mat-error *ngIf="requirements.invalid && (requirements.dirty || requirements.touched) && requirements.hasError('maxlength')">
+                        Les exigences doivent contenir au maximum 200 caractères.
+                    </mat-error>
+            </div>
             
         <h5>Informations sur le stage recherché</h5>
 
         <div class="flex" >
-            <div>
+            <div class="ligne-verticale2">
                 <label class="block">Type de stage</label>
                     <mat-form-field appearance="fill" class="block">
                         <mat-label>Veuillez effectuer un choix</mat-label>
@@ -60,14 +93,14 @@
                             </mat-select>
                     </mat-form-field>
             </div>
-            <div>
+            <div class="ligne-verticale2">
                 <label class="block">Date de début</label>
                 <mat-form-field appearance="fill" class="block">
                     <mat-label>05/25/2022</mat-label>
-                    <input matInput [matDatepicker]="dp">
+                    <input matInput [matDatepicker]="dp1" required>
                     <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                    <mat-datepicker #dp></mat-datepicker>
+                    <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                    <mat-datepicker #dp1></mat-datepicker>
                 </mat-form-field>
             </div>
         </div>
@@ -75,7 +108,7 @@
       
         
         <div class="flex">
-            <div>
+            <div class="ligne-verticale2">
                 <label class="block">Nombre d'heures pas semaine</label>
                     <mat-form-field appearance="fill" class="block">
                         <mat-label>Veuillez effectuer un choix</mat-label>
@@ -88,14 +121,14 @@
                     </mat-form-field>
             </div>
           
-            <div>               
+            <div class="ligne-verticale2">               
                 <label class="block">Date de fin</label>
                     <mat-form-field appearance="fill" class="block">
                         <mat-label>05/25/2022</mat-label>
-                        <input matInput [matDatepicker]="dp">
+                        <input matInput [matDatepicker]="dp2" required>
                         <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                        <mat-datepicker #dp></mat-datepicker>
+                        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                        <mat-datepicker #dp2></mat-datepicker>
                     </mat-form-field>
             </div>
         </div>
@@ -106,25 +139,33 @@
                     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
                     <mat-datepicker #dp></mat-datepicker>
                   </mat-form-field> -->
-
-            <label class="block">Rémunération</label>
-                <mat-checkbox class="example-margin">À discuter</mat-checkbox><br>
-                <mat-checkbox class="example-margin">Stage rémunéré</mat-checkbox><br>
-                <mat-checkbox class="example-margin">Stage non rémunéré</mat-checkbox>
-
+            <div class="ligne-verticale2">
+                <label class="block">Rémunération</label>
+                    <mat-checkbox class="example-margin">À discuter</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">Stage rémunéré</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">Stage non rémunéré</mat-checkbox>
+            </div>
         
         <h5>Informations suplémentaires</h5>
             <mat-form-field appearance="fill" class="textarea-size">
                 <mat-label></mat-label>
-                <textarea matInput type="text" required>
+                <textarea matInput type="text" id="additionalInfo" name="additionalInfo" maxlength="200" required
+                 [(ngModel)]="newStage.additionalInfo" #additionalInfo="ngModel">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
                     dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
                     nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
                     purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.
                 </textarea>
-            </mat-form-field>      
-             
+            </mat-form-field> 
+            <mat-error *ngIf="additionalInfo.invalid && (additionalInfo.dirty || additionalInfo.touched) && additionalInfo.hasError('required')">
+                Les informations suplémentaires sont obligatoires.
+            </mat-error>
+            <mat-error *ngIf="additionalInfo.invalid && (additionalInfo.dirty || additionalInfo.touched) && additionalInfo.hasError('maxlength')">
+                Les informations suplémentaires doivent contenir au maximum 200 caractères.
+            </mat-error>     
+
             <button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Mettre à jour</button><button mat-raised-button class="button1">Annuler</button><br>
-    </form>
-</div>
+    </div>
+</form>
+
 

@@ -12,4 +12,5 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'gestion-stages';
+
 }

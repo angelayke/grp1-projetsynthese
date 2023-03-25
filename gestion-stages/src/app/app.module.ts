@@ -21,12 +21,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
-
-import { MatCheckboxModule} from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
-
-
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -40,14 +37,16 @@ import { TableauAffichageDemandeStageComponent } from './tableau-affichage-deman
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
-import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
-import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
 import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
 
+
+//Demande de stage
+import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
+import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
 import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
@@ -61,6 +60,11 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
+import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
+import { CandidatService } from './candidat.service';
+
+
 
 
 @NgModule({
@@ -85,8 +89,10 @@ import {MatDividerModule} from '@angular/material/divider';
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
-    FicheOffreStageComponent,
     TableauAffichageOffreStage2Component,
+    CandidatDetailsComponent,
+    MajCandidatComponent,
+    FicheOffreStageComponent,
     DernieresDemandesStagesComponent,
     ModifierDemandeStageComponent,
     DialogModifierStageComponent,
@@ -116,11 +122,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCheckboxModule,
     LayoutModule,
     MatSortModule,
-    MatCheckboxModule,
     MatGridListModule,
-    MatListModule
-   ],
-  providers: [],
+    MatListModule,
+    HttpClientModule
+  ],
+  providers: [CandidatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
