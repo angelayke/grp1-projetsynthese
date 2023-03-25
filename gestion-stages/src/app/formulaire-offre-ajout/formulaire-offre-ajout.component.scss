@@ -8,12 +8,59 @@
 $color1: #bb2026;
 $color1hover: #821519;
 $color3: #707070;
+$color4: #242222;
 
 // :host {
 //     display: flex;
 //     flex-direction: row;
 //     align-items: flex-start;
 //   }
+
+
+.form-container {
+    margin: auto;
+    width: 75%;
+    margin-top: 64px;
+  
+    .form-fields-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-fields-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .fieldChamp {
+            width: 55%;
+        }
+}
+
+.exemple-margin {
+    margin: 0%;
+}
+
+// .ligne-verticale {
+//     border-left: 6px solid; 
+//     color: $color1;
+//     height: 800px;
+//     display: inline;
+// }
+
+.ligne-verticale {
+    border-left: 12px solid; 
+    color: $color1;
+    height: fit-content;
+}
+
+
+.ligne-verticale2 {
+    border-left: 7px solid; 
+    color: $color4;
+    height: fit-content;
+    // position:fixed;  
+}
 
 
 .flex-container {
@@ -26,6 +73,7 @@ $color3: #707070;
     height: 800px;
     display: inline;
 }
+
 
 .button1, .button2 {
     float: right;
@@ -62,8 +110,6 @@ div h3 {
 
 .font-size {
     font-size: 12px;
-
-
 }
 
 .form-margin {
@@ -71,7 +117,13 @@ div h3 {
 }
 
 div h5 {
+    color: $color1;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 12px;
+}
 
+div .textarea-size {
     color: $color1;
     font-size: 16px;
     font-weight: bolder;
@@ -95,6 +147,10 @@ div h5 {
 
 label {
     margin-right: 24px;
+    color: $color3;
+    font-family: Lato;
+    font-weight: bolder;
+    margin-bottom: 8px;
     margin-left: 16px;
 }
 
@@ -120,4 +176,11 @@ label {
     color: rgb(185, 182, 182);
 }
 
+
+h5 {
+     color: $color1;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 12px;
+}
 

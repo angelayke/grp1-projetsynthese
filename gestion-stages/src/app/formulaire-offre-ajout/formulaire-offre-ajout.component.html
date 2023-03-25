@@ -1,18 +1,30 @@
-***********************************************************************************************************************************************
+<!-- <form action="" class="form-container" #formulaireOffreAjout="ngForm"> 
+    
+    <div class="ligne-verticale">
+        <h1>Offre de stage</h1><br>
+    </div>
 
+    <button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Sauvegarder</button>  <button mat-raised-button class="button1">Annuler</button><br>
 
-<h1><span class="ligne-verticale">Offre de stage</span><h1><br>
-
-<form action="">    
-<button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Sauvegarder</button>  <button mat-raised-button class="button1">Annuler</button><br>
- 
+    <div class="form-fields-container">
         <div class="inline font-size">
             <label>Titre:</label> 
                 <mat-form-field appearance="fill" class="input-size">
                     <mat-label></mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" id="title" name="title" minlength="5" maxlength="50" required
+                     [(ngModel)]="newStage.title" #title="ngModel">
                 </mat-form-field>
-        </div><br>
+                <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('required')">
+                    Le titre est obligatoire.
+                </mat-error>
+                <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('minlength')">
+                    Le titre doit contenir au moins 5 caractères.
+                </mat-error>
+                <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('maxlength')">
+                    Le titre doit contenir au maximum 50 caractères.
+                </mat-error>
+           </div><br>
+            
         <div class="inline font-size">
             <label>Entreprise:</label>
                 <mat-form-field appearance="fill" class="input-size"> 
@@ -24,34 +36,60 @@
                     </mat-select>
                 </mat-form-field>
         </div>
-</form>
+    </div>
 
 <div class="font-size">
-    
-    <h3>Description de la tâche</h3>
+            <h3>Description de la tâche</h3>
+        <div class="form-fields-container">
+                <mat-form-field appearance="fill" class="textarea-size">
+                    <mat-label></mat-label>
+                    <textarea matInput type="text" maxlength="200" name="description" id="description" required  
+                     [(ngModel)]="newStage.description" #description="ngModel">
+                    </textarea>
+                </mat-form-field>
+                <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
+                    La description est obligatoire.
+                </mat-error>
+                <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('maxlength')">
+                    La description doit contenir au maximum 200 caractères.
+                </mat-error>
 
-        <form action="" class="form-margin">
-                <mat-form-field appearance="fill" class="textarea-size">
-                    <mat-label></mat-label>
-                    <textarea matInput type="text"  required></textarea>
-                </mat-form-field>
-            <p>Programme de Formation</p>
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                        <input matInput type="text" required>
-                </mat-form-field>
-            <p>Exigences</p>
-                <mat-form-field appearance="fill" class="textarea-size">
-                    <mat-label></mat-label>
-                    <textarea matInput type="text" required></textarea>
-                </mat-form-field>
+            <div class="ligne-verticale2">
+                <label>Programme de Formation</label>
+                    <mat-form-field appearance="fill">
+                        <mat-label></mat-label>
+                            <input matInput type="text" name="program" id="program" maxlength="50" required
+                            [(ngModel)]="newStage.program" #program="ngModel">
+                    </mat-form-field>
+                    <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('required')">
+                        Le nom du programme est obligatoire.
+                    </mat-error>
+                    <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('maxlength')">
+                        Le nom du programme doit contenir au maximum 50 caractères.
+                    </mat-error>
+            </div>
+
+            <div class="ligne-verticale2">
+                <label>Exigences</label>
+                    <mat-form-field appearance="fill" class="textarea-size">
+                        <mat-label></mat-label>
+                        <textarea matInput type="text"  name="requirements" id="requirements" maxlength="200" required 
+                        [(ngModel)]="newStage. requirements" #requirements="ngModel">
+                        </textarea>
+                    </mat-form-field>
+                    <mat-error *ngIf="requirements.invalid && (requirements.dirty || requirements.touched) && requirements.hasError('required')">
+                        Les exigences sont obligatoires.
+                    </mat-error>
+                    <mat-error *ngIf="requirements.invalid && (requirements.dirty || requirements.touched) && requirements.hasError('maxlength')">
+                        Le exigences doivent contenir au maximum 200 caractères.
+                    </mat-error>
+            </div>    
             
         <h5>Informations sur le stage recherché</h5>
-
-        <div class="flex" >
-            <div>
+        <div class="form-fields-row">
+            <div class="ligne-verticale2">
                 <label class="block">Type de stage</label>
-                    <mat-form-field appearance="fill" class="block">
+                    <mat-form-field appearance="fill"  class="fieldChamp">
                         <mat-label>Veuillez effectuer un choix</mat-label>
                             <mat-select>
                                 <mat-option>Option 1</mat-option>
@@ -60,24 +98,24 @@
                             </mat-select>
                     </mat-form-field>
             </div>
-            <div>
+
+            <div class="ligne-verticale2">
                 <label class="block">Date de début</label>
-                <mat-form-field appearance="fill" class="block">
+                <mat-form-field appearance="fill"  class="fieldChamp">
                     <mat-label>05/25/2022</mat-label>
-                    <input matInput [matDatepicker]="dp">
+                    <input matInput [matDatepicker]="dp1" required>
                     <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                    <mat-datepicker #dp></mat-datepicker>
+                    <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                    <mat-datepicker #dp1></mat-datepicker>
                 </mat-form-field>
             </div>
-        </div>
+    </div>
 
       
-        
-        <div class="flex">
-            <div>
-                <label class="block">Nombre d'heures pas semaine</label>
-                    <mat-form-field appearance="fill" class="block">
+        <div class="form-fields-row">
+            <div class="ligne-verticale2">
+                <label class="block">Nombre d'heures par semaine</label>
+                    <mat-form-field appearance="fill"  class="fieldChamp">
                         <mat-label>Veuillez effectuer un choix</mat-label>
                             <mat-select>
                                 <mat-option>8</mat-option>
@@ -88,38 +126,45 @@
                     </mat-form-field>
             </div>
           
-            <div>               
+
+            <div class="ligne-verticale2">               
                 <label class="block">Date de fin</label>
-                    <mat-form-field appearance="fill" class="block">
+                    <mat-form-field appearance="fill"  class="fieldChamp">
                         <mat-label>05/25/2022</mat-label>
-                        <input matInput [matDatepicker]="dp">
+                        <input matInput [matDatepicker]="dp2" required>
                         <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                        <mat-datepicker #dp></mat-datepicker>
+                        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                        <mat-datepicker #dp2></mat-datepicker>
                     </mat-form-field>
             </div>
-        </div>
-                <!-- <mat-form-field appearance="fill">
-                    <mat-label>Different locale</mat-label>
-                    <input matInput [matDatepicker]="dp">
-                    <mat-hint>YYYY/MM/DD</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                    <mat-datepicker #dp></mat-datepicker>
-                  </mat-form-field> -->
+    </div> -->
 
-            <label class="block">Rémunération</label>
-                <mat-checkbox class="example-margin">À discuter</mat-checkbox><br>
-                <mat-checkbox class="example-margin">Stage rémunéré</mat-checkbox><br>
-                <mat-checkbox class="example-margin">Stage non rémunéré</mat-checkbox>
+            <!-- <div class="ligne-verticale2">
+                <label class="block">Rémunération</label>
+                    <mat-checkbox>À discuter</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">Stage rémunéré</mat-checkbox><br>
+                    <mat-checkbox class="example-margin">Stage non rémunéré</mat-checkbox>
+            </div>
 
         
         <h5>Informations suplémentaires</h5>
-            <mat-form-field appearance="fill" class="textarea-size">
+            <mat-form-field appearance="fill" class="form-field">
                 <mat-label></mat-label>
-                <textarea matInput type="text" required></textarea>
-            </mat-form-field>      
+                <textarea matInput type="text" name="additionalInfo" id="additionalInfo" maxlength="200" required
+                 [(ngModel)]="newStage.additionalInfo" #additionalInfo="ngModel">
+                </textarea>
+                <mat-error *ngIf="additionalInfo.invalid && (additionalInfo.dirty || additionalInfo.touched) && additionalInfo.hasError('required')">
+                    Les informations suplémentaires sont obligatoires.
+                </mat-error>
+                <mat-error *ngIf="additionalInfo.invalid && (additionalInfo.dirty || additionalInfo.touched) && requirements.hasError('maxlength')">
+                    Le information suplémentairesdoivent contenir au maximum 200 caractères.
+                </mat-error>
+            </mat-form-field> 
+        </div>     
              
             <button mat-raised-button color="" class="button2"><mat-icon>save</mat-icon>Sauvegarder</button>  <button mat-raised-button class="button1">Annuler</button><br>
-    </form>
-</div>
+    
+    </div>
+</form> -->
+
 
