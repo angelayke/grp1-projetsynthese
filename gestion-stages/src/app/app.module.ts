@@ -41,6 +41,8 @@ import { TableaudebordComponent } from './tableaudebord/tableaudebord.component'
 import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
+import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
+
 
 //Demande de stage
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
@@ -61,6 +63,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
 import { CandidatService } from './candidat.service';
+
 
 
 
@@ -86,6 +89,7 @@ import { CandidatService } from './candidat.service';
     FormulaireStageComponent,
     TableauGestionDemandeStageComponent,
     TableaudebordComponent,
+    TableauAffichageOffreStage2Component,
     CandidatDetailsComponent,
     MajCandidatComponent,
     FicheOffreStageComponent,
