@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entreprise } from '../entreprises';
+import { ApiResponse, Entreprise } from '../entreprises';
 import { ENTREPRISES } from '../mock-entreprises';
+import { EnterpriseService } from '../enterprise.service';
+
 
 @Component({
   selector: 'app-entreprises',
@@ -8,11 +10,25 @@ import { ENTREPRISES } from '../mock-entreprises';
   styleUrls: ['./entreprises.component.scss']
 })
 export class EntreprisesComponent implements OnInit {
- entreprises=ENTREPRISES;
+entreprises=ENTREPRISES;
 
-  constructor() { }
+ //entreprises : Entreprise[]=[];
+
+  constructor(private entrepriseService : EnterpriseService) { }
 
   ngOnInit(): void {
+   // this.getEntreprise();
   }
+
+  //// l'api enterprise ne fonctionne pas ////
+  // getEntreprise() {
+  //   this.entrepriseService.getEntreprises().subscribe((data: ApiResponse<Entreprise[]>) => {
+  //     this.entreprises = data.data;
+  //     console.log("Données récupérées depuis l'API:", this.entreprises);
+  //   }, (err) => {
+  //     console.log("Impossible d'obtenir les données de l'url" + err);
+  //   });
+  // }
+
 
 }
