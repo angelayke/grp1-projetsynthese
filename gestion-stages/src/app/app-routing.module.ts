@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,11 @@ const routes: Routes = [
         path: 'ajout-candidat',
         component: CandidatsComponent
       },
+      {
+        path: 'ajout-entreprise',
+        component: FormulaireAjoutEntrepriseComponent
+      },
+      
     ]
   },
   {
