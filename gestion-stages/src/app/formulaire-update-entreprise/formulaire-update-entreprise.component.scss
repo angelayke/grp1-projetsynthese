@@ -35,7 +35,7 @@ img{
     font-weight: bold;
 }
 
-.titre-entreprise{
+.titre-entreprise {
     margin-top: 2px;
     margin-left: 5px;
     color: #707070;
@@ -47,7 +47,7 @@ img{
 }
 
 .form-header{
-    margin-bottom: 10em;
+    margin-bottom: 7em;
 }
 
 .fiche{
@@ -60,7 +60,11 @@ img{
 }
 
 .td-fiche-entreprise{
+    display: flex;
     border-left: 7px solid #86a9e6;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
 }
 
 .subtitle-fiche{
@@ -75,6 +79,9 @@ img{
 }
 
 .tr-fiche{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
