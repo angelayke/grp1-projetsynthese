@@ -83,27 +83,6 @@ nav ul {
 nav ul li {
   width: 100%;
   display: block;
-
-  &.active-1 {
-    border-right: #089da4 solid 5px;
-    font-weight: bold;
-  }
-  &.active-2 {
-    border-right: #cb912b solid 5px;
-    font-weight: bold;
-  }
-  &.active-3 {
-    border-right: #bb2026 solid 5px;
-    font-weight: bold;
-  }
-  &.active-4 {
-    border-right: #7f2987 solid 5px;
-    font-weight: bold;
-  }
-  &.active-5 {
-    border-right: #86a9e6 solid 5px;
-    font-weight: bold;
-  }
 }
 
 nav ul li a {
@@ -114,41 +93,51 @@ nav ul li a {
   padding-left: 20px;
 }
 
-// .active{
-//   background-color: #F6F6F6;
-// }
+.active {
+  background-color: #F6F6F6;
+}
 
 /*couleur bordure lien menu en hover et active*/
 nav ul li:nth-child(1) a {
-  &:hover {
+
+  &:hover,
+  &:active {
     border-right: #089da4 solid 5px;
     font-weight: bold;
   }
 }
 
 nav ul li:nth-child(2) a {
-  &:hover {
+
+  &:hover,
+  &:active {
     border-right: #cb912b solid 5px;
     font-weight: bold;
   }
 }
 
 nav ul li:nth-child(3) a {
-  &:hover {
+
+  &:hover,
+  &:active {
     border-right: #bb2026 solid 5px;
     font-weight: bold;
   }
 }
 
 nav ul li:nth-child(4) a {
-  &:hover {
+
+  &:hover,
+  &:active {
     border-right: #7f2987 solid 5px;
     font-weight: bold;
   }
 }
 
 nav ul li:nth-child(5) a {
-  &:hover {
+
+  &:hover,
+  &:active {
     border-right: #86a9e6 solid 5px;
     font-weight: bold;
   }
