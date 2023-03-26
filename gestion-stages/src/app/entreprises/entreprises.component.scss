@@ -21,26 +21,23 @@ img{
   color: #2b497c;
 }
 
-/*
-.flex-card{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px 5px;
-  width: 100%;
-}*/
-
-.mat-card{
-  display: inline-flex;
-  align-items: center;
-
+.row{
+  justify-content: space-between;
 }
 
-.mat-card-title-group{
-  display: flex;
-  flex-wrap: wrap;
+.card {
+  margin-bottom: 2em;
+  height: auto;
 }
 
-.mat-card-md-image {
-  width: 50%; 
+
+.list-group{
+  --bs-list-group-border-color: rgba(0, 0, 0, 0);
+  --bs-list-group-color: #707070;
+} 
+
+.fw-bold{
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
 }
