@@ -5,29 +5,29 @@
     <div class="container-nav">
       <nav>
         <ul>
-          <li><a  class="color-tableaubord" routerLink="/sidenav/tableaudebord" (click)="toggleSideMenu('section-1')" >
+          <li [routerLinkActive]="'active-1'" [routerLinkActiveOptions]="{exact: true}"><a  class="color-tableaubord" routerLink="/sidenav/tableaudebord"  >
               <mat-icon>home</mat-icon>
               <span> Tableau de bord</span>
             </a></li>
-          <li><a class="color-demandestage" routerLink="demandesdestage" (click)="toggleSideMenu('section-2')">
+          <li [routerLinkActive]="'active-2'"><a class="color-demandestage" routerLink="demandesdestage" >
               <mat-icon>event_note</mat-icon>
               <span> Demandes de stages</span>
             </a>
           </li>
-          <li>
-            <a class="color-offrestage" routerLink="offredestage" (click)="toggleSideMenu('section-3')">
+          <li [routerLinkActive]="'active-3'">
+            <a class="color-offrestage" routerLink="offredestage" >
               <mat-icon>near_me</mat-icon>
               <span>Offres de stage</span>
             </a>
           </li>
-          <li>
-            <a class="color-candidat" routerLink="candidats" (click)="toggleSideMenu('section-4')">
+          <li [routerLinkActive]="'active-4'">
+            <a class="color-candidat" routerLink="candidats" >
               <mat-icon>person</mat-icon>
               <span> Candidats</span>
             </a>
           </li>
-          <li>
-            <a class="color-entreprise" routerLink="entreprises" (click)="toggleSideMenu('section-5')">
+          <li [routerLinkActive]="'active-5'">
+            <a class="color-entreprise" routerLink="entreprises" >
               <mat-icon>business_center</mat-icon>
               <span> Entreprises</span>
             </a>
@@ -71,8 +71,8 @@
 
          <!-- Test  Jean-->
         <!--Tableau de gestion de demandes de stage-->
-        <section *ngIf="sideMenuContext === 'section-2'">
-          <app-tableau-gestion-demande-stage></app-tableau-gestion-demande-stage>
+        <section>
+          <!-- <app-tableau-gestion-demande-stage></app-tableau-gestion-demande-stage> -->
         </section>
 
         <!--Tableau de gestion d'offres de stage à ajouter n'existe pas encore-->
