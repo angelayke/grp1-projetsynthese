@@ -1,1 +1,127 @@
-<p>formulaire-ajout-entreprise works!</p>
+<section id="formulaire-update-entreprise">
+    <ng-container>
+      <table>
+        <tr>
+          <td class="td-fiche-entreprise">
+            <h1 class="titre-entreprise">Ajouter entreprise</h1>
+          </td>
+        </tr>
+      </table>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-stroked-button color="secondary" class="btn-annuler">
+              <mat-icon>cancel</mat-icon> Annuler
+            </button>
+  
+            <button mat-flat-button>
+              <mat-icon>save</mat-icon> Sauvegarder
+            </button>
+          </div>
+        </ng-container>
+      </div>
+  
+      <form class="form-header">
+        <div class="example-full-width flex-entete">
+          <p class="soustitre-entreprise">Entreprise</p>
+          <input matInput value="" class="form-detail-entreprise">  
+        </div>
+        <mat-form-field class="example-full-width" id="formfieldupload">
+          <!-- tuto https://www.positronx.io/angular-material-file-browse-upload-ui-with-material-components/ -->
+          <div>
+            <mat-toolbar>
+              <!-- Display files names -->
+              <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+              <!-- Browse Button -->
+              <button mat-flat-button id="btn-parcourir">Parcourir</button>
+            </mat-toolbar>
+            <!-- Fetch selected filed on change -->
+            <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+              multiple="multiple" accept="image/*" />
+          </div>
+        </mat-form-field>
+      </form>
+  
+      <div class="container fiche">
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <h1>Courte présentation</h1>
+                  <input class="form-detail" matInput name="description" placeholder="" required>
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Personne contact</mat-label> <br>
+                <input class="form-detail" matInput name="contact" placeholder="" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.adresse"-->
+              </td>
+            </tr>
+            <br>
+            <h3>Information de contact</h3>
+            <!--Test input form angular-->
+  
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
+                <input class="form-detail" matInput name="adresse" placeholder="Adresse" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.adresse"-->
+              </td>
+  
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
+                <input class="form-detail" matInput name="telephone" placeholder="000 000-0000" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.phone"-->
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Ville</mat-label> <br>
+                <input class="form-detail" matInput name="ville" placeholder="Ville" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.ville"-->
+              </td>
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Courriel</mat-label> <br>
+                <input class="form-detail" matInput name="email" placeholder="Courriel" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.email"-->
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Province</mat-label> <br>
+                <input class="form-detail" matInput name="province" placeholder="Province" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.province"-->
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Code Postal</mat-label> <br>
+                <input class="form-detail" matInput name="codepostal" placeholder="H1H 1H1" required>
+                <!-- #nom="ngModel" [(ngModel)]="enterprise.codePostal"-->
+              </td>
+            </tr>
+          </table>
+  
+        </form>
+      </div>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-stroked-button color="secondary" class="btn-annuler">
+              <mat-icon>cancel</mat-icon> Annuler
+            </button>
+  
+            <button mat-flat-button>
+              <mat-icon>save</mat-icon> Sauvegarder
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </section>
+  
