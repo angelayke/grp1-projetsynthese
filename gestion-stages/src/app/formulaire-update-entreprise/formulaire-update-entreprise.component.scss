@@ -30,16 +30,38 @@ img{
     width:"150px";
 }
 
-.soustitre-fiche{
-    margin-left: 5px;
-    font-weight: bold;
+button:hover{
+    background-color: #2b497c;
 }
 
-.titre-entreprise{
+.flex-entete{
+    display: flex;
+    align-items: center;
+ }
+
+.subtitle-fiche{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.soustitre-entreprise{
+    @extend .subtitle-fiche;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.soustitre-fiche{
+     margin-left: 5px;
+     font-weight: bold;
+}
+
+.titre-entreprise {
     margin-top: 2px;
     margin-left: 5px;
     color: #707070;
-    font-size: 4em;
+    font-size: 2.5em;
 }
 
 .table-titre{
@@ -47,7 +69,7 @@ img{
 }
 
 .form-header{
-    margin-bottom: 10em;
+    margin-bottom: 7em;
 }
 
 .fiche{
@@ -60,14 +82,13 @@ img{
 }
 
 .td-fiche-entreprise{
+    display: flex;
     border-left: 7px solid #86a9e6;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
 }
 
-.subtitle-fiche{
-    font-size: large;
-    font-weight: bold;
-    margin-left: 5px;
-}
 
 .txt-fiche{
     margin-left: 5px;
@@ -75,6 +96,9 @@ img{
 }
 
 .tr-fiche{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -111,8 +135,13 @@ img{
 
     &#btn-parcourir{
         margin-left: 20px;
+        
+        &:hover {
+        background-color: #2b497c;            
+        }
     }
 }
+
 
 .btn-control{
     display: flex;
@@ -122,6 +151,9 @@ img{
 
 .btn-annuler{
     margin-right: 10px;
+    &:hover{
+        color: #fff;
+    }
 }
 
 /* tuto upload file*/
@@ -134,7 +166,7 @@ img{
     height: auto !important;
     background: transparent;
     padding: 0;
-    width: 200px;
+    width: 500px;
 }
 
 .mat-toolbar {

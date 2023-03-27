@@ -33,7 +33,7 @@ img{
     margin-top: 2px;
     margin-left: 5px;
     color: #707070;
-    font-size: 4em;
+    font-size: 2.5em;
 }
 
 .table-titre{
@@ -50,7 +50,10 @@ img{
 }
 
 .td-fiche-entreprise{
-    border-left: 7px solid #86a9e6;
+  display: flex;
+  border-left: 7px solid #86a9e6;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .subtitle-fiche{

@@ -10,6 +10,7 @@ import { ENTREPRISES } from '../mock-entreprises';
 })
 
 export class FicheEntrepriseComponent implements OnInit {
+  @Input() entreprise?: Entreprise;
   entreprises=ENTREPRISES;
 
   constructor() { }
