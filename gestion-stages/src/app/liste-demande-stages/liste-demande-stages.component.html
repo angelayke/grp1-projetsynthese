@@ -1,0 +1,47 @@
+<!-- <pre>{{  demandesStages | json}}</pre> -->
+
+<div class="stage-list">
+  <h2>Kevin Labonté</h2>
+  <div class="stage-item" *ngFor="let stage of demandesStages" (click)="afficherDetails(stage)">
+       <h2>Information sur le stage recherché</h2>
+
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Programme de formation </div>
+        <div class="stage-item-value">{{ stage.program }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Secteur d'activité </div>
+        <div class="stage-item-value">{{ stage.activitySector }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Compétences </div>
+        <div class="stage-item-value">{{ stage.description }}</div>
+      </div>
+    </div>
+
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Établissement d'enseignement</div>
+        <div class="stage-item-value">{{ stage.activitySector }}</div>
+
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Ville</div>
+        <div class="stage-item-value">{{ stage.additionalInfo }}</div>
+
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Région</div>
+        <div class="stage-item-value">{{ stage.region }}</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+

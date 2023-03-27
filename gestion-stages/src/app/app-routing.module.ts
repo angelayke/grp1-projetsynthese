@@ -1,3 +1,6 @@
+import { ListeDemandeStagesComponent } from './liste-demande-stages/liste-demande-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { OffreStage, TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -59,7 +62,14 @@ const routes: Routes = [
         path: 'ajout-entreprise',
         component: FormulaireAjoutEntrepriseComponent
       },
-      
+      {
+        path: 'modifier-demandestage',
+        component: ModifierDemandeStageComponent
+      },
+      {
+        path: 'fiche-demandestage/:_id',
+        component: FicheDemandeStageComponent
+      }
     ]
   },
   {
