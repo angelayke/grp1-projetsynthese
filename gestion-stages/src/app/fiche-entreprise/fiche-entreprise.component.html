@@ -5,7 +5,7 @@
         <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo"></td>
         <td class="td-fiche-entreprise">
           <p class="soustitre-fiche">Entreprise</p>
-          <h1 class="titre-entreprise">Titre</h1>
+          <h1 class="titre-entreprise">Titre -{{entreprise?.name}}-</h1>
         </td>
       </tr>
     </table>
@@ -54,7 +54,7 @@
         repellendus.</p>
       <br>
       <h3>Personne contact</h3>
-      <p class="person-contact-fiche">Louise St-Cyr</p>
+      <p class="person-contact-fiche">Louise St-Cyr {{entreprise?.contactName}}</p>
       <br>
       <h3>Information de contact</h3>
       <!--Test input form angular-->

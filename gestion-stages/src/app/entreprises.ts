@@ -9,7 +9,7 @@ export interface Entreprise {
     _id?: number;
     createdAt: string;
     updatedAt: string;
-    name: string;
+    name?: string;
     description: string;
     imageUrl: string;
     contactName: string;

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ApiResponse, Entreprise } from '../entreprises';
 import { ENTREPRISES } from '../mock-entreprises';
 import { EnterpriseService } from '../enterprise.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ entreprises=ENTREPRISES;
 
  //entreprises : Entreprise[]=[];
 
-  constructor(private entrepriseService : EnterpriseService) { }
+  constructor(private entrepriseService : EnterpriseService, private router : Router) { }
 
   ngOnInit(): void {
    // this.getEntreprise();
@@ -30,5 +31,8 @@ entreprises=ENTREPRISES;
   //   });
   // }
 
-
+  //aide de pour faire en sorte que les card soient cliquable pour afficher la fiche correspondante + private router etc
+onCardClick() {
+  this.router.navigate(['/sidenav/fiche-entreprise'])
+}
 }

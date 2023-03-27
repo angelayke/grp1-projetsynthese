@@ -9,6 +9,7 @@ import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.co
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 
 
 const routes: Routes = [
@@ -58,7 +59,10 @@ const routes: Routes = [
         path: 'ajout-entreprise',
         component: FormulaireAjoutEntrepriseComponent
       },
-      
+      {
+        path: 'fiche-entreprise',
+        component: FicheEntrepriseComponent
+      },
     ]
   },
   {
