@@ -1,0 +1,102 @@
+// @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {  
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    }
+
+$color1: #bb2026;
+$color1hover: #821519;
+$color3: #707070;
+$color4: #242222;
+
+.card-container {
+    margin: auto;
+    width: 75%;
+    margin-top: 36px;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: bolder;
+    color: $color3;
+    font-family: Lato;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: bolder;
+    color: $color1;
+    font-family: Lato;
+    margin-top: 48px;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: bolder;
+    color: $color3;
+    font-family: Lato;
+}
+
+div .heading {
+    color: $color3;
+}
+
+.line-height {
+    line-height: 1px;
+    color: $color3;
+    // margin: 5px;
+}
+
+.ligne-verticale {
+    border-left: 12px solid; 
+    color: $color1;
+    height: fit-content;
+    display: flexbox;
+}
+
+.ligne-verticale2 {
+    border-left: 7px solid; 
+    color: $color4;
+    height: fit-content;
+    // position:fixed;
+  
+}
+
+.flex {
+    display: flex;
+    width: fit-content;
+}
+
+
+.block {
+    display: block;
+    text-align: start;
+    margin-left: 12;
+}
+
+div h5 {
+    margin-top: 24px;
+    color: $color1;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+h6 {
+    margin-right: 24px;
+    color: $color3;
+    font-family: Lato;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.margin {
+    margin-top: 24px;
+}
+
+
+// .margin-title {
+//     padding-top: 24px;
+// }

@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
+import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
 
 
 const routes: Routes = [
@@ -54,7 +56,11 @@ const routes: Routes = [
       },
       {
         path: 'ajout-candidat',
-        component: CandidatsComponent
+        component: AjoutCandidatComponent
+      },
+      {
+        path: 'ajout-entreprise',
+        component: FormulaireAjoutEntrepriseComponent
       },
       {
         path: 'modifier-demandestage',
@@ -63,7 +69,7 @@ const routes: Routes = [
       {
         path: 'fiche-demandestage/:_id',
         component: FicheDemandeStageComponent
-      },
+      }
     ]
   },
   {
