@@ -3,15 +3,15 @@
    /* min-width: 150px;
     max-width: 500px;*/
     width: 100%;
-  }
+}
   
-  .example-full-width {
+.example-full-width {
     width: 100%;
-  }
+}
   
 td {
     padding-right: 8px;
-  }
+}
 
 .example-button-row {
     display: table-cell;
@@ -44,6 +44,10 @@ img{
 
 .table-titre{
     width: 300px;
+}
+
+.form-header{
+    margin-bottom: 10em;
 }
 
 .fiche{
@@ -87,9 +91,70 @@ img{
   'opsz' 48
 }
 
-input{
+.form-detail{
     margin-top: 5px;
     margin-left: 5px;
     padding: 7px;
     border: 1px #70707031 solid;
 }
+
+.form-detail-entreprise{
+    @extend .form-detail;
+    margin-left: 0;
+    background-color: #fff;
+}
+
+.mat-flat-button{
+    background-color: #86a9e6;
+    color: #fff;
+    min-width: 100px;
+
+    &#btn-parcourir{
+        margin-left: 20px;
+    }
+}
+
+.btn-control{
+    display: flex;
+    justify-content: right;
+    margin: 10px 0;
+}
+
+.btn-annuler{
+    margin-right: 10px;
+}
+
+/* tuto upload file*/
+/*pour faire disparaitre la ligne en dessous du mat-form-field*/
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+    width: 200px;
+}
+
+.mat-toolbar {
+    background: none;
+    color: #707070;
+    font-size: medium;
+}
+
+#uploadFile {
+    top: 0px;
+    left: 0px;
+    width: 100%;    
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#formfieldupload{
+    width: 500px !important;
+}
+/* fin tuto upolaod file */
