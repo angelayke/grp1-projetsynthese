@@ -16,9 +16,9 @@ export class SidenavComponent implements OnInit {
   sideMenuOpen = false;
   sideMenuContext = '';
 
-  toggleSideMenu(context: string) {
-    this.sideMenuOpen = !this.sideMenuOpen;
-    this.sideMenuContext = context;
-  }
+  // toggleSideMenu(context: string) {
+  //   this.sideMenuOpen = !this.sideMenuOpen;
+  //   this.sideMenuContext = context;
+  // }
 
 }

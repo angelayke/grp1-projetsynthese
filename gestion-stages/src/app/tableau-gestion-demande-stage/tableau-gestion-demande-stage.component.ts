@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from '../details-stages-request/details-stages-request.component';
 import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-modifier-stage.component';
@@ -50,6 +51,7 @@ export class TableauGestionDemandeStageComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeStage!: MatTable<Stage>;
+  selectedStage!: Stage;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -57,7 +59,7 @@ export class TableauGestionDemandeStageComponent implements OnInit {
 
   }
 
-  constructor(public dialog: MatDialog, private demandeStageService: DemandesStagesService) {
+  constructor(public dialog: MatDialog, private demandeStageService: DemandesStagesService, private router: Router) {
     this.demandesStages = [];
    }
 
@@ -142,6 +144,15 @@ export class TableauGestionDemandeStageComponent implements OnInit {
       }
     });
   }
+
+
+  afficherDetails(stage: Stage){
+    this.newStage = stage;
+    this.router.navigate(['/sidenav/fiche-demande-stage', stage._id]);
+
+  }
+
+
 
 
 }

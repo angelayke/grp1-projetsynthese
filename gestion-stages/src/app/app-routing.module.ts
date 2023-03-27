@@ -1,3 +1,6 @@
+import { ListeDemandeStagesComponent } from './liste-demande-stages/liste-demande-stages.component';
+import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
+import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { OffreStage, TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
@@ -10,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
 
 
 const routes: Routes = [
@@ -53,7 +57,7 @@ const routes: Routes = [
       },
       {
         path: 'ajout-candidat',
-        component: CandidatsComponent
+        component: AjoutCandidatComponent
       },
       {
         path: 'ajout-entreprise',
@@ -63,6 +67,14 @@ const routes: Routes = [
         path: 'fiche-entreprise',
         component: FicheEntrepriseComponent
       },
+
+        path: 'modifier-demandestage',
+        component: ModifierDemandeStageComponent
+      },
+      {
+        path: 'fiche-demandestage/:_id',
+        component: FicheDemandeStageComponent
+      }
     ]
   },
   {
