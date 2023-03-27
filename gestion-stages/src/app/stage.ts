@@ -1,5 +1,13 @@
+
+// export interface ApiResponse<T> {
+//   success: boolean;
+//   data: T;
+//   error?: string;
+// }
+
+
 export interface Stage {
-  _id?: string;
+   _id?: string;
   description: string;
   createdAt?: string;
   updatedAt?: string;

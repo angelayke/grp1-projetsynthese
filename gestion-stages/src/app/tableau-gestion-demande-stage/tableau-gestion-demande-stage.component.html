@@ -38,11 +38,15 @@
         <ng-container matColumnDef="actions" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let stage" class="btn-td">
+            <a mat-button aria-label="Visualiser" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">Visualiser une demande de stage</a>
+            <!-- (click)="afficherDetails(stage)" -->
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
               <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
             </button>
+            <button mat-button aria-label="Modifier" routerLink="/sidenav/modifier-demandestage">Modifier une demande de stage</button>
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
               <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
+
             </button>
             <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
               <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>
