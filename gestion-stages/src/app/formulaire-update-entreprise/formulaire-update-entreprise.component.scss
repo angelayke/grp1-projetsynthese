@@ -30,9 +30,31 @@ img{
     width:"150px";
 }
 
-.soustitre-fiche{
-    margin-left: 5px;
+button:hover{
+    background-color: #2b497c;
+}
+
+.flex-entete{
+    display: flex;
+    align-items: center;
+ }
+
+.subtitle-fiche{
+    font-size: large;
     font-weight: bold;
+    margin-left: 5px;
+}
+
+.soustitre-entreprise{
+    @extend .subtitle-fiche;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.soustitre-fiche{
+     margin-left: 5px;
+     font-weight: bold;
 }
 
 .titre-entreprise {
@@ -67,11 +89,6 @@ img{
     
 }
 
-.subtitle-fiche{
-    font-size: large;
-    font-weight: bold;
-    margin-left: 5px;
-}
 
 .txt-fiche{
     margin-left: 5px;
@@ -118,8 +135,13 @@ img{
 
     &#btn-parcourir{
         margin-left: 20px;
+        
+        &:hover {
+        background-color: #2b497c;            
+        }
     }
 }
+
 
 .btn-control{
     display: flex;
@@ -129,6 +151,9 @@ img{
 
 .btn-annuler{
     margin-right: 10px;
+    &:hover{
+        color: #fff;
+    }
 }
 
 /* tuto upload file*/
@@ -141,7 +166,7 @@ img{
     height: auto !important;
     background: transparent;
     padding: 0;
-    width: 200px;
+    width: 500px;
 }
 
 .mat-toolbar {
