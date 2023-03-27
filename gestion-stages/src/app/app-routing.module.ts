@@ -67,14 +67,14 @@ const routes: Routes = [
         path: 'fiche-entreprise',
         component: FicheEntrepriseComponent
       },
-
+      {
         path: 'modifier-demandestage',
         component: ModifierDemandeStageComponent
       },
       {
         path: 'fiche-demandestage/:_id',
         component: FicheDemandeStageComponent
-      }
+      },
     ]
   },
   {
