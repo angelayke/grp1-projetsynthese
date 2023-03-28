@@ -140,7 +140,7 @@
           <mat-option value="hoursPerWeek">Valeur 2</mat-option>
         </mat-select>
         <mat-error
-          *ngIf="formStage.get('activity')?.invalid && (formStage.get('activity')?.dirty || formStage.get('activity')?.touched) && formStage.get('activity')?.errors">
+          *ngIf="formStage.get('activity')?.invalid && (formStage.get('hoursPerWeek')?.dirty || formStage.get('hoursPerWeek')?.touched) && formStage.get('hoursPerWeek')?.errors">
           Ce champ est obligatoire</mat-error>
       </mat-form-field>
 
