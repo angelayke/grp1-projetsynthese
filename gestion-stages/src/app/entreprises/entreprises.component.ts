@@ -11,25 +11,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./entreprises.component.scss']
 })
 export class EntreprisesComponent implements OnInit {
-entreprises=ENTREPRISES;
+//entreprises=ENTREPRISES;
 
- //entreprises : Entreprise[]=[];
+entreprises : Entreprise[]=[];
 
   constructor(private entrepriseService : EnterpriseService, private router : Router) { }
 
   ngOnInit(): void {
-   // this.getEntreprise();
+   this.getEntreprise();
   }
 
   //// l'api enterprise ne fonctionne pas ////
-  // getEntreprise() {
-  //   this.entrepriseService.getEntreprises().subscribe((data: ApiResponse<Entreprise[]>) => {
-  //     this.entreprises = data.data;
-  //     console.log("Données récupérées depuis l'API:", this.entreprises);
-  //   }, (err) => {
-  //     console.log("Impossible d'obtenir les données de l'url" + err);
-  //   });
-  // }
+   getEntreprise() {
+     this.entrepriseService.getEntreprises().subscribe((data: ApiResponse<Entreprise[]>) => {
+       this.entreprises = data.data;
+       console.log("Données récupérées depuis l'API:", this.entreprises);
+     }, (err) => {
+      console.log("Impossible d'obtenir les données de l'url" + err);
+    });
+   }
 
   //aide de pour faire en sorte que les card soient cliquable pour afficher la fiche correspondante + private router etc
 onCardClick() {
