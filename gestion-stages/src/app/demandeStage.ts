@@ -7,25 +7,57 @@
 
 
 
-
 export interface DemandeStage {
    _id: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
+   createdAt: string;
+   updatedAt: string;
+   description: string;
   titre: string;
   startDate: string;
+  enterprise:{
+    _id: string;
+    postalCode: string;
+    createdAt: string;
+    updatedAt: string;
+    name: string;
+    description: string;
+    imageUrl: string;
+    contactName: string;
+    contactEmail: string;
+    contactPhone: string;
+    address: string;
+    city: string;
+    province: string;
+    published: true;
+  },
   endDate:string;
   program: string;
   requirements: string;
+  stageType: {
+
+    __typename: string;
+      label: string;
+      value: string;
+
+  },
   hoursPerWeek: number;
-  region: string;
   additionalInfo: string;
   paid: boolean;
   published: boolean;
+  skills: {
+    __typename: string;
+    label: string;
+    value: string;
+  },
   active: boolean;
-  activitySector: string;
-  stageType: string;
+  region: {
+    __typename: string;
+    label: string;
+    value: string;
 
+  },
+    activitySector: string;
+    city: string;
+    resume: string;
 
 }
