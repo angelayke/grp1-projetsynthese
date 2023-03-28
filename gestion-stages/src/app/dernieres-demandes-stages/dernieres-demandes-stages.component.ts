@@ -6,8 +6,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
-import { STAGES } from '../mock-stages';
-import { Stage } from '../stage';
+import { DEMANDESTAGES } from '../mock-demandeStages';
+import { DemandeStage } from '../demandeStage';
 import { DetailsStagesRequestComponent } from '../details-stages-request/details-stages-request.component';
 import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-modifier-stage.component';
 
@@ -18,19 +18,19 @@ import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-mo
   styleUrls: ['./dernieres-demandes-stages.component.scss']
 })
 export class DernieresDemandesStagesComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'activitySector','startDate', 'actions'];
+  displayedColumns: string[] = ['titre', 'activitySector','startDate', 'actions'];
 
-  dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource(STAGES);
+  dataSource:  MatTableDataSource<DemandeStage> = new  MatTableDataSource(DEMANDESTAGES);
   // dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource();
 
-  demandesStages: Stage[]=[];
+  demandesStages: DemandeStage[]=[];
 
-  newStage: Stage = {
+  newStage: DemandeStage = {
     _id: "",
     description: "",
     createdAt: "",
     updatedAt: "",
-    title: "",
+    titre: "",
     startDate: "",
     endDate: "",
     program: "",
@@ -43,12 +43,12 @@ export class DernieresDemandesStagesComponent implements OnInit {
     published: false,
     active: true,
     activitySector: "",
-    enterprise: ''
+    // enterprise: ''
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) tableDemandeStage!: MatTable<Stage>;
+  @ViewChild(MatTable) tableDemandeStage!: MatTable<DemandeStage>;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -104,7 +104,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
     }
 
 
-    onDeleteClick(stage: Stage): void {
+    onDeleteClick(stage: DemandeStage): void {
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
         width: '400px',
         data: { itemId: stage._id},
@@ -132,7 +132,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
       this.tableDemandeStage.renderRows();
     }
 
-    openDetailsDialog(stage: Stage) {
+    openDetailsDialog(stage: DemandeStage) {
       const dialogRef = this.dialog.open(DetailsStagesRequestComponent, {
         width: '600px',
         data: { stage },
@@ -143,9 +143,9 @@ export class DernieresDemandesStagesComponent implements OnInit {
 
 
 
-    stages = STAGES; // Utiliser les données du tableau
+    stages = DEMANDESTAGES; // Utiliser les données du tableau
 
-    openDialog(stage: Stage): void {
+    openDialog(stage: DemandeStage): void {
       const dialogRef = this.dialog.open(DialogModifierStageComponent, {
         width: '500px',
         data: {...stage} // Passer les données du stage à modifier

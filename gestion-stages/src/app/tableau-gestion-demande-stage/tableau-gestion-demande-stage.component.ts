@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { DetailsStagesRequestComponent } from '../details-stages-request/details-stages-request.component';
 import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-modifier-stage.component';
-import { STAGES } from '../mock-stages';
+import { DEMANDESTAGES } from '../mock-demandeStages';
 import { DemandesStagesService } from '../services/demandes-stages.service';
-import { Stage } from '../stage';
+import { DemandeStage } from '../demandeStage';
 
 
 @Component({
@@ -21,16 +21,16 @@ export class TableauGestionDemandeStageComponent implements OnInit {
   displayedColumns: string[] = ['title', 'activitySector', 'region','startDate', 'actions'];
 
   // stages=STAGES;
-  dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource(STAGES);
+  dataSource:  MatTableDataSource<DemandeStage> = new  MatTableDataSource(DEMANDESTAGES);
 
-  demandesStages: Stage[]=[];
+  demandesStages: DemandeStage[]=[];
 
-  newStage: Stage = {
+  newStage: DemandeStage = {
     _id: "",
     description: "",
     createdAt: "",
     updatedAt: "",
-    title: "",
+    titre: "",
     startDate: "",
     endDate: "",
     program: "",
@@ -50,8 +50,8 @@ export class TableauGestionDemandeStageComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) tableDemandeStage!: MatTable<Stage>;
-  selectedStage!: Stage;
+  @ViewChild(MatTable) tableDemandeStage!: MatTable<DemandeStage>;
+  selectedStage!: DemandeStage;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -89,7 +89,7 @@ export class TableauGestionDemandeStageComponent implements OnInit {
 
 
 
-  onDeleteClick(stage: Stage): void {
+  onDeleteClick(stage: DemandeStage): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
       data: { itemId: stage._id},
@@ -117,7 +117,7 @@ export class TableauGestionDemandeStageComponent implements OnInit {
     this.tableDemandeStage.renderRows();
   }
 
-  openDetailsDialog(stage: Stage) {
+  openDetailsDialog(stage: DemandeStage) {
     const dialogRef = this.dialog.open(DetailsStagesRequestComponent, {
       width: '600px',
       data: { stage },
@@ -128,9 +128,9 @@ export class TableauGestionDemandeStageComponent implements OnInit {
 
 
 
-  stages = STAGES; // Utiliser les données du tableau
+  stages = DEMANDESTAGES; // Utiliser les données du tableau
 
-  openDialog(stage: Stage): void {
+  openDialog(stage: DemandeStage): void {
     const dialogRef = this.dialog.open(DialogModifierStageComponent, {
       width: '500px',
       data: {...stage} // Passer les données du stage à modifier
@@ -146,7 +146,7 @@ export class TableauGestionDemandeStageComponent implements OnInit {
   }
 
 
-  afficherDetails(stage: Stage){
+  afficherDetails(stage: DemandeStage){
     this.newStage = stage;
     this.router.navigate(['/sidenav/fiche-demande-stage', stage._id]);
 

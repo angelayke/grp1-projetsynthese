@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { STAGES } from '../mock-stages';
 import { DemandesStagesService } from '../services/demandes-stages.service';
-import { Stage } from '../stage';
+import { DemandeStage } from '../demandeStage';
 
 @Component({
   selector: 'app-liste-demande-stages',
@@ -12,14 +12,14 @@ import { Stage } from '../stage';
 export class ListeDemandeStagesComponent implements OnInit {
   // stages = STAGES;
   // demandesStages: Stage[] = STAGES;
-  demandesStages : Stage[] = [];
+  demandesStages : DemandeStage[] = [];
 
-  newStage: Stage = {
+  newStage: DemandeStage = {
     _id: "",
     description: "",
     createdAt: "",
     updatedAt: "",
-    title: "",
+    titre: "",
     startDate: "",
     endDate: "",
     program: "",
@@ -32,7 +32,7 @@ export class ListeDemandeStagesComponent implements OnInit {
     published: false,
     active: true,
     activitySector: "",
-    enterprise: '',
+    // enterprise: '',
 
   }
 
@@ -55,7 +55,7 @@ export class ListeDemandeStagesComponent implements OnInit {
 
 
 
-  afficherDetails(stage: Stage): void {
+  afficherDetails(stage: DemandeStage): void {
     const id = stage?._id ?? '';
     this.demandeStageService.getDemandeStageById(id).subscribe(demande => {
       console.log("Demande de stage sélectionnée :", demande);
