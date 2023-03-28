@@ -93,15 +93,12 @@ nav ul li a {
   padding-left: 20px;
 }
 
-.active {
-  background-color: #F6F6F6;
-}
 
 /*couleur bordure lien menu en hover et active*/
 nav ul li:nth-child(1) a {
 
   &:hover,
-  &:active {
+  &.active {
     border-right: #089da4 solid 5px;
     font-weight: bold;
   }
@@ -110,7 +107,7 @@ nav ul li:nth-child(1) a {
 nav ul li:nth-child(2) a {
 
   &:hover,
-  &:active {
+  &.active {
     border-right: #cb912b solid 5px;
     font-weight: bold;
   }
@@ -119,7 +116,7 @@ nav ul li:nth-child(2) a {
 nav ul li:nth-child(3) a {
 
   &:hover,
-  &:active {
+  &.active {
     border-right: #bb2026 solid 5px;
     font-weight: bold;
   }
@@ -128,7 +125,7 @@ nav ul li:nth-child(3) a {
 nav ul li:nth-child(4) a {
 
   &:hover,
-  &:active {
+  &.active {
     border-right: #7f2987 solid 5px;
     font-weight: bold;
   }
@@ -137,7 +134,7 @@ nav ul li:nth-child(4) a {
 nav ul li:nth-child(5) a {
 
   &:hover,
-  &:active {
+  &.active {
     border-right: #86a9e6 solid 5px;
     font-weight: bold;
   }
