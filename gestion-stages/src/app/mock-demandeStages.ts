@@ -100,6 +100,106 @@ export const DEMANDESTAGES: DemandeStage[] = [
       province: "Pehig tic.",
       published: true
     },
+  },
+  {
+    _id: "e57abab43bac14623b6fc7cc",
+    createdAt: "2034-05-31T18:51:49.011Z",
+    updatedAt: "2121-09-26T19:28:01.627Z",
+    titre: "Uda omopooje.",
+    description: "Itce begijpaj.",
+    startDate: "2029-04-30T03:56:32.670Z",
+    endDate: "2059-12-04T14:10:47.878Z",
+    program: "Mi unenolu.",
+    requirements: "Kog obienomed.",
+    stageType: {
+      __typename: "PickerOption",
+      label: "Temps partiel",
+      value: "TEMPS_PARTIEL"
+    },
+    hoursPerWeek: 1721,
+    additionalInfo: "Elauvi koij.",
+    paid: false,
+    published: false,
+    skills: {
+      __typename: "PickerOption",
+      label: "Vue",
+      value: "VUE"
+    },
+    active: false,
+    region: {
+      __typename: "PickerOption",
+      label: "Montréal",
+      value: "MONTREAL"
+    },
+    activitySector: "Pivjamtac ar.",
+    city: "No if.",
+    resume: "Inikakgip ice.",
+    enterprise: {
+      _id: "6e9744c49aaec53edacd40e2",
+      postalCode: "Esidoiw bavcim.",
+      createdAt: "2047-11-19T10:17:05.672Z",
+      updatedAt: "2070-04-17T06:53:27.611Z",
+      name: "Goshelhin kiskoom.",
+      description: "Uc igeve.",
+      imageUrl: "Izja ho.",
+      contactName: "Epu mav.",
+      contactEmail: "Ucta tob.",
+      contactPhone: "Pu fakkesita.",
+      address: "Gazwak uloeje.",
+      city: "Un ek.",
+      province: "Pehig tic.",
+      published: true
+    },
+  },
+  {
+    _id: "e57abab43bac14623b6fc7cc",
+    createdAt: "2034-05-31T18:51:49.011Z",
+    updatedAt: "2121-09-26T19:28:01.627Z",
+    titre: "Uda omopooje.",
+    description: "Itce begijpaj.",
+    startDate: "2029-04-30T03:56:32.670Z",
+    endDate: "2059-12-04T14:10:47.878Z",
+    program: "Mi unenolu.",
+    requirements: "Kog obienomed.",
+    stageType: {
+      __typename: "PickerOption",
+      label: "Temps partiel",
+      value: "TEMPS_PARTIEL"
+    },
+    hoursPerWeek: 1721,
+    additionalInfo: "Elauvi koij.",
+    paid: false,
+    published: false,
+    skills: {
+      __typename: "PickerOption",
+      label: "Vue",
+      value: "VUE"
+    },
+    active: false,
+    region: {
+      __typename: "PickerOption",
+      label: "Montréal",
+      value: "MONTREAL"
+    },
+    activitySector: "Pivjamtac ar.",
+    city: "No if.",
+    resume: "Inikakgip ice.",
+    enterprise: {
+      _id: "6e9744c49aaec53edacd40e2",
+      postalCode: "Esidoiw bavcim.",
+      createdAt: "2047-11-19T10:17:05.672Z",
+      updatedAt: "2070-04-17T06:53:27.611Z",
+      name: "Goshelhin kiskoom.",
+      description: "Uc igeve.",
+      imageUrl: "Izja ho.",
+      contactName: "Epu mav.",
+      contactEmail: "Ucta tob.",
+      contactPhone: "Pu fakkesita.",
+      address: "Gazwak uloeje.",
+      city: "Un ek.",
+      province: "Pehig tic.",
+      published: true
+    },
   }
 ]
 
