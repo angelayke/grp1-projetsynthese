@@ -1,4 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { EnterpriseService } from '../enterprise.service';
+import { NgForm } from '@angular/forms';
+import { Entreprise } from '../entreprises';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formulaire-ajout-entreprise',
@@ -6,6 +12,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./formulaire-ajout-entreprise.component.scss']
 })
 export class FormulaireAjoutEntrepriseComponent implements OnInit {
+  @Output() entrepriseAjoute = new EventEmitter();// pour rafraichir le tableau apres l'ajout
+  //toute cette partie est pour le bouton de upload une image de logo
   @ViewChild('fileInput') fileInput: ElementRef;
   fileAttr = 'Logo';
 
@@ -31,10 +39,52 @@ export class FormulaireAjoutEntrepriseComponent implements OnInit {
       this.fileAttr = 'Logo';
     }
   }
+//fin upload image logo
 
-  constructor() { }
+newEntreprise: Entreprise ={
+  createdAt: '',
+  updatedAt: '',
+  description: '',
+  imageUrl: '',
+  contactName: '',
+  contactEmail: '',
+  contactPhone: '',
+  address: '',
+  city: '',
+  province: '',
+  postalCode: '',
+  published: false
+}
+
+  constructor(private entrepriseService: EnterpriseService  ) { //public dialogRef: MatDialogRef<FormulaireAjoutEntrepriseComponent>, @Inject(MAT_DIALOG_DATA) public data: Entreprise
+    // if (data) {
+    //   this.newEntreprise = data;
+    // }
+  } 
 
   ngOnInit(): void {
+    this.entrepriseService.getEntreprises().subscribe(
+      resultat => {
+        //
+      }
+    );
   }
+
+  createEntreprise(entrepriseFormAjout: NgForm) {
+    if (entrepriseFormAjout.valid){
+      this.entrepriseService.createEntreprise(this.newEntreprise).subscribe(
+        _ => {
+          entrepriseFormAjout.resetForm();
+          this.entrepriseAjoute.emit();
+          //this.dialogRef.close("Entreprise ajoutée");
+        }
+      );
+    }
+  }
+
+
+  annuler() {
+    //this.dialogRef.close();
+    }
 
 }

@@ -21,7 +21,6 @@ entreprises : Entreprise[]=[];
    this.getEntreprise();
   }
 
-  //// l'api enterprise ne fonctionne pas ////
    getEntreprise() {
      this.entrepriseService.getEntreprises().subscribe((data: ApiResponse<Entreprise[]>) => {
        this.entreprises = data.data;
