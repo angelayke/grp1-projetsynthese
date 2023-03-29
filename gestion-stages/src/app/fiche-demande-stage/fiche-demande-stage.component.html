@@ -1,93 +1,145 @@
-
 <!-- <pre>{{stageId | json}}</pre>
 <pre>{{stage | json}}</pre> -->
 
+<div class="btn-control">
+  <ng-container matColumnDef="actions" class="text-underline">
+    <div class="example-button-row">
+      <button mat-flat-button class="btn">
+        <mat-icon id="done">done</mat-icon>
+      </button>
 
+      <button mat-flat-button class="btn">
+        <mat-icon id="edit">edit</mat-icon>
+      </button>
 
-<!-- fiche-demande-stage.component.html -->
-<div>
-  <h2>Kevin Labonté</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi, cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam quibusdam nostrum sapiente.</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi, cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam quibusdam nostrum sapiente.</p>
-
-</div>
-<div class="stage-item" *ngIf="!loading && isNotEmpty()">
-
-  <div class="stage-item-col">
-    <div class="stage-item-field">
-      <div class="stage-item-label">Programme de formation</div>
-      <div class="stage-item-value">{{ stage.program }}</div>
+      <button mat-flat-button class="btn">
+        <mat-icon id="cancel">cancel</mat-icon>
+      </button>
     </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Secteur d'activité</div>
-      <div class="stage-item-value">{{ stage.activitySector }}</div>
-    </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Compétences</div>
-      <div class="stage-item-value">{{ stage.description }}</div>
-    </div>
-  </div>
-
-  <div class="stage-item-col">
-    <div class="stage-item-field">
-      <div class="stage-item-label">Établissement d'enseignement</div>
-      <div class="stage-item-value">{{ stage.additionalInfo }}</div>
-    </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Ville</div>
-      <div class="stage-item-value">{{ stage.region }}</div>
-    </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Région</div>
-      <div class="stage-item-value">{{ stage.region }}</div>
-    </div>
-  </div>
-
+  </ng-container>
 </div>
 
-<h2>Information sur le stage recherché</h2>
-<div class="stage-item" *ngIf="!loading && isNotEmpty()">
+<div class="fiche">
+  <!-- fiche-demande-stage.component.html -->
+  <div class="fiche">
+    <h2>Kevin Labonté</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+      quibusdam nostrum sapiente.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+      quibusdam nostrum sapiente.</p>
 
-  <div class="stage-item-col">
-    <div class="stage-item-field">
-      <div class="stage-item-label">Type de stage</div>
-      <div class="stage-item-value">{{ stage.program }}</div>
-    </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Nombre d'heures par semaine</div>
-      <div class="stage-item-value">{{ stage.activitySector }}</div>
-    </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Rémunération</div>
-      <div class="stage-item-value">{{ stage.description }}</div>
-    </div>
   </div>
+  <div class="stage-item fiche" *ngIf="!loading && isNotEmpty()">
 
-  <div class="stage-item-col">
-    <div class="stage-item-field">
-      <div class="stage-item-label">Date de début</div>
-      <div class="stage-item-value">{{ stage.additionalInfo }}</div>
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Programme de formation</div>
+        <div class="stage-item-value">{{ demandeStage.program }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Secteur d'activité</div>
+        <div class="stage-item-value">{{ demandeStage.activitySector }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Compétences</div>
+        <div class="stage-item-value">{{ demandeStage.description }}</div>
+      </div>
     </div>
-    <div class="stage-item-field">
-      <div class="stage-item-label">Date de fin</div>
-      <div class="stage-item-value">{{ stage.region }}</div>
+
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Établissement d'enseignement</div>
+        <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Ville</div>
+        <div class="stage-item-value">{{ demandeStage.description}}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Région</div>
+        <div class="stage-item-value">{{ demandeStage.description }}</div>
+      </div>
     </div>
 
   </div>
 
+  <div class="fiche">
+    <h2>Information sur le stage recherché</h2>
+  </div>
+
+  <div class="stage-item fiche" *ngIf="!loading && isNotEmpty()">
+
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Type de stage</div>
+        <div class="stage-item-value">{{ demandeStage.description }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Nombre d'heures par semaine</div>
+        <div class="stage-item-value">{{ demandeStage.hoursPerWeek }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Rémunération</div>
+        <div class="stage-item-value">{{ demandeStage.description }}</div>
+      </div>
+    </div>
+
+    <div class="stage-item-col">
+      <div class="stage-item-field">
+        <div class="stage-item-label">Date de début</div>
+        <div class="stage-item-value">{{ demandeStage.startDate | date }}</div>
+      </div>
+      <div class="stage-item-field">
+        <div class="stage-item-label">Date de fin</div>
+        <div class="stage-item-value">{{ demandeStage.endDate | date }}</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="fiche">
+    <h2>Informations supplémentaires</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+      quibusdam nostrum sapiente.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+      quibusdam nostrum sapiente.</p>
+
+  </div>
+
+
+  <div class="download-container">
+    <a href="../../assets/img/fichier.pdf" target="_blank" class="download-link">
+      <button mat-icon-button class="btn-telecharger">
+        <mat-icon class="cloud-download-icon">cloud_download</mat-icon>
+        <span class="download-label">Télécharger le CV</span>
+      </button>
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="btn-retour">
+    <a routerLink="/sidenav/demandesdestage">Back</a>
+  </div>
+
+  <div *ngIf="!demandeStage">
+    <p>La demande de stage demandée n'existe pas.</p>
+  </div>
+
 </div>
-
-
-<div>
-  <h2>Informations supplémentaires</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi, cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam quibusdam nostrum sapiente.</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi, cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam quibusdam nostrum sapiente.</p>
-
-</div>
-<a class="btn-retour" routerLink="/sidenav/demandesdestage">Back</a>
-
-<div *ngIf="!stage">
-  <p>La demande de stage demandée n'existe pas.</p>
-</div>
-
-

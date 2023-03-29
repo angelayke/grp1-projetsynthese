@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {  STAGES } from '../mock-stages';
+import {  DEMANDESTAGES } from '../mock-demandeStages';
 import { DemandesStagesService } from '../services/demandes-stages.service';
-import { Stage } from '../stage';
+import { DemandeStage } from '../demandeStage';
 
 
 @Component({
@@ -13,11 +13,11 @@ import { Stage } from '../stage';
 export class FicheDemandeStageComponent implements OnInit {
 
   public loading:boolean = false;
-  public stage: Stage = {} as Stage;
+  public demandeStage: DemandeStage = {} as DemandeStage;
   public errorMessage : string | null = null;
 
 
-public stageId: string | null = null;
+public demandeStageId: string | null = null;
 
   constructor( private demandeStageService: DemandesStagesService, private activatedRoute: ActivatedRoute) {
 
@@ -26,13 +26,13 @@ public stageId: string | null = null;
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((param)=>{
-     this.stageId = param.get('_id')
+     this.demandeStageId = param.get('_id')
 
     });
-    if(this.stageId){
-      this.demandeStageService.getDemandeStageById(this.stageId).subscribe((data) => {
+    if(this.demandeStageId){
+      this.demandeStageService.getDemandeStageById(this.demandeStageId).subscribe((data) => {
         this.loading = true;
-        this.stage = data;
+        this.demandeStage = data;
         this.loading = false;
 
       }, (error) => {
@@ -46,7 +46,7 @@ public stageId: string | null = null;
   }
 
   public isNotEmpty() {
-    return Object.keys(this.stage).length > 0;
+    return Object.keys(this.demandeStage).length > 0;
   }
 
 

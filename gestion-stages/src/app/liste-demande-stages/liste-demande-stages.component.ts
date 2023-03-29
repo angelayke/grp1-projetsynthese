@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { STAGES } from '../mock-stages';
 import { DemandesStagesService } from '../services/demandes-stages.service';
-import { Stage } from '../stage';
+import { DemandeStage } from '../demandeStage';
 
 @Component({
   selector: 'app-liste-demande-stages',
@@ -12,28 +12,57 @@ import { Stage } from '../stage';
 export class ListeDemandeStagesComponent implements OnInit {
   // stages = STAGES;
   // demandesStages: Stage[] = STAGES;
-  demandesStages : Stage[] = [];
+  demandesStages : DemandeStage[] = [];
 
-  newStage: Stage = {
-    _id: "",
-    description: "",
-    createdAt: "",
-    updatedAt: "",
-    title: "",
-    startDate: "",
-    endDate: "",
-    program: "",
-    region: "",
-    requirements: "",
-    stageType: "",
+  newStage: DemandeStage = {
+    _id: '',
+    createdAt: '',
+    updatedAt: '',
+    titre: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    program: '',
+    requirements: '',
+    stageType: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
     hoursPerWeek: 0,
-    additionalInfo: "",
-    paid: true,
+    additionalInfo: '',
+    paid: false,
     published: false,
-    active: true,
-    activitySector: "",
-    enterprise: '',
-
+    skills: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    active: false,
+    region: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    activitySector: '',
+    city: '',
+    resume: '',
+    enterprise: {
+      _id: '',
+      createdAt: '',
+      updatedAt: '',
+      name: '',
+      description: '',
+      imageUrl: '',
+      contactName: '',
+      contactEmail: '',
+      contactPhone: '',
+      address: '',
+      city: '',
+      province: '',
+      postalCode: '',
+      published: true
+    }
   }
 
 
@@ -55,7 +84,7 @@ export class ListeDemandeStagesComponent implements OnInit {
 
 
 
-  afficherDetails(stage: Stage): void {
+  afficherDetails(stage: DemandeStage): void {
     const id = stage?._id ?? '';
     this.demandeStageService.getDemandeStageById(id).subscribe(demande => {
       console.log("Demande de stage sélectionnée :", demande);

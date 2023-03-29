@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, Observable, of, throwError } from 'rxjs';
-import { STAGES } from '../mock-stages';
-import { Stage } from '../stage';
+import { DEMANDESTAGES } from '../mock-demandeStages';
+import { DemandeStage } from '../demandeStage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,12 @@ import { Stage } from '../stage';
 export class DemandesStagesService {
 
 
-  demandesStages: Stage[] = STAGES;
-  demandeStageSelectionnee!: Stage;
+  demandesStages: DemandeStage[] = DEMANDESTAGES;
+  demandeStageSelectionnee!: DemandeStage;
 
   constructor(private http: HttpClient) { }
 
-  getDemandesStages(): Observable<Stage[]>{
+  getDemandesStages(): Observable<DemandeStage[]>{
     console.log("Demande stage service fonctionne pour tous les stages", this.demandesStages)
     return of(this.demandesStages)
 
@@ -30,11 +30,11 @@ export class DemandesStagesService {
   //   console.log("Verification:...........",demandeStage)
   //   return of(demandeStage)
   // }
-  getDemandeStageById(_id: string): Observable<Stage>{
-    const demandeStage = this.demandesStages.find((ds: Stage) => ds._id === _id);
+  getDemandeStageById(_id: string): Observable<DemandeStage>{
+    const demandeStage = this.demandesStages.find((ds: DemandeStage) => ds._id === _id);
 
     console.log("Demande stage service fonctionne pour le stage avec l'ID: " + _id, demandeStage);
-    return of(demandeStage).pipe(filter((ds:Stage | undefined):ds is Stage => ds !== undefined));
+    return of(demandeStage).pipe(filter((ds:DemandeStage | undefined):ds is DemandeStage => ds !== undefined));
     // if (demandeStage) {
     //     return of(demandeStage);
     // } else {
@@ -51,11 +51,11 @@ export class DemandesStagesService {
   // }
 
 
-  setDemandeStageSelectionnee(demandeStage: Stage): void {
+  setDemandeStageSelectionnee(demandeStage: DemandeStage): void {
     this.demandeStageSelectionnee = demandeStage;
   }
 
-  getDemandeStageSelectionnee(): Stage {
+  getDemandeStageSelectionnee(): DemandeStage {
     return this.demandeStageSelectionnee;
   }
 

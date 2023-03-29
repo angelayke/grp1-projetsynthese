@@ -29,7 +29,6 @@
 // }
 
 
-
 @mixin stage-item-field {
   margin-bottom: 10px;
   display: flex;
@@ -81,4 +80,94 @@
       @include stage-item-field;
     }
   }
+}
+
+
+.btn-control{
+  display: flex;
+  justify-content: right;
+  margin: 10px 2rem 10px 0;
+
+}
+
+.mat-icon{
+  font-weight: 700;
+    &#done{
+      color: #07a04a;
+    }
+    &#edit{
+      color: #2b497c;
+    }
+    &#cancel{
+      color:  #bb2026;
+    }
+}
+ .fiche{
+  background-color: white;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 1.5rem;
+
+  h2{
+    padding-top: 2rem;
+    color: #089da4;
+  }
+
+ }
+.btn-retour{
+  margin-left: 2rem;
+  a{
+    text-decoration: none;
+    color: #089da4;
+  }
+
+
+}
+.btn-telecharger{
+ margin: 1rem;
+
+// .cloud-download-icon {
+//   font-family: 'Material Icons';
+//   font-size: 24px;
+//   color: white;
+//   background-color:#089da4;
+//   padding: 1.7rem 5rem;
+
+
+//   /* autres styles CSS */
+// }
+}
+
+
+.download-container {
+  display: flex;
+  justify-content: left;
+  background-color: #22A6AC;
+  width:20%;
+  color: white;
+  margin-left: 2rem;
+
+  &:hover{
+    background-color: #2ec0c8;
+  }
+}
+
+.btn-telecharger {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.cloud-download-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.download-label {
+  font-size: 16px;
+}
+
+.download-link {
+  text-decoration: none;
+  color: inherit;
 }
