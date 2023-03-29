@@ -64,6 +64,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
 import { CandidatService } from './candidat.service';
+import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
 
 
 
@@ -98,6 +99,7 @@ import { CandidatService } from './candidat.service';
     ModifierDemandeStageComponent,
     DialogModifierStageComponent,
     FicheDemandeStageComponent,
+    GroupeCardsComponent,
    ],
 
   imports: [

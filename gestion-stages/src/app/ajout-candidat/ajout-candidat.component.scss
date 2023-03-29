@@ -1,50 +1,49 @@
 
 h1 {
-    font: 600 24px/60px "Open Sans";
-    color: #6b0fb3;
-    font-family: "Open Sans";
-  }
-  
-  
-  h2 {
-    font: 600 24px/30px "Open Sans";
-  }
-  
-  form {
-    min-width: 50px;
-    margin-left: 50px;
-  }
-  
-  .full-width {
-    width: 50%;
-    margin-right: 5px;
-    border-left: solid;
-  }
-  
-  
-  h2, h3 {
-    color:
-    rgb(66, 216, 191);
-    font-family: "Open Sans";
-  }
-  
-  .container-coordonnees {
-    position: absolute;
-    right: 30px;
-    width: 40%;
-    top: 600px;
-    float: right;
-  }
-  
-  #btn__boutonAjoutCandidat {
-    color: #fff;
-    background-color: #7f2985;
-  }
-  
-  #btn__boutonCancelCandidat {
-    color: #666565;
-    background-color: #eae9e9;
-  }
-  
-  
-  
+  font: 600 24px/60px "Open Sans";
+  color: #6b0fb3;
+  font-family: "Open Sans";
+}
+
+
+h2 {
+  font: 600 24px/30px "Open Sans";
+}
+
+form {
+  min-width: 50px;
+  margin-left: 50px;
+}
+
+.full-width {
+  width: 50%;
+  margin-right: 5px;
+  border-left: solid;
+}
+
+
+h2, h3 {
+  color:
+  rgb(66, 216, 191);
+  font-family: "Open Sans";
+}
+
+.container-coordonnees {
+  position: absolute;
+  right: 30px;
+  width: 40%;
+  top: 600px;
+  float: right;
+}
+
+#btn__boutonAjoutCandidat {
+  color: #fff;
+  background-color: #7f2985;
+}
+
+#btn__boutonCancelCandidat {
+  color: #666565;
+  background-color: #eae9e9;
+}
+
+
