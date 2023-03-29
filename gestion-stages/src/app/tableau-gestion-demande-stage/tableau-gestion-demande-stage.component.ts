@@ -18,7 +18,7 @@ import { DemandeStage } from '../demandeStage';
   styleUrls: ['./tableau-gestion-demande-stage.component.scss']
 })
 export class TableauGestionDemandeStageComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'activitySector', 'region','startDate', 'actions'];
+  displayedColumns: string[] = ['titre', 'activitySector', 'description','startDate', 'actions'];
 
   // stages=STAGES;
   dataSource:  MatTableDataSource<DemandeStage> = new  MatTableDataSource(DEMANDESTAGES);
@@ -26,23 +26,54 @@ export class TableauGestionDemandeStageComponent implements OnInit {
   demandesStages: DemandeStage[]=[];
 
   newStage: DemandeStage = {
-    _id: "",
-    description: "",
-    createdAt: "",
-    updatedAt: "",
-    titre: "",
-    startDate: "",
-    endDate: "",
-    program: "",
-    region: "",
-    requirements: "",
-    stageType: "",
+    _id: '',
+    createdAt: '',
+    updatedAt: '',
+    titre: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    program: '',
+    requirements: '',
+    stageType: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
     hoursPerWeek: 0,
-    additionalInfo: "",
-    paid: true,
+    additionalInfo: '',
+    paid: false,
     published: false,
-    active: true,
-    activitySector: ""
+    skills: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    active: false,
+    region: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    activitySector: '',
+    city: '',
+    resume: '',
+    enterprise: {
+      _id: '',
+      createdAt: '',
+      updatedAt: '',
+      name: '',
+      description: '',
+      imageUrl: '',
+      contactName: '',
+      contactEmail: '',
+      contactPhone: '',
+      address: '',
+      city: '',
+      province: '',
+      postalCode: '',
+      published: true
+    }
   }
 
 

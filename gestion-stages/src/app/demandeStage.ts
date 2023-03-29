@@ -11,12 +11,38 @@ export interface DemandeStage {
    _id: string;
    createdAt: string;
    updatedAt: string;
+   titre: string;
    description: string;
-  titre: string;
   startDate: string;
+  endDate:string;
+  program: string;
+  requirements: string;
+  stageType: {
+    __typename: string;
+      label: string;
+      value: string;
+  };
+  hoursPerWeek: number;
+  additionalInfo: string;
+  paid: boolean;
+  published: boolean;
+  skills: {
+    __typename: string;
+    label: string;
+    value: string;
+  };
+  active: boolean;
+  region: {
+    __typename: string;
+    label: string;
+    value: string;
+
+  };
+  activitySector: string;
+  city: string;
+  resume: string;
   enterprise:{
     _id: string;
-    postalCode: string;
     createdAt: string;
     updatedAt: string;
     name: string;
@@ -28,36 +54,9 @@ export interface DemandeStage {
     address: string;
     city: string;
     province: string;
+    postalCode: string;
     published: true;
-  },
-  endDate:string;
-  program: string;
-  requirements: string;
-  stageType: {
+  };
 
-    __typename: string;
-      label: string;
-      value: string;
-
-  },
-  hoursPerWeek: number;
-  additionalInfo: string;
-  paid: boolean;
-  published: boolean;
-  skills: {
-    __typename: string;
-    label: string;
-    value: string;
-  },
-  active: boolean;
-  region: {
-    __typename: string;
-    label: string;
-    value: string;
-
-  },
-    activitySector: string;
-    city: string;
-    resume: string;
 
 }

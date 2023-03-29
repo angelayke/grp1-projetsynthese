@@ -26,24 +26,54 @@ export class DernieresDemandesStagesComponent implements OnInit {
   demandesStages: DemandeStage[]=[];
 
   newStage: DemandeStage = {
-    _id: "",
-    description: "",
-    createdAt: "",
-    updatedAt: "",
-    titre: "",
-    startDate: "",
-    endDate: "",
-    program: "",
-    region: "",
-    requirements: "",
-    stageType: "",
+    _id: '',
+    createdAt: '',
+    updatedAt: '',
+    titre: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    program: '',
+    requirements: '',
+    stageType: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
     hoursPerWeek: 0,
-    additionalInfo: "",
-    paid: true,
+    additionalInfo: '',
+    paid: false,
     published: false,
-    active: true,
-    activitySector: "",
-    // enterprise: ''
+    skills: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    active: false,
+    region: {
+      __typename: '',
+      label: '',
+      value: ''
+    },
+    activitySector: '',
+    city: '',
+    resume: '',
+    enterprise: {
+      _id: '',
+      createdAt: '',
+      updatedAt: '',
+      name: '',
+      description: '',
+      imageUrl: '',
+      contactName: '',
+      contactEmail: '',
+      contactPhone: '',
+      address: '',
+      city: '',
+      province: '',
+      postalCode: '',
+      published: true
+    }
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
