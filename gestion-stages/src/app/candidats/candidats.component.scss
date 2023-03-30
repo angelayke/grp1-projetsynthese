@@ -1,4 +1,11 @@
-
+/* example angular*/
+.example-card {
+  max-width: 350px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+/* fin exemple angular */
 h1 {
     font: 600 24px/28px "Open Sans";
     color: gray;
@@ -8,6 +15,16 @@ h2 {
   color: white;
 }
 
+.btn__button {
+  background-color: #a00768;
+  color: #fff;
+  margin-bottom: 20px;
+   &:hover{
+    background-color: #4a1150;
+   }
+}
+
+/*
 .liste-candidats {
   margin-bottom: 5px;
   display: inline-flex;
@@ -26,14 +43,34 @@ mat-card-content {
   justify-content: center;
   font-family: "Open Sans";
 }
+*/
 
-.btn__button {
-  border-style: solid;
-  background: transparent;
-  border-radius: 5px;
+.material-icons{
+  color: #c58db1;
   background-color: #a00768;
-
+  font-size: 100px;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 1rem;
 }
+
+.mat-card-title {
+  margin-bottom: 0px;
+}
+
+.mat-card-title-group {
+  margin-bottom: 16px;
+}
+
+.mat-card-subtitle{
+  margin-bottom: 0px;
+}
+
+.flex-candidat{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 
 
