@@ -25,9 +25,9 @@
           <td mat-cell *matCellDef="let stage"> {{stage.activitySector | titlecase }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="description" class="text-underline">
+        <ng-container matColumnDef="region" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Région </th>
-          <td mat-cell *matCellDef="let stage"> {{stage.description | titlecase  }} </td>
+          <td mat-cell *matCellDef="let stage"> {{stage.region.label | titlecase  }} </td>
         </ng-container>
 
         <ng-container matColumnDef="startDate" class="text-underline">
@@ -38,12 +38,12 @@
         <ng-container matColumnDef="actions" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let stage" class="btn-td">
-            <a mat-button aria-label="Visualiser" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">Visualiser une demande de stage</a>
+            <a mat-button aria-label="Visualiser" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">Visualiser</a>
             <!-- (click)="afficherDetails(stage)" -->
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
               <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
             </button>
-            <button mat-button aria-label="Modifier" routerLink="/sidenav/modifier-demandestage">Modifier une demande de stage</button>
+            <button mat-button aria-label="Modifier" routerLink="/sidenav/modifier-demandestage">Modifier</button>
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
               <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
 

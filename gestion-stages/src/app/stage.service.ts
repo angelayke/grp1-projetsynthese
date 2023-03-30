@@ -17,7 +17,7 @@ export class StageService {
   constructor(private http: HttpClient) { }
 
 
-  stagesUrl = 'https://e-stages-gbgeb8.can.canonic.dev/api/https://e-stages-gbgeb8.can.canonic.dev/api/stages';
+  stagesUrl = 'https://e-stages-gbgeb8.can.canonic.dev/api/stages';
 
     getStages(): Observable<ApiResponse<Stage[]>> {
       return this.http.get<ApiResponse<Stage[]>>(this.stagesUrl, httpOptions);
