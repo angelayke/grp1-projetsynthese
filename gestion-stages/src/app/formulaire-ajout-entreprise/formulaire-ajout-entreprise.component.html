@@ -9,16 +9,16 @@
       </table>
      
   
-      <form class="form-header" #entrepriseFormAjout="ngForm">
+      <form class="form-header" #entrepriseFormAjout="ngForm" (submit)="createEntreprise()">
 
         <div class="btn-control">
           <ng-container matColumnDef="actions" class="text-underline">
             <div class="example-button-row">
-              <button mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler" (click)="annuler()">
+              <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler" ><!--(click)="annuler()"-->
                 <mat-icon>cancel</mat-icon> Annuler
               </button>
     
-              <button mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid" (click)="createEntreprise(entrepriseFormAjout)">
+              <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid" ><!--(click)="createEntreprise(entrepriseFormAjout)"-->
                 <mat-icon>save</mat-icon> Sauvegarder
               </button>
               <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched) && nom.hasError('required')">
@@ -36,7 +36,7 @@
 
         <div class="example-full-width flex-entete">
           <p class="soustitre-entreprise">Entreprise</p>
-          <input matInput value="" class="form-detail-entreprise" name="name" required minlength="2" maxlength="50" [(ngModel)]="newEntreprise.name" #nom="ngModel">  
+          <input matInput value="" class="form-detail-entreprise" name="entreprise" required minlength="2" maxlength="50" [(ngModel)]="newEntreprise.name" #nom="ngModel">  
         </div>
         <mat-form-field class="example-full-width" id="formfieldupload">
           <!-- tuto https://www.positronx.io/angular-material-file-browse-upload-ui-with-material-components/ -->
@@ -114,11 +114,11 @@
           <div class="btn-control">
             <ng-container matColumnDef="actions" class="text-underline">
               <div class="example-button-row">
-                <button mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler" (click)="annuler()">
+                <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler" ><!--(click)="annuler()"-->
                   <mat-icon>cancel</mat-icon> Annuler
                 </button>
       
-                <button mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid" (click)="createEntreprise(entrepriseFormAjout)">
+                <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid" ><!--(click)="createEntreprise(entrepriseFormAjout)"-->
                   <mat-icon>save</mat-icon> Sauvegarder
                 </button>
               </div>
