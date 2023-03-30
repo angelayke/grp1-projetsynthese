@@ -171,3 +171,13 @@
   text-decoration: none;
   color: inherit;
 }
+
+.vertical-line {
+  display: inline-block;
+  border-left: 10px solid #CD9635;
+  // height: 35px;
+  margin-left: 35px;
+  // margin-right: 15px;
+  vertical-align: middle;
+  padding-left:10px;
+}

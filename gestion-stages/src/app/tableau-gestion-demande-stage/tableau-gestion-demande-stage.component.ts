@@ -18,7 +18,7 @@ import { DemandeStage } from '../demandeStage';
   styleUrls: ['./tableau-gestion-demande-stage.component.scss']
 })
 export class TableauGestionDemandeStageComponent implements OnInit {
-  displayedColumns: string[] = ['titre', 'activitySector', 'description','startDate', 'actions'];
+  displayedColumns: string[] = ['titre', 'activitySector', 'region','startDate', 'actions'];
 
   // stages=STAGES;
   dataSource:  MatTableDataSource<DemandeStage> = new  MatTableDataSource(DEMANDESTAGES);
