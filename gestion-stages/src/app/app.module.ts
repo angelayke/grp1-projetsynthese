@@ -70,7 +70,10 @@ import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entrepr
 
 //Services
 import { CandidatService } from './candidat.service';
+
+import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
 import { EnterpriseService } from './enterprise.service';
+
 
 
 
@@ -105,6 +108,8 @@ import { EnterpriseService } from './enterprise.service';
     ModifierDemandeStageComponent,
     DialogModifierStageComponent,
     FicheDemandeStageComponent,
+    GroupeCardsComponent,
+=======
     ListeDemandeStagesComponent,
    ],
 

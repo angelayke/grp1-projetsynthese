@@ -3,15 +3,34 @@ h1,h2,h3{
     font-weight: bold;
 }
 
+td {
+    padding-right: 8px;
+  }
+
 .example-form{
     min-width: 150px;
     max-width: 500px;
     width:100%
 
 }
+.example-full-width {
+    width: 100%;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
 
 .example-full-width{
     width:100%
+}
+.titre-candidat{
+    margin-top: 2px;
+    margin-left: 5px;
+    color: #707070;
+    font-size: 4em;
 }
 
 td{
@@ -28,4 +47,22 @@ td{
 
 .tr-fiche{
     margin-bottom: 20px;
+}
+
+.soustitre-fiche{
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.table-titre{
+    width: 300px;
+}
+
+.fiche{
+    padding: 4em;
+    background-color: white;
+}
+
+.td-candidat-details{
+    border-left: 7px solid #a00768;
 }
