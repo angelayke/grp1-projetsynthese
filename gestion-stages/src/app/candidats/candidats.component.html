@@ -1,9 +1,21 @@
-<h1>Candidats</h1>
+<section>
+  
+  <div class="container">
+      <div class="row">
+        <div class="col-12">
+        <h1>Candidats</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
 <div><button mat-raised-button class="btn__button"> <h2>Ajouter un candidat</h2></button></div>
-
-
-    <!--<mat-card class="liste-candidats" (click)="(c._id)">-->
-      <ng-container class="container-fluid" *ngFor="let candidat of candidats">
+</div>
+</div>
+</div> 
+<div class="container mt-3">
+  <div class="row">
+    
+      <ng-container class="col-md-12 col-lg-6 d-flex align-self-stretch"*ngFor="let candidat of candidats">
         
     <mat-card-title>
         <span class="material-icons">person</span>
@@ -18,3 +30,6 @@
         </dl>
         </mat-card-content>
       </ng-container>
+  </div>
+</div>
+    </section>

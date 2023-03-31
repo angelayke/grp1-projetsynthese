@@ -1,23 +1,33 @@
 
 <section id="candidat-details">
     <ng-container>
+        <table class="table-titre">
+            <tr>
+                    <td class="td-candidat-details">
+                      <p class="soustitre-fiche">Candidat</p>
+                      <h1 class="titre-candidat">{{candidat.name}}</h1>
+                      <h1 class="jobTitle">{{candidat.jobTitle}}</h1>
+                    </td>
+                  </tr>
+            </table>
 
+   <div class="btn-control">
+      <ng-container matColumnDef="actions" class="text-underline">
+        <div class="example-button-row">
+          <button mat-flat-button class="btn">
+            <mat-icon id="done">done</mat-icon>
+          </button>
 
-<button mat-raised-button class="delete" style="float: right; "  (click)="(candidat._id)"><mat-icon> cancel_presentation</mat-icon></button>
-<button mat-raised-button class="cancel" style="float: right; "  (click)=" (candidat.name)"><mat-icon> border_color</mat-icon></button>
-<button mat-raised-button class="update" style="float: right; "  (click)="(candidat._id)"><mat-icon>check</mat-icon></button>
+          <button mat-flat-button class="btn">
+            <mat-icon id="edit">edit</mat-icon>
+          </button>
 
-<ng-container class="container-fluid" *ngFor="let candidat of candidats"></ng-container>
-<table class="table-titre">
-    <tr>
-            <td class="td-candidat-details">
-              <p class="soustitre-fiche">Candidat</p>
-              <h1 class="titre-candidat">{{candidat.name}}</h1>
-              <h1 class="jobTitle">{{candidat.jobTitle}}</h1>
-            </td>
-          </tr>
-        
-    </table>
+          <button mat-flat-button class="btn">
+            <mat-icon id="cancel">cancel</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+    </div>
 
     <div class="container fiche">
           <h1>Courte présentation</h1>
@@ -28,59 +38,49 @@
           <h3>Informations personnelles</h3>
 
 
-              <form class="example-form">
-                <table class="example-full-width" cellspacing="0">
-                    <tr class=" tr-fiche">
-                        <td class="td-fiche">
-              <p class="subtitle-fiche">Adresse: </p>
-              <p class="txt-fiche">{{candidat.address}}</p>
-            </td>
-            
-            
-             <td class="td-fiche">
-                <p class="subtitle-fiche">Ville: </p>
-                <p class="txt-fiche">{{candidat.city}}</p>
-            </td>
-
-            </tr>
-
-            <br>
-
-            <tr class=" tr-fiche">
-            <td class="td-fiche">
-                <p class="subtitle-fiche">Province: </p>
-                    <p class="txt-fiche">{{candidat.province}}</p>
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Adresse</p>
+                  <p class="txt-fiche">{{candidat.address}}</p>
                 </td>
-
-
-                    <td class="td-fiche">
-                <p class="subtitle-fiche">Code postal </p>
-                    <p class="txt-fiche">{{candidat.postalCode}}</p>
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Téléphone</p>
+                  <p class="txt-fiche">{{candidat.phone}}</p>
                 </td>
-                </tr>
-                <br>
-
-                   
-                <tr class=" tr-fiche">
-                 <td class="td-fiche">
-                <p class="subtitle-fiche">Téléphone: </p>
-                    <p class="txt-fiche">{{candidat.phone}}</p>
-              
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Ville</p>
+                  <p class="txt-fiche">{{candidat.city}}</p>
                 </td>
-
-                    <td class="td-fiche">
-                <p class="subtitle-fiche">Courriel: </p>
-                    <p class="txt-fiche">{{candidat.email}}</p>
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Courriel</p>
+                  <p class="txt-fiche">{{candidat.email}}</p>
                 </td>
-            </tr>
-            
-        
-        </table>
-    </form>
-          </div>
-
-    </ng-container>
-</section>
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Province</p>
+                  <p class="txt-fiche">{{candidat.province}}</p>
+                </td>
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <p class="subtitle-fiche">Code Postal</p>
+                  <p class="txt-fiche">{{candidat.postalCode}}</p>
+                </td>
+              </tr>
+            </table>
+    
+          </form>
+        </div>
+      </ng-container>
+    </section>
 
 
     
