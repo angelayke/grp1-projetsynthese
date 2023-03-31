@@ -1,8 +1,11 @@
+import { DemandeStage } from './../demandeStage';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {  DEMANDESTAGES } from '../mock-demandeStages';
 import { DemandesStagesService } from '../services/demandes-stages.service';
-import { DemandeStage } from '../demandeStage';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+
 
 
 @Component({
@@ -19,7 +22,10 @@ export class FicheDemandeStageComponent implements OnInit {
 
 public demandeStageId: string | null = null;
 
-  constructor( private demandeStageService: DemandesStagesService, private activatedRoute: ActivatedRoute) {
+editing: boolean = false;
+
+
+  constructor( private demandeStageService: DemandesStagesService, private activatedRoute: ActivatedRoute, private dialog: MatDialog) {
 
   }
 
@@ -49,6 +55,37 @@ public demandeStageId: string | null = null;
     return Object.keys(this.demandeStage).length > 0;
   }
 
+
+
+
+  onDoneClick(){
+     this.editing = false;
+     alert("Fiche sauvegardée!");
+  }
+
+  onEditClick(){
+    this.editing = true;
+    alert("Fiche modifiée!");
+  }
+
+  // onCancelClick(){
+  //   this.editing = false;
+  //   alert("Fiche annulée!");
+  // }
+
+
+  onDeleteClick(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '400px',
+      data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log("Fiche annulée!")
+      }
+    });
+  }
 
 
 }

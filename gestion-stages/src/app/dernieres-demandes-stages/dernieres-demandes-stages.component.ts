@@ -18,7 +18,7 @@ import { DialogModifierStageComponent } from '../dialog-modifier-stage/dialog-mo
   styleUrls: ['./dernieres-demandes-stages.component.scss']
 })
 export class DernieresDemandesStagesComponent implements OnInit {
-  displayedColumns: string[] = ['titre', 'activitySector','startDate', 'actions'];
+  displayedColumns: string[] = ['titre', 'enterprise','startDate', 'actions'];
 
   dataSource:  MatTableDataSource<DemandeStage> = new  MatTableDataSource(DEMANDESTAGES);
   // dataSource:  MatTableDataSource<Stage> = new  MatTableDataSource();
@@ -79,6 +79,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeStage!: MatTable<DemandeStage>;
+  demandes: any;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -132,6 +133,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
       stage.active = true;
       console.log("result",  stage.active)
     }
+
 
 
     onDeleteClick(stage: DemandeStage): void {

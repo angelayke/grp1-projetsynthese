@@ -1,18 +1,21 @@
 <!-- <pre>{{stageId | json}}</pre>
 <pre>{{stage | json}}</pre> -->
-
+<div class="vertical-line">
+  <p>Demande de stage</p>
+  <h1>Développeur front-end</h1>
+</div>
 <div class="btn-control">
   <ng-container matColumnDef="actions" class="text-underline">
     <div class="example-button-row">
-      <button mat-flat-button class="btn">
+      <button mat-flat-button class="btn" (click)="onDoneClick()">
         <mat-icon id="done">done</mat-icon>
       </button>
 
-      <button mat-flat-button class="btn">
+      <button mat-flat-button class="btn" (click)="onEditClick()">
         <mat-icon id="edit">edit</mat-icon>
       </button>
 
-      <button mat-flat-button class="btn">
+      <button mat-flat-button class="btn" (click)="onDeleteClick()">
         <mat-icon id="cancel">cancel</mat-icon>
       </button>
     </div>
@@ -46,7 +49,7 @@
       </div>
       <div class="stage-item-field">
         <div class="stage-item-label">Compétences</div>
-        <div class="stage-item-value">{{ demandeStage.description }}</div>
+        <div class="stage-item-value">{{ demandeStage.requirements }}</div>
       </div>
     </div>
 
@@ -57,11 +60,11 @@
       </div>
       <div class="stage-item-field">
         <div class="stage-item-label">Ville</div>
-        <div class="stage-item-value">{{ demandeStage.description}}</div>
+        <div class="stage-item-value">{{ demandeStage.enterprise.city}}</div>
       </div>
       <div class="stage-item-field">
         <div class="stage-item-label">Région</div>
-        <div class="stage-item-value">{{ demandeStage.description }}</div>
+        <div class="stage-item-value">{{ demandeStage.region.label }}</div>
       </div>
     </div>
 
@@ -76,7 +79,7 @@
     <div class="stage-item-col">
       <div class="stage-item-field">
         <div class="stage-item-label">Type de stage</div>
-        <div class="stage-item-value">{{ demandeStage.description }}</div>
+        <div class="stage-item-value">{{ demandeStage.stageType.label }}</div>
       </div>
       <div class="stage-item-field">
         <div class="stage-item-label">Nombre d'heures par semaine</div>
@@ -84,7 +87,7 @@
       </div>
       <div class="stage-item-field">
         <div class="stage-item-label">Rémunération</div>
-        <div class="stage-item-value">{{ demandeStage.description }}</div>
+        <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
       </div>
     </div>
 
