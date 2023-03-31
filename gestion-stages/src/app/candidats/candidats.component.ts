@@ -31,6 +31,6 @@ selectedCandidat?: Candidat;
 
   //aide de pour faire en sorte que les card soient cliquable pour afficher la fiche correspondante + private router etc
 onCardClick() {
-  this.router.navigate(['/sidenav/fiche-candidat'])
+  this.router.navigate(['/sidenav/candidat-details'])
 }
 }

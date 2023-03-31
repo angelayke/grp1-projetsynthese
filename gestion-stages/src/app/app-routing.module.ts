@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
+import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 
 
 const routes: Routes = [
@@ -75,6 +76,11 @@ const routes: Routes = [
         path: 'fiche-demandestage/:_id',
         component: FicheDemandeStageComponent
       },
+      {
+        path: 'candidat-details',
+        component: CandidatDetailsComponent
+      },
+
     ]
   },
   {
