@@ -12,29 +12,28 @@
       </div>
     </div>
 
-<!--<div class="row">
+    <!--<div class="row">
   <div class="col">-->
-    <div class="card-container" *ngFor="let candidat of candidats" >
-    <!--<ng-container class="container-fluid " >-->
-      <mat-card class="example-card" (click)="onCardClick()">
-        <mat-icon>person</mat-icon>
-        <!--<span class="material-icons">person</span>-->
-        <div>
-        <mat-card-title-group>
-          <mat-card-title>{{candidat.name}}</mat-card-title>
-          <mat-card-subtitle>{{candidat.jobTitle}}</mat-card-subtitle>
-        </mat-card-title-group>
-        <mat-card-subtitle>
-          {{candidat.email }} <br> {{candidat.phone}}
-        </mat-card-subtitle>
-      </div>
-      </mat-card>
-    
-  </div>
-  <!--</div>
+    <div class="card-container">
+      <ng-container *ngFor="let candidat of candidats">
+        <mat-card class="example-card" (click)="onCardClick()">
+          <mat-icon>person</mat-icon>
+          <div>
+            <mat-card-title-group>
+              <mat-card-title>{{candidat.name}}</mat-card-title>
+              <mat-card-subtitle>{{candidat.jobTitle}}</mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-subtitle>
+              {{candidat.email }} <br> {{candidat.phone}}
+            </mat-card-subtitle>
+          </div>
+        </mat-card>
+      </ng-container>
+    </div>
+    <!--</div>
 </div>-->
 
-   
+
   </div>
 </section>
 
