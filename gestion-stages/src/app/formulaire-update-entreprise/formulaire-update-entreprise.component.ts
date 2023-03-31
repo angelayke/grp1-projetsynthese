@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Entreprise } from '../entreprises';
+import { EnterpriseService } from '../enterprise.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire-update-entreprise',
@@ -6,6 +9,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./formulaire-update-entreprise.component.scss']
 })
 export class FormulaireUpdateEntrepriseComponent implements OnInit {
+
+   //toute cette partie est pour le bouton de upload une image de logo
   @ViewChild('fileInput') fileInput: ElementRef;
   fileAttr = 'Logo';
 
@@ -31,10 +36,47 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
       this.fileAttr = 'Logo';
     }
   }
+  //fin upload image logo
 
-  constructor() { }
+  newEntreprise: Entreprise ={
+    createdAt: '',
+    updatedAt: '',
+    description: '',
+    imageUrl: '',
+    contactName: '',
+    contactEmail: '',
+    contactPhone: '',
+    address: '',
+    city: '',
+    province: '',
+    postalCode: '',
+    published: false
+  }
+  
+  constructor(private entrepriseService: EnterpriseService ) { }
 
   ngOnInit(): void {
+    this.entrepriseService.getEntreprises().subscribe(
+      resultat => {
+        //
+      }
+    );
+  }
+
+
+  modifierEntreprise(entrepriseFormAjout: NgForm) {
+    if (entrepriseFormAjout.valid) {
+      this.entrepriseService.modifierEntreprise(this.newEntreprise).subscribe(
+      _ => {
+        entrepriseFormAjout.resetForm();
+        //this.dialogRef.close("Entreprise modifiée");
+        }
+      );
+    }
+ }
+
+ annuler() {
+  //this.dialogRef.close();
   }
 
 }

@@ -1,10 +1,8 @@
 ul {
-  //margin: 50px;
   display: inline-flex;
-  //width: 85%;
-  //justify-content: space-between;
   list-style: none;
   flex-wrap: wrap;
+  margin: 1em 0;
   }
   li {
       font-size: 60%;
@@ -17,27 +15,45 @@ ul {
       background: transparent;
       border-radius: 8px;
       color: $color;
-
-      &:hover{
-        cursor: pointer;
-        filter: brightness(85%);
-      }
     }
 
     .btn-rouge {
       @include header-bouton()
     }
 
+    .btn-rouge:hover{
+       background-color: #821519;
+       color: #fff;
+    }
+
     .btn-jaune {
       @include header-bouton(#cb912b, #986d22)
     }
+
+     .btn-jaune:hover{
+       background-color: #986d22;
+       color: #fff;
+    }
+
 
     .btn-bleu{
       @include header-bouton(#86a9e6, #2b497c)
     }
 
+     .btn-bleu:hover{
+       background-color: #5e7eb5;
+       color: #fff;
+    }
+
+
     .btn-violet{
       @include header-bouton(#7f2987, #4a1150)
     }
+
+     .btn-violet:hover{
+       background-color: #4a1150;
+       color: #fff;
+    }
+
 
     

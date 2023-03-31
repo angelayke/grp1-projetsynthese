@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { Candidat } from '../candidat';
-
+import { CandidatService } from '../candidat.service';
 
 @Component({
   selector: 'app-ajout-candidat',
@@ -9,24 +8,32 @@ import { Candidat } from '../candidat';
   styleUrls: ['./ajout-candidat.component.scss']
 })
 export class AjoutCandidatComponent implements OnInit {
- // candidat: Candidat = new Candidat();
-  submitted = false;
-
+  @Input() candidat: Candidat = {
   
+    _id: '',
+    email: '',
+    createdAt: '',
+    updatedAt: '',
+    province: '',
+    jobTitle: '',
+    postalCode: '',
+    city: '',
+    name: '',
+    description: '',
+    address: '',
+    published: true,
+    phone: '',
 
-  
+};
+constructor(private CandidatService: CandidatService) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  newCandidat(): void {
-    this.submitted = false;
-   // this.candidat = new Candidat();
+  AjoutCandidat(): void {
+    this.candidat._id = "930c92da2319965dfe3882b9";
+   
     }
-    save() {
-    //  this.candidat = new Candidat();
-    }
-    onSubmit() {
-      this.submitted = true;
-      this.save();
-    }
+    Test(): void {
+      console.log(this.candidat)
+}
 }

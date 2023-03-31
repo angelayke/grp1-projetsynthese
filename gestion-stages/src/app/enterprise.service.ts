@@ -26,17 +26,17 @@ export class EnterpriseService {
   createEntreprise(newEntreprise: Entreprise): Observable<Entreprise> {
     const headers = httpOptions.headers;
     console.log("L'API fonctionne!")
-    return this.http.post<Entreprise>(`${this.enterpriseUrl}/enterprise`, JSON.stringify(newEntreprise), httpOptions);
+    return this.http.post<Entreprise>(`${this.enterpriseUrl}`, JSON.stringify(newEntreprise), httpOptions);
   }
 
   modifierEntreprise(entreprise: Entreprise): Observable<Entreprise> {
     const headers = httpOptions.headers;
-    const url = `${this.enterpriseUrl}/candiadtes/${entreprise._id}`;
+    const url = `${this.enterpriseUrl}/${entreprise._id}`;
     return this.http.put<Entreprise>(url, JSON.stringify(entreprise), { headers: headers });
   }
 
   supprimerEntreprise(id: string): Observable<any> {
-    const url = `${this.enterpriseUrl}/enterprises/${id}`;
+    const url = `${this.enterpriseUrl}/${id}`;
     return this.http.delete(url);
   }
 
