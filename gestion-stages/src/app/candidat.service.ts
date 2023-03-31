@@ -30,18 +30,18 @@ const httpOptions = {
     const headers = httpOptions.headers;
     console.log("L'API fonctionne!")
     // return this.http.post<Candidat>(`${this.candidatUrl}/candidats`, JSON.stringify(newCandidat), { headers: headers });
-    return this.http.post<Candidat>(`${this.candidatsUrl}/candiadtes`, JSON.stringify(newCandidat), httpOptions);
+    return this.http.post<Candidat>(`${this.candidatsUrl}`, JSON.stringify(newCandidat), httpOptions);
   }
 
   modifierCandidats(candidat: Candidat): Observable<Candidat> {
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const headers = httpOptions.headers;
-    const url = `${this.candidatsUrl}/candiadtes/${candidat._id}`;
+    const url = `${this.candidatsUrl}/${candidat._id}`;
     return this.http.put<Candidat>(url, JSON.stringify(candidat), { headers: headers });
   }
 
   supprimerCandidats(id: string): Observable<any> {
-    const url = `${this.candidatsUrl}/candiadtes/${id}`;
+    const url = `${this.candidatsUrl}/${id}`;
     return this.http.delete(url);
   }
   

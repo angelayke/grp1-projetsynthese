@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
+import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 
 
 const routes: Routes = [
@@ -78,6 +79,9 @@ const routes: Routes = [
         component: FicheDemandeStageComponent
       },
       {
+        path: 'candidat-details',
+        component: CandidatDetailsComponent
+      },
         path: 'fiche-offre-stage',
         component: FicheOffreStageComponent
       },
@@ -91,28 +95,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/login'
   }
-
-  // { path: '', component: LoginComponent },
-  // { path: 'sidenav', component: SidenavComponent}, //component: TableaudebordComponent
-  // { path: '', redirectTo: '/login', pathMatch: 'full' },
-// { path: '', component: MainComponent, children: [
-//   { path: '', component: T}
-// ]}, //component: LoginComponent
-// { path: 'offredestage'}, //component: OffredestageComponent
-// { path: 'candidats'}, //component: CandidatsComponent
-// { path: 'entreprises'}, //component: EntreprisesComponent
-// { path: 'fichedemandestage'}, //component: FicheDemandeStageComponent
-// { path: 'formulairestage'}, //component: FormulaireStageComponent
-// { path: 'ficheoffrestage'}, //component: FicheOffreStageComponent
-// { path: 'formulaireoffre'}, //component: FormulaireOffreComponent
-// { path: 'fichecandidat'}, //component: FicheCandidatComponent
-// { path: 'formulairecandidat'}, //component: FormulaireCandidatComponent
-// { path: 'ficheentreprise'}, //component: FicheEntrepriseComponent
-// { path: 'formulaireentreprise'}, //component: FormulaireEntrepriseComponent
-
-
-
-
 ];
 
 @NgModule({

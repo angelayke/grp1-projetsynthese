@@ -1,13 +1,35 @@
-
+/* example angular*/
+.example-card {
+  max-width: 350px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+/* fin exemple angular */
 h1 {
-    font: 600 24px/28px "Open Sans";
-    color: gray;
+    font: 900 38px/42px "Lato";
+    color: #707070;
+
   }
 
 h2 {
   color: white;
 }
 
+.row{
+  margin-bottom: 1.5em;
+}
+
+.btn__button {
+  background-color: #7f2987;
+  color: #fff;
+  margin-bottom: 20px;
+   &:hover{
+    background-color: #4a1150;
+   }
+}
+
+/*
 .liste-candidats {
   margin-bottom: 5px;
   display: inline-flex;
@@ -26,16 +48,59 @@ mat-card-content {
   justify-content: center;
   font-family: "Open Sans";
 }
+*/
 
-.btn__button {
-  border-style: solid;
-  background: transparent;
-  border-radius: 5px;
-  background-color: #a00768;
-
+.material-icons{
+  color: #bc86c2;
+  background-color: #7f2987;
+  font-size: 100px;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 1rem;
 }
 
+.mat-card-title {
+  margin-bottom: 0px;
+}
 
+.mat-card-title-group {
+  margin-bottom: 16px;
+}
 
+.mat-card-subtitle{
+  margin-bottom: 0px;
+}
 
+.flex-candidat{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-column-gap: 1rem; // optional
+  grid-row-gap: 1rem; // optional
+}
+
+.card2 {
+  //display: block;
+  top: 0px;
+  position: relative;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+  background-color: white;
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+
+  }
+}
 

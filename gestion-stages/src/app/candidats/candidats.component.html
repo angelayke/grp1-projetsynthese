@@ -1,35 +1,60 @@
 <section>
-  
   <div class="container">
-      <div class="row">
-        <div class="col-12">
+    <div class="row">
+      <div class="col-12">
         <h1>Candidats</h1>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-<div><button mat-raised-button class="btn__button"> <h2>Ajouter un candidat</h2></button></div>
-</div>
-</div>
-</div> 
-<div class="container mt-3">
-  <div class="row">
-    
-      <ng-container class="col-md-12 col-lg-6 d-flex align-self-stretch"*ngFor="let candidat of candidats">
-        
-    <mat-card-title>
-        <span class="material-icons">person</span>
-      </mat-card-title>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button mat-button class="btn__button" aria-label="Ajouter" routerLink="/sidenav/ajout-candidat">Ajouter un
+          candidat</button>
+      </div>
+    </div>
 
-      <mat-card-content>
-        <dl> 
-          <dt>{{candidat.name}} </dt>
-          <dt>{{candidat.jobTitle}}</dt>
-          <dt>{{candidat.email }}</dt>
-          <dt>{{candidat.phone}}</dt>
-        </dl>
+    <!--<div class="row">
+  <div class="col">-->
+    <div class="card-container">
+      <ng-container *ngFor="let candidat of candidats">
+        <mat-card class="example-card card2" (click)="onCardClick()">
+          <mat-icon>person</mat-icon>
+          <div>
+            <mat-card-title-group>
+              <mat-card-title>{{candidat.name}}</mat-card-title>
+              <mat-card-subtitle>{{candidat.jobTitle}}</mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-subtitle>
+              {{candidat.email }} <br> {{candidat.phone}}
+            </mat-card-subtitle>
+          </div>
+        </mat-card>
+      </ng-container>
+    </div>
+    <!--</div>
+</div>-->
+  </div>
+</section>
+
+
+
+<!-- code de khaled
+    <ng-container class="container-fluid" *ngFor="let c of candidats">
+-->
+<!--<mat-card class="liste-candidats" (click)="(c._id)">-->
+<!--
+      <ng-container class="container-fluid" *ngFor="let candidat of candidats">
+        <mat-card-title>
+          <span class="material-icons">person</span>
+        </mat-card-title>
+
+        <mat-card-content>
+          <dl>
+            <dt>{{candidat.name}} </dt>
+            <dt>{{candidat.jobTitle}}</dt>
+            <dt>{{candidat.email }}</dt>
+            <dt>{{candidat.phone}}</dt>
+          </dl>
         </mat-card-content>
       </ng-container>
-  </div>
-</div>
-    </section>
+    </ng-container>-->
+
