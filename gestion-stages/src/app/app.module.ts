@@ -109,7 +109,6 @@ import { EnterpriseService } from './enterprise.service';
     DialogModifierStageComponent,
     FicheDemandeStageComponent,
     GroupeCardsComponent,
-=======
     ListeDemandeStagesComponent,
    ],
 
