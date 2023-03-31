@@ -13,15 +13,15 @@
     <div class="btn-control">
       <ng-container matColumnDef="actions" class="text-underline">
         <div class="example-button-row">
-          <button mat-flat-button class="btn">
+          <button mat-flat-button class="btn" (click)="onDoneClick()">
             <mat-icon id="done">done</mat-icon>
           </button>
 
-          <button mat-flat-button class="btn">
+          <button mat-flat-button class="btn" (click)="onEditClick()">
             <mat-icon id="edit">edit</mat-icon>
           </button>
 
-          <button mat-flat-button class="btn">
+          <button mat-flat-button class="btn" (click)="onDeleteClick()">
             <mat-icon id="cancel">cancel</mat-icon>
           </button>
         </div>
@@ -32,7 +32,7 @@
                 <ng-container matColumnDef="actions" class="text-underline">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
                 <td mat-cell *matCellDef="let entreprise" class="btn-td">
-      
+
                   <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
                     <mat-icon (click)="openDetailsDialog(entreprise._id)" class="visibility">visibility</mat-icon>
                   </button>

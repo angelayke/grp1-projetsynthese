@@ -1,6 +1,6 @@
 // @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-@font-face {  
+@font-face {
     font-family: 'Lato', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
     }
@@ -50,18 +50,18 @@ div .heading {
 }
 
 .ligne-verticale {
-    border-left: 12px solid; 
+    border-left: 12px solid;
     color: $color1;
     height: fit-content;
     display: flexbox;
 }
 
 .ligne-verticale2 {
-    border-left: 7px solid; 
+    border-left: 7px solid;
     color: $color4;
     height: fit-content;
     // position:fixed;
-  
+
 }
 
 .flex {
@@ -100,3 +100,10 @@ h6 {
 // .margin-title {
 //     padding-top: 24px;
 // }
+
+.btn-control{
+  display: flex;
+  justify-content: right;
+  margin: 10px 2rem 10px 0;
+
+}

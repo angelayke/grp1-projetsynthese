@@ -5,44 +5,44 @@
 <div class="table-container">
     <div>
         <h1>Offres de stage</h1>
-      
-        <button mat-raised-button color="" class="btn-offre-stage">Ajouter une offre de stage</button>
+
+        <button mat-raised-button color="" class="btn-offre-stage" routerLink="/sidenav/formulairestage">Ajouter une offre de stage</button>
     </div>
-  
-    
+
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    
-    
+
+
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
-      
+
         <!-- Position Column -->
         <ng-container matColumnDef="poste">
           <th mat-header-cell *matHeaderCellDef><b> Poste </b></th><br><hr>
-          <td mat-cell *matCellDef="let element" class="border-left"><span class="ligne-vertical"><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon></span><b>Intégrateur Web</b><br>Acolyte communication</td> 
+          <td mat-cell *matCellDef="let element" class="border-left"><span class="ligne-vertical"><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon></span><b>Intégrateur Web</b><br>Acolyte communication</td>
         </ng-container>
-      
+
         <!-- Name Column -->
         <ng-container matColumnDef="secteur">
           <th mat-header-cell *matHeaderCellDef><b> Secteur d'activité </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
           <td mat-cell *matCellDef="let element" >Communication</td>
         </ng-container>
-      
+
         <!-- Weight Column -->
         <ng-container matColumnDef="region">
           <th mat-header-cell *matHeaderCellDef><b> Région </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.weight}} </td> -->
           <td mat-cell *matCellDef="let element"> Mauricie </td>
         </ng-container>
-  
+
          <!-- Weight Column -->
          <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef><b> Date de publication </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.weight}} </td> -->
           <td mat-cell *matCellDef="let element"> 2022-03-03 </td>
         </ng-container>
-      
+
         <!-- Symbol Column -->
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef><b></b></th>
@@ -61,7 +61,7 @@
             </button> -->
           </td>
         </ng-container>
-      
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>

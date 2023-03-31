@@ -2,42 +2,43 @@
 <h2><b>Dernières <span>offres</span> de stage</b></h2>
 <p><b>En attente de validation</b></p>
 -->
+<a class="btn-valid" routerLink="/sidenav/fiche-offre-stage">Ajouter une offre</a>
 <<<<<<< HEAD
 <div class="table-container">
- 
+
   <div>
     <h2>Dernières <span class="demandes">offres</span> de stage</h2>
     <h3 class="titre2"> En attente de validation</h3>
     <button mat-raised-button color="" class="btn-offre-stage">Valider toutes les offres</button>
   </div>
-  
-  
+
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-  
+
+
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
-    
+
       <!-- Position Column -->
       <ng-container matColumnDef="poste">
         <th mat-header-cell *matHeaderCellDef><b> Poste </b></th><br><hr>
-        <td mat-cell *matCellDef="let element" class="border-left"><span class="ligne-vertical"></span><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon><b>Intégrateur Web</b><br>Acolyte communication</td> 
+        <td mat-cell *matCellDef="let element" class="border-left"><span class="ligne-vertical"></span><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon><b>Intégrateur Web</b><br>Acolyte communication</td>
       </ng-container>
-    
+
       <!-- Name Column -->
       <ng-container matColumnDef="ville">
         <th mat-header-cell *matHeaderCellDef><b> Ville </b></th><br><hr>
         <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
         <td mat-cell *matCellDef="let element" >Cégep de Trois-Rivières</td>
       </ng-container>
-    
+
       <!-- Weight Column -->
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef><b> Date </b></th><br><hr>
         <!-- <td mat-cell *matCellDef="let element"> {{element.weight}} </td> -->
         <td mat-cell *matCellDef="let element"> 2022-03-03 </td>
       </ng-container>
-    
+
       <!-- Symbol Column -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef><b> Actions </b></th>
@@ -56,10 +57,10 @@
           <!-- <button mat-icon-button aria-label="Modifier">
             <mat-icon>school</mat-icon>
           </button> -->
-        
+
         </td>
       </ng-container>
-    
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>

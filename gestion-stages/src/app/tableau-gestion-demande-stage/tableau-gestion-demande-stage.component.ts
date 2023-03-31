@@ -185,5 +185,15 @@ export class TableauGestionDemandeStageComponent implements OnInit {
 
 
 
+  getInactiveStages(): DemandeStage[] {
+    return this.demandesStages.filter(stage => !stage.active);
+  }
+
+  showInactive() {
+    this.dataSource = new MatTableDataSource(this.getInactiveStages());
+
+  }
+
+
 
 }

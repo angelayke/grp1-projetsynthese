@@ -1,19 +1,40 @@
+
+
+
 <mat-card class="card-container">
+  <div class="btn-control">
+    <ng-container matColumnDef="actions" class="text-underline">
+      <div class="example-button-row">
+        <button mat-flat-button class="btn" (click)="onDoneClick()">
+          <mat-icon id="done">done</mat-icon>
+        </button>
+
+        <button mat-flat-button class="btn" (click)="onEditClick()">
+          <mat-icon id="edit">edit</mat-icon>
+        </button>
+
+        <button mat-flat-button class="btn" (click)="onDeleteClick()">
+          <mat-icon id="cancel">cancel</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+
     <mat-card-title>
         <div class="line-height">
             <div class="ligne-verticale">
                 <h5 class="heading">Offre de stage</h5><br>
                 <h1>Intégrateur Web junior</h1><br>
                 <h4>Acolyte communication</h4>
-            </div>    
-        </div>    
+            </div>
+        </div>
     </mat-card-title>
     <mat-card-subtitle>
-        <h3>Description de la tâche</h3>    
+        <h3>Description de la tâche</h3>
     </mat-card-subtitle>
     <mat-card-content>
         <div class="font-size">
-                      
+
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
                 dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
@@ -21,21 +42,21 @@
                 purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.
                 <br>
                 <br>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sint, sit harum praesentium nesciunt vitae tempora itaque, 
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sint, sit harum praesentium nesciunt vitae tempora itaque,
                 rem recusandae, temporibus rerum perferendis laboriosam ea quas adipisci quibusdam repudiandae voluptatem dolorum.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, perspiciatis facere totam minima mollitia provident deleniti debitis 
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, perspiciatis facere totam minima mollitia provident deleniti debitis
                 culpa possimus officiis quaerat dolore ullam reiciendis unde sunt corporis maxime necessitatibus cupiditate.
             </p>
 
-                
-                   
+
+
                 <div class="ligne-verticale2 margin">
                     <h6 class="block">Programme de Formation</h6>
                         <p>
                             Diplôme d'études collégiales ou équivalent
                         </p>
                 </div>
-    
+
                 <div class="ligne-verticale2 margin">
                     <h6 class="block">Exigences</h6>
                         <p>
@@ -51,53 +72,53 @@
                             venenatis purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.
                         </p>
                 </div>
-                
+
             <h5 class="margin-title">Informations sur le stage recherché</h5>
-    
+
             <div class="flex" >
                 <div class="ligne-verticale2">
                     <h6 class="block">Type de stage</h6>
                         <p>
                             Temps plein
                         </p>
-                     
+
                 </div>
                 <div class="ligne-verticale2">
                     <h6 class="block">Date de début</h6>
                         <p>
                             2022-05-25
                         </p>
-                    
+
                 </div>
             </div>
-    
+
             <div class="flex">
                 <div class="ligne-verticale2 margin">
                     <h6 class="block">Nombre d'heures pas semaine</h6>
                         <p>
                             35 heures par semaine
                         </p>
-                      
+
                 </div>
-              
-                <div class="ligne-verticale2 margin">               
+
+                <div class="ligne-verticale2 margin">
                     <h6 class="block">Date de fin</h6>
                         <p>
                             2022-09-01
                         </p>
-                     
+
                 </div>
             </div>
-                  
+
                 <div class="ligne-verticale2 margin">
                     <h6 class="block">Rémunération</h6>
                         <p>
                             À discuter
                         </p>
                 </div>
-            
+
             <h5 class="margin-title">Informations suplémentaires</h5>
-              
+
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
                     dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
@@ -109,8 +130,8 @@
                     dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
                     nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
                     purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.
-                </p> 
-                   
+                </p>
+
         </div>
 
     </mat-card-content>

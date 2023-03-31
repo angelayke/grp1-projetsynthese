@@ -134,14 +134,7 @@ export class DernieresDemandesStagesComponent implements OnInit {
       console.log("result",  stage.active)
     }
 
-    getInactiveStages(): DemandeStage[] {
-      return this.demandesStages.filter(stage => !stage.active);
-    }
 
-    showInactive() {
-      this.dataSource = new MatTableDataSource(this.getInactiveStages());
-
-    }
 
     onDeleteClick(stage: DemandeStage): void {
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
