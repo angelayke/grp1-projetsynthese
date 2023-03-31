@@ -9,6 +9,7 @@
   </section>
 
   <section class="container">
+    <button class="btn-inactive" mat-button (click)="showInactive()">Voir les demandes inactives</button>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="titre" class="text-underline">

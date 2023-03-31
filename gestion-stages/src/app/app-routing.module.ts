@@ -1,3 +1,5 @@
+import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
+import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
 import { ListeDemandeStagesComponent } from './liste-demande-stages/liste-demande-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
 import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
@@ -74,6 +76,14 @@ const routes: Routes = [
       {
         path: 'fiche-demandestage/:_id',
         component: FicheDemandeStageComponent
+      },
+      {
+        path: 'fiche-offre-stage',
+        component: FicheOffreStageComponent
+      },
+      {
+        path: 'formulaire-ajout-stage',
+        component: FormulaireOffreAjoutComponent
       },
     ]
   },

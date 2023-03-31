@@ -76,7 +76,7 @@ editing: boolean = false;
 
   onDeleteClick(): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '300px',
+      width: '400px',
       data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
     });
 
