@@ -82,6 +82,7 @@ const routes: Routes = [
         path: 'candidat-details',
         component: CandidatDetailsComponent
       },
+      {
         path: 'fiche-offre-stage',
         component: FicheOffreStageComponent
       },
