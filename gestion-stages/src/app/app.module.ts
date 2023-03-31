@@ -25,46 +25,55 @@ import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+//menu sidenav
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
 
 // Component
 import { TableauAffichageOffreStageComponent } from './tableau-affichage-offre-stage/tableau-affichage-offre-stage.component';
 import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { LoginComponent } from './login/login.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
+
+//Candidats
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
 import { CandidatsComponent } from './candidats/candidats.component';
 import { ModalCandidatComponent } from './modal-candidat/modal-candidat.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { LoginComponent } from './login/login.component';
+import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
+import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
+import { ListeDemandeStagesComponent } from './liste-demande-stages/liste-demande-stages.component';
+
+//Demandes de stage
 import { TableauAffichageDemandeStageComponent } from './tableau-affichage-demande-stage/tableau-affichage-demande-stage.component';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
-import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
-import { EntreprisesComponent } from './entreprises/entreprises.component';
-import { TableaudebordComponent } from './tableaudebord/tableaudebord.component';
-import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
-import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
-import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
-import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
-
-
-//Demande de stage
 import { FormulaireStageComponent } from './formulaire-stage/formulaire-stage.component';
 import { TableauGestionDemandeStageComponent } from './tableau-gestion-demande-stage/tableau-gestion-demande-stage.component';
 import { DernieresDemandesStagesComponent } from './dernieres-demandes-stages/dernieres-demandes-stages.component';
 import { ModifierDemandeStageComponent } from './modifier-demande-stage/modifier-demande-stage.component';
 import { DialogModifierStageComponent } from './dialog-modifier-stage/dialog-modifier-stage.component';
 import { FicheDemandeStageComponent } from './fiche-demande-stage/fiche-demande-stage.component';
+import { DetailsStagesRequestComponent } from './details-stages-request/details-stages-request.component';
 
+//Offres de stage
+import { FormulaireOffreAjoutComponent } from './formulaire-offre-ajout/formulaire-offre-ajout.component';
+import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
+import { FicheOffreStageComponent } from './fiche-offre-stage/fiche-offre-stage.component';
+import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
+
+//Entreprises
+import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entreprise/formulaire-ajout-entreprise.component';
 import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
-//menu sidenav
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatDividerModule} from '@angular/material/divider';
-import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
-import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
+//Services
 import { CandidatService } from './candidat.service';
+
 import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
+import { EnterpriseService } from './enterprise.service';
+
 
 
 
@@ -100,6 +109,8 @@ import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
     DialogModifierStageComponent,
     FicheDemandeStageComponent,
     GroupeCardsComponent,
+=======
+    ListeDemandeStagesComponent,
    ],
 
   imports: [
@@ -129,7 +140,10 @@ import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
     MatListModule,
     HttpClientModule
   ],
-  providers: [CandidatService],
+  providers: [
+    CandidatService,
+    EnterpriseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

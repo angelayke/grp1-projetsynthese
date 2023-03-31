@@ -33,7 +33,7 @@ img{
     margin-top: 2px;
     margin-left: 5px;
     color: #707070;
-    font-size: 4em;
+    font-size: 2.5em;
 }
 
 .table-titre{
@@ -50,7 +50,10 @@ img{
 }
 
 .td-fiche-entreprise{
-    border-left: 7px solid #86a9e6;
+  display: flex;
+  border-left: 7px solid #86a9e6;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .subtitle-fiche{
@@ -61,7 +64,6 @@ img{
 
 .txt-fiche{
     margin-left: 5px;
-    font-style: italic;
 }
 
 .tr-fiche{
@@ -72,3 +74,33 @@ img{
     font-weight: bold;
     font-size: x-large;
 }
+
+
+.btn-control{
+    display: flex;
+    justify-content: right;
+    margin: 10px 0;
+  }
+  
+  .btn{
+    background-color: transparent;
+  }
+  
+  .mat-flat-button{
+    min-width: 30px;
+    padding: 0 5px;
+  }
+  
+  
+  .mat-icon{
+    font-weight: 700;
+      &#done{
+        color: #07a04a;
+      }
+      &#edit{
+        color: #2b497c;
+      }
+      &#cancel{
+        color:  #bb2026;
+      }
+  }

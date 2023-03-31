@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { STAGES } from '../mock-stages';
-import { Stage } from '../stage';
+import { filter, Observable, of, throwError } from 'rxjs';
+import { DEMANDESTAGES } from '../mock-demandeStages';
+import { DemandeStage } from '../demandeStage';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,13 @@ import { Stage } from '../stage';
 export class DemandesStagesService {
 
 
-  demandesStages: Stage[] = STAGES;
+  demandesStages: DemandeStage[] = DEMANDESTAGES;
+  demandeStageSelectionnee!: DemandeStage;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getDemandesStages(): Observable<Stage[]>{
+  getDemandesStages(): Observable<DemandeStage[]>{
+    console.log("Demande stage service fonctionne pour tous les stages", this.demandesStages)
     return of(this.demandesStages)
 
   }
@@ -22,11 +25,39 @@ export class DemandesStagesService {
     this.demandesStages = this.demandesStages.filter(stage => stage._id != _id);
   }
 
-  getDemandeStageById(_id: string): Observable<Stage>{
-    const demandeStage = STAGES.filter(ds => ds._id === _id)[0];
-    return of(demandeStage)
+  // getDemandeStageById(_id: string): Observable<Stage>{
+  //   const demandeStage = STAGES.filter(ds => ds._id === _id)[0];
+  //   console.log("Verification:...........",demandeStage)
+  //   return of(demandeStage)
+  // }
+  getDemandeStageById(_id: string): Observable<DemandeStage>{
+    const demandeStage = this.demandesStages.find((ds: DemandeStage) => ds._id === _id);
+
+    console.log("Demande stage service fonctionne pour le stage avec l'ID: " + _id, demandeStage);
+    return of(demandeStage).pipe(filter((ds:DemandeStage | undefined):ds is DemandeStage => ds !== undefined));
+    // if (demandeStage) {
+    //     return of(demandeStage);
+    // } else {
+    //     return throwError(`La demande de stage avec l'ID ${_id} n'a pas été trouvée.`);
+    // }
+}
+
+  // // Get a stage
+  // getStageById(id: string): Observable<Stage> {
+  //   // if (!id) {
+  //   //   throw new Error('ID cannot be null or undefined');
+  //   // }
+  //   return this.http.get<Stage>(`${this.demandesStages}/${id}`);
+  // }
+
+
+  setDemandeStageSelectionnee(demandeStage: DemandeStage): void {
+    this.demandeStageSelectionnee = demandeStage;
   }
 
+  getDemandeStageSelectionnee(): DemandeStage {
+    return this.demandeStageSelectionnee;
+  }
 
 
 }

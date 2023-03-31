@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { StagesRequest } from '../models/stagesRequests';
 import { StagesRequestService } from '../services/stages-request.service';
-import { Stage } from '../stage';
+import { DemandeStage } from '../demandeStage';
 
 @Component({
   selector: 'app-details-stages-request',
@@ -10,11 +10,11 @@ import { Stage } from '../stage';
   styleUrls: ['./details-stages-request.component.scss']
 })
 export class DetailsStagesRequestComponent implements OnInit {
-  stage: Stage;
+  stage: DemandeStage;
   stagesRequest: StagesRequest | undefined;
   constructor(public dialogRef: MatDialogRef<DetailsStagesRequestComponent>,
     // @Inject(MAT_DIALOG_DATA) public data: { id: string },
-    @Inject(MAT_DIALOG_DATA) public data: { stage: Stage },
+    @Inject(MAT_DIALOG_DATA) public data: { stage: DemandeStage },
     // private stagesRequestService: StagesRequestService
     ) {
       this.stage = data.stage;

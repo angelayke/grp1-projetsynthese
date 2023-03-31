@@ -259,13 +259,19 @@
     }
   }
 
+ .mat-primary .btn-save-annuler:hover{
+    color: #53ADB2!important;
+
+
+  }
+
   .mat-accent {
     // background-color: #ff4081;
     background-color: #fff;
     color: #333;;
 
     &:hover {
-      background-color:  #ff4081;
+      background-color:  #53ADB2
     }
   }
 
