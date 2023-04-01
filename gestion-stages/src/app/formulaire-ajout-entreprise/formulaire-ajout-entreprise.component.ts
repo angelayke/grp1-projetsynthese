@@ -94,14 +94,15 @@ newEntreprise: Entreprise ={
   //   //this.dialogRef.close();
      }
   
-  createEntreprise() {
-    this.entrepriseService.createEntreprise(this.entreprise).subscribe((data) => { //:ApiResponse<Entreprise[]>
-      this.router.navigate(['sidenav/tableaudebord']).then();
-    },
-    (error) => {
-    this.errorMessage = error;
-    this.router.navigate(['sidenav/tableaudebord/ajout-entreprise']).then();
-
-  });
+  createEntreprise() { // (entrepriseFormAjout: NgForm)
+    //if (entrepriseFormAjout.valid) {
+      this.entrepriseService.createEntreprise(this.entreprise).subscribe((data) => { //:ApiResponse<Entreprise[]>
+        this.router.navigate(['sidenav/tableaudebord']).then();
+      },
+      (error) => {
+      this.errorMessage = error;
+      this.router.navigate(['sidenav/tableaudebord/ajout-entreprise']).then();
+      });
+    //}
   }
 }

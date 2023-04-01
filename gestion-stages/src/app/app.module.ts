@@ -25,6 +25,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 //menu sidenav
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -138,7 +139,8 @@ import { EnterpriseService } from './enterprise.service';
     MatSortModule,
     MatGridListModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [
     CandidatService,

@@ -24,6 +24,10 @@
      color: #86a9e6;
      font-weight: bold;
  }
+
+ button:hover{
+    background-color: #2b497c;
+}
  
  img{
      max-width: 100%;
@@ -74,7 +78,10 @@
  }
  
  .td-fiche-entreprise{
-     border-left: 7px solid #86a9e6;
+    display: flex;
+    border-left: 7px solid #86a9e6;
+    align-items: flex-start;
+    flex-wrap: wrap; 
  }
  
  .txt-fiche{
@@ -83,7 +90,10 @@
  }
  
  .tr-fiche{
-     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
  }
  
  .person-contact-fiche{
@@ -113,14 +123,18 @@
  }
  
  .mat-flat-button{
-     background-color: #86a9e6;
-     color: #fff;
-     min-width: 100px;
- 
-     &#btn-parcourir{
-         margin-left: 20px;
-     }
- }
+    background-color: #86a9e6;
+    color: #fff;
+    min-width: 100px;
+
+    &#btn-parcourir{
+        margin-left: 20px;
+        
+        &:hover {
+        background-color: #2b497c;            
+        }
+    }
+}
  
  .btn-control{
      display: flex;
@@ -129,8 +143,11 @@
  }
  
  .btn-annuler{
-     margin-right: 10px;
- }
+    margin-right: 10px;
+    &:hover{
+        color: #fff;
+    }
+}
  
  /* tuto upload file*/
  /*pour faire disparaitre la ligne en dessous du mat-form-field*/
@@ -142,7 +159,7 @@
      height: auto !important;
      background: transparent;
      padding: 0;
-     width: 200px;
+     width: 500px;
  }
  
  .mat-toolbar {

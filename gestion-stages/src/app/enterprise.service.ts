@@ -15,18 +15,19 @@ const httpOptions = {
 })
 export class EnterpriseService {
 
-  constructor(private http: HttpClient) { }
-
-  enterpriseUrl = 'https://e-stages-gbgeb8.can.canonic.dev/api/enterprises';
+ enterpriseUrl = 'https://e-stages-gbgeb8.can.canonic.dev/api/enterprises';
+  
+ constructor(private http: HttpClient) { }
 
   getEntreprises(): Observable<ApiResponse<Entreprise[]>> {
-    return this.http.get<ApiResponse<Entreprise[]>>(this.enterpriseUrl, httpOptions);
+    return this.http.get<ApiResponse<Entreprise[]>>(this.enterpriseUrl); //, HttpOptions
   }
 
   createEntreprise(newEntreprise: Entreprise): Observable<Entreprise> {
-    const headers = httpOptions.headers;
+    //const headers = httpOptions.headers;
     console.log("L'API fonctionne!")
-    return this.http.post<Entreprise>(`${this.enterpriseUrl}`, JSON.stringify(newEntreprise), httpOptions);
+    //return this.http.post<Entreprise>(`${this.enterpriseUrl}`, JSON.stringify(newEntreprise), httpOptions);
+    return this.http.post<Entreprise>(this.enterpriseUrl, newEntreprise, httpOptions);
   }
 
   modifierEntreprise(entreprise: Entreprise): Observable<Entreprise> {
