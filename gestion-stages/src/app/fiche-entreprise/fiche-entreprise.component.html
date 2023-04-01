@@ -6,7 +6,7 @@
           <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo"></td>
           <td class="td-fiche-entreprise">
             <p class="soustitre-fiche">Entreprise</p>
-            <h1 class="titre-entreprise">Titre -{{entreprise?._id}}-</h1>
+            <h1 class="titre-entreprise">Titre -{{entreprise?.name}}-</h1>
           </td>
         </tr>
       </table>
@@ -22,7 +22,7 @@
               <mat-icon id="edit">edit</mat-icon>
             </button>
 
-            <button mat-flat-button class="btn" (click)="onDeleteClick()">
+            <button mat-flat-button class="btn" (click)="onDeleteClick()" ><!--(click)="supprimerEntreprise(entreprise?.id)"-->
               <mat-icon id="cancel">cancel</mat-icon>
             </button>
           </div>

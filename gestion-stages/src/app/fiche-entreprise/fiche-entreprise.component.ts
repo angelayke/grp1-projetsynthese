@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { Entreprise } from '../entreprises';
 import { ENTREPRISES } from '../mock-entreprises';
+import { EnterpriseService } from '../enterprise.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -18,9 +20,14 @@ export class FicheEntrepriseComponent implements OnInit {
 
   editing: boolean = false;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private entrepriseService: EnterpriseService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.entrepriseService.getEntreprises().subscribe(
+      resultat => {
+        //
+      }
+    );
   }
 
 
@@ -46,4 +53,24 @@ export class FicheEntrepriseComponent implements OnInit {
     }
   });
 }
+
+getEntreprises() { 
+  this.entrepriseService.getEntreprises().subscribe(
+    resultat => {
+      console.log(resultat);
+    }
+  );
+}
+
+supprimerEntreprise(id: string) {
+  this.entrepriseService.supprimerEntreprise(id).subscribe(
+    _ => {
+      this.getEntreprises();
+      this._snackBar.open("Entreprise supprimée!", undefined, {
+        duration: 2000
+      });
+    }
+  );
+}
+
 }
