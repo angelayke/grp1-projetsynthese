@@ -87,7 +87,7 @@ const routes: Routes = [
         component: FicheOffreStageComponent
       },
       {
-        path: 'formulaire-ajout-stage',
+        path: 'ajout-offre-stage',
         component: FormulaireOffreAjoutComponent
       },
     ]
