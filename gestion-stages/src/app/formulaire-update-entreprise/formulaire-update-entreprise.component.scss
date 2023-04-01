@@ -85,10 +85,8 @@ button:hover{
     display: flex;
     border-left: 7px solid #86a9e6;
     align-items: flex-start;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
 }
-
 
 .txt-fiche{
     margin-left: 5px;
@@ -136,12 +134,11 @@ button:hover{
     &#btn-parcourir{
         margin-left: 20px;
         
-        &:hover {
-        background-color: #2b497c;            
+        &:hover {/* ne fonctionne pas  */
+        background-color: #2b497c !important;            
         }
     }
 }
-
 
 .btn-control{
     display: flex;

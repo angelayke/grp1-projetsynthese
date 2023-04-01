@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Entreprise } from '../entreprises';
 import { EnterpriseService } from '../enterprise.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire-update-entreprise',
@@ -53,7 +54,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
     published: false
   }
   
-  constructor(private entrepriseService: EnterpriseService ) { }
+  constructor(private entrepriseService: EnterpriseService, private router: Router ) { }
 
   ngOnInit(): void {
     this.entrepriseService.getEntreprises().subscribe(
@@ -64,11 +65,11 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
   }
 
 
-  modifierEntreprise(entrepriseFormAjout: NgForm) {
-    if (entrepriseFormAjout.valid) {
+  modifierEntreprise(entrepriseFormEdit: NgForm) {
+    if (entrepriseFormEdit.valid) {
       this.entrepriseService.modifierEntreprise(this.newEntreprise).subscribe(
       _ => {
-        entrepriseFormAjout.resetForm();
+        entrepriseFormEdit.resetForm();
         //this.dialogRef.close("Entreprise modifiée");
         }
       );
