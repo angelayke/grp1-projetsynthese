@@ -1,34 +1,3 @@
-// .stage-item {
-//   display: flex;
-//   margin-bottom: 20px;
-
-//   .stage-item-col {
-//     width: 50%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-
-//     .stage-item-field {
-//       margin-bottom: 10px;
-//       display: flex;
-//       flex-direction: column;
-//       border-left: 3px solid #333;
-//       padding-left: 10px;
-
-//       .stage-item-label {
-//         font-weight: bold;
-//         margin-bottom: 5px;
-//       }
-
-//       .stage-item-value {
-//         display: inline-block;
-
-//       }
-//     }
-//   }
-// }
-
-
 @mixin stage-item-field {
   margin-bottom: 10px;
   display: flex;
@@ -121,21 +90,11 @@
     color: #089da4;
   }
 
-
 }
+
 .btn-telecharger{
  margin: 1rem;
 
-// .cloud-download-icon {
-//   font-family: 'Material Icons';
-//   font-size: 24px;
-//   color: white;
-//   background-color:#089da4;
-//   padding: 1.7rem 5rem;
-
-
-//   /* autres styles CSS */
-// }
 }
 
 
@@ -175,9 +134,7 @@
 .vertical-line {
   display: inline-block;
   border-left: 10px solid #CD9635;
-  // height: 35px;
   margin-left: 35px;
-  // margin-right: 15px;
   vertical-align: middle;
   padding-left:10px;
 }
