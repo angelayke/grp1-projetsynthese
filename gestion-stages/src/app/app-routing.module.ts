@@ -17,6 +17,7 @@ import { FormulaireAjoutEntrepriseComponent } from './formulaire-ajout-entrepris
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,10 @@ const routes: Routes = [
       {
         path: 'entreprises/fiche-entreprise/:entrepriseId',
         component: FicheEntrepriseComponent
+      },
+      {
+        path: 'entreprises/modifier-entreprise/:entrepriseId',
+        component: FormulaireUpdateEntrepriseComponent
       },
       {
         path: 'modifier-demandestage',
