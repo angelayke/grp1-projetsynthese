@@ -1,68 +1,118 @@
-h1,h2,h3{
-    color: #86a9e6 ;
-    font-weight: bold;
+/* demo angular */
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
 }
 
 td {
-    padding-right: 8px;
+  padding-right: 8px;
+}
+
+/* fin demo angular */
+
+h1,
+h3 {
+  color: #7f2987;
+  font-weight: bold;
+}
+
+h2 {
+  margin-left: 8px;
+  color: #707070;
+  background-color: #fff;
+  padding: 0.5em 1em;
+  width: fit-content;
+}
+
+.soustitre-fiche {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.titre-candidat {
+  margin-top: 2px;
+  margin-left: 5px;
+  color: #707070;
+  font-size: 2.5em;
+}
+
+.table-titre {
+  width: 100%;
+}
+
+.fiche {
+  padding: 4em;
+  background-color: white;
+}
+/*
+td {
+  padding-right: 8px;
+}*/
+
+.td-fiche {
+  border-left: 7px solid #707070;
+}
+
+.td-fiche-candidat {
+    display: flex;
+    border-left: 7px solid #86a9e6;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
-
-.example-form{
-    min-width: 150px;
-    max-width: 500px;
-    width:100%
-
-}
-.example-full-width {
-    width: 100%;
-  }
-
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-
-.example-full-width{
-    width:100%
-}
-.titre-candidat{
-    margin-top: 2px;
-    margin-left: 5px;
-    color: #707070;
-    font-size: 4em;
-}
-
-td{
-    padding-right:8px;
-}
-
-.td-fiche{
-    border-left: 7px solid #a00768 ;
-}
-.txt-fiche{
-    margin-left:5px;
-    font-style:italic
-}
-
-.tr-fiche{
-    margin-bottom: 20px;
-}
-
-.soustitre-fiche{
-    margin-left: 5px;
+  
+  .subtitle-fiche {
+    font-size: large;
     font-weight: bold;
+    margin-left: 5px;
+  }
+  
+
+.txt-fiche {
+  margin-left: 5px;
 }
 
-.table-titre{
-    width: 300px;
+.tr-fiche {
+  margin-bottom: 20px;
 }
 
-.fiche{
-    padding: 4em;
-    background-color: white;
+.td-candidat-details {
+  border-left: 7px solid #7f2987;
 }
 
-.td-candidat-details{
-    border-left: 7px solid #a00768;
+/*boutons en haut a droite*/
+.btn-control {
+  display: flex;
+  justify-content: right;
+  margin: 10px 0;
+}
+
+.btn {
+  background-color: transparent;
+}
+
+.mat-flat-button {
+  min-width: 30px;
+  padding: 0 5px;
+}
+
+
+.mat-icon {
+  font-weight: 700;
+
+  &#done {
+    color: #07a04a;
+  }
+
+  &#edit {
+    color: #2b497c;
+  }
+
+  &#cancel {
+    color: #bb2026;
+  }
 }
