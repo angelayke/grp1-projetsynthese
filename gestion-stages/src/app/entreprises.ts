@@ -9,7 +9,7 @@ export interface ApiResponse<T> {
     _id: string;
     createdAt: string;
     updatedAt: string;
-    name?: string;
+    name: string;
     description: string;
     imageUrl: string;
     contactName: string;

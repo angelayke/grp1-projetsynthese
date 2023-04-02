@@ -17,12 +17,12 @@
             <button mat-flat-button class="btn" (click)="onDoneClick()">
               <mat-icon id="done">done</mat-icon>
             </button>
-
-            <button mat-flat-button class="btn" (click)="onEditClick()">
+            <!-- (click)="onEditClick()" -->
+            <button mat-flat-button class="btn" routerLink="/sidenav/entreprises/modifier-entreprise/{{entreprise._id}}">
               <mat-icon id="edit">edit</mat-icon>
             </button>
 
-            <button mat-flat-button class="btn" (click)="onDeleteClick()" ><!--(click)="supprimerEntreprise(entreprise?.id)"-->
+            <button mat-flat-button class="btn" (click)="onDeleteClick(entreprise._id)" ><!--(click)="supprimerEntreprise(entreprise?.id)"-->
               <mat-icon id="cancel">cancel</mat-icon>
             </button>
           </div>

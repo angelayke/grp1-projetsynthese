@@ -6,6 +6,7 @@ import { ENTREPRISES } from '../mock-entreprises';
 import { EnterpriseService } from '../enterprise.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { SuppressionDialogComponent } from '../suppression-dialog/suppression-dialog.component';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class FicheEntrepriseComponent implements OnInit {
   // public entreprise: Entreprise [] = [];
   // public entreprise: Entreprise = {} as Entreprise;
   public entreprise : any;
+  entreprises: Entreprise[];
   public errorMessage: string | null = null;
 
 
@@ -57,26 +59,42 @@ export class FicheEntrepriseComponent implements OnInit {
    alert("Fiche modifiée!");
  }
 
- onDeleteClick(): void {
-  const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+//  onDeleteClick(): void {
+//   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+//     width: '400px',
+//     data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+//   });
+
+//   dialogRef.afterClosed().subscribe(result => {
+//     if (result) {
+//       console.log("Fiche annulée!")
+//     }
+//   });
+// }
+onDeleteClick(entrepriseId: string): void {
+  const dialogRef = this.dialog.open(SuppressionDialogComponent, {
     width: '400px',
-    data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+    data: { message: 'Êtes-vous sûr de vouloir supprimer cette entreprise ?' }
   });
 
   dialogRef.afterClosed().subscribe(result => {
+    console.log("juste pour tester",result)
     if (result) {
-      console.log("Fiche annulée!")
+      this.entrepriseService.supprimerEntreprise(entrepriseId)
+        .subscribe((data) => {
+          this.entreprises = this.entreprises.filter(entreprise => entreprise._id !== entrepriseId);
+          console.log(this.entreprises)
+        });
     }
   });
 }
 
-getEntreprises() {
-  this.entrepriseService.getEntreprises().subscribe(
-    resultat => {
-      console.log(resultat);
-    }
-  );
+getEntreprises(): void {
+  this.entrepriseService.getEntreprises()
+    .subscribe(entreprises => this.entreprise = entreprises);
 }
+
+
 
 // supprimerEntreprise(id: string) {
 //   this.entrepriseService.supprimerEntreprise(id).subscribe(

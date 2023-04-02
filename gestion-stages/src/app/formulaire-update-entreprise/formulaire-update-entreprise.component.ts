@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Entreprise } from '../entreprises';
+import { ApiResponse, Entreprise } from '../entreprises';
 import { EnterpriseService } from '../enterprise.service';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire-update-entreprise',
@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulaire-update-entreprise.component.scss']
 })
 export class FormulaireUpdateEntrepriseComponent implements OnInit {
+
+  public loading: boolean = false;
+  public entrepriseId: string | null = null;
+  // public entreprise: Entreprise = {} as Entreprise;
+  public entreprise: any;
+  public errorMessage : string | null = null;
 
    //toute cette partie est pour le bouton de upload une image de logo
   @ViewChild('fileInput') fileInput: ElementRef;
@@ -44,6 +50,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
     createdAt: '',
     updatedAt: '',
     description: '',
+    name: '',
     imageUrl: '',
     contactName: '',
     contactEmail: '',
@@ -55,14 +62,29 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
     published: false
   }
 
-  constructor(private entrepriseService: EnterpriseService, private router: Router ) { }
+  constructor(private activatedRoute:ActivatedRoute, private entrepriseService: EnterpriseService, private router: Router ) { }
 
   ngOnInit(): void {
-    this.entrepriseService.getEntreprises().subscribe(
-      resultat => {
-        //
-      }
-    );
+    // this.entrepriseService.getEntreprises().subscribe(
+    //   resultat => {
+    //     //
+    //   }
+    // );
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.entrepriseId = param.get('entrepriseId');
+
+    });
+    if(this.entrepriseId){
+       this.entrepriseService.getEntreprise(this.entrepriseId).subscribe((data: ApiResponse<Entreprise[]>) => {
+        this.entreprise = data.data;
+        this.loading = false;
+
+      }, (error)=>{
+        this.errorMessage = error;
+        this.loading = false;
+      })
+    }
+
   }
 
 
@@ -76,6 +98,24 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
 //       );
 //     }
 //  }
+
+updateEntreprise(){
+  if(this.entrepriseId){
+    this.entrepriseService.modifierEntreprise(this.entreprise, this.entrepriseId).subscribe((data: ApiResponse<Entreprise[]>) => {
+      this.router.navigate(['sidenav/tableaudebord/']).then();
+
+
+    }, (error) => {
+      this.errorMessage = error;
+      this.router.navigate([`sidenav/tableaudebord/modifier-entreprise/${this.entrepriseId}`]).then();
+
+    });
+   }
+
+
+}
+
+
 
  annuler() {
   //this.dialogRef.close();
