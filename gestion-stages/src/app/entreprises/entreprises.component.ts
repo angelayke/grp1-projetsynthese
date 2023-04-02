@@ -13,7 +13,9 @@ import { Router } from '@angular/router';
 export class EntreprisesComponent implements OnInit {
 //entreprises=ENTREPRISES;
 
+public loading: boolean = false;
 entreprises : Entreprise[]=[];
+public errorMessage: string | null = null;
 
   constructor(private entrepriseService : EnterpriseService, private router : Router) { }
 
@@ -21,17 +23,22 @@ entreprises : Entreprise[]=[];
    this.getEntreprise();
   }
 
-   getEntreprise() {
+  public getEntreprise() {
+    this.loading = true;
      this.entrepriseService.getEntreprises().subscribe((data: ApiResponse<Entreprise[]>) => {
        this.entreprises = data.data;
+       this.loading = false;
        console.log("Données récupérées depuis l'API:", this.entreprises);
-     }, (err) => {
-      console.log("Impossible d'obtenir les données de l'url" + err);
+     }, (error) => {
+      this.errorMessage = error;
+      // console.log("Impossible d'obtenir les données de l'url" + err);
+      this.loading = false;
     });
    }
 
   //aide de pour faire en sorte que les card soient cliquable pour afficher la fiche correspondante + private router etc
-onCardClick() {
-  this.router.navigate(['/sidenav/fiche-entreprise'])
-}
+// onCardClick() {
+//   this.router.navigate(['/sidenav/fiche-entreprise'])
+// }
+
 }

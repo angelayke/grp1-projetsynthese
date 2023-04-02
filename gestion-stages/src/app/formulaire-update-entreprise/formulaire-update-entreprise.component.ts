@@ -40,6 +40,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
   //fin upload image logo
 
   newEntreprise: Entreprise ={
+    _id: '',
     createdAt: '',
     updatedAt: '',
     description: '',
@@ -53,7 +54,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
     postalCode: '',
     published: false
   }
-  
+
   constructor(private entrepriseService: EnterpriseService, private router: Router ) { }
 
   ngOnInit(): void {
@@ -65,16 +66,16 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
   }
 
 
-  modifierEntreprise(entrepriseFormEdit: NgForm) {
-    if (entrepriseFormEdit.valid) {
-      this.entrepriseService.modifierEntreprise(this.newEntreprise).subscribe(
-      _ => {
-        entrepriseFormEdit.resetForm();
-        //this.dialogRef.close("Entreprise modifiée");
-        }
-      );
-    }
- }
+//   modifierEntreprise(entrepriseFormEdit: NgForm) {
+//     if (entrepriseFormEdit.valid) {
+//       this.entrepriseService.modifierEntreprise(this.newEntreprise).subscribe(
+//       _ => {
+//         entrepriseFormEdit.resetForm();
+//         //this.dialogRef.close("Entreprise modifiée");
+//         }
+//       );
+//     }
+//  }
 
  annuler() {
   //this.dialogRef.close();

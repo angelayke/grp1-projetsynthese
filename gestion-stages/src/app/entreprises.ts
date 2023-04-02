@@ -3,10 +3,10 @@ export interface ApiResponse<T> {
     data: T;
     error?: string;
   }
-  
 
-export interface Entreprise {  
-    _id?: number;
+
+  export interface Entreprise {
+    _id: string;
     createdAt: string;
     updatedAt: string;
     name?: string;
@@ -19,5 +19,6 @@ export interface Entreprise {
     city: string;
     province: string;
     postalCode: string;
-    published: boolean; 
+    published: boolean;
+
 }

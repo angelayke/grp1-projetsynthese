@@ -75,6 +75,7 @@ import { CandidatService } from './candidat.service';
 
 import { GroupeCardsComponent } from './groupe-cards/groupe-cards.component';
 import { EnterpriseService } from './enterprise.service';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -112,6 +113,7 @@ import { EnterpriseService } from './enterprise.service';
     FicheDemandeStageComponent,
     GroupeCardsComponent,
     ListeDemandeStagesComponent,
+    SpinnerComponent,
    ],
 
   imports: [
