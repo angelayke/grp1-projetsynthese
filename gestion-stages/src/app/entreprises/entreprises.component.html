@@ -1,5 +1,5 @@
 <section>
-  
+
   <div class="container">
       <div class="row">
         <div class="col-12">
@@ -11,16 +11,37 @@
           <button mat-button aria-label="Ajouter" routerLink="/sidenav/ajout-entreprise">Ajouter une entreprise</button>
         </div>
       </div>
-  </div> 
+  </div>
   <!--
 <app-fiche-entreprise [entreprise]=""></app-fiche-entreprise>-->
+
+
+<!-- Loading Spinner -->
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger">{{errorMessage}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <pre>{{entreprises | json}}</pre> -->
+
   <!-- Cards -->
-<div class="container mt-3">
+<div class="container mt-3" *ngIf="!loading && entreprises.length > 0">
   <div class="row">
     <!--d-flex et align-self-stretch pour que les card aient la meme hauteur malgré leur différent contenu
     https://stackoverflow.com/questions/58228030/bootstrap-4-cards-same-height-and-bottom-justified-->
-    <div class="col-md-12 col-lg-6 d-flex align-self-stretch" *ngFor="let e of entreprises">
-      <div class="card card2 list-group-item-light" (click)="onCardClick()" >
+    <div class="col-md-12 col-lg-6 d-flex align-self-stretch" *ngFor="let e of entreprises" routerLink="/sidenav/entreprises/fiche-entreprise/{{e._id}}">
+      <div class="card card2 list-group-item-light">
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-md-4">
@@ -30,10 +51,10 @@
             <div class="col-md-7">
               <ul class="list-group">
                 <li class="list-group-item"><span class="fw-bold">{{e.name}}</span></li>
-                <li class="list-group-item"><span>{{e?.address}} <br>
-                  {{e?.city}} {{e?.postalCode}}</span></li>
-                <li class="list-group-item"><span>Téléphone: {{e?.contactPhone}} <br>
-                  Courriel: {{e?.contactEmail}}</span></li>
+                <li class="list-group-item"><span>{{e.address}} <br>
+                  {{e.city}} {{e.postalCode}}</span></li>
+                <li class="list-group-item"><span>Téléphone: {{e.contactPhone}} <br>
+                  Courriel: {{e.contactEmail}}</span></li>
               </ul>
             </div>
           </div>

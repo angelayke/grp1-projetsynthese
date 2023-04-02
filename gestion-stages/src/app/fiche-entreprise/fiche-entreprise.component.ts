@@ -5,6 +5,7 @@ import { Entreprise } from '../entreprises';
 import { ENTREPRISES } from '../mock-entreprises';
 import { EnterpriseService } from '../enterprise.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,20 +15,35 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 
 export class FicheEntrepriseComponent implements OnInit {
-  @Input() entreprise?: Entreprise;
-  entreprises=ENTREPRISES;
+  // @Input() entreprise?: Entreprise;
+  // entreprises=ENTREPRISES;
+  public loading: boolean = false;
+  public entrepriseId: string | null = null;
+  // public entreprise: Entreprise [] = [];
+  // public entreprise: Entreprise = {} as Entreprise;
+  public entreprise : any;
+  public errorMessage: string | null = null;
 
 
   editing: boolean = false;
 
-  constructor(private dialog: MatDialog, private entrepriseService: EnterpriseService, private _snackBar: MatSnackBar) { }
+  constructor(private dialog: MatDialog, private activatedRoute: ActivatedRoute, private entrepriseService: EnterpriseService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.entrepriseService.getEntreprises().subscribe(
-      resultat => {
-        //
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.entrepriseId = param.get('entrepriseId');
+    });
+      if(this.entrepriseId) {
+        this.loading = true;
+        this.entrepriseService.getEntreprise(this.entrepriseId).subscribe((data) => {
+          this.entreprise = data.data;
+          this.loading = false;
+
+        }, (error) => {
+          this.errorMessage = error;
+          this.loading = false;
+        })
       }
-    );
   }
 
 
@@ -54,7 +70,7 @@ export class FicheEntrepriseComponent implements OnInit {
   });
 }
 
-getEntreprises() { 
+getEntreprises() {
   this.entrepriseService.getEntreprises().subscribe(
     resultat => {
       console.log(resultat);
@@ -62,15 +78,20 @@ getEntreprises() {
   );
 }
 
-supprimerEntreprise(id: string) {
-  this.entrepriseService.supprimerEntreprise(id).subscribe(
-    _ => {
-      this.getEntreprises();
-      this._snackBar.open("Entreprise supprimée!", undefined, {
-        duration: 2000
-      });
-    }
-  );
+// supprimerEntreprise(id: string) {
+//   this.entrepriseService.supprimerEntreprise(id).subscribe(
+//     _ => {
+//       this.getEntreprises();
+//       this._snackBar.open("Entreprise supprimée!", undefined, {
+//         duration: 2000
+//       });
+//     }
+//   );
+// }
+
+public isNotEmpty(){
+  return Object.keys(this.entreprise).length > 0;
+
 }
 
 }

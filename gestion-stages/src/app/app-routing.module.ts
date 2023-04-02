@@ -67,7 +67,7 @@ const routes: Routes = [
         component: FormulaireAjoutEntrepriseComponent
       },
       {
-        path: 'fiche-entreprise',
+        path: 'entreprises/fiche-entreprise/:entrepriseId',
         component: FicheEntrepriseComponent
       },
       {
