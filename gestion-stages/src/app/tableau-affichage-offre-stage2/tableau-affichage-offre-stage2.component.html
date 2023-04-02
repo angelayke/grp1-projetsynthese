@@ -6,7 +6,7 @@
     <div>
         <h1>Offres de stage</h1>
 
-        <button mat-raised-button color="" class="btn-offre-stage" routerLink="/sidenav/formulairestage">Ajouter une offre de stage</button>
+        <button mat-raised-button color="" class="btn-offre-stage" routerLink="/sidenav/formulaire-offre-ajout-stage">Ajouter une offre de stage</button>
     </div>
 
 
@@ -19,43 +19,46 @@
         <!-- Position Column -->
         <ng-container matColumnDef="poste">
           <th mat-header-cell *matHeaderCellDef><b> Poste </b></th><br><hr>
-          <td mat-cell *matCellDef="let element" class="border-left"><span class="ligne-vertical"><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon></span><b>Intégrateur Web</b><br>Acolyte communication</td>
+          <td mat-cell *matCellDef="let stage" class="border-left"><span class="ligne-vertical"><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon></span>
+            <!-- <b>Intégrateur Web</b><br>Acolyte communication</td> -->
+            {{stage.title | titlecase}}
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="secteur">
           <th mat-header-cell *matHeaderCellDef><b> Secteur d'activité </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
-          <td mat-cell *matCellDef="let element" >Communication</td>
+          <td mat-cell *matCellDef="let stage"> {{ stage.activitySector | titlecase }} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="region">
           <th mat-header-cell *matHeaderCellDef><b> Région </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.weight}} </td> -->
-          <td mat-cell *matCellDef="let element"> Mauricie </td>
+          <td mat-cell *matCellDef="let stage"> {{ stage.region | titlecase }} </td>
         </ng-container>
 
          <!-- Weight Column -->
          <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef><b> Date de publication </b></th><br><hr>
           <!-- <td mat-cell *matCellDef="let element"> {{element.weight}} </td> -->
-          <td mat-cell *matCellDef="let element"> 2022-03-03 </td>
+          <td mat-cell *matCellDef="let stage"> {{stage.createdAt | date }} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef><b></b></th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-icon-button aria-label="Supprimer">
-              <span class="delete"><mat-icon>delete</mat-icon></span>
+          <td mat-cell *matCellDef="let stage">
+            <button mat-icon-button aria-label="visibility">
+              <span class=visibility><mat-icon routerLink="/sidenav/fiche-offre-stage">visibility</mat-icon></span>
             </button>
             <button mat-icon-button aria-label="Modifier">
-              <span class="edit"><mat-icon>edit</mat-icon></span>
+              <span class="edit"><mat-icon routerLink="/sidenav/formulaire-offre-edition-stage">edit</mat-icon></span>
             </button>
-            <button mat-icon-button aria-label="visibility">
-              <span class=visibility><mat-icon>visibility</mat-icon></span>
+            <button mat-icon-button aria-label="Supprimer">
+              <span class="delete"><mat-icon (click)="onDeleteClick(stage)">delete</mat-icon></span>
             </button>
+           
             <!-- <button mat-icon-button aria-label="Modifier">
               <mat-icon>school</mat-icon>
             </button> -->
