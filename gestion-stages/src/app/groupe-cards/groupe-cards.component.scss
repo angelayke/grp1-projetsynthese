@@ -1,4 +1,82 @@
+/*Angelique */
+.row{
+  justify-content: space-between;
+}
 
+h5{
+  font-size: 0.8em;
+  margin-bottom: 0;
+}
+
+p{
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0 0;
+}
+
+.item__align{
+  display: flex;
+  align-items: center;
+}
+
+.icon__align{
+ text-align: center;
+}
+
+.mat-icon{
+  font-size: 3.5em;
+}
+
+.card{
+  padding: 0;
+  color: #fff;
+  font-family: 'lato', sans-serif;
+  width: 270px;
+  border: 0 transparent;
+  border-radius: 1em;
+    &__demande{
+      background-color: #cb912b;
+    }
+    &__offre{
+      background-color: #bb2026;
+    }
+    
+    &__candidat{
+      background-color: #7f2987;
+    }
+    
+    &__entreprise{
+      background-color: #86a9e6;
+    }
+}
+
+
+#demande{
+  background-color: #986d22;
+  height: 21vh;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+#offre{
+  @extend #demande;
+  background-color: #821519;
+}
+
+#candidat{
+  @extend #demande;
+  background-color: #4a1150;
+}
+
+#entreprise{
+  @extend #demande;
+  background-color: #5e7eb5;//2b497c
+}
+
+
+
+/*khaled*/
+/*
 .container-1{
     width: 25%;
     }
@@ -9,18 +87,15 @@
             width: 25%;
             }
     
-    
-    p {
-        font: 300 16px/24px "Open Sans";
-      }
+    // p {
+    //     font: 300 16px/24px "Open Sans";
+    //   }
     
       .middle1 {
         color: white;
         padding-bottom: 15px;
         padding-top: 15px;
         background-color: #986D22;
-        
-        
       }
     
       .fin {
@@ -30,11 +105,8 @@
         background-color: #cd9635;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
-       
       }
       
-    
-    
       .middle2 {
         color: white;
         padding-bottom: 15px;
@@ -109,6 +181,7 @@
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
       }
-    
+    */
       //------------------
+      /*fin khaled*/
       
