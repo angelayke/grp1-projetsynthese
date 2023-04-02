@@ -23,23 +23,23 @@
                 <!--(click)="createEntreprise(entrepriseFormAjout)"-->
                 <mat-icon>save</mat-icon> Sauvegarder
               </button>
-              <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched) && nom.hasError('required')">
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">
                 Le nom est obligatoire.
               </mat-error>
-              <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched) && nom.hasError('minlength')">
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('minlength')">
                 Le nom doit contenir au moins 2 caractères.
               </mat-error>
-              <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched) && nom.hasError('maxlength')">
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('maxlength')">
                 Le nom doit contenir au maximum 50 caractères.
               </mat-error>
             </div>
           </ng-container>
         </div>
-
+        
         <div class="example-full-width flex-entete">
           <p class="soustitre-entreprise">Entreprise</p>
           <input matInput value="" class="form-detail-entreprise" name="entreprise" required minlength="2"
-            maxlength="50" [(ngModel)]="newEntreprise.name" #nom="ngModel">
+            maxlength="50" [(ngModel)]="entreprise.name" #name="ngModel">
         </div>
         <mat-form-field class="example-full-width" id="formfieldupload">
           <!-- tuto https://www.positronx.io/angular-material-file-browse-upload-ui-with-material-components/ -->
@@ -64,16 +64,16 @@
             <tr>
               <td>
                 <h1>Courte présentation</h1>
-                <input class="form-detail" matInput name="description" placeholder="" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.description">
+                <input class="form-detail" matInput name="description" placeholder="" required #description="ngModel"
+                  [(ngModel)]="entreprise.description">
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Personne contact</mat-label> <br>
-                <input class="form-detail" matInput name="contact" placeholder="" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.contactName">
+                <input class="form-detail" matInput name="contactName" placeholder="" required #contactName="ngModel"
+                  [(ngModel)]="entreprise.contactName">
               </td>
             </tr>
             <br>
@@ -82,43 +82,43 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
-                <input class="form-detail" matInput name="adresse" placeholder="Adresse" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.address">
+                <input class="form-detail" matInput name="address" placeholder="Adresse" required #address="ngModel"
+                  [(ngModel)]="entreprise.address">
               </td>
 
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
-                <input class="form-detail" matInput name="telephone" placeholder="000 000-0000" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.contactPhone">
+                <input class="form-detail" matInput name="contactPhone" placeholder="000 000-0000" required #contactPhone="ngModel"
+                  [(ngModel)]="entreprise.contactPhone">
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Ville</mat-label> <br>
-                <input class="form-detail" matInput name="ville" placeholder="Ville" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.city">
+                <input class="form-detail" matInput name="city" placeholder="Ville" required #city="ngModel"
+                  [(ngModel)]="entreprise.city">
               </td>
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Courriel</mat-label> <br>
-                <input class="form-detail" matInput name="email" placeholder="Courriel" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.contactEmail">
+                <input class="form-detail" matInput name="contactEmail" placeholder="Courriel" required #contactEmail="ngModel"
+                  [(ngModel)]="entreprise.contactEmail">
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Province</mat-label> <br>
-                <input class="form-detail" matInput name="province" placeholder="Province" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.province">
+                <input class="form-detail" matInput name="province" placeholder="Province" required #province="ngModel"
+                  [(ngModel)]="entreprise.province">
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Code Postal</mat-label> <br>
-                <input class="form-detail" matInput name="codepostal" placeholder="H1H 1H1" required #nom="ngModel"
-                  [(ngModel)]="newEntreprise.postalCode">
+                <input class="form-detail" matInput name="postalCode" placeholder="H1H 1H1" required #postalCode="ngModel"
+                  [(ngModel)]="entreprise.postalCode">
               </td>
             </tr>
           </table>

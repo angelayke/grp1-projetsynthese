@@ -1,10 +1,10 @@
+
 table {
   width: 100%;
   margin: 0 auto;
-  // background-color: #FFFFFF;
 
   td, th{
-    width: 25%;
+    width: 35%;
   }
 
   th{
@@ -17,12 +17,12 @@ table {
 }
 
 .mat-elevation-z8{
-  // margin: 0 15%;
-  margin-top: 3rem;
+   margin-top: 3rem;
+
 }
 
-.container{
-  margin: 0 5%;
+.sec1{
+  margin-bottom: 5rem;
 }
 
 
@@ -65,6 +65,7 @@ table {
 
 .btn-td{
   white-space: nowrap;
+
 }
 
 .btn-icons{
@@ -91,38 +92,47 @@ table {
 
 
 .demandes-infos{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
   // margin: 0 5% 2rem 5%;
 
   .demandes{
     color: #CD9635;
   }
 
+
   .titre2{
     color:#E33462;
     margin-top:0;
   }
 
-  .btn-valid{
-    background-color: #089da4;
-    color: #F1FEFB;
-    border-radius: 10px;
-    border: none;
-    padding:1rem;
-    font-size: 16px;
-    cursor: pointer;
-  }
+
 }
 
-// .actions-cell {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// }
+.btn-valid{
+  background-color: #089da4;
+  color: #F1FEFB;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+}
 
-// .actions-cell button {
-//   margin-right: 10px;
-// }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+.btn-active, .btn-icons {
+  width: 100px; /* ajustez la largeur en fonction de vos besoins */
+  margin-left: 2rem;
+}
 

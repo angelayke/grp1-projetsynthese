@@ -49,9 +49,11 @@ public entreprise: Entreprise = {} as Entreprise;
 public errorMessage: string | null = null;
 
 newEntreprise: Entreprise ={
+  _id: '',
   createdAt: '',
   updatedAt: '',
   description: '',
+  name: '',
   imageUrl: '',
   contactName: '',
   contactEmail: '',
@@ -67,7 +69,7 @@ newEntreprise: Entreprise ={
     // if (data) {
     //   this.newEntreprise = data;
     // }
-  } 
+  }
 
   ngOnInit(): void {
     this.entrepriseService.getEntreprises().subscribe(
@@ -93,10 +95,11 @@ newEntreprise: Entreprise ={
    annuler() {
   //   //this.dialogRef.close();
      }
-  
+
   createEntreprise() { // (entrepriseFormAjout: NgForm)
     //if (entrepriseFormAjout.valid) {
-      this.entrepriseService.createEntreprise(this.entreprise).subscribe((data) => { //:ApiResponse<Entreprise[]>
+      this.entrepriseService.createEntreprise(this.entreprise).subscribe((data :ApiResponse<Entreprise[]>) => { //:ApiResponse<Entreprise[]>
+        console.log("data created:", data)
         this.router.navigate(['sidenav/tableaudebord']).then();
       },
       (error) => {

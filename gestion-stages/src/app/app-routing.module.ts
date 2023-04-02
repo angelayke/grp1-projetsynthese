@@ -19,6 +19,7 @@ import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.componen
 import { CandidatDetailsComponent } from './candidat-details/candidat-details.component';
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
+import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
 
 
 const routes: Routes = [
@@ -69,8 +70,12 @@ const routes: Routes = [
         component: FormulaireAjoutEntrepriseComponent
       },
       {
-        path: 'fiche-entreprise',
+        path: 'entreprises/fiche-entreprise/:entrepriseId',
         component: FicheEntrepriseComponent
+      },
+      {
+        path: 'entreprises/modifier-entreprise/:entrepriseId',
+        component: FormulaireUpdateEntrepriseComponent
       },
       {
         path: 'modifier-demandestage',

@@ -1,18 +1,17 @@
-
 <main>
 
-  <section class="container">
-    <div class="demandes-infos">
-      <div>
-        <h2>Dernières <span class="demandes">demandes</span> de stage</h2>
-        <h3 class="titre2"> En attente de validation</h3>
-       </div>
 
-        <button class="btn-valid" (click)="validerToutesDemandes()">Valider toutes les demandes</button>
+  <section class="sec1">
+    <div class="demandes-infos">
+      <h2>Dernières <span class="demandes">demandes</span> de stage</h2>
+      <h3 class="titre2">En attente de validation</h3>
+    </div>
+    <div class="btn-right">
+      <button class="btn-valid" (click)="validerToutesDemandes()">Valider toutes les demandes</button>
     </div>
   </section>
 
-  <section class="container">
+  <section>
 
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -37,10 +36,6 @@
         </ng-container>
 
 
-        <!-- <ng-container matColumnDef="region" class="text-underline">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Région </th>
-          <td mat-cell *matCellDef="let stage"> {{stage.region | titlecase  }} </td>
-        </ng-container> -->
 
         <ng-container matColumnDef="startDate" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
@@ -49,29 +44,29 @@
 
 
 
-        <ng-container matColumnDef="actions" class="text-underline">
+        <ng-container matColumnDef="actions" class="text-underline actions">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let stage" class="btn-td">
+            <div class="btn-group1">
+              <button class="btn-active" class="refuser" (click)="refuserStage(stage)" *ngIf="stage.active">
+                Refuser</button>
+              <button class="btn-active" class="accepter" (click)="accepterStage(stage)" *ngIf="!stage.active">
+                Accepter</button>
 
+              <!-- (click)="openDetailsDialog(stage)" -->
+              <!-- (click)="openDialog(stage)" -->
 
-            <button class="refuser"  (click)="refuserStage(stage)" *ngIf="stage.active"> Refuser</button>
-            <button  class="accepter" (click)="accepterStage(stage)" *ngIf="!stage.active"> Accepter</button>
-
-
-
-            <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
-              <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
-            </button>
-            <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
-              <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
-
-            </button>
-
-            <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
-              <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>
-            </button>
-
-
+              <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
+                <mat-icon class="visibility" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">visibility
+                </mat-icon>
+              </button>
+              <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
+                <mat-icon class="edit" routerLink="/sidenav/modifier-demandestage">edit</mat-icon>
+              </button>
+              <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
+                <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>
+              </button>
+            </div>
           </td>
         </ng-container>
 
@@ -85,5 +80,3 @@
     </div>
   </section>
 </main>
-
-
