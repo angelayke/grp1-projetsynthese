@@ -12,11 +12,34 @@
       </div>
     </div>
 
+<!-- Loading Spinner -->
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger">{{errorMessage}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <pre>{{candidats | json}}</pre> -->
+
     <!--<div class="row">
   <div class="col">-->
-    <div class="card-container">
-      <ng-container *ngFor="let candidat of candidats">
-        <mat-card class="example-card card2" (click)="onCardClick()">
+    <!-- (click)="onCardClick()" -->
+    <div class="card-container" *ngIf="!loading && candidats.length > 0">
+      <div *ngFor="let candidat of candidats" routerLink="/sidenav/candidats/candidat-details/{{candidat._id}}">
+
+
+      <ng-container>
+        <mat-card class="example-card card2" >
           <mat-icon>person</mat-icon>
           <div>
             <mat-card-title-group>
@@ -29,6 +52,7 @@
           </div>
         </mat-card>
       </ng-container>
+    </div>
     </div>
     <!--</div>
 </div>-->

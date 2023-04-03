@@ -20,6 +20,7 @@ import { CandidatDetailsComponent } from './candidat-details/candidat-details.co
 import { FormulaireOffreEditionComponent } from './formulaire-offre-edition/formulaire-offre-edition.component';
 import { TableauAffichageOffreStage2Component } from './tableau-affichage-offre-stage2/tableau-affichage-offre-stage2.component';
 import { FormulaireUpdateEntrepriseComponent } from './formulaire-update-entreprise/formulaire-update-entreprise.component';
+import { MajCandidatComponent } from './maj-candidat/maj-candidat.component';
 
 
 const routes: Routes = [
@@ -74,8 +75,16 @@ const routes: Routes = [
         component: FicheEntrepriseComponent
       },
       {
+        path: 'candidats/candidat-details/:candidatId',
+        component: CandidatDetailsComponent
+      },
+      {
         path: 'entreprises/modifier-entreprise/:entrepriseId',
         component: FormulaireUpdateEntrepriseComponent
+      },
+      {
+        path: 'candidats/modifier-candidat/:candidatId',
+        component: MajCandidatComponent
       },
       {
         path: 'modifier-demandestage',
