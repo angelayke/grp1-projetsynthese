@@ -75,14 +75,16 @@ button:hover{
   margin-left: 5px;
 }
 
-.tr-fiche {
+.tr-fiche{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .td-candidat-details {
   border-left: 7px solid #7f2987;
 }
-
 
 .btn {
   background-color: transparent;
