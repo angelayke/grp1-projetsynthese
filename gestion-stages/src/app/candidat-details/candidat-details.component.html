@@ -19,8 +19,8 @@
             <button mat-flat-button class="btn" (click)="onDoneClick()">
               <mat-icon id="done">done</mat-icon>
             </button>
-
-            <button mat-flat-button class="btn" (click)="onEditClick()">
+            <!-- (click)="onEditClick()" -->
+            <button mat-flat-button class="btn" routerLink="/sidenav/candidats/modifier-candidat/{{candidat._id}}">
               <mat-icon id="edit">edit</mat-icon>
             </button>
 
@@ -30,11 +30,14 @@
           </div>
         </ng-container>
       </div>
+<!--
+<pre>{{candidatId | json}}</pre>
+<pre>{{candidat | json}}</pre> -->
 
-      <div class="fiche">
+      <div class="fiche" *ngIf="!loading && isNotEmpty()">
         <h1>Courte présentation</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 
-          consectetur adipisicing elit. Rerum consectetur quaerat quam maiores magni fuga dolor inventore pariatur, 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Rerum consectetur quaerat quam maiores magni fuga dolor inventore pariatur,
           optio omnis dicta repudiandae delectus porro sed aliquam et quisquam eos? Incidunt.</p><!--{{candidat.description}}-->
         <br>
         <h3>Informations personnelles</h3>
@@ -44,12 +47,12 @@
               <td class="td-fiche">
                 <p class="subtitle-fiche">Adresse</p>
                 <p class="txt-fiche">123 rue machin</p>
-                <!--{{candidat.address}}-->
+                {{candidat.address}}
               </td>
               <td class="td-fiche">
                 <p class="subtitle-fiche">Téléphone</p>
                 <p class="txt-fiche">000 000-0000</p>
-                <!--{{candidat.phone}}-->
+                {{candidat.phone}}
               </td>
             </tr>
             <br>
@@ -57,12 +60,12 @@
               <td class="td-fiche">
                 <p class="subtitle-fiche">Ville</p>
                 <p class="txt-fiche">Towncity</p>
-                <!--{{candidat.city}}-->
+                {{candidat.city}}
               </td>
               <td class="td-fiche">
                 <p class="subtitle-fiche">Courriel</p>
                 <p class="txt-fiche">info@candidat.com</p>
-                <!--{{candidat.email}}-->
+                {{candidat.email}}
               </td>
             </tr>
             <br>
@@ -70,7 +73,7 @@
               <td class="td-fiche">
                 <p class="subtitle-fiche">Province</p>
                 <p class="txt-fiche">Québec</p>
-                <!--{{candidat.province}}-->
+                {{candidat.province}}
               </td>
             </tr>
             <br>
@@ -78,7 +81,7 @@
               <td class="td-fiche">
                 <p class="subtitle-fiche">Code Postal</p>
                 <p class="txt-fiche">H1H 1H1</p>
-                <!--{{candidat.postalCode}}-->
+                {{candidat.postalCode}}
               </td>
             </tr>
           </table>
