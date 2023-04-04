@@ -1,148 +1,164 @@
 <!-- <pre>{{stageId | json}}</pre>
 <pre>{{stage | json}}</pre> -->
-<div class="vertical-line">
-  <p>Demande de stage</p>
-  <h1>Développeur front-end</h1>
-</div>
-<div class="btn-control">
-  <ng-container matColumnDef="actions" class="text-underline">
-    <div class="example-button-row">
-      <button mat-flat-button class="btn" (click)="onDoneClick()">
-        <mat-icon id="done">done</mat-icon>
-      </button>
+<section>
+  <div class="container">
+    <ng-container>
+      <!--
+      <div class="vertical-line">
+        <p>Demande de stage</p>
+        <h1>Développeur front-end</h1>
+      </div>-->
+      <table class="table-titre">
+        <tr>
+          <td class="td-demande-details">
+            <p class="soustitre-fiche">Demande de stage</p>
+            <h1 class="titre-demande">Développeur front-end</h1><!--{{candidat.name}}-->
+          </td>
+        </tr>
+      </table>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-flat-button class="btn" (click)="onDoneClick()">
+              <mat-icon id="done">done</mat-icon>
+            </button>
 
-      <button mat-flat-button class="btn" (click)="onEditClick()">
-        <mat-icon id="edit">edit</mat-icon>
-      </button>
+            <button mat-flat-button class="btn" (click)="onEditClick()">
+              <mat-icon id="edit">edit</mat-icon>
+            </button>
 
-      <button mat-flat-button class="btn" (click)="onDeleteClick()">
-        <mat-icon id="cancel">cancel</mat-icon>
-      </button>
-    </div>
-  </ng-container>
-</div>
+            <button mat-flat-button class="btn" (click)="onDeleteClick()">
+              <mat-icon id="cancel">cancel</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+      </div>
 
-<div class="fiche">
-  <!-- fiche-demande-stage.component.html -->
-  <div class="fiche">
-    <h2>Kevin Labonté</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
-      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
-      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
-      quibusdam nostrum sapiente.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
-      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
-      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
-      quibusdam nostrum sapiente.</p>
+      <div class="fiche">
+        <!-- fiche-demande-stage.component.html -->
+        <div class="fiche">
+          <h2 id="nom-demandeur">Kevin Labonté</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+            cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed
+            laboriosam
+            itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at
+            ullam
+            quibusdam nostrum sapiente.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+            cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed
+            laboriosam
+            itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at
+            ullam
+            quibusdam nostrum sapiente.</p>
 
+        </div>
+        <div class="stage-item fiche" *ngIf="!loading && isNotEmpty()">
+
+          <div class="stage-item-col">
+            <div class="stage-item-field">
+              <div class="stage-item-label">Programme de formation</div>
+              <div class="stage-item-value">{{ demandeStage.program }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Secteur d'activité</div>
+              <div class="stage-item-value">{{ demandeStage.activitySector }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Compétences</div>
+              <div class="stage-item-value">{{ demandeStage.requirements }}</div>
+            </div>
+          </div>
+
+          <div class="stage-item-col">
+            <div class="stage-item-field">
+              <div class="stage-item-label">Établissement d'enseignement</div>
+              <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Ville</div>
+              <div class="stage-item-value">{{ demandeStage.enterprise.city}}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Région</div>
+              <div class="stage-item-value">{{ demandeStage.region.label }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fiche">
+          <h2>Information sur le stage recherché</h2>
+      
+        <div class="stage-item" *ngIf="!loading && isNotEmpty()">
+          <div class="stage-item-col">
+            <div class="stage-item-field">
+              <div class="stage-item-label">Type de stage</div>
+              <div class="stage-item-value">{{ demandeStage.stageType.label }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Nombre d'heures par semaine</div>
+              <div class="stage-item-value">{{ demandeStage.hoursPerWeek }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Rémunération</div>
+              <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
+            </div>
+          </div>
+
+          <div class="stage-item-col">
+            <div class="stage-item-field">
+              <div class="stage-item-label">Date de début</div>
+              <div class="stage-item-value">{{ demandeStage.startDate | date }}</div>
+            </div>
+            <div class="stage-item-field">
+              <div class="stage-item-label">Date de fin</div>
+              <div class="stage-item-value">{{ demandeStage.endDate | date }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="fiche">
+          <h2>Informations supplémentaires</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+            cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed
+            laboriosam
+            itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at
+            ullam
+            quibusdam nostrum sapiente.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+            cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed
+            laboriosam
+            itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at
+            ullam
+            quibusdam nostrum sapiente.</p>
+        </div>
+        
+<!--
+        <div class="download-container">
+          <a href="../../assets/img/fichier.pdf" target="_blank" class="download-link">
+            <button mat-icon-button class="btn-telecharger">
+              <mat-icon class="cloud-download-icon">cloud_download</mat-icon>
+              <span class="download-label">Télécharger le CV</span>
+            </button>
+          </a>
+        </div>
+-->
+        <div class="example-button-row">
+          <a href="../../assets/img/fichier.pdf" target="_blank" class="download-link">
+          <button mat-flat-button class="btn-telecharger" >
+            <mat-icon>cloud_download</mat-icon> Télécharger le CV
+          </button>
+        </a>
+        </div>
+
+        <div class="btn-retour">
+          <a routerLink="/sidenav/demandesdestage">Back</a>
+        </div>
+
+        <div *ngIf="!demandeStage">
+          <p>La demande de stage demandée n'existe pas.</p>
+        </div>
+      </div>
+    </ng-container>
   </div>
-  <div class="stage-item fiche" *ngIf="!loading && isNotEmpty()">
-
-    <div class="stage-item-col">
-      <div class="stage-item-field">
-        <div class="stage-item-label">Programme de formation</div>
-        <div class="stage-item-value">{{ demandeStage.program }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Secteur d'activité</div>
-        <div class="stage-item-value">{{ demandeStage.activitySector }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Compétences</div>
-        <div class="stage-item-value">{{ demandeStage.requirements }}</div>
-      </div>
-    </div>
-
-    <div class="stage-item-col">
-      <div class="stage-item-field">
-        <div class="stage-item-label">Établissement d'enseignement</div>
-        <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Ville</div>
-        <div class="stage-item-value">{{ demandeStage.enterprise.city}}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Région</div>
-        <div class="stage-item-value">{{ demandeStage.region.label }}</div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="fiche">
-    <h2>Information sur le stage recherché</h2>
-  </div>
-
-  <div class="stage-item fiche" *ngIf="!loading && isNotEmpty()">
-
-    <div class="stage-item-col">
-      <div class="stage-item-field">
-        <div class="stage-item-label">Type de stage</div>
-        <div class="stage-item-value">{{ demandeStage.stageType.label }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Nombre d'heures par semaine</div>
-        <div class="stage-item-value">{{ demandeStage.hoursPerWeek }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Rémunération</div>
-        <div class="stage-item-value">{{ demandeStage.additionalInfo }}</div>
-      </div>
-    </div>
-
-    <div class="stage-item-col">
-      <div class="stage-item-field">
-        <div class="stage-item-label">Date de début</div>
-        <div class="stage-item-value">{{ demandeStage.startDate | date }}</div>
-      </div>
-      <div class="stage-item-field">
-        <div class="stage-item-label">Date de fin</div>
-        <div class="stage-item-value">{{ demandeStage.endDate | date }}</div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="fiche">
-    <h2>Informations supplémentaires</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
-      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
-      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
-      quibusdam nostrum sapiente.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
-      cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
-      itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
-      quibusdam nostrum sapiente.</p>
-
-  </div>
-
-
-  <div class="download-container">
-    <a href="../../assets/img/fichier.pdf" target="_blank" class="download-link">
-      <button mat-icon-button class="btn-telecharger">
-        <mat-icon class="cloud-download-icon">cloud_download</mat-icon>
-        <span class="download-label">Télécharger le CV</span>
-      </button>
-    </a>
-  </div>
-
-
-
-
-
-
-
-
-
-  <div class="btn-retour">
-    <a routerLink="/sidenav/demandesdestage">Back</a>
-  </div>
-
-  <div *ngIf="!demandeStage">
-    <p>La demande de stage demandée n'existe pas.</p>
-  </div>
-
-</div>
+</section>
