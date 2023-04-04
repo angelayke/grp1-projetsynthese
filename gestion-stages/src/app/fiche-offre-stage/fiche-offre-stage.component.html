@@ -1,6 +1,153 @@
+<!-- <pre>{{stageId | json}}</pre>
+<pre>{{stage | json}}</pre> -->
+<div class="vertical-line">
+    <p>Offre de stage</p>
+    <h1>Intégrateur Web junior</h1>
+</div>
+  <div class="btn-control">
+    <ng-container matColumnDef="actions" class="text-underline">
+      <div class="example-button-row">
+        <button mat-flat-button class="btn" (click)="onDoneClick()">
+          <mat-icon id="done">done</mat-icon>
+        </button>
+  
+        <button mat-flat-button class="btn" (click)="onEditClick()">
+          <mat-icon id="edit">edit</mat-icon>
+        </button>
+  
+        <button mat-flat-button class="btn" (click)="onDeleteClick()">
+          <mat-icon id="cancel">cancel</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  
+  <div class="fiche">
+    <!-- fiche-demande-stage.component.html -->
+    <div class="fiche">
+      <h1>Description de la tâche</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+        cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+        itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+        quibusdam nostrum sapiente.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+        cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+        itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+        quibusdam nostrum sapiente.</p>
+  
+    </div>
+
+    <div class="stage-item fiche">
+  
+      <div class="stage-item-col">
+        <div class="stage-item-field">
+          <div class="stage-item-label">Formation demandées</div>
+          <div class="stage-item-value">{{ stage.program }}</div>
+        </div>
+        <!-- <div class="stage-item-field">
+          <div class="stage-item-label">Secteur d'activité</div>
+          <div class="stage-item-value">{{ stage.activitySector }}</div>
+        </div> -->
+        <div class="stage-item-field">
+          <div class="stage-item-label">Exigences</div>
+          <div class="stage-item-value">{{ stage.requirements }}</div>
+        </div>
+      </div>
+  
+      <!-- <div class="stage-item-col">
+        <div class="stage-item-field">
+          <div class="stage-item-label">Établissement d'enseignement</div>
+          <div class="stage-item-value">{{ stage.additionalInfo }}</div>
+        </div>
+        <div class="stage-item-field">
+          <div class="stage-item-label">Ville</div>
+          <div class="stage-item-value">{{ stage.enterprise.city}}</div>
+        </div>
+        <div class="stage-item-field">
+          <div class="stage-item-label">Région</div>
+          <div class="stage-item-value">{{ demandeStage.region.label }}</div>
+        </div>
+      </div> -->
+  
+    </div>
+  
+    <div class="fiche">
+      <h2>Information sur le stage</h2>
+    </div>
+  
+    <div class="stage-item fiche">
+  
+      <div class="stage-item-col">
+        <div class="stage-item-field">
+          <div class="stage-item-label">Type de stage</div>
+          <div class="stage-item-value">{{ stage.stageType }}</div>
+        </div>
+        <div class="stage-item-field">
+          <div class="stage-item-label">Nombre d'heures par semaine</div>
+          <div class="stage-item-value">{{ stage.hoursPerWeek }}</div>
+        </div>
+        <div class="stage-item-field">
+          <div class="stage-item-label">Rémunération</div>
+          <div class="stage-item-value">{{ stage.additionalInfo }}</div>
+        </div>
+      </div>
+  
+      <div class="stage-item-col">
+        <div class="stage-item-field">
+          <div class="stage-item-label">Date de début</div>
+          <div class="stage-item-value">{{ stage.startDate | date }}</div>
+        </div>
+        <div class="stage-item-field">
+          <div class="stage-item-label">Date de fin</div>
+          <div class="stage-item-value">{{ stage.endDate | date }}</div>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  
+    <div class="fiche">
+      <h2>Informations supplémentaires</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+        cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+        itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+        quibusdam nostrum sapiente.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis quis vitae est eligendi,
+        cupiditate iure ipsa quidem ipsam iste provident distinctio rerum cum pariatur hic culpa minima sed laboriosam
+        itaque quibusdam sit sapiente dicta ea dolorem. Dolores alias aliquid, quis, eum assumenda ut dolorem at ullam
+        quibusdam nostrum sapiente.</p>
+  
+    </div>
+  
+  
+    <!-- <div class="download-container">
+      <a href="../../assets/img/fichier.pdf" target="_blank" class="download-link">
+        <button mat-icon-button class="btn-telecharger">
+          <mat-icon class="cloud-download-icon">cloud_download</mat-icon>
+          <span class="download-label">Télécharger le CV</span>
+        </button>
+      </a>
+    </div> -->
+  
+  
+
+    <div class="btn-retour">
+      <a routerLink="/sidenav/tableau-gestion-offre-stage">Retour</a>
+    </div>
+  
+    <!-- <div *ngIf="!stage">
+      <p>La demande de stage demandée n'existe pas.</p>
+    </div> -->
+  
+  </div>
 
 
 
+
+
+
+<!-- 
 <mat-card class="card-container">
   <div class="btn-control">
     <ng-container matColumnDef="actions" class="text-underline">
@@ -135,5 +282,5 @@
         </div>
 
     </mat-card-content>
-</mat-card>
+</mat-card> -->
 

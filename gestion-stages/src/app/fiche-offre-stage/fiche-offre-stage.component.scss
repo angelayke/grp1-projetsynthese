@@ -1,109 +1,253 @@
-// @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-@font-face {
-    font-family: 'Lato', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-    }
-
-$color1: #bb2026;
-$color1hover: #821519;
-$color3: #707070;
-$color4: #242222;
-
-.card-container {
-    margin: auto;
-    width: 75%;
-    margin-top: 36px;
-    font-family: 'Lato', sans-serif;
-}
-
-h1 {
-    font-size: 42px;
-    font-weight: bolder;
-    color: $color3;
-    font-family: Lato;
-}
-
-h3 {
-    font-size: 36px;
-    font-weight: bolder;
-    color: $color1;
-    font-family: Lato;
-    margin-top: 48px;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: bolder;
-    color: $color3;
-    font-family: Lato;
-}
-
-div .heading {
-    color: $color3;
-}
-
-.line-height {
-    line-height: 1px;
-    color: $color3;
-    // margin: 5px;
-}
-
-.ligne-verticale {
-    border-left: 12px solid;
-    color: $color1;
-    height: fit-content;
-    display: flexbox;
-}
-
-.ligne-verticale2 {
-    border-left: 7px solid;
-    color: $color4;
-    height: fit-content;
-    // position:fixed;
-
-}
-
-.flex {
+@mixin stage-item-field {
+    margin-bottom: 10px;
     display: flex;
-    width: fit-content;
-}
-
-
-.block {
-    display: block;
-    text-align: start;
-    margin-left: 12;
-}
-
-div h5 {
-    margin-top: 24px;
-    color: $color1;
+    flex-direction: column;
+    border-left: 5px solid #333;
+    padding-left: 10px;
+  
+    .stage-item-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    .stage-item-value {
+      display: inline-block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stage-item {
+      flex-direction: column;
+  
+      .stage-item-col {
+        width: 100%;
+  
+        .stage-item-field {
+          @include stage-item-field;
+          border: none;
+          padding-left: 0;
+  
+          .stage-item-label {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  
+  .stage-item {
+    display: flex;
+    margin-bottom: 20px;
+  
+    .stage-item-col {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .stage-item-field {
+        @include stage-item-field;
+      }
+    }
+  }
+  
+  
+  .btn-control{
+    display: flex;
+    justify-content: right;
+    margin: 10px 2rem 10px 0;
+  
+  }
+  
+  .mat-icon{
+    font-weight: 700;
+      &#done{
+        color: #07a04a;
+      }
+      &#edit{
+        color: #2b497c;
+      }
+      &#cancel{
+        color:  #bb2026;
+      }
+  }
+   .fiche{
+    background-color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-bottom: 1.5rem;
+  
+     h1, h2{
+      padding-top: 2rem;
+      color: #bb2026;
+      font-weight: bolder;
+    }
+  
+   }
+  .btn-retour{
+    margin-left: 2rem;
+    a{
+      text-decoration: none;
+      color: #bb2026;
+    }
+  
+  }
+  
+  .btn-telecharger{
+   margin: 1rem;
+  
+  }
+  
+  
+  .download-container {
+    display: flex;
+    justify-content: left;
+    background-color: #22A6AC;
+    width:20%;
+    color: white;
+    margin-left: 2rem;
+  
+    &:hover{
+      background-color: #2ec0c8;
+    }
+  }
+  
+  .btn-telecharger {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  
+  .cloud-download-icon {
     font-size: 24px;
-    font-weight: bolder;
-}
-
-h6 {
-    margin-right: 24px;
-    color: $color3;
-    font-family: Lato;
-    font-weight: bolder;
-    margin-bottom: 8px;
+    margin-right: 8px;
+  }
+  
+  .download-label {
     font-size: 16px;
-}
+  }
+  
+  .download-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .vertical-line {
+    display: inline-block;
+    border-left: 10px solid  #bb2026;
+    margin-left: 35px;
+    vertical-align: middle;
+    padding-left:10px;
+  }
 
-.margin {
-    margin-top: 24px;
-}
 
 
-// .margin-title {
-//     padding-top: 24px;
+// // @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+// @font-face {
+//     font-family: 'Lato', sans-serif;
+//     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+//     }
+
+// $color1: #bb2026;
+// $color1hover: #821519;
+// $color3: #707070;
+// $color4: #242222;
+
+// .card-container {
+//     margin: auto;
+//     width: 75%;
+//     margin-top: 36px;
+//     font-family: 'Lato', sans-serif;
 // }
 
-.btn-control{
-  display: flex;
-  justify-content: right;
-  margin: 10px 2rem 10px 0;
+// h1 {
+//     font-size: 42px;
+//     font-weight: bolder;
+//     color: $color3;
+//     font-family: Lato;
+// }
 
-}
+// h3 {
+//     font-size: 36px;
+//     font-weight: bolder;
+//     color: $color1;
+//     font-family: Lato;
+//     margin-top: 48px;
+// }
+
+// h4 {
+//     font-size: 24px;
+//     font-weight: bolder;
+//     color: $color3;
+//     font-family: Lato;
+// }
+
+// div .heading {
+//     color: $color3;
+// }
+
+// .line-height {
+//     line-height: 1px;
+//     color: $color3;
+//     // margin: 5px;
+// }
+
+// .ligne-verticale {
+//     border-left: 12px solid;
+//     color: $color1;
+//     height: fit-content;
+//     display: flexbox;
+// }
+
+// .ligne-verticale2 {
+//     border-left: 7px solid;
+//     color: $color4;
+//     height: fit-content;
+//     // position:fixed;
+
+// }
+
+// .flex {
+//     display: flex;
+//     width: fit-content;
+// }
+
+
+// .block {
+//     display: block;
+//     text-align: start;
+//     margin-left: 12;
+// }
+
+// div h5 {
+//     margin-top: 24px;
+//     color: $color1;
+//     font-size: 24px;
+//     font-weight: bolder;
+// }
+
+// h6 {
+//     margin-right: 24px;
+//     color: $color3;
+//     font-family: Lato;
+//     font-weight: bolder;
+//     margin-bottom: 8px;
+//     font-size: 16px;
+// }
+
+// .margin {
+//     margin-top: 24px;
+// }
+
+
+// // .margin-title {
+// //     padding-top: 24px;
+// // }
+
+// .btn-control{
+//   display: flex;
+//   justify-content: right;
+//   margin: 10px 2rem 10px 0;
+
+// }
