@@ -12,30 +12,24 @@ table {
     text-decoration: underline;
     text-underline-position: under;
     text-underline-offset: 0.5em;
-
   }
 }
 
 .mat-elevation-z8{
    margin-top: 3rem;
-
 }
 
 .sec1{
   margin-bottom: 5rem;
 }
 
-
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
 }
 
-
-
 .visibility{
   color:#22a6ac;
-
 }
 
 .edit{
@@ -52,7 +46,6 @@ table {
   padding: 0.4rem;
   border-radius: 5%;
   border: none;
-
 }
 
 .accepter{
@@ -65,7 +58,6 @@ table {
 
 .btn-td{
   white-space: nowrap;
-
 }
 
 .btn-icons{
@@ -90,7 +82,6 @@ table {
   vertical-align: middle;
 }
 
-
 .demandes-infos{
   // display: flex;
   // justify-content: space-between;
@@ -101,26 +92,21 @@ table {
     color: #CD9635;
   }
 
-
   .titre2{
     color:#E33462;
     margin-top:0;
   }
-
-
 }
 
 .btn-valid{
   background-color: #089da4;
   color: #F1FEFB;
-  border-radius: 10px;
-  border: none;
-  padding: 0.5rem;
-  font-size: 16px;
-  cursor: pointer;
+  font-family: 'lato';
   float: right;
+  &:hover{
+    background-color: #05666b;
+  }
 }
-
 
 .actions {
   display: flex;

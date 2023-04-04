@@ -120,12 +120,13 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     font-family: Lato;
 }
 
-
-
 .btn-offre-stage {
     color: white;
     background-color: #22a6ac;
     font-family: Lato;
+    &:hover{
+        background-color: #05666b;
+      }
 }
 
 .work {
