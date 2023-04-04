@@ -101,7 +101,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
 
 updateEntreprise(){
   if(this.entrepriseId){
-    this.entrepriseService.modifierEntreprise(this.entreprise, this.entrepriseId).subscribe((data: ApiResponse<Entreprise[]>) => {
+    this.entrepriseService.modifierEntreprise(this.entrepriseId, this.entreprise).subscribe((data: ApiResponse<Entreprise[]>) => {
       this.router.navigate(['sidenav/tableaudebord/']).then();
 
 

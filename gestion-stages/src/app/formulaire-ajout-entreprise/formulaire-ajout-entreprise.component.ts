@@ -96,8 +96,8 @@ newEntreprise: Entreprise ={
   //   //this.dialogRef.close();
      }
 
-  createEntreprise() { // (entrepriseFormAjout: NgForm)
-    //if (entrepriseFormAjout.valid) {
+  createEntreprise(entrepriseFormAjout: NgForm) { // (entrepriseFormAjout: NgForm)
+    if (entrepriseFormAjout.valid) {
       this.entrepriseService.createEntreprise(this.entreprise).subscribe((data :ApiResponse<Entreprise[]>) => { //:ApiResponse<Entreprise[]>
         console.log("data created:", data)
         this.router.navigate(['sidenav/tableaudebord']).then();
@@ -106,7 +106,7 @@ newEntreprise: Entreprise ={
       this.errorMessage = error;
       this.router.navigate(['sidenav/tableaudebord/ajout-entreprise']).then();
       });
-    //}
+    }
   }
 
 
