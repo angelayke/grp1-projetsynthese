@@ -1,3 +1,6 @@
+h2{
+  margin: 0;
+}
 
 table {
   width: 100%;
@@ -64,13 +67,18 @@ table {
   margin: 0 0 0 2rem;
 }
 
+.material-icons .school{
+  font-size: 24px;
+  height: fit-content;
+  width: fit-content;
+}
+
 .school{
   vertical-align: middle;
   margin-right: 10px;
   color: #70582E;
   background-color: #D6B477;
   border-radius: 10%;
-  padding: 0.2rem;
 }
 
 .vertical-line {
@@ -93,7 +101,7 @@ table {
   }
 
   .titre2{
-    color:#E33462;
+    color:#bb2026;
     margin-top:0;
   }
 }

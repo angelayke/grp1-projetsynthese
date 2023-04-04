@@ -6,13 +6,7 @@ $line-height: normal;
 @font-face {  
     font-family: 'Lato', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 }
-
-table {
-    align-content: center;
-}
-
 
 .flex-container {
     display: flex;
@@ -21,6 +15,10 @@ table {
 
 span, p {
     color: #a00707;
+}
+
+h2{
+    margin: 0;
 }
 
 h3, p {
@@ -34,6 +32,7 @@ button {
 }
 
 table {
+    align-content: center;
     margin-top: 5rem;
     width: 100%;
     border-left-color: #a00707;
