@@ -41,10 +41,10 @@ const httpOptions = {
     // const headers = httpOptions.headers;
     console.log("Création vers l'api:========", newCandidat)
     // return this.http.post<Candidat>(`${this.candidatUrl}/candidats`, JSON.stringify(newCandidat), { headers: headers });
-    return this.http.post<ApiResponse<Candidat[]>>(dataURL,newCandidat, httpOptions).pipe(catchError(this.handleError));
+    return this.http.post<ApiResponse<Candidat[]>>(dataURL, {input: newCandidat }, httpOptions).pipe(catchError(this.handleError));
   }
 
-  modifierCandidat(candidat: Candidat, candidatId: string): Observable<ApiResponse<Candidat[]>> {
+  modifierCandidat(candidatId: string, candidat: Candidat ): Observable<ApiResponse<Candidat[]>> {
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // const headers = httpOptions.headers;
     const dataURL: string = `${this.candidatUrl}/${candidatId}`;
@@ -52,7 +52,7 @@ const httpOptions = {
   }
 
 
-supprimerEntreprise(candidatId: string): Observable<{}> {
+supprimerCandidat(candidatId: string): Observable<{}> {
   const dataURL: string = `${this.candidatUrl}/${candidatId}`;
   console.log("=========================",dataURL)
   return this.http.delete(dataURL).pipe(catchError(this.handleError));

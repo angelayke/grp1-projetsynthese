@@ -74,7 +74,7 @@ export class FicheEntrepriseComponent implements OnInit {
 onDeleteClick(entrepriseId: string): void {
   const dialogRef = this.dialog.open(SuppressionDialogComponent, {
     width: '400px',
-    data: { message: 'Êtes-vous sûr de vouloir supprimer cette entreprise ?' }
+    data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
   });
 
   dialogRef.afterClosed().subscribe(result => {

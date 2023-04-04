@@ -37,13 +37,15 @@ createEntreprise(newEntreprise: Entreprise): Observable<ApiResponse<Entreprise[]
   // const headers = httpOptions.headers;
   console.log("Création vers l'api:========", newEntreprise)
   // return this.http.post<Entreprise>(`${this.enterpriseUrl}`, JSON.stringify(newEntreprise), httpOptions);
-  return this.http.post<ApiResponse<Entreprise[]>>(dataURL, newEntreprise, httpOptions).pipe(catchError(this.handleError));
+  return this.http.post<ApiResponse<Entreprise[]>>(dataURL, { input: newEntreprise }, httpOptions).pipe(catchError(this.handleError));
+
 }
 
-modifierEntreprise(newEntreprise: Entreprise, entrepriseId: string): Observable<ApiResponse<Entreprise[]>>{
+modifierEntreprise(entrepriseId: string, newEntreprise: Entreprise, ): Observable<ApiResponse<Entreprise[]>> {
   // const headers = httpOptions.headers;
   const dataURL: string = `${this.enterpriseUrl}/${entrepriseId}`;
-  return this.http.put<ApiResponse<Entreprise[]>>(dataURL, newEntreprise, httpOptions).pipe(catchError(this.handleError));
+  const body = {  input: newEntreprise };
+  return this.http.patch<ApiResponse<Entreprise[]>>(dataURL, {input: newEntreprise},  httpOptions).pipe(catchError(this.handleError));
 }
 
 supprimerEntreprise(entrepriseId: string): Observable<{}> {
