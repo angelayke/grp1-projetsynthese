@@ -2,7 +2,7 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  border-left: 5px solid #333;
+  border-left: 5px solid #707070;
   padding-left: 10px;
 
   .stage-item-label {
@@ -13,6 +13,152 @@
   .stage-item-value {
     display: inline-block;
   }
+}
+
+
+.stage-item {
+  display: flex;
+  margin-bottom: 20px;
+
+  .stage-item-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .stage-item-field {
+      @include stage-item-field;
+    }
+  }
+}
+
+/*boutons en haut a droite*/
+.btn-control {
+  display: flex;
+  justify-content: right;
+  margin: 10px 0;
+}
+
+.btn {
+  background-color: transparent;
+}
+
+.mat-flat-button {
+  min-width: 30px;
+  padding: 0 5px;
+}
+
+
+.mat-icon {
+  font-weight: 700;
+
+  &#done {
+    color: #07a04a;
+  }
+
+  &#edit {
+    color: #2b497c;
+  }
+
+  &#cancel {
+    color: #bb2026;
+  }
+}
+/*
+.vertical-line {
+  display: inline-block;
+  border-left: 10px solid #CD9635;
+  margin-left: 35px;
+  vertical-align: middle;
+  padding-left: 10px;
+}*/
+
+.soustitre-fiche {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.table-titre {
+  width: 400px;
+}
+
+.td-demande-details {
+  display: flex;
+  border-left: 10px solid #cb912b;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 10px;
+} 
+
+.titre-demande {
+  margin-top: 2px;
+  margin-left: 5px;
+  color: #707070;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.fiche {
+  background-color: white;
+  padding: 2em;
+
+  h2 {
+    padding-top: 2rem;
+    color: #cb912b;
+  }
+}
+
+.btn-retour {
+  margin-left: 2rem;
+
+  a {
+    text-decoration: none;
+    color: #cb912b;
+  }
+}
+
+.btn-telecharger {
+  margin-left: 2em;
+}
+
+/*
+.download-container {
+  display: flex;
+  justify-content: left;
+  //background-color: #cb912b ;
+  //width: 20%;
+  //margin-left: 2rem;
+}*/
+
+.btn-telecharger {
+  border: 0 transparent;
+  border-radius: 7px;
+  width: fit-content;
+  background-color: #cb912b;
+  color: white;
+
+  &:hover {
+    background-color: #986d22;
+  }
+}
+
+.cloud-download-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+/*
+.download-label {
+  font-size: 16px;
+}*/
+
+.download-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+#nom-demandeur{
+  font-size: 30px;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 768px) {
@@ -35,106 +181,3 @@
   }
 }
 
-.stage-item {
-  display: flex;
-  margin-bottom: 20px;
-
-  .stage-item-col {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .stage-item-field {
-      @include stage-item-field;
-    }
-  }
-}
-
-
-.btn-control{
-  display: flex;
-  justify-content: right;
-  margin: 10px 2rem 10px 0;
-
-}
-
-.mat-icon{
-  font-weight: 700;
-    &#done{
-      color: #07a04a;
-    }
-    &#edit{
-      color: #2b497c;
-    }
-    &#cancel{
-      color:  #bb2026;
-    }
-}
- .fiche{
-  background-color: white;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  padding-bottom: 1.5rem;
-
-  h2{
-    padding-top: 2rem;
-    color: #089da4;
-  }
-
- }
-.btn-retour{
-  margin-left: 2rem;
-  a{
-    text-decoration: none;
-    color: #089da4;
-  }
-
-}
-
-.btn-telecharger{
- margin: 1rem;
-
-}
-
-
-.download-container {
-  display: flex;
-  justify-content: left;
-  background-color: #22A6AC;
-  width:20%;
-  color: white;
-  margin-left: 2rem;
-
-  &:hover{
-    background-color: #2ec0c8;
-  }
-}
-
-.btn-telecharger {
-  border: none;
-  background: none;
-  padding: 0;
-}
-
-.cloud-download-icon {
-  font-size: 24px;
-  margin-right: 8px;
-}
-
-.download-label {
-  font-size: 16px;
-}
-
-.download-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.vertical-line {
-  display: inline-block;
-  border-left: 10px solid #CD9635;
-  margin-left: 35px;
-  vertical-align: middle;
-  padding-left:10px;
-}

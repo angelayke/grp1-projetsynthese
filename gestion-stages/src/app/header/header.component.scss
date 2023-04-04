@@ -10,7 +10,7 @@ ul {
     }
 
     @mixin header-bouton($border-color: #bb2026, $color: #821519){
-      padding: 7px;
+      padding: 0px 7px;
       border: $border-color solid 1px;
       background: transparent;
       border-radius: 8px;
