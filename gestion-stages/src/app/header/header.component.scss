@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 ul {
   display: inline-flex;
   list-style: none;
@@ -9,7 +11,7 @@ ul {
       padding: 0 10px;
     }
 
-    @mixin header-bouton($border-color: #bb2026, $color: #821519){
+    @mixin header-bouton($border-color: $offre, $color: $dark-offre){
       padding: 0px 7px;
       border: $border-color solid 1px;
       background: transparent;
@@ -22,37 +24,37 @@ ul {
     }
 
     .btn-rouge:hover{
-       background-color: #821519;
-       color: #fff;
+       background-color: $dark-offre;
+       color: $white;
     }
 
     .btn-jaune {
-      @include header-bouton(#cb912b, #986d22)
+      @include header-bouton($demande, $dark-demande)
     }
 
      .btn-jaune:hover{
-       background-color: #986d22;
-       color: #fff;
+       background-color: $dark-demande;
+       color: $white;
     }
 
 
     .btn-bleu{
-      @include header-bouton(#86a9e6, #2b497c)
+      @include header-bouton($entreprise, $darker-entreprise)
     }
 
      .btn-bleu:hover{
-       background-color: #5e7eb5;
-       color: #fff;
+       background-color: $dark-entreprise;
+       color: $white;
     }
 
 
     .btn-violet{
-      @include header-bouton(#7f2987, #4a1150)
+      @include header-bouton($candidat, $dark-candidat)
     }
 
      .btn-violet:hover{
-       background-color: #4a1150;
-       color: #fff;
+       background-color: $dark-candidat;
+       color: $white;
     }
 
 

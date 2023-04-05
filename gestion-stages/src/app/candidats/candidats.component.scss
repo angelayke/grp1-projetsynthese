@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 /* example angular*/
 .example-card {
   max-width: 350px;
@@ -8,12 +10,12 @@
 /* fin exemple angular */
 h1 {
     font: 900 38px/42px "Lato";
-    color: #707070;
+    color: $darkgrey;
 
   }
 
 h2 {
-  color: white;
+  color: $white;
 }
 
 .row{
@@ -21,11 +23,11 @@ h2 {
 }
 
 .btn__button {
-  background-color: #7f2987;
-  color: #fff;
+  background-color: $candidat;
+  color: $white;
   margin-bottom: 20px;
    &:hover{
-    background-color: #4a1150;
+    background-color: $dark-candidat;
    }
 }
 
@@ -51,8 +53,8 @@ mat-card-content {
 */
 
 .material-icons{
-  color: #bc86c2;
-  background-color: #7f2987;
+  color: #bc86c2; // couleur d'icon
+  background-color: $candidat;
   font-size: 100px;
   height: fit-content;
   width: fit-content;
@@ -92,15 +94,14 @@ mat-card-content {
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
-  border: 1px solid #f2f8f9;
-  background-color: white;
+  border: 1px solid #f2f8f9; // couleurs d'un tuto
+  background-color: $white;
 
   &:hover {
     transition: all 0.2s ease-out;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
     top: -4px;
-    border: 1px solid #cccccc;
-
+    border: 1px solid #cccccc; // couleur dun tuto
   }
 }
 

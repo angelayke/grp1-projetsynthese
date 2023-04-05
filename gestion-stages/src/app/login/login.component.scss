@@ -1,72 +1,4 @@
-// h1, p {
-//   margin-top: 0;
-//   text-align: center;
-//   margin-bottom: 3rem;
-// }
-
-// h1{
-//   font-size:48px;
-
-// }
-
-// .login-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: #EEEEEE;
-
-//   .image-container {
-//     width: 50%;
-//     display: flex;
-//     justify-content: center;
-//     margin-bottom: 20px;
-
-//     img {
-//       width: 100%;
-//       max-width: 400px;
-//     }
-//   }
-
-//   form {
-//     width:100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-
-//     mat-form-field {
-//       width: 100%;
-//       // margin-bottom: 20px;
-
-
-//     }
-
-//     button {
-//       width: 60%;
-//       background-color: #089da4;
-//       color: #F1FEFB;
-//       margin: 0 13rem 0 auto;
-//     }
-//     input{
-//       border: 3px solid #089da4;;
-//       width:100%;
-//       padding: 1rem;
-//       background-color: #FFFFFF;
-
-//     }
-//     mat-form-field{
-//       border:none;
-//     }
-//     mat-label{
-//       display:none;
-//     }
-
-//   }
-// }
-
-
-
+@import 'src/variables';
 
 .login-wrapper {
   display: flex;
@@ -133,10 +65,10 @@
       width: 20%;
       margin-left: auto;
       margin-right: 0;
-      background-color: #0C9DA4;
+      background-color: $dashboard;
 
       &:hover {
-        background-color: #4ccad1;
+        background-color: $dark-dashboard;
       }
     }
   }

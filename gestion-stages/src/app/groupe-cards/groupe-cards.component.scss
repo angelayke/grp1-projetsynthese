@@ -1,3 +1,4 @@
+@import 'src/variables';
 /*Angelique */
 .row{
   justify-content: space-between;
@@ -29,30 +30,30 @@ p{
 
 .card{
   padding: 0;
-  color: #fff;
+  color: $white;
   font-family: 'lato', sans-serif;
   width: 270px;
   border: 0 transparent;
   border-radius: 1em;
     &__demande{
-      background-color: #cb912b;
+      background-color: $demande;
     }
     &__offre{
-      background-color: #bb2026;
+      background-color: $offre;
     }
     
     &__candidat{
-      background-color: #7f2987;
+      background-color: $candidat;
     }
     
     &__entreprise{
-      background-color: #86a9e6;
+      background-color: $entreprise;
     }
 }
 
 
 #demande{
-  background-color: #986d22;
+  background-color: $dark-demande;
   height: 21vh;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
@@ -60,17 +61,17 @@ p{
 
 #offre{
   @extend #demande;
-  background-color: #821519;
+  background-color: $dark-offre;
 }
 
 #candidat{
   @extend #demande;
-  background-color: #4a1150;
+  background-color: $dark-candidat;
 }
 
 #entreprise{
   @extend #demande;
-  background-color: #5e7eb5;//2b497c
+  background-color: $dark-entreprise;//2b497c
 }
 
 
