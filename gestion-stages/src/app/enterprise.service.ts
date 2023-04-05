@@ -50,7 +50,7 @@ modifierEntreprise(entrepriseId: string, newEntreprise: Entreprise, ): Observabl
 
 supprimerEntreprise(entrepriseId: string): Observable<any> {
   const dataURL: string = `${this.enterpriseUrl}/${entrepriseId}`;
-  console.log("=========================",dataURL)
+  console.log("Entreprise supprimée",dataURL)
   // return this.http.delete(dataURL, {body: JSON.stringify({entrepriseId: entrepriseId})}).pipe(catchError(this.handleError));
   return this.http.delete<any>(dataURL).pipe(catchError(this.handleError));
 }

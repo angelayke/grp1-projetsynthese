@@ -94,7 +94,7 @@ onDeleteClick(entrepriseId: string): void {
       this.entrepriseService.supprimerEntreprise(entrepriseId)
         .subscribe((data) => {
           this.entreprises = this.entreprises.filter(entreprise => entreprise._id !== entrepriseId);
-          console.log("????????????????????",this.entreprises, data)
+          console.log("Suppression",this.entreprises, data)
         }, (error)=>{
           this.errorMessage = error;
         });
