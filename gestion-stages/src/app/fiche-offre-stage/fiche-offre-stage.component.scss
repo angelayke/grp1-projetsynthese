@@ -1,14 +1,15 @@
 // @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import 'src/variables';
 
 @font-face {
     font-family: 'Lato', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
     }
-
+/*
 $color1: #bb2026;
 $color1hover: #821519;
 $color3: #707070;
-$color4: #242222;
+$color4: #242222;*/
 
 .card-container {
     margin: auto;
@@ -20,14 +21,14 @@ $color4: #242222;
 h1 {
     font-size: 42px;
     font-weight: bolder;
-    color: $color3;
+    color: $darkgrey;
     font-family: Lato;
 }
 
 h3 {
     font-size: 36px;
     font-weight: bolder;
-    color: $color1;
+    color: $offre;
     font-family: Lato;
     margin-top: 48px;
 }
@@ -35,23 +36,23 @@ h3 {
 h4 {
     font-size: 24px;
     font-weight: bolder;
-    color: $color3;
+    color: $darkgrey;
     font-family: Lato;
 }
 
 div .heading {
-    color: $color3;
+    color: $darkgrey;
 }
 
 .line-height {
     line-height: 1px;
-    color: $color3;
+    color: $darkgrey;
     // margin: 5px;
 }
 
 .ligne-verticale {
     border-left: 12px solid;
-    color: $color1;
+    color: $offre;
     height: fit-content;
     display: flexbox;
 }
@@ -61,7 +62,6 @@ div .heading {
     color: $color4;
     height: fit-content;
     // position:fixed;
-
 }
 
 .flex {
@@ -78,14 +78,14 @@ div .heading {
 
 div h5 {
     margin-top: 24px;
-    color: $color1;
+    color: $offre;
     font-size: 24px;
     font-weight: bolder;
 }
 
 h6 {
     margin-right: 24px;
-    color: $color3;
+    color: $darkgrey;
     font-family: Lato;
     font-weight: bolder;
     margin-bottom: 8px;
@@ -96,7 +96,6 @@ h6 {
     margin-top: 24px;
 }
 
-
 // .margin-title {
 //     padding-top: 24px;
 // }
@@ -105,5 +104,4 @@ h6 {
   display: flex;
   justify-content: right;
   margin: 10px 2rem 10px 0;
-
 }

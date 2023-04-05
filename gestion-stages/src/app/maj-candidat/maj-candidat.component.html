@@ -1,3 +1,8 @@
+
+<!--Composant maj-candidat
+Creer par Khaled Belkacemi
+dernière modification le 03 avril 2023-->
+
 <section>
    <div class="container">
      <ng-container>
@@ -124,12 +129,41 @@
       </ng-container>
    </div>
  </section>
- 
 
 
 <!--Khaled-->
 <!--
 <body>
+
+    <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
+    <button  id="btn__boutonCancelCandidat" style="float: right; " matSuffix type="cancel" mat-raised-button><mat-icon>clear</mat-icon>Annuler</button>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <div class="entete">
+        <h1>Candidat</h1>
+        <br>
+         <label><h2>{{candidats[0].name}}</h2></label>
+        <br>
+         <label class="jobTitle">{{candidats[0].jobTitle}}</label>
+        </div>
+        <br>
+        <br>
+    </mat-form-field>
+  
+    <div class="container">
+      <label for="description"><h4> Courte présentation</h4></label>
+      <textarea type="text" rows="10" cols="60" class="form-control" id="description"  required [(ngModel)]="candidats[0].description" name="description"></textarea>
+       <div class="row">
+                   <div class="adresse">
+                      <label for="adresse" class="form-label">Adresse</label>
+      <input [(ngModel)]="candidats[0].address" name="address"type="text" class="form-control" id="adresse" placeholder="3500 de Courval" value="" required="" name="adresse">
+      <div class="validation">
+         L'adresse est requise
+      </div>
+   </div>
+  </div>
+  
+     <div class="row">
   <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button>
     <mat-icon>save</mat-icon>Sauvegarder
   </button>
@@ -169,6 +203,7 @@
       </div>
     </div>
     <div class="row">
+
       <div class="ville">
         <label for="ville" class="form-label">Ville</label>
 

@@ -1,185 +1,191 @@
+@import 'src/variables';
+
 /* demo angular */
 .example-form {
-    /* min-width: 150px;
+  /* min-width: 150px;
      max-width: 500px;*/
-     width: 100%;
- }
-   
- .example-full-width {
-     width: 100%;
- }
-   
- td {
-     padding-right: 8px;
- }
- 
- .example-button-row {
-     display: table-cell;
-     max-width: 600px;
- }
- 
- /* fin demo angular */
- 
- h1,h2,h3{
-     color: #86a9e6;
-     font-weight: bold;
- }
-
- button:hover{
-    background-color: #2b497c;
-}
- 
- img{
-     max-width: 100%;
-     width:"150px";
- }
- 
-.flex-entete{
-    display: flex;
-    align-items: center;
- }
-   
-.subtitle-fiche{
-    font-size: large;
-    font-weight: bold;
-    margin-left: 5px;
+  width: 100%;
 }
 
-.soustitre-entreprise{
-    @extend .subtitle-fiche;
-    margin-right: 10px;
-    margin-bottom: 0;
-    margin-left: 0;
+.example-full-width {
+  width: 100%;
 }
 
-.soustitre-fiche{
-     margin-left: 5px;
-     font-weight: bold;
+td {
+  padding-right: 8px;
 }
 
-.titre-entreprise{
-     margin-top: 2px;
-     margin-left: 5px;
-     color: #707070;
-     font-size: 2.5em;
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
 }
- 
- .form-header{
-     margin-bottom: 7em;
- }
- 
- .fiche{
-     padding: 4em;
-     background-color: white;
- }
- 
- .td-fiche{
-     border-left: 7px solid #707070;
- }
- 
- .td-fiche-entreprise{
-    display: flex;
-    border-left: 7px solid #86a9e6;
-    align-items: flex-start;
-    flex-wrap: wrap; 
- }
- 
- .txt-fiche{
-     margin-left: 5px;
-     font-style: italic;
- }
- 
- .tr-fiche{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
- }
- 
- .person-contact-fiche{
-     font-weight: bold;
-     font-size: x-large;
- }
- 
- .material-symbols-outlined {
-   font-variation-settings:
-   'FILL' 0,
-   'wght' 400,
-   'GRAD' 0,
-   'opsz' 48
- }
- 
- .form-detail{
-     margin-top: 5px;
-     margin-left: 5px;
-     padding: 7px;
-     border: 1px #70707031 solid;
- }
- 
- .form-detail-entreprise{
-     @extend .form-detail;
-     margin-left: 0;
-     background-color: #fff;
- }
- 
- .mat-flat-button{
-    background-color: #86a9e6;
-    color: #fff;
-    min-width: 100px;
 
-    &#btn-parcourir{
-        margin-left: 20px;
-        
-        &:hover {
-        background-color: #2b497c;            
-        }
+/* fin demo angular */
+
+h1,
+h2,
+h3 {
+  color: $entreprise;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: $darker-entreprise;
+}
+
+img {
+  max-width: 100%;
+  width: "150px";
+}
+
+.flex-entete {
+  display: flex;
+  align-items: center;
+}
+
+.subtitle-fiche {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.soustitre-entreprise {
+  @extend .subtitle-fiche;
+  margin-right: 10px;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.soustitre-fiche {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.titre-entreprise {
+  margin-top: 2px;
+  margin-left: 5px;
+  color: $darkgrey;
+  font-size: 2.5em;
+}
+
+.form-header {
+  margin-bottom: 7em;
+}
+
+.fiche {
+  padding: 4em;
+  background-color: $white;
+}
+
+.td-fiche {
+  border-left: 7px solid $darkgrey;
+}
+
+.td-fiche-entreprise {
+  display: flex;
+  border-left: 7px solid $entreprise;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.txt-fiche {
+  margin-left: 5px;
+  font-style: italic;
+}
+
+.tr-fiche {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.person-contact-fiche {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL'0,
+    'wght'400,
+    'GRAD'0,
+    'opsz'48
+}
+
+.form-detail {
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 7px;
+  border: 1px #70707031 solid;
+}
+
+.form-detail-entreprise {
+  @extend .form-detail;
+  margin-left: 0;
+  background-color: $white;
+}
+
+.mat-flat-button {
+  background-color: $entreprise;
+  color: $white;
+  min-width: 100px;
+
+  &#btn-parcourir {
+    margin-left: 20px;
+
+    &:hover {
+      background-color: $darker-entreprise;
     }
+  }
 }
- 
- .btn-control{
-     display: flex;
-     justify-content: right;
-     margin: 10px 0;
- }
- 
- .btn-annuler{
-    margin-right: 10px;
-    &:hover{
-        color: #fff;
-    }
+
+.btn-control {
+  display: flex;
+  justify-content: right;
+  margin: 10px 0;
 }
- 
- /* tuto upload file*/
- /*pour faire disparaitre la ligne en dessous du mat-form-field*/
- ::ng-deep .mat-form-field-underline {
-     display: none;
- }
- 
- .mat-toolbar-single-row {
-     height: auto !important;
-     background: transparent;
-     padding: 0;
-     width: 500px;
- }
- 
- .mat-toolbar {
-     background: none;
-     color: #707070;
-     font-size: medium;
- }
- 
- #uploadFile {
-     top: 0px;
-     left: 0px;
-     width: 100%;    
-     z-index: 9;
-     opacity: 0;
-     height: 100%;
-     cursor: pointer;
-     position: absolute;
- }
- 
- #formfieldupload{
-     width: 500px !important;
- }
- /* fin tuto upolaod file */
+
+.btn-annuler {
+  margin-right: 10px;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+/* tuto upload file*/
+/*pour faire disparaitre la ligne en dessous du mat-form-field*/
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+  padding: 0;
+  width: 500px;
+}
+
+.mat-toolbar {
+  background: none;
+  color: $darkgrey;
+  font-size: medium;
+}
+
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#formfieldupload {
+  width: 500px !important;
+}
+
+/* fin tuto upolaod file */

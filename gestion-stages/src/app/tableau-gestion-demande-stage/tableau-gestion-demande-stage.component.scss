@@ -1,138 +1,111 @@
+@import 'src/variables';
+
 table {
   width: 100%;
   margin: 0 auto;
 
-
   // td, th{
   //   width: 25%;
-
   // }
 
-  th{
-    color:#707070;
-
+  th {
+    color: $darkgrey;
     text-decoration: underline;
     text-underline-position: under;
     text-underline-offset: 0.5em;
-
   }
-
 }
 
-
-
-.mat-elevation-z8{
+.mat-elevation-z8 {
   // margin: 0 15%;
   margin-top: 3rem;
-
-
 }
-.container{
+
+.container {
   margin: 0 5%;
 }
-
 
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
 }
 
-
-
-
-.visibility{
-  color:#22a6ac;
-
+.visibility {
+  color: $eye;
 }
 
-.edit{
-  color:#f89747
+.edit {
+  color: $edit;
 }
 
-.delete{
-  color:#f26689;
+.delete {
+  color: $trash;
 }
 
-.refuser{
-  color: #a00707;
+.refuser {
+  color: $refuse;
   background-color: rgba(160, 7, 7, 0.5);
   padding: 0.4rem;
   border-radius: 5%;
   border: none;
-
 }
 
-.accepter{
-  color:#07a04a;
+.accepter {
+  color: $accept;
   background-color: rgba(173, 216, 230, 0.5);
   padding: 0.4rem;
   border-radius: 5%;
-  border:none;
-
-
+  border: none;
 }
 
-.btn-td{
+.btn-td {
   white-space: nowrap;
 }
 
-.btn-icons{
+.btn-icons {
   margin: 0 0 0 2rem;
-
 }
 
-.school{
+.school {
   vertical-align: middle;
   margin-right: 10px;
   color: #70582E;
   background-color: #D6B477;
   border-radius: 10%;
-  padding: 0.2rem;
-
 }
-
-
 
 .vertical-line {
   display: inline-block;
-  border-right: 3px solid #CD9635;
+  border-right: 3px solid $demande;
   height: 20px;
   margin-left: 15px;
   margin-right: 15px;
   vertical-align: middle;
 }
 
-
-.btn-inactive{
+.btn-inactive {
   margin-top: 3rem;
 }
 
 
-
-
-.demandes-infos{
-   .titre2{
-    color:#E33462;
-    margin-top:0;
-
+.demandes-infos {
+  .titre2 {
+    color: $offre;
+    margin-top: 0;
   }
 
-  .btn-valid{
-    background-color:  #CD9635;
+  .btn-valid {
+    background-color: $demande;
     color: #F1FEFB;
     border-radius: 10px;
     border: none;
     text-decoration: none;
-    padding:1rem;
+    padding: 1rem;
     font-size: 16px;
     cursor: pointer;
-    &:hover{
-      background-color:  #d2ae71;
+
+    &:hover {
+      background-color: #d2ae71;
     }
   }
-
-
 }
-
-
-
