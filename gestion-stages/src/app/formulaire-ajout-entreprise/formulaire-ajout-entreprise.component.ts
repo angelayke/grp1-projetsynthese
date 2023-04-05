@@ -100,6 +100,7 @@ newEntreprise: Entreprise ={
     if (entrepriseFormAjout.valid) {
       this.entrepriseService.createEntreprise(this.entreprise).subscribe((data :ApiResponse<Entreprise[]>) => { //:ApiResponse<Entreprise[]>
         console.log("data created:", data)
+        entrepriseFormAjout.resetForm();
         this.router.navigate(['sidenav/tableaudebord']).then();
       },
       (error) => {

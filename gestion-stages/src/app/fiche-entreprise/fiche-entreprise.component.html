@@ -11,7 +11,7 @@
         </tr>
       </table>
 
-      <div class="btn-control">
+      <div class="btn-control" *ngIf="!loading && isNotEmpty()">
         <ng-container matColumnDef="actions" class="text-underline">
           <div class="example-button-row">
             <button mat-flat-button class="btn" (click)="onDoneClick()">
