@@ -1,84 +1,89 @@
-<section id="fiche-entreprise">
-  <ng-container>
-    <table class="table-titre">
-      <tr>
-        <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo" ></td>
-        <td class="td-fiche-entreprise">
-          <p class="soustitre-fiche">Entreprise</p>
-          <h1 class="titre-entreprise">Titre</h1>
-        </td>
-      </tr>
-      <tr>
-        <!--            
-                <ng-container matColumnDef="actions" class="text-underline">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
-                <td mat-cell *matCellDef="let entreprise" class="btn-td">
-      
-                  <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
-                    <mat-icon (click)="openDetailsDialog(entreprise._id)" class="visibility">visibility</mat-icon>
-                  </button>
-                  <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
-                    <mat-icon class="edit">edit</mat-icon>
-                  </button>
-                  <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer" (click)="deleteStage(entreprise._id)">
-                    <mat-icon class="delete">delete</mat-icon>
-                  </button>
-                </td>
-              </ng-container>-->
-      </tr>
-    </table>
-    <div class="container fiche">
-      <h1>Courte présentation</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium repudiandae, incidunt deserunt assumenda
-        laboriosam rem odio?
-        Assumenda non quae accusantium asperiores vel veritatis dolorum numquam enim tempora. Repudiandae, adipisci
-        repellendus.</p>
+<section *ngIf="!loading && isNotEmpty()">
+  <div class="container" >
+    <ng-container>
+      <table class="table-titre">
+        <tr>
+          <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo"></td>
+          <td class="td-fiche-entreprise">
+            <p class="soustitre-fiche">Entreprise</p>
+            <h1 class="titre-entreprise">Titre -{{entreprise.name}}-</h1>
+          </td>
+        </tr>
+      </table>
 
-      <h3>Personne contact</h3>
-      <p class="person-contact-fiche">Louise St-Cyr</p>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-flat-button class="btn" (click)="onDoneClick()">
+              <mat-icon id="done">done</mat-icon>
+            </button>
+            <!-- (click)="onEditClick()" -->
+            <button mat-flat-button class="btn" routerLink="/sidenav/entreprises/modifier-entreprise/{{entreprise._id}}">
+              <mat-icon id="edit">edit</mat-icon>
+            </button>
 
-      <h3>Information de contact</h3>
-      <!--Test input form angular-->
-      <form class="example-form">
-        <table class="example-full-width" cellspacing="0">
-          <tr class="tr-fiche">
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Adresse</p>
-              <p class="txt-fiche">123 rue machin</p>
-            </td>
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Téléphone</p>
-              <p class="txt-fiche">819 373-2235</p>
-            </td>
-          </tr>
+            <button mat-flat-button class="btn" (click)="onDeleteClick(entreprise._id)" ><!--(click)="supprimerEntreprise(entreprise?.id)"-->
+
+              <mat-icon id="cancel">cancel</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+      </div>
+
+<!-- <pre>{{entrepriseId | json}}</pre> -->
+<!-- <pre>{{entreprise | json}}</pre> -->
+
+<!-- <pre>{{entreprise._id}}</pre> -->
+
+      <div class="fiche" *ngIf="!loading && isNotEmpty()">
+        <h1>Courte présentation</h1>
+        <p>{{entreprise.description}}</p>
         <br>
-          <tr class="tr-fiche">
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Ville</p>
-              <p class="txt-fiche">TownCity</p>
-            </td>
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Courriel</p>
-              <p class="txt-fiche">info@entreprise.com</p>
-            </td>
-          </tr>
-          <br>
-          <tr class="tr-fiche">
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Province</p>
-              <p class="txt-fiche">Québec</p>
-            </td>
-          </tr>
-          <br>
-          <tr class="tr-fiche">
-            <td class="td-fiche">
-              <p class="subtitle-fiche">Code Postal</p>
-              <p class="txt-fiche">H1H 1H1</p>
-            </td>
-          </tr>
-        </table>
+        <h3>Personne contact</h3>
+        <p class="person-contact-fiche">{{entreprise.contactName}}</p>
+        <br>
+        <h3>Information de contact</h3>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Adresse</p>
+                <p class="txt-fiche">{{entreprise.address}}</p>
+              </td>
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Téléphone</p>
+                <p class="txt-fiche">{{entreprise.contactPhone}}</p>
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Ville</p>
+                <p class="txt-fiche">{{entreprise.city}}</p>
+              </td>
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Courriel</p>
+                <p class="txt-fiche">{{entreprise.contactEmail}}</p>
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Province</p>
+                <p class="txt-fiche">{{entreprise.province}}</p>
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Code Postal</p>
+                <p class="txt-fiche">{{entreprise.postalCode}}</p>
+              </td>
+            </tr>
+          </table>
 
-      </form>
-    </div>
-  </ng-container>
+        </form>
+      </div>
+    </ng-container>
+  </div>
 </section>

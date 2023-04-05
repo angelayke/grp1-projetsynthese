@@ -1,74 +1,112 @@
 /* demo angular */
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
 td {
-    padding-right: 8px;
-  }
+  padding-right: 8px;
+}
+
 /* fin demo angular */
 
-h1,h2,h3{
-    color: #86a9e6;
-    font-weight: bold;
+h1,
+h2,
+h3 {
+  color: #86a9e6;
+  font-weight: bold;
 }
 
-img{
-    max-width: 100%;
-    width:"150px";
+img {
+  max-width: 100%;
+  width: "150px";
 }
 
-.soustitre-fiche{
-    margin-left: 5px;
-    font-weight: bold;
+.soustitre-fiche {
+  margin-left: 5px;
+  font-weight: bold;
 }
 
-.titre-entreprise{
-    margin-top: 2px;
-    margin-left: 5px;
-    color: #707070;
-    font-size: 4em;
+.titre-entreprise {
+  margin-top: 2px;
+  margin-left: 5px;
+  color: #707070;
+  font-size: 2.5em;
 }
 
-.table-titre{
-    width: 300px;
+.table-titre {
+  width: 300px;
 }
 
-.fiche{
-    padding: 4em;
-    background-color: white;
+.fiche {
+  padding: 4em;
+  background-color: white;
 }
 
-.td-fiche{
-    border-left: 7px solid #707070;
+.td-fiche {
+  border-left: 7px solid #707070;
 }
 
-.td-fiche-entreprise{
-    border-left: 7px solid #86a9e6;
+.td-fiche-entreprise {
+  display: flex;
+  border-left: 7px solid #86a9e6;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.subtitle-fiche{
-    font-size: large;
-    font-weight: bold;
-    margin-left: 5px;
+.subtitle-fiche {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
 }
 
-.txt-fiche{
-    margin-left: 5px;
-    font-style: italic;
+.txt-fiche {
+  margin-left: 5px;
 }
 
-.tr-fiche{
-    margin-bottom: 20px;
+.tr-fiche {
+  margin-bottom: 20px;
 }
 
-.person-contact-fiche{
-    font-weight: bold;
-    font-size: x-large;
+.person-contact-fiche {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+/*boutons en haut a droite*/
+.btn-control {
+  display: flex;
+  justify-content: right;
+  margin: 10px 0;
+}
+
+.btn {
+  background-color: transparent;
+}
+
+.mat-flat-button {
+  min-width: 30px;
+  padding: 0 5px;
+}
+
+
+.mat-icon {
+  font-weight: 700;
+
+  &#done {
+    color: #07a04a;
+  }
+
+  &#edit {
+    color: #2b497c;
+  }
+
+  &#cancel {
+    color: #bb2026;
+  }
 }

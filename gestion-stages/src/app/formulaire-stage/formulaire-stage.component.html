@@ -9,10 +9,10 @@
   <div class="form-fields-container">
     <mat-form-field class="form-field">
       <mat-label>Titre</mat-label>
-      <input type="text" matInput class="mat-input-element" formControlName="title" name="title" required minlength="5"
+      <input type="text" matInput class="mat-input-element" formControlName="titre" name="titre" required minlength="5"
         maxlength="50" placeholder="Titre">
       <mat-error
-        *ngIf="formStage.get('title')?.invalid && (formStage.get('title')?.dirty || formStage.get('title')?.touched) && formStage.get('title')?.errors ">
+        *ngIf="formStage.get('titre')?.invalid && (formStage.get('titre')?.dirty || formStage.get('titre')?.touched) && formStage.get('titre')?.errors ">
         Le titre est obligatoire et il doit contenir au moins 5 caractères.</mat-error>
 
 
@@ -140,7 +140,7 @@
           <mat-option value="hoursPerWeek">Valeur 2</mat-option>
         </mat-select>
         <mat-error
-          *ngIf="formStage.get('activity')?.invalid && (formStage.get('activity')?.dirty || formStage.get('activity')?.touched) && formStage.get('activity')?.errors">
+          *ngIf="formStage.get('activity')?.invalid && (formStage.get('hoursPerWeek')?.dirty || formStage.get('hoursPerWeek')?.touched) && formStage.get('hoursPerWeek')?.errors">
           Ce champ est obligatoire</mat-error>
       </mat-form-field>
 
@@ -179,12 +179,14 @@
 
 
   <div class="button-container">
-    <button mat-raised-button class="mat-accent" type="reset" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button class="mat-primary" [disabled]="formStage.invalid" (click)="onAdd()">
+    <button mat-raised-button class="mat-accent btn-save-annuler" type="reset" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button class="mat-primary btn-save-annuler" [disabled]="formStage.invalid" (click)="onAdd()">
       <mat-icon>save</mat-icon>Sauvegarder
     </button>
   </div>
 
-
+  <div class="btn-retour">
+    <a routerLink="/sidenav/demandesdestage">Back</a>
+  </div>
 </form>
 

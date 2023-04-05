@@ -1,12 +1,12 @@
 table {
   width: 100%;
   margin: 0 auto;
-  // background-color: #FFFFFF;
 
-  td, th{
-    width: 25%;
 
-  }
+  // td, th{
+  //   width: 25%;
+
+  // }
 
   th{
     color:#707070;
@@ -103,7 +103,9 @@ table {
 }
 
 
-
+.btn-inactive{
+  margin-top: 3rem;
+}
 
 
 

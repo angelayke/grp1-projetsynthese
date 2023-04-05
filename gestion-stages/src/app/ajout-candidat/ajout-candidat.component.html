@@ -1,6 +1,154 @@
+
 <!--Composant ajout-candidat
 créer par Khaled Belkacemi
 dernière modification le 03 avril 2023-->
+
+
+<section>
+    <div class="container">
+      <ng-container>
+        <table>
+          <tr>
+            <td class="td-fiche-candidat">
+              <h1 class="titre-candidat">Ajouter un candidat</h1>
+            </td>
+          </tr>
+        </table>
+
+        <form class="form-header" (submit)="createCandidat()" ><!-- #candidatFormAjout="ngForm" -->
+          <!--(submit)="createCandidat(candidatFormAjout)"-->
+          <div class="btn-control">
+            <ng-container matColumnDef="actions" class="text-underline">
+              <div class="example-button-row">
+                <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler">
+                  <!--(click)="annuler()"-->
+                  <mat-icon>cancel</mat-icon> Annuler
+                </button>
+
+                <button type="submit" mat-flat-button aria-label="Ajouter" ><!--[disabled]="!candidatFormAjout.form.valid"-->
+                  <!--(click)="createCandidat(candidatFormAjout)"-->
+                  <mat-icon>save</mat-icon> Sauvegarder
+                </button>
+                <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">
+                  Le nom est obligatoire.
+                </mat-error>
+                <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('minlength')">
+                  Le nom doit contenir au moins 2 caractères.
+                </mat-error>
+                <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('maxlength')">
+                  Le nom doit contenir au maximum 50 caractères.
+                </mat-error>
+              </div>
+            </ng-container>
+          </div>
+
+          <table>
+            <tr>
+              <td><p class="soustitre-candidat">Nom et prénom:</p></td>
+              <td><input type="text" matInput value="" class="form-detail-candidat input__candidat" name="name" required minlength="2"
+                maxlength="50" [(ngModel)]="candidat.name" #name="ngModel">
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error></td>
+            </tr>
+            <tr>
+              <td> <p class="soustitre-candidat">Poste:</p></td>
+              <td><input type="text" matInput value="" class="form-detail-candidat" name="jobTitle" required minlength="2"
+                maxlength="50" [(ngModel)]="candidat.jobTitle" #jobTitle="ngModel">
+                <mat-error *ngIf="jobTitle.invalid && (jobTitle.dirty || jobTitle.touched) && jobTitle.hasError('required')">Champ obligatoire</mat-error></td>
+            </tr>
+          </table>
+
+          </form>
+
+          <div class="fiche">
+            <form class="example-form" (submit)="createCandidat()">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <h1>Courte présentation</h1>
+                    <textarea class="form-detail-candidat" matInput name="description" placeholder="" [(ngModel)]="candidat.description" name="description" #description="ngModel" cols="60px" rows="10px" required></textarea>
+                    <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+              </tr>
+
+              <br>
+              <h3>Informations personnelles</h3>
+
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
+                  <input class="form-detail" matInput name="adresse" placeholder="Adresse" required #name="ngModel"
+                    [(ngModel)]="candidat.address">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
+                  <input class="form-detail" matInput name="telephone" placeholder="000 000-0000" required #name="ngModel"
+                    [(ngModel)]="candidat.phone">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Ville</mat-label> <br>
+                  <input class="form-detail" matInput name="ville" placeholder="Ville" required #name="ngModel"
+                    [(ngModel)]="candidat.city">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Courriel</mat-label> <br>
+                  <input class="form-detail" matInput name="email" placeholder="Courriel" required #name="ngModel"
+                    [(ngModel)]="candidat.email">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Province</mat-label> <br>
+                  <input class="form-detail" matInput name="province" placeholder="Province" required #name="ngModel"
+                    [(ngModel)]="candidat.province">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+              </tr>
+              <br>
+              <tr class="tr-fiche">
+                <td class="td-fiche">
+                  <mat-label class="subtitle-fiche">Code Postal</mat-label> <br>
+                  <input class="form-detail" matInput name="codepostal" placeholder="H1H 1H1" required #name="ngModel"
+                    [(ngModel)]="candidat.postalCode">
+                    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
+                </td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        <div class="btn-control">
+          <ng-container matColumnDef="actions" class="text-underline">
+            <div class="example-button-row">
+              <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler">
+                <!--(click)="annuler()"-->
+                <mat-icon>cancel</mat-icon> Annuler
+              </button>
+
+              <button type="submit" mat-flat-button aria-label="Ajouter" ><!--[disabled]="!candidatFormAjout.form.valid"-->
+                <!--(click)="createCandidat(candidatFormAjout)"-->
+                <mat-icon>save</mat-icon> Sauvegarder
+              </button>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+
+
+
+
+
+<!--Khaled-->
+<!--
 <body>
     <mat-form-field appearance="fill" class="full-width"><h1>Ajouter un candidat</h1></mat-form-field>
 
@@ -14,7 +162,7 @@ dernière modification le 03 avril 2023-->
     <mat-form-field >
         <input name="name" [(ngModel)]="candidat.name" name="name" #name="ngModel">
         <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Champ obligatoire</mat-error>
- 
+
     </mat-form-field>
     </div>
 
@@ -22,20 +170,20 @@ dernière modification le 03 avril 2023-->
     <mat-form-field >
         <input name="jobTitle" [(ngModel)]="candidat.jobTitle" name="jobTitle" #jobTitle="ngModel">
         <mat-error *ngIf="jobTitle.invalid && (jobTitle.dirty || jobTitle.touched) && jobTitle.hasError('required')">Champ obligatoire</mat-error>
-      
+
     </mat-form-field>
     </div>
     </div>
 
     <div class="container-fluid">
-        
+
         <div><label id="name" for="name"><h2>Courte présentation</h2></label></div>
         <mat-form-field >
         <textarea class="presentation" matInput name="description" [(ngModel)]="candidat.description" name="description" #description="ngModel" cols="60px" rows="10px"></textarea>
         <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">Champ obligatoire</mat-error>
-       
+
     </mat-form-field>
-        
+
     <div class="container-info-perso">
         <label id="name" for="name"><h3>Informations personnelles</h3></label>
 
@@ -43,29 +191,29 @@ dernière modification le 03 avril 2023-->
         <mat-form-field appearance="fill" class="full-width">
             <input name="address" [(ngModel)]="candidat.address" name="address" #address="ngModel">
             <mat-error *ngIf="address.invalid && (address.dirty || address.touched) && address.hasError('required')">Champ obligatoire</mat-error>
-          
+
         </mat-form-field>
 
     <div><label id="ville" for="name">Ville</label></div>
         <mat-form-field appearance="fill" class="full-width">
             <input name="city" [(ngModel)]="candidat.city" name="city" #city="ngModel">
             <mat-error *ngIf="city.invalid && (city.dirty || city.touched) && city.hasError('required')">Champ obligatoire</mat-error>
-            
+
         </mat-form-field>
 
     <div><label id="province" for="name">Province</label></div>
         <mat-form-field appearance="fill" class="full-width">
             <input name="province" [(ngModel)]="candidat.province" name="province" #province="ngModel">
             <mat-error *ngIf="province.invalid && (province.dirty || province.touched) && province.hasError('required')">Champ obligatoire</mat-error>
-          
+
         </mat-form-field>
 
     <div><label id="codePostale" for="name">code postale</label></div>
         <mat-form-field appearance="fill" class="full-width">
             <input name="postalCode" [(ngModel)]="candidat.postalCode" name="postalCode" #postalCode="ngModel">
             <mat-error *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched) && postalCode.hasError('required')">Champ obligatoire</mat-error>
-            
-            
+
+
         </mat-form-field>
 
         <div class="container-coordonnees">
@@ -74,23 +222,23 @@ dernière modification le 03 avril 2023-->
         <mat-form-field appearance="fill" class="full-width">
             <input name="phone" [(ngModel)]="candidat.phone" name="phone" #phone="ngModel">
             <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.hasError('required')">Champ obligatoire</mat-error>
-           
-           
+
+
         </mat-form-field>
 
         <div><label id="email" for="name">Courriel</label></div>
-    
+
         <mat-form-field appearance="fill" class="full-width">
             <input name="email" [(ngModel)]="candidat.email" name="email" #email="ngModel">
             <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.hasError('required')">Champ obligatoire</mat-error>
-            
+
         </mat-form-field>
     </div>
     </div>
-    </div>  
+    </div>
     <br>
     <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
     <button  id="btn__boutonCancelCandidat" style="float: right; " matSuffix type="cancel" mat-raised-button><mat-icon>clear</mat-icon>Annuler</button>
 
 </form>
-</body>
+</body>-->

@@ -1,100 +1,97 @@
+
 <!--Composant candidat-details
 créer par Khaled Belkacemi
 dernière modification le 03 avril 2023-->
 
-<section id="candidat-details">
+<section>
+  <div class="container">
     <ng-container>
-        <table class="table-titre">
-            <tr>
-                    <td class="td-candidat-details">
-                      <p class="soustitre-fiche">Candidat</p>
-                      <h1 class="titre-candidat">{{candidat.name}}</h1>
-                      <h1 class="jobTitle">{{candidat.jobTitle}}</h1>
-                    </td>
-                  </tr>
-            </table>
+      <table class="table-titre">
+        <tr>
+          <td class="td-candidat-details">
+            <p class="soustitre-fiche">Candidat</p>
+            <h1 class="titre-candidat">Prénom Nom</h1>
+            <!--{{candidat.name}}-->
+            <h2 class="jobTitle">Titre du poste</h2>
+            <!--{{candidat.jobTitle}}-->
+          </td>
+        </tr>
+      </table>
 
-   <div class="btn-control">
-      <ng-container matColumnDef="actions" class="text-underline">
-        <div class="example-button-row">
-          <button mat-flat-button class="btn">
-            <mat-icon id="done">done</mat-icon>
-          </button>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button mat-flat-button class="btn" (click)="onDoneClick()">
+              <mat-icon id="done">done</mat-icon>
+            </button>
+            <!-- (click)="onEditClick()" -->
+            <button mat-flat-button class="btn" routerLink="/sidenav/candidats/modifier-candidat/{{candidat._id}}">
+              <mat-icon id="edit">edit</mat-icon>
+            </button>
 
-          <button mat-flat-button class="btn">
-            <mat-icon id="edit">edit</mat-icon>
-          </button>
+            <button mat-flat-button class="btn" (click)="onDeleteClick(candidat._id)">
+              <mat-icon id="cancel">cancel</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+      </div>
+<!--
+<pre>{{candidatId | json}}</pre>
+<pre>{{candidat | json}}</pre> -->
 
-          <button mat-flat-button class="btn">
-            <mat-icon id="cancel">cancel</mat-icon>
-          </button>
-        </div>
-      </ng-container>
-    </div>
-
-    <div class="container fiche">
-          <h1>Courte présentation</h1>
-          <p>{{candidat.description}}</p>
-          
-
-          <br>
-          <h3>Informations personnelles</h3>
-
-
-          <form class="example-form">
-            <table class="example-full-width" cellspacing="0">
-              <tr class="tr-fiche">
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Adresse</p>
-                  <p class="txt-fiche">{{candidat.address}}</p>
-                </td>
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Téléphone</p>
-                  <p class="txt-fiche">{{candidat.phone}}</p>
-                </td>
-              </tr>
-              <br>
-              <tr class="tr-fiche">
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Ville</p>
-                  <p class="txt-fiche">{{candidat.city}}</p>
-                </td>
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Courriel</p>
-                  <p class="txt-fiche">{{candidat.email}}</p>
-                </td>
-              </tr>
-              <br>
-              <tr class="tr-fiche">
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Province</p>
-                  <p class="txt-fiche">{{candidat.province}}</p>
-                </td>
-              </tr>
-              <br>
-              <tr class="tr-fiche">
-                <td class="td-fiche">
-                  <p class="subtitle-fiche">Code Postal</p>
-                  <p class="txt-fiche">{{candidat.postalCode}}</p>
-                </td>
-              </tr>
-            </table>
-    
-          </form>
-        </div>
-      </ng-container>
-    </section>
-
-
-    
-
-
-    
-    
-  
-  
-
-
-
-
-
+      <div class="fiche" *ngIf="!loading && isNotEmpty()">
+        <h1>Courte présentation</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Rerum consectetur quaerat quam maiores magni fuga dolor inventore pariatur,
+          optio omnis dicta repudiandae delectus porro sed aliquam et quisquam eos? Incidunt.</p><!--{{candidat.description}}-->
+        <br>
+        <h3>Informations personnelles</h3>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Adresse</p>
+                <p class="txt-fiche">123 rue machin</p>
+                {{candidat.address}}
+              </td>
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Téléphone</p>
+                <p class="txt-fiche">000 000-0000</p>
+                {{candidat.phone}}
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Ville</p>
+                <p class="txt-fiche">Towncity</p>
+                {{candidat.city}}
+              </td>
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Courriel</p>
+                <p class="txt-fiche">info@candidat.com</p>
+                {{candidat.email}}
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Province</p>
+                <p class="txt-fiche">Québec</p>
+                {{candidat.province}}
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <p class="subtitle-fiche">Code Postal</p>
+                <p class="txt-fiche">H1H 1H1</p>
+                {{candidat.postalCode}}
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </ng-container>
+  </div>
+</section>

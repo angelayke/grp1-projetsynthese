@@ -20,7 +20,7 @@ export class FormulaireStageComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder) {
     this.formStage = this.fb.group({
-      title: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      titre: new FormControl('', [Validators.required, Validators.minLength(5)]),
       nomPrenom: new FormControl(''),
       presentation: new FormControl(''),
       program: new FormControl(''),

@@ -1,5 +1,5 @@
 <main>
-  <section class="container">
+  <section>
     <div class="demandes-infos">
       <div>
         <h1>Demande de stage</h1>
@@ -8,15 +8,16 @@
     </div>
   </section>
 
-  <section class="container">
+  <section>
+    <button class="btn-inactive" mat-button (click)="showInactive()">Voir les demandes inactives</button>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-        <ng-container matColumnDef="title" class="text-underline">
+        <ng-container matColumnDef="titre" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Poste </th>
           <td mat-cell *matCellDef="let stage">
             <span class="vertical-line"></span>
             <mat-icon class="school">school</mat-icon>
-            {{stage.title | titlecase}}
+            {{stage.titre | titlecase}}
           </td>
         </ng-container>
 
@@ -27,7 +28,7 @@
 
         <ng-container matColumnDef="region" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Région </th>
-          <td mat-cell *matCellDef="let stage"> {{stage.region | titlecase  }} </td>
+          <td mat-cell *matCellDef="let stage"> {{stage.region.label | titlecase  }} </td>
         </ng-container>
 
         <ng-container matColumnDef="startDate" class="text-underline">
@@ -38,11 +39,17 @@
         <ng-container matColumnDef="actions" class="text-underline">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let stage" class="btn-td">
+            <!-- <a mat-button aria-label="Visualiser" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">Visualiser</a> -->
+            <!-- (click)="afficherDetails(stage)" -->
+            <!-- (click)="openDetailsDialog(stage)" -->
+            <!-- (click)="openDialog(stage)" -->
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Visualiser">
-              <mat-icon  class="visibility" (click)="openDetailsDialog(stage)">visibility</mat-icon>
+              <mat-icon  class="visibility" routerLink="/sidenav/fiche-demandestage/{{stage._id}}">visibility</mat-icon>
             </button>
+            <!-- <button mat-button aria-label="Modifier" routerLink="/sidenav/modifier-demandestage">Modifier</button> -->
             <button class="btn-icons" mat-icon-button color="primary" aria-label="Modifier">
-              <mat-icon class="edit" (click)="openDialog(stage)">edit</mat-icon>
+              <mat-icon class="edit" routerLink="/sidenav/modifier-demandestage" >edit</mat-icon>
+
             </button>
             <button class="btn-icons" mat-icon-button color="warn" aria-label="Supprimer">
               <mat-icon class="delete" (click)="onDeleteClick(stage)">delete</mat-icon>

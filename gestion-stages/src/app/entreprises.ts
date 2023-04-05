@@ -1,5 +1,12 @@
-export interface Entreprise {  
-    _id?: number;
+export interface ApiResponse<T> {
+    success: boolean;
+    data: T;
+    error?: string;
+  }
+
+
+  export interface Entreprise {
+    _id: string;
     createdAt: string;
     updatedAt: string;
     name: string;
@@ -12,5 +19,6 @@ export interface Entreprise {
     city: string;
     province: string;
     postalCode: string;
-    published: boolean; 
+    published: boolean;
+
 }

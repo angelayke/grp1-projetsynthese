@@ -21,7 +21,7 @@ export class DialogModifierStageComponent implements OnInit {
   }
 
   isDataValid(): boolean {
-    return !this.data.title || !this.data.activitySector || !this.data.startDate;
+    return !this.data.titre || !this.data.activitySector || !this.data.startDate;
   }
 
   onSaveClick(): void {

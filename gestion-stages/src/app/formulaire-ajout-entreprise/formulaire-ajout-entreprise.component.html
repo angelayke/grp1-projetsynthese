@@ -1,1 +1,144 @@
-<p>formulaire-ajout-entreprise works!</p>
+<section>
+  <div class="container">
+    <ng-container>
+      <table>
+        <tr>
+          <td class="td-fiche-entreprise">
+            <h1 class="titre-entreprise">Ajouter entreprise</h1>
+          </td>
+        </tr>
+      </table>
+
+      <form class="form-header" #entrepriseFormAjout="ngForm" (submit)="createEntreprise(entrepriseFormAjout)">
+        <!--(submit)="createEntreprise(entrepriseFormAjout)"-->
+        <div class="btn-control">
+          <ng-container matColumnDef="actions" class="text-underline">
+            <div class="example-button-row">
+              <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler">
+                <!--(click)="annuler()"-->
+                <mat-icon>cancel</mat-icon> Annuler
+              </button>
+
+              <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid">
+                <!--(click)="createEntreprise(entrepriseFormAjout)"-->
+                <mat-icon>save</mat-icon> Sauvegarder
+              </button>
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">
+                Le nom est obligatoire.
+              </mat-error>
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('minlength')">
+                Le nom doit contenir au moins 2 caractères.
+              </mat-error>
+              <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('maxlength')">
+                Le nom doit contenir au maximum 50 caractères.
+              </mat-error>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="example-full-width flex-entete">
+          <p class="soustitre-entreprise">Entreprise</p>
+          <input type="text" matInput value="" class="form-detail-entreprise" name="entreprise" required minlength="2"
+            maxlength="50" [(ngModel)]="entreprise.name" #name="ngModel">
+        </div>
+        <mat-form-field class="example-full-width" id="formfieldupload">
+          <!-- tuto https://www.positronx.io/angular-material-file-browse-upload-ui-with-material-components/ -->
+          <!--bouton pour upload image logo-->
+          <div>
+            <mat-toolbar>
+              <!-- Display files names -->
+              <input  matInput [(ngModel)]="fileAttr" readonly name="name" />
+              <!-- Browse Button -->
+              <button mat-flat-button id="btn-parcourir">Parcourir</button>
+            </mat-toolbar>
+            <!-- Fetch selected filed on change -->
+            <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+              multiple="multiple" accept="image/*" />
+          </div>
+        </mat-form-field>
+        </form>
+
+        <div class="fiche">
+          <form class="example-form" (submit)="createEntreprise(entrepriseFormAjout)">
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <h1>Courte présentation</h1>
+                <input type="text" class="form-detail" matInput name="description" placeholder="" required #description="ngModel"
+                  [(ngModel)]="entreprise.description">
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Personne contact</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="contactName" placeholder="" required #contactName="ngModel"
+                  [(ngModel)]="entreprise.contactName">
+              </td>
+            </tr>
+            <br>
+            <h3>Information de contact</h3>
+
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="address" placeholder="Adresse" required #address="ngModel"
+                  [(ngModel)]="entreprise.address">
+              </td>
+
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
+                <input type="text" class="form-detail" matInput name="contactPhone" placeholder="000 000-0000" required #contactPhone="ngModel"
+                  [(ngModel)]="entreprise.contactPhone">
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Ville</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="city" placeholder="Ville" required #city="ngModel"
+                  [(ngModel)]="entreprise.city">
+              </td>
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Courriel</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="contactEmail" placeholder="Courriel" required #contactEmail="ngModel"
+                  [(ngModel)]="entreprise.contactEmail">
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Province</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="province" placeholder="Province" required #province="ngModel"
+                  [(ngModel)]="entreprise.province">
+              </td>
+            </tr>
+            <br>
+            <tr class="tr-fiche">
+              <td class="td-fiche">
+                <mat-label class="subtitle-fiche">Code Postal</mat-label> <br>
+                <input type="text" class="form-detail" matInput name="postalCode" placeholder="H1H 1H1" required #postalCode="ngModel"
+                  [(ngModel)]="entreprise.postalCode">
+              </td>
+            </tr>
+          </table>
+          </form>
+        </div>
+      <div class="btn-control">
+        <ng-container matColumnDef="actions" class="text-underline">
+          <div class="example-button-row">
+            <button type="reset" mat-stroked-button color="secondary" class="btn-annuler" aria-label="Annuler">
+              <!--(click)="annuler()"-->
+              <mat-icon>cancel</mat-icon> Annuler
+            </button>
+
+            <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!entrepriseFormAjout.form.valid">
+              <!--(click)="createEntreprise(entrepriseFormAjout)"-->
+              <mat-icon>save</mat-icon> Sauvegarder
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</section>
