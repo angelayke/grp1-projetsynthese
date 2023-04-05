@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 /* demo angular */
 .example-form {
   min-width: 150px;
@@ -18,7 +20,7 @@ td {
 h1,
 h2,
 h3 {
-  color: #86a9e6;
+  color: $entreprise;
   font-weight: bold;
 }
 
@@ -35,7 +37,7 @@ img {
 .titre-entreprise {
   margin-top: 2px;
   margin-left: 5px;
-  color: #707070;
+  color: $darkgrey;
   font-size: 2.5em;
 }
 
@@ -45,16 +47,16 @@ img {
 
 .fiche {
   padding: 4em;
-  background-color: white;
+  background-color: $white;
 }
 
 .td-fiche {
-  border-left: 7px solid #707070;
+  border-left: 7px solid $darkgrey;
 }
 
 .td-fiche-entreprise {
   display: flex;
-  border-left: 7px solid #86a9e6;
+  border-left: 7px solid $entreprise;
   align-items: flex-start;
   flex-wrap: wrap;
 }
@@ -99,14 +101,14 @@ img {
   font-weight: 700;
 
   &#done {
-    color: #07a04a;
+    color: $accept;
   }
 
   &#edit {
-    color: #2b497c;
+    color: $darker-entreprise
   }
 
   &#cancel {
-    color: #bb2026;
+    color: $offre;
   }
 }
