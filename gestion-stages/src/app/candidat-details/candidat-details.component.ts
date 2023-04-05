@@ -64,10 +64,10 @@ export class CandidatDetailsComponent implements OnInit {
       alert("Fiche sauvegardée!");
    }
 
-   onEditClick(){
-     this.editing = true;
-     alert("Fiche modifiée!");
-   }
+  //  onEditClick(){
+  //    this.editing = true;
+  //    alert("Fiche modifiée!");
+  //  }
 
   //  onDeleteClick(): void {
   //   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -101,7 +101,7 @@ export class CandidatDetailsComponent implements OnInit {
         this.candidatService.supprimerCandidat(candidatId)
           .subscribe((data) => {
             this.candidats = this.candidats.filter(candidat => candidat._id !== candidatId);
-            console.log(this.candidats)
+            console.log(this.candidats, data)
           });
       }
     });

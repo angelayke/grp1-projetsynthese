@@ -48,14 +48,14 @@ const httpOptions = {
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // const headers = httpOptions.headers;
     const dataURL: string = `${this.candidatUrl}/${candidatId}`;
-    return this.http.put<ApiResponse<Candidat[]>>(dataURL, candidat, httpOptions).pipe(catchError(this.handleError));
+    return this.http.patch<ApiResponse<Candidat[]>>(dataURL, {input: candidat}, httpOptions).pipe(catchError(this.handleError));
   }
 
 
-supprimerCandidat(candidatId: string): Observable<{}> {
+supprimerCandidat(candidatId: string): Observable<any> {
   const dataURL: string = `${this.candidatUrl}/${candidatId}`;
   console.log("=========================",dataURL)
-  return this.http.delete(dataURL).pipe(catchError(this.handleError));
+  return this.http.delete<any>(dataURL).pipe(catchError(this.handleError));
 }
 
 
