@@ -1,3 +1,6 @@
+<!--Composant maj-candidat
+Creer par Khaled Belkacemi
+dernière modification le 02 avril 2023-->
 
 <body>
     <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
@@ -7,9 +10,9 @@
       <div class="entete">
         <h1>Candidat</h1>
         <br>
-        <label><h2>{{candidats[0].name}}</h2></label>
+         <label><h2>{{candidats[0].name}}</h2></label>
         <br>
-        <label class="jobTitle">{{candidats[0].jobTitle}}</label>
+         <label class="jobTitle">{{candidats[0].jobTitle}}</label>
         </div>
         <br>
         <br>
@@ -18,9 +21,6 @@
     <div class="container">
       <label for="description"><h4> Courte présentation</h4></label>
       <textarea type="text" rows="10" cols="60" class="form-control" id="description"  required [(ngModel)]="candidats[0].description" name="description"></textarea>
-    
-  
-     
        <div class="row">
                    <div class="adresse">
                       <label for="adresse" class="form-label">Adresse</label>
@@ -30,6 +30,7 @@
       </div>
    </div>
   </div>
+  
      <div class="row">
       <div class="ville">
        <label for="ville" class="form-label">Ville</label>
