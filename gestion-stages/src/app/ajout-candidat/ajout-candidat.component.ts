@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ApiResponse, Candidat } from '../candidat';
 import { CandidatService } from '../candidat.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-ajout-candidat',
@@ -46,8 +47,8 @@ constructor(private candidatService: CandidatService, private router: Router ) {
 //       console.log(this.candidat)
 // }
 
-createCandidat() {
-
+createCandidat(candidatFormAjout: NgForm) {
+  if (candidatFormAjout.valid) {
     this.candidatService.createCandidat(this.candidat).subscribe((data :ApiResponse<Candidat[]>) => {
       console.log("data created:", data)
       this.router.navigate(['sidenav/tableaudebord']).then();
@@ -57,6 +58,7 @@ createCandidat() {
     this.router.navigate(['sidenav/tableaudebord/ajout-candidat']).then();
     });
 
+}
 }
 
 }

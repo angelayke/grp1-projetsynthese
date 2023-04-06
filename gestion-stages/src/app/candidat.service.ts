@@ -47,18 +47,20 @@ const httpOptions = {
     return this.http.post<ApiResponse<Candidat[]>>(dataURL, {input: newCandidat }, httpOptions).pipe(catchError(this.handleError));
   }
 
-  modifierCandidat(candidatId: string, candidat: Candidat ): Observable<ApiResponse<Candidat[]>> {
+  // modifierCandidat(candidatId: string, candidat: Candidat ): Observable<ApiResponse<Candidat[]>> {
+  modifierCandidat(candidatId: string, candidat: Candidat ): Observable<{success: boolean, data?: Candidat}> {
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // const headers = httpOptions.headers;
     const dataURL: string = `${this.candidatUrl}/${candidatId}`;
-    return this.http.patch<ApiResponse<Candidat[]>>(dataURL, {input: candidat}, httpOptions).pipe(catchError(this.handleError));
+    // return this.http.patch<ApiResponse<Candidat[]>>(dataURL, {input: candidat}, httpOptions).pipe(catchError(this.handleError));
+    return this.http.patch<{success: boolean, data?: Candidat}>(dataURL, {input: candidat}, httpOptions).pipe(catchError(this.handleError));
   }
 
 
-supprimerCandidat(candidatId: string): Observable<any> {
+supprimerCandidat(candidatId: string): Observable<{success: boolean, data?: Candidat}> {
   const dataURL: string = `${this.candidatUrl}/${candidatId}`;
   console.log("=========================",dataURL)
-  return this.http.delete<any>(dataURL).pipe(catchError(this.handleError));
+  return this.http.delete<{success: boolean, data?: Candidat}>(dataURL).pipe(catchError(this.handleError));
 }
 
 
