@@ -2,7 +2,7 @@
   <h1 class="vertical-line">Ajouter une demande</h1>
   <div class="button-container">
     <button mat-raised-button class="mat-accent" type="reset" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button class="mat-primary" [disabled]="formStage.invalid" (click)="onAdd()">
+    <button mat-raised-button class="mat-primary white" [disabled]="formStage.invalid" (click)="onAdd()">
       <mat-icon>save</mat-icon>Sauvegarder
     </button>
   </div>
@@ -171,16 +171,15 @@
     <mat-checkbox class="mat-input-element vertical-line" formControlName="discretion">A la discrétion de l'entreprise</mat-checkbox>
     <mat-checkbox  class="mat-input-element vertical-line" formControlName="remunere">Stage rémunéré</mat-checkbox>
     <mat-checkbox  class="mat-input-element vertical-line" formControlName="nonRemunere">Stage non rémunéré</mat-checkbox>
-
   </div>
 
-    <a href="../../assets/img/fichier.pdf"  target="_blank"> <mat-icon>folder</mat-icon><mat-icon>keyboard_arrow_down</mat-icon></a>
+    <a href="../../assets/img/fichier.pdf"  target="_blank"> <mat-icon  class="folder">folder</mat-icon><mat-icon class="folder">keyboard_arrow_down</mat-icon></a>
 
 
 
   <div class="button-container">
     <button mat-raised-button class="mat-accent btn-save-annuler" type="reset" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button class="mat-primary btn-save-annuler" [disabled]="formStage.invalid" (click)="onAdd()">
+    <button mat-raised-button class="mat-primary btn-save-annuler white" [disabled]="formStage.invalid" (click)="onAdd()">
       <mat-icon>save</mat-icon>Sauvegarder
     </button>
   </div>

@@ -9,7 +9,7 @@
         </tr>
       </table>
 
-      <form class="form-header" #entrepriseFormAjout="ngForm" (submit)="createEntreprise()">
+      <form class="form-header" #entrepriseFormAjout="ngForm" (submit)="createEntreprise(entrepriseFormAjout)">
         <!--(submit)="createEntreprise(entrepriseFormAjout)"-->
         <div class="btn-control">
           <ng-container matColumnDef="actions" class="text-underline">
@@ -35,10 +35,10 @@
             </div>
           </ng-container>
         </div>
-        
+
         <div class="example-full-width flex-entete">
           <p class="soustitre-entreprise">Entreprise</p>
-          <input matInput value="" class="form-detail-entreprise" name="entreprise" required minlength="2"
+          <input type="text" matInput value="" class="form-detail-entreprise" name="entreprise" required minlength="2"
             maxlength="50" [(ngModel)]="entreprise.name" #name="ngModel">
         </div>
         <mat-form-field class="example-full-width" id="formfieldupload">
@@ -47,7 +47,7 @@
           <div>
             <mat-toolbar>
               <!-- Display files names -->
-              <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+              <input  matInput [(ngModel)]="fileAttr" readonly name="name" />
               <!-- Browse Button -->
               <button mat-flat-button id="btn-parcourir">Parcourir</button>
             </mat-toolbar>
@@ -59,12 +59,12 @@
         </form>
 
         <div class="fiche">
-          <form class="example-form" (submit)="createEntreprise()">
+          <form class="example-form" (submit)="createEntreprise(entrepriseFormAjout)">
           <table class="example-full-width" cellspacing="0">
             <tr>
               <td>
                 <h1>Courte présentation</h1>
-                <input class="form-detail" matInput name="description" placeholder="" required #description="ngModel"
+                <input type="text" class="form-detail" matInput name="description" placeholder="" required #description="ngModel"
                   [(ngModel)]="entreprise.description">
               </td>
             </tr>
@@ -72,7 +72,7 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Personne contact</mat-label> <br>
-                <input class="form-detail" matInput name="contactName" placeholder="" required #contactName="ngModel"
+                <input type="text" class="form-detail" matInput name="contactName" placeholder="" required #contactName="ngModel"
                   [(ngModel)]="entreprise.contactName">
               </td>
             </tr>
@@ -82,13 +82,13 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Adresse</mat-label> <br>
-                <input class="form-detail" matInput name="address" placeholder="Adresse" required #address="ngModel"
+                <input type="text" class="form-detail" matInput name="address" placeholder="Adresse" required #address="ngModel"
                   [(ngModel)]="entreprise.address">
               </td>
 
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Téléphone</mat-label><br>
-                <input class="form-detail" matInput name="contactPhone" placeholder="000 000-0000" required #contactPhone="ngModel"
+                <input type="text" class="form-detail" matInput name="contactPhone" placeholder="000 000-0000" required #contactPhone="ngModel"
                   [(ngModel)]="entreprise.contactPhone">
               </td>
             </tr>
@@ -96,12 +96,12 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Ville</mat-label> <br>
-                <input class="form-detail" matInput name="city" placeholder="Ville" required #city="ngModel"
+                <input type="text" class="form-detail" matInput name="city" placeholder="Ville" required #city="ngModel"
                   [(ngModel)]="entreprise.city">
               </td>
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Courriel</mat-label> <br>
-                <input class="form-detail" matInput name="contactEmail" placeholder="Courriel" required #contactEmail="ngModel"
+                <input type="text" class="form-detail" matInput name="contactEmail" placeholder="Courriel" required #contactEmail="ngModel"
                   [(ngModel)]="entreprise.contactEmail">
               </td>
             </tr>
@@ -109,7 +109,7 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Province</mat-label> <br>
-                <input class="form-detail" matInput name="province" placeholder="Province" required #province="ngModel"
+                <input type="text" class="form-detail" matInput name="province" placeholder="Province" required #province="ngModel"
                   [(ngModel)]="entreprise.province">
               </td>
             </tr>
@@ -117,7 +117,7 @@
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <mat-label class="subtitle-fiche">Code Postal</mat-label> <br>
-                <input class="form-detail" matInput name="postalCode" placeholder="H1H 1H1" required #postalCode="ngModel"
+                <input type="text" class="form-detail" matInput name="postalCode" placeholder="H1H 1H1" required #postalCode="ngModel"
                   [(ngModel)]="entreprise.postalCode">
               </td>
             </tr>

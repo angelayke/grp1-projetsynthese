@@ -1,9 +1,10 @@
+import { EnterpriseService } from './../enterprise.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { Entreprise } from '../entreprises';
 import { ENTREPRISES } from '../mock-entreprises';
-import { EnterpriseService } from '../enterprise.service';
+// import { EnterpriseService } from '../enterprise.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { SuppressionDialogComponent } from '../suppression-dialog/suppression-dialog.component';
@@ -34,11 +35,13 @@ export class FicheEntrepriseComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((param) => {
       this.entrepriseId = param.get('entrepriseId');
+      console.log("la variable id: ", this.entrepriseId)
     });
       if(this.entrepriseId) {
         this.loading = true;
         this.entrepriseService.getEntreprise(this.entrepriseId).subscribe((data) => {
           this.entreprise = data.data;
+          console.log("Tester:...........",this.entreprise, this.entrepriseId)
           this.loading = false;
 
         }, (error) => {
@@ -48,16 +51,23 @@ export class FicheEntrepriseComponent implements OnInit {
       }
   }
 
+  // getEntreprise(entrepriseId: string): void{
+  //   this.entrepriseService.getEntreprise(entrepriseId).subscribe(response => {
+  //     this.entreprise = response.data;
+  //   });
+
+  // }
+
 
   onDoneClick(){
     this.editing = false;
     alert("Fiche sauvegardée!");
  }
 
- onEditClick(){
-   this.editing = true;
-   alert("Fiche modifiée!");
- }
+//  onEditClick(){
+//    this.editing = true;
+//    alert("Fiche modifiée!");
+//  }
 
 //  onDeleteClick(): void {
 //   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -71,10 +81,11 @@ export class FicheEntrepriseComponent implements OnInit {
 //     }
 //   });
 // }
+
 onDeleteClick(entrepriseId: string): void {
   const dialogRef = this.dialog.open(SuppressionDialogComponent, {
     width: '400px',
-    data: { message: 'Êtes-vous sûr de vouloir supprimer cette entreprise ?' }
+    data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -83,11 +94,33 @@ onDeleteClick(entrepriseId: string): void {
       this.entrepriseService.supprimerEntreprise(entrepriseId)
         .subscribe((data) => {
           this.entreprises = this.entreprises.filter(entreprise => entreprise._id !== entrepriseId);
-          console.log(this.entreprises)
+          console.log("Suppression",this.entreprises, data)
+        }, (error)=>{
+          this.errorMessage = error;
         });
     }
   });
 }
+
+// onDeleteClick(entrepriseId: string): void {
+//   const dialogRef = this.dialog.open(SuppressionDialogComponent, {
+//     width: '400px',
+//     data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+//   });
+
+//   dialogRef.afterClosed().subscribe(result => {
+//     console.log("juste pour tester",result)
+//     if (result) {
+//       this.entrepriseService.supprimerEntreprise(entrepriseId)
+//         .subscribe(() => {
+//           this.entreprise = null;
+//           console.log("Entreprise supprimée", entrepriseId);
+//         }, (error)=>{
+//           this.errorMessage = error;
+//         });
+//     }
+//   });
+// }
 
 getEntreprises(): void {
   this.entrepriseService.getEntreprises()

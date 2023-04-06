@@ -219,7 +219,7 @@ export const DEMANDESTAGES: DemandeStage[] = [
       value: "TEMPS_PLEIN"
     },
     hoursPerWeek: 40,
-    additionalInfo: "",
+    additionalInfo: "Cégep de Trois-Rivières",
     paid: true,
     published: false,
     skills: {
@@ -269,7 +269,7 @@ export const DEMANDESTAGES: DemandeStage[] = [
       value: "TEMPS_PLEIN"
     },
     hoursPerWeek: 40,
-    additionalInfo: "",
+    additionalInfo: "Cégep de Trois-Rivières",
     paid: true,
     published: false,
     skills: {
@@ -319,7 +319,7 @@ export const DEMANDESTAGES: DemandeStage[] = [
       value: "TEMPS_PLEIN"
     },
     hoursPerWeek: 40,
-    additionalInfo: "",
+    additionalInfo: "Cégep de Trois-Rivières",
     paid: true,
     published: false,
     skills: {

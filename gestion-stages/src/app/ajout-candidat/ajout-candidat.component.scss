@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 /* demo angular */
 .example-form {
   /* min-width: 150px;
@@ -25,12 +27,12 @@ td {
 /* fin demo angular */
 
 h1,h2,h3{
-   color: #7f2987;
+   color: $candidat;
    font-weight: bold;
 }
 
 button:hover{
-  background-color: #4a1150
+  background-color: $dark-candidat;
   ;
 }
 
@@ -65,7 +67,7 @@ img{
 .titre-candidat{
    margin-top: 2px;
    margin-left: 5px;
-   color: #707070;
+   color: $darkgrey;
    font-size: 2.5em;
 }
 
@@ -75,16 +77,16 @@ img{
 
 .fiche{
    padding: 4em;
-   background-color: white;
+   background-color: $white;
 }
 
 .td-fiche{
-   border-left: 7px solid #707070;
+   border-left: 7px solid $darkgrey;
 }
 
 .td-fiche-candidat{
   display: flex;
-  border-left: 7px solid #7f2987;
+  border-left: 7px solid $candidat;
   align-items: flex-start;
   flex-wrap: wrap; 
 }
@@ -124,15 +126,15 @@ img{
 .form-detail-candidat{
    @extend .form-detail;
    margin-left: 0;
-   background-color: #fff;
+   background-color: $white;
 }
 
 .mat-flat-button{
-  background-color: #7f2987;
+  background-color: $candidat;
   color: #fff;
   min-width: 100px;
       &:hover {
-      background-color: #4a1150;            
+      background-color: $dark-candidat;            
       }
 }
 
@@ -145,7 +147,7 @@ img{
 .btn-annuler{
   margin-right: 10px;
   &:hover{
-      color: #fff;
+      color: $white;
   }
 }
 

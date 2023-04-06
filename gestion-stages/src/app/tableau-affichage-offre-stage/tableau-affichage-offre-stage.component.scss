@@ -1,18 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import 'src/variables';
 
-$color1: red;
+/*$color1: red;*/
 $line-height: normal;
 
 @font-face {  
     font-family: 'Lato', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 }
-
-table {
-    align-content: center;
-}
-
 
 .flex-container {
     display: flex;
@@ -20,7 +15,11 @@ table {
 }
 
 span, p {
-    color: #a00707;
+    color: $offre;
+}
+
+h2{
+    margin: 0;
 }
 
 h3, p {
@@ -34,9 +33,10 @@ button {
 }
 
 table {
+    align-content: center;
     margin-top: 5rem;
     width: 100%;
-    border-left-color: #a00707;
+    border-left-color: $offre;
     font-family: Lato;
     font-size: 8px;
   }
@@ -68,21 +68,19 @@ th {
 }
 
 .delete {
-    color: #f26689;
+    color: $trash;
     display: inline-table;
 }
 
 .visibility {
-    color: #22a6ac;
+    color:$eye;
     display: inline-table;
 }
 
 .edit {
-   color: #f89747;
+   color: $edit;
    display: inline-table;
-
 }
-
 
 th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     padding: 0;
@@ -91,13 +89,12 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     // text-decoration: underline; 
 }
 
-
 // mat-row, mat-header-row,   td.mat-cell, td.mat-footer-cell {
 //     border-bottom-color: #f44336;
 // }
 
 .refuser {
-    color: #a00707;
+    color: $refuse;
     background-color: rgba(160, 7, 7, 0.5);
     padding: 0.1rem;
     float: left;
@@ -108,7 +105,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 }
 
 .accepter {
-    color:#07a04a;
+    color:$accept;
     background-color: rgba(173, 216, 230, 0.5);
     padding: 0.1rem;
     float: left;
@@ -120,12 +117,13 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
     font-family: Lato;
 }
 
-
-
 .btn-offre-stage {
-    color: white;
-    background-color: #22a6ac;
+    color: $white;
+    background-color: $dashboard;
     font-family: Lato;
+    &:hover{
+        background-color: $dark-dashboard;
+      }
 }
 
 .work {
@@ -149,12 +147,12 @@ hr {
 
 .ligne-vertical {
    height: 30px;
-   border-left: 6px solid green;
+   border-left: 6px solid transparent;
    margin-left: -3px;
 }
 
 .titre2{
-    color:#bb2026;
+    color: $offre;
     margin-top:0;
   }
 

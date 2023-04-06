@@ -72,7 +72,7 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
     // );
     this.activatedRoute.paramMap.subscribe((param) => {
       this.entrepriseId = param.get('entrepriseId');
-
+       console.log("==================================",this.entrepriseId)
     });
     if(this.entrepriseId){
        this.entrepriseService.getEntreprise(this.entrepriseId).subscribe((data: ApiResponse<Entreprise[]>) => {
@@ -101,9 +101,8 @@ export class FormulaireUpdateEntrepriseComponent implements OnInit {
 
 updateEntreprise(){
   if(this.entrepriseId){
-    this.entrepriseService.modifierEntreprise(this.entreprise, this.entrepriseId).subscribe((data: ApiResponse<Entreprise[]>) => {
+    this.entrepriseService.modifierEntreprise(this.entrepriseId, this.entreprise).subscribe((data: ApiResponse<Entreprise[]>) => {
       this.router.navigate(['sidenav/tableaudebord/']).then();
-
 
     }, (error) => {
       this.errorMessage = error;
@@ -111,7 +110,6 @@ updateEntreprise(){
 
     });
    }
-
 
 }
 

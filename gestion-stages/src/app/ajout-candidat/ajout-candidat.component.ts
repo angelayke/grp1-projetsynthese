@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-candidat.component.scss']
 })
 export class AjoutCandidatComponent implements OnInit {
-  @Input() candidat: Candidat = {
+  // @Input() candidat: Candidat = {
+
+  public candidat: Candidat = {} as Candidat;
+public errorMessage: string | null = null;
+    newCandidat : Candidat = {
 
     _id: '',
     email: '',
@@ -29,8 +33,7 @@ export class AjoutCandidatComponent implements OnInit {
 constructor(private candidatService: CandidatService, private router: Router ) {}
 
 
-public entreprise: Candidat = {} as Candidat;
-public errorMessage: string | null = null;
+
 
   ngOnInit(): void {}
 

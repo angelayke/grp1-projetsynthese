@@ -4,6 +4,7 @@ import { Candidat,ApiResponse } from '../candidat';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { SuppressionDialogComponent } from '../suppression-dialog/suppression-dialog.component';
 
 
 @Component({
@@ -63,23 +64,23 @@ export class CandidatDetailsComponent implements OnInit {
       alert("Fiche sauvegardée!");
    }
 
-   onEditClick(){
-     this.editing = true;
-     alert("Fiche modifiée!");
-   }
+  //  onEditClick(){
+  //    this.editing = true;
+  //    alert("Fiche modifiée!");
+  //  }
 
-   onDeleteClick(): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '400px',
-      data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
-    });
+  //  onDeleteClick(): void {
+  //   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+  //     width: '400px',
+  //     data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log("Fiche annulée!")
-      }
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result) {
+  //       console.log("Fiche annulée!")
+  //     }
+  //   });
+  // }
 
 
   getCandidats(): void {
@@ -88,6 +89,23 @@ export class CandidatDetailsComponent implements OnInit {
   }
 
 
+  onDeleteClick(candidatId: string): void {
+    const dialogRef = this.dialog.open(SuppressionDialogComponent, {
+      width: '400px',
+      data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("juste pour tester",result)
+      if (result) {
+        this.candidatService.supprimerCandidat(candidatId)
+          .subscribe((data) => {
+            this.candidats = this.candidats.filter(candidat => candidat._id !== candidatId);
+            console.log(this.candidats, data)
+          });
+      }
+    });
+  }
 
 
   public isNotEmpty(){

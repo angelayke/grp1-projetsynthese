@@ -1,4 +1,7 @@
 
+//creation de candidat.service pour faire appel a l'API candidats
+//creer par Khaled Belkacemi
+//Derniere mise a jours le 30 mars 2023
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -41,21 +44,21 @@ const httpOptions = {
     // const headers = httpOptions.headers;
     console.log("Création vers l'api:========", newCandidat)
     // return this.http.post<Candidat>(`${this.candidatUrl}/candidats`, JSON.stringify(newCandidat), { headers: headers });
-    return this.http.post<ApiResponse<Candidat[]>>(dataURL,newCandidat, httpOptions).pipe(catchError(this.handleError));
+    return this.http.post<ApiResponse<Candidat[]>>(dataURL, {input: newCandidat }, httpOptions).pipe(catchError(this.handleError));
   }
 
-  modifierCandidat(candidat: Candidat, candidatId: string): Observable<ApiResponse<Candidat[]>> {
+  modifierCandidat(candidatId: string, candidat: Candidat ): Observable<ApiResponse<Candidat[]>> {
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // const headers = httpOptions.headers;
     const dataURL: string = `${this.candidatUrl}/${candidatId}`;
-    return this.http.put<ApiResponse<Candidat[]>>(dataURL, candidat, httpOptions).pipe(catchError(this.handleError));
+    return this.http.patch<ApiResponse<Candidat[]>>(dataURL, {input: candidat}, httpOptions).pipe(catchError(this.handleError));
   }
 
 
-supprimerEntreprise(candidatId: string): Observable<{}> {
+supprimerCandidat(candidatId: string): Observable<any> {
   const dataURL: string = `${this.candidatUrl}/${candidatId}`;
   console.log("=========================",dataURL)
-  return this.http.delete(dataURL).pipe(catchError(this.handleError));
+  return this.http.delete<any>(dataURL).pipe(catchError(this.handleError));
 }
 
 

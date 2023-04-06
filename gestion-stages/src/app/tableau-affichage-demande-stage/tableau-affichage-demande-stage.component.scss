@@ -1,3 +1,6 @@
+@import 'src/variables';
+
+
 table {
   width: 100%;
   margin: 0 auto;
@@ -8,11 +11,10 @@ table {
   }
 
   th{
-    color:#707070;
+    color:$darkgrey;
     text-decoration: underline;
     text-underline-position: under;
     text-underline-offset: 0.5em;
-
   }
 }
 
@@ -25,29 +27,25 @@ table {
   margin: 0 5%;
 }
 
-
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
 }
 
-
-
 .visibility{
-  color:#22a6ac;
-
+  color:$eye;
 }
 
 .edit{
-  color:#f89747
+  color:$edit;
 }
 
 .delete{
-  color:#f26689;
+  color:$trash;
 }
 
 .refuser{
-  color: #a00707;
+  color: $offre;
   background-color: rgba(160, 7, 7, 0.5);
   padding: 0.4rem;
   border-radius: 5%;
@@ -56,7 +54,7 @@ table {
 }
 
 .accepter{
-  color:#07a04a;
+  color:$accept;
   background-color: rgba(173, 216, 230, 0.5);
   padding: 0.4rem;
   border-radius: 5%;
@@ -74,15 +72,15 @@ table {
 .school{
   vertical-align: middle;
   margin-right: 10px;
-  color: #70582E;
-  background-color: #D6B477;
+  color: #70582E;//couleur special icon
+  background-color: $demande;
   border-radius: 10%;
   padding: 0.2rem;
 }
 
 .vertical-line {
   display: inline-block;
-  border-right: 3px solid #CD9635;
+  border-right: 3px solid $demande;
   height: 20px;
   margin-left: 15px;
   margin-right: 15px;
@@ -97,16 +95,16 @@ table {
   // margin: 0 5% 2rem 5%;
 
   .demandes{
-    color: #CD9635;
+    color: $demande;
   }
 
   .titre2{
-    color:#E33462;
+    color:$offre;
     margin-top:0;
   }
 
   .btn-valid{
-    background-color: #089da4;
+    background-color: $dashboard;
     color: #F1FEFB;
     border-radius: 10px;
     border: none;
