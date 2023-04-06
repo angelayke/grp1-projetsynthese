@@ -72,7 +72,7 @@ export class FormulaireStageComponent implements OnInit {
 
 
   ajouterDemande(){
-    this.router.navigate(['/formStage']);
+    this.router.navigate(['/sidenav/formulairestage']);
     console.log("Tester")
 
   }
