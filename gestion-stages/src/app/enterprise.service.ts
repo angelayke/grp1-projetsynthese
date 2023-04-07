@@ -41,18 +41,20 @@ createEntreprise(newEntreprise: Entreprise): Observable<ApiResponse<Entreprise[]
 
 }
 
-modifierEntreprise(entrepriseId: string, newEntreprise: Entreprise, ): Observable<ApiResponse<Entreprise[]>> {
+// modifierEntreprise(entrepriseId: string, newEntreprise: Entreprise, ): Observable<ApiResponse<Entreprise[]>> {
+modifierEntreprise(entrepriseId: string, newEntreprise: Entreprise, ): Observable<{success: boolean, data?: Entreprise}> {
   // const headers = httpOptions.headers;
   const dataURL: string = `${this.enterpriseUrl}/${entrepriseId}`;
   // const body = {  input: newEntreprise };
-  return this.http.patch<ApiResponse<Entreprise[]>>(dataURL,  {input: newEntreprise},  httpOptions).pipe(catchError(this.handleError));
+  // return this.http.patch<ApiResponse<Entreprise[]>>(dataURL,  {input: newEntreprise},  httpOptions).pipe(catchError(this.handleError));
+  return this.http.patch<{success: boolean, data?:Entreprise}>(dataURL,  {input: newEntreprise},  httpOptions).pipe(catchError(this.handleError));
 }
 
-supprimerEntreprise(entrepriseId: string): Observable<any> {
+supprimerEntreprise(entrepriseId: string): Observable<{success: boolean, data?: Entreprise}> {
   const dataURL: string = `${this.enterpriseUrl}/${entrepriseId}`;
   console.log("Entreprise supprimée",dataURL)
   // return this.http.delete(dataURL, {body: JSON.stringify({entrepriseId: entrepriseId})}).pipe(catchError(this.handleError));
-  return this.http.delete<any>(dataURL).pipe(catchError(this.handleError));
+  return this.http.delete<{success: boolean, data?:Entreprise}>(dataURL).pipe(catchError(this.handleError));
 }
 
 

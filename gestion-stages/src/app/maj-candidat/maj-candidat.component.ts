@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {CANDIDATS} from '../mock-candidat';
 import { ApiResponse, Candidat } from '../candidat';
 import { CandidatService } from '../candidat.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-maj-candidat',
@@ -36,7 +36,7 @@ export class MajCandidatComponent implements OnInit {
 
 };
 
-  constructor(private activatedRoute:ActivatedRoute,private candidatService: CandidatService) { }
+  constructor(private activatedRoute:ActivatedRoute,private candidatService: CandidatService, private router: Router ) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((param) => {
@@ -44,7 +44,8 @@ export class MajCandidatComponent implements OnInit {
 
       });
       if(this.candidatId){
-        this.candidatService.getCandidat(this.candidatId).subscribe((data: ApiResponse<Candidat[]>) => {
+        // this.candidatService.getCandidat(this.candidatId).subscribe((data: ApiResponse<Candidat[]>) => {
+        this.candidatService.getCandidat(this.candidatId).subscribe((data) => {
         this.candidat = data.data;
         this.loading =false;
         }, (error) => {
@@ -66,6 +67,23 @@ export class MajCandidatComponent implements OnInit {
 // }
 
 
+
+
+updateCandidat(){
+  if(this.candidatId){
+    // this.entrepriseService.modifierEntreprise(this.entrepriseId, this.entreprise).subscribe((data: ApiResponse<Entreprise[]>) => {
+    this.candidatService.modifierCandidat(this.candidatId, this.candidat).subscribe((data) => {
+      this.router.navigate(['sidenav/tableaudebord/']).then();
+      console.log(data)
+
+    }, (error) => {
+      this.errorMessage = error;
+      this.router.navigate([`sidenav/tableaudebord/modifier-candidat/${this.candidatId}`]).then();
+
+    });
+   }
+
+}
 
 
 

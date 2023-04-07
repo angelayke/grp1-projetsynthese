@@ -15,7 +15,7 @@ dernière modification le 03 avril 2023-->
           </tr>
         </table>
 
-        <form class="form-header" (submit)="createCandidat()" ><!-- #candidatFormAjout="ngForm" -->
+        <form class="form-header" #candidatFormAjout="ngForm" (submit)="createCandidat(candidatFormAjout)" ><!-- #candidatFormAjout="ngForm" -->
           <!--(submit)="createCandidat(candidatFormAjout)"-->
           <div class="btn-control">
             <ng-container matColumnDef="actions" class="text-underline">
@@ -25,7 +25,7 @@ dernière modification le 03 avril 2023-->
                   <mat-icon>cancel</mat-icon> Annuler
                 </button>
 
-                <button type="submit" mat-flat-button aria-label="Ajouter" ><!--[disabled]="!candidatFormAjout.form.valid"-->
+                <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!candidatFormAjout.form.valid"><!--[disabled]="!candidatFormAjout.form.valid"-->
                   <!--(click)="createCandidat(candidatFormAjout)"-->
                   <mat-icon>save</mat-icon> Sauvegarder
                 </button>
@@ -60,7 +60,7 @@ dernière modification le 03 avril 2023-->
           </form>
 
           <div class="fiche">
-            <form class="example-form" (submit)="createCandidat()">
+            <form class="example-form" (submit)="createCandidat(candidatFormAjout)">
             <table class="example-full-width" cellspacing="0">
               <tr>
                 <td>
@@ -132,7 +132,7 @@ dernière modification le 03 avril 2023-->
                 <mat-icon>cancel</mat-icon> Annuler
               </button>
 
-              <button type="submit" mat-flat-button aria-label="Ajouter" ><!--[disabled]="!candidatFormAjout.form.valid"-->
+              <button type="submit" mat-flat-button aria-label="Ajouter" [disabled]="!candidatFormAjout.form.valid"><!--[disabled]="!candidatFormAjout.form.valid"-->
                 <!--(click)="createCandidat(candidatFormAjout)"-->
                 <mat-icon>save</mat-icon> Sauvegarder
               </button>

@@ -17,8 +17,8 @@ dernière modification le 03 avril 2023-->
            </td>
          </tr>
        </table>
- 
-       <form class="form-header" ><!-- #candidatFormAjout="ngForm" (submit)="createEntreprise()"-->
+
+       <form class="form-header" #candidatFormEdit="ngForm" (submit)="updateCandidat()"><!-- #candidatFormAjout="ngForm" (submit)="createEntreprise()"-->
          <!--(submit)="createEntreprise(entrepriseFormAjout)"-->
          <div class="btn-control">
            <ng-container matColumnDef="actions" class="text-underline">
@@ -27,13 +27,13 @@ dernière modification le 03 avril 2023-->
                  <!--(click)="annuler()"-->
                  <mat-icon>cancel</mat-icon> Annuler
                </button>
- 
-               <button type="submit" mat-flat-button aria-label="Ajouter" name="name"><!--[disabled]="!candidatFormAjout.form.valid"-->
+
+               <button type="submit" mat-flat-button aria-label="modifier" name="name" [disabled]="!candidatFormEdit.form.valid"><!--[disabled]="!candidatFormAjout.form.valid"-->
                  <!--(click)="createEntreprise(entrepriseFormAjout)"-->
                  <mat-icon>save</mat-icon> Mettre à jour
                </button>
-               <!--
-               <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">
+
+               <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">
                  Le nom est obligatoire.
                </mat-error>
                <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('minlength')">
@@ -41,7 +41,7 @@ dernière modification le 03 avril 2023-->
                </mat-error>
                <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('maxlength')">
                  Le nom doit contenir au maximum 50 caractères.
-               </mat-error>-->
+               </mat-error> -->
              </div>
            </ng-container>
          </div>
@@ -107,8 +107,8 @@ dernière modification le 03 avril 2023-->
                  <!--(click)="annuler()"-->
                  <mat-icon>cancel</mat-icon> Annuler
                </button>
- 
-               <button type="submit" mat-flat-button aria-label="Ajouter" name="name"><!--[disabled]="!candidatFormAjout.form.valid"-->
+
+               <button type="submit" mat-flat-button aria-label="Ajouter" name="name" [disabled]="!candidatFormEdit.form.valid"><!--[disabled]="!candidatFormAjout.form.valid"-->
                  <!--(click)="createEntreprise(entrepriseFormAjout)"-->
                  <mat-icon>save</mat-icon> Mettre à jour
                </button>
@@ -137,7 +137,7 @@ dernière modification le 03 avril 2023-->
 
     <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button><mat-icon>save</mat-icon>Sauvegarder</button>
     <button  id="btn__boutonCancelCandidat" style="float: right; " matSuffix type="cancel" mat-raised-button><mat-icon>clear</mat-icon>Annuler</button>
-  
+
     <mat-form-field appearance="fill" class="full-width">
       <div class="entete">
         <h1>Candidat</h1>
@@ -149,7 +149,7 @@ dernière modification le 03 avril 2023-->
         <br>
         <br>
     </mat-form-field>
-  
+
     <div class="container">
       <label for="description"><h4> Courte présentation</h4></label>
       <textarea type="text" rows="10" cols="60" class="form-control" id="description"  required [(ngModel)]="candidats[0].description" name="description"></textarea>
@@ -162,7 +162,7 @@ dernière modification le 03 avril 2023-->
       </div>
    </div>
   </div>
-  
+
      <div class="row">
   <button id="btn__boutonAjoutCandidat" style="float: right; " matSuffix type="submit" mat-raised-button>
     <mat-icon>save</mat-icon>Sauvegarder
