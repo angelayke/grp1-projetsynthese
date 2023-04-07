@@ -25,8 +25,8 @@ h3 {
 }
 
 img {
-  max-width: 100%;
-  width: "150px";
+  //max-width: 100%;
+  max-width: 150px;
 }
 
 .soustitre-fiche {
@@ -42,7 +42,7 @@ img {
 }
 
 .table-titre {
-  width: 300px;
+  width: 100%;
 }
 
 .fiche {
@@ -59,6 +59,7 @@ img {
   border-left: 7px solid $entreprise;
   align-items: flex-start;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .subtitle-fiche {

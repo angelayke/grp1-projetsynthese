@@ -10,10 +10,8 @@ dernière modification le 03 avril 2023-->
         <tr>
           <td class="td-candidat-details">
             <p class="soustitre-fiche">Candidat</p>
-            <h1 class="titre-candidat">Prénom Nom</h1>
-            <!--{{candidat.name}}-->
-            <h2 class="jobTitle">Titre du poste</h2>
-            <!--{{candidat.jobTitle}}-->
+            <h1 class="titre-candidat">{{candidat.name}}</h1>
+            <h2 class="jobTitle">{{candidat.jobTitle}}</h2>
           </td>
         </tr>
       </table>
@@ -41,9 +39,7 @@ dernière modification le 03 avril 2023-->
 
       <div class="fiche" *ngIf="!loading && isNotEmpty()">
         <h1>Courte présentation</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Rerum consectetur quaerat quam maiores magni fuga dolor inventore pariatur,
-          optio omnis dicta repudiandae delectus porro sed aliquam et quisquam eos? Incidunt.</p><!--{{candidat.description}}-->
+        <p>{{candidat.description}}</p>
         <br>
         <h3>Informations personnelles</h3>
         <form class="example-form">
@@ -51,42 +47,36 @@ dernière modification le 03 avril 2023-->
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <p class="subtitle-fiche">Adresse</p>
-                <p class="txt-fiche">123 rue machin</p>
-                {{candidat.address}}
+                <p class="txt-fiche">{{candidat.address}}</p>
               </td>
               <td class="td-fiche">
                 <p class="subtitle-fiche">Téléphone</p>
-                <p class="txt-fiche">000 000-0000</p>
-                {{candidat.phone}}
+                <p class="txt-fiche">{{candidat.phone}}</p>
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <p class="subtitle-fiche">Ville</p>
-                <p class="txt-fiche">Towncity</p>
-                {{candidat.city}}
+                <p class="txt-fiche">{{candidat.city}}</p>  
               </td>
               <td class="td-fiche">
                 <p class="subtitle-fiche">Courriel</p>
-                <p class="txt-fiche">info@candidat.com</p>
-                {{candidat.email}}
+                <p class="txt-fiche">{{candidat.email}}</p>
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <p class="subtitle-fiche">Province</p>
-                <p class="txt-fiche">Québec</p>
-                {{candidat.province}}
+                <p class="txt-fiche">{{candidat.province}}</p>
               </td>
             </tr>
             <br>
             <tr class="tr-fiche">
               <td class="td-fiche">
                 <p class="subtitle-fiche">Code Postal</p>
-                <p class="txt-fiche">H1H 1H1</p>
-                {{candidat.postalCode}}
+                <p class="txt-fiche">{{candidat.postalCode}}</p>
               </td>
             </tr>
           </table>
