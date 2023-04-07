@@ -41,7 +41,7 @@ export class FicheEntrepriseComponent implements OnInit {
         this.loading = true;
         this.entrepriseService.getEntreprise(this.entrepriseId).subscribe((data) => {
           this.entreprise = data.data;
-          console.log("Tester:...........",this.entreprise, this.entrepriseId)
+          console.log(this.entreprise, this.entrepriseId)
           this.loading = false;
 
         }, (error) => {
@@ -64,23 +64,7 @@ export class FicheEntrepriseComponent implements OnInit {
     alert("Fiche sauvegardée!");
  }
 
-//  onEditClick(){
-//    this.editing = true;
-//    alert("Fiche modifiée!");
-//  }
 
-//  onDeleteClick(): void {
-//   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-//     width: '400px',
-//     data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
-//   });
-
-//   dialogRef.afterClosed().subscribe(result => {
-//     if (result) {
-//       console.log("Fiche annulée!")
-//     }
-//   });
-// }
 
 onDeleteClick(entrepriseId: string): void {
   const dialogRef = this.dialog.open(SuppressionDialogComponent, {

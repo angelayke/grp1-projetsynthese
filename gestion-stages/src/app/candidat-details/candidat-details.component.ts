@@ -64,23 +64,6 @@ export class CandidatDetailsComponent implements OnInit {
       alert("Fiche sauvegardée!");
    }
 
-  //  onEditClick(){
-  //    this.editing = true;
-  //    alert("Fiche modifiée!");
-  //  }
-
-  //  onDeleteClick(): void {
-  //   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-  //     width: '400px',
-  //     data: { message: 'Êtes-vous sûr de vouloir supprimer cette information ?' }
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result) {
-  //       console.log("Fiche annulée!")
-  //     }
-  //   });
-  // }
 
 
   getCandidats(): void {
