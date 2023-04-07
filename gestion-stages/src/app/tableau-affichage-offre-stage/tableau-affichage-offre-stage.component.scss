@@ -61,12 +61,6 @@ th {
     width: fit-content;
 }
 
-.school {
-    float: left;
-    margin-right: 10px;
-    color: rgb(138, 120, 21);
-}
-
 .delete {
     color: $trash;
     display: inline-table;
@@ -125,18 +119,25 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
         background-color: $dark-dashboard;
       }
 }
+/*
+.school {
+    float: left;
+    margin-right: 10px;
+    color: rgb(138, 120, 21);
+}*/
 
 .work {
-    background-color: rgba(160, 7, 7, 0.5);
+    background-color: $offre; //rgba(160, 7, 7, 0.5)
     float: left;
-    font-size: 24px;
-    // border-left: solid;
+    margin-right: 10px;
+    color: #cf7174; //couleur pour icone
+    border-radius: 10%;
 }
 
 .border-left {
     border-left: solid;
     border-left-width: 5px;
-    border-left-color:  rgba(160, 7, 7, 0.5);
+    border-left-color:  $offre;
     border-left-style: groove;
 }
 
