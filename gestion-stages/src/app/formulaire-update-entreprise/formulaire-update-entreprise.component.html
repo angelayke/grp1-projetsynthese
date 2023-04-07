@@ -6,7 +6,7 @@
           <td><img src="../../assets/img/logofakecie_300x214.png" alt="logo"></td>
           <td class="td-fiche-entreprise">
             <p class="soustitre-fiche">Entreprise</p>
-            <h1 class="titre-entreprise">Titre -{{newEntreprise.name}}-</h1>
+            <h1 class="titre-entreprise">{{newEntreprise.name}}</h1>
           </td>
         </tr>
       </table>
@@ -51,7 +51,7 @@
           <div>
             <mat-toolbar>
               <!-- Display files names -->
-              <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+              <input matInput [(ngModel)]="fileAttr" readonly name="logo" />
               <!-- Browse Button -->
               <button mat-flat-button id="btn-parcourir">Parcourir</button>
             </mat-toolbar>
