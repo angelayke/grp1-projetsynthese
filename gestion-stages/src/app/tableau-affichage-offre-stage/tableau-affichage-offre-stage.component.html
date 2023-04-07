@@ -14,15 +14,14 @@
 
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
 
       <!-- Position Column -->
       <ng-container matColumnDef="poste">
         <th mat-header-cell *matHeaderCellDef><b> Poste </b></th><br><hr>
-        <td mat-cell *matCellDef="let stage" class="border-left"><span class="ligne-vertical"></span><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon>
+        <td mat-cell *matCellDef="let stage" class="border-left"><span class="ligne-vertical"></span>
+          <mat-icon class="material-icons md-48" class="work">work</mat-icon>
           <!-- <b>Intégrateur Web</b><br>Acolyte communication</td> --> 
           {{ stage.title | titlecase }}
       </ng-container>
@@ -56,10 +55,6 @@
           <button mat-icon-button aria-label="visibility" (click)="openDetailsDialog(stage)">
             <span class=visibility><mat-icon>visibility</mat-icon></span>
           </button>
-          <!-- <button mat-icon-button aria-label="Modifier">
-            <mat-icon>school</mat-icon>
-          </button> -->
-
         </td>
       </ng-container>
 

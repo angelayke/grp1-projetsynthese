@@ -19,7 +19,8 @@
         <!-- Position Column -->
         <ng-container matColumnDef="poste">
           <th mat-header-cell *matHeaderCellDef><b> Poste </b></th><br><hr>
-          <td mat-cell *matCellDef="let stage" class="border-left"><span class="ligne-vertical"><mat-icon class="material-icons md-48" class="work">work_outline</mat-icon></span>
+          <td mat-cell *matCellDef="let stage" class="border-left"><span class="ligne-vertical">
+            <mat-icon class="material-icons md-48" class="work">work</mat-icon></span>
             <!-- <b>Intégrateur Web</b><br>Acolyte communication</td> -->
             {{stage.title | titlecase}}
         </ng-container>
